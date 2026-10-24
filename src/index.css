@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+/* Design system — The Tiny Wisdom brand palette. All colors MUST be HSL. */
+/* Brand colors: #EFEEEA (bg), #ed612b (accent/orange), #1a1a1a (dark) */
+
+@layer base {
+  :root {
+    /* #EFEEEA — warm stone background */
+    --background: 45 10% 93%;
+    --foreground: 0 0% 10%;
+
+    /* Card: slightly lighter than bg */
+    --card: 45 14% 96%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 45 14% 96%;
+    --popover-foreground: 0 0% 10%;
+
+    /* #1a1a1a as primary */
+    --primary: 0 0% 10%;
+    --primary-foreground: 45 10% 93%;
+
+    /* Muted surface */
+    --secondary: 45 10% 88%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 45 8% 86%;
+    --muted-foreground: 0 0% 42%;
+
+    /* #ed612b — brand orange as accent */
+    --accent: 19 83% 55%;
+    --accent-foreground: 45 10% 93%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 45 10% 93%;
+
+    --border: 45 8% 84%;
+    --input: 45 8% 84%;
+    --ring: 19 83% 55%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --orange: 19 83% 55%;
+    --orange-light: 19 83% 93%;
+    --stone: 45 10% 93%;
+    --stone-deep: 45 8% 86%;
+    --dark: 0 0% 10%;
+
+    /* Feedback panels */
+    --feedback-correct-bg: 150 60% 96% / 0.85;
+    --feedback-correct-border: 150 50% 40% / 0.45;
+    --feedback-correct-text: 150 60% 28%;
+    --feedback-incorrect-bg: 25 85% 95% / 0.9;
+    --feedback-incorrect-border: 19 83% 55% / 0.55;
+    --feedback-incorrect-text: 19 80% 35%;
+    --feedback-badge-correct-bg: 150 50% 35%;
+    --feedback-badge-correct-text: 0 0% 100%;
+    --feedback-badge-incorrect-bg: 19 83% 55%;
+    --feedback-badge-incorrect-text: 0 0% 100%;
+
+    /* Shadows */
+    --shadow-card: 0 1px 12px -2px hsl(0 0% 10% / 0.08), 0 1px 3px -1px hsl(0 0% 10% / 0.05);
+    --shadow-float: 0 6px 32px -6px hsl(0 0% 10% / 0.14), 0 2px 8px -3px hsl(0 0% 10% / 0.08);
+
+    --sidebar-background: 45 10% 93%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 45 10% 93%;
+    --sidebar-accent: 45 10% 88%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 45 8% 84%;
+    --sidebar-ring: 19 83% 55%;
+  }
+
+  .dark {
+    /* Warm deep charcoal background, complements #ed612b accent */
+    --background: 30 6% 9%;
+    --foreground: 45 14% 92%;
+
+    --card: 30 6% 12%;
+    --card-foreground: 45 14% 92%;
+
+    --popover: 30 6% 12%;
+    --popover-foreground: 45 14% 92%;
+
+    --primary: 45 14% 92%;
+    --primary-foreground: 30 6% 9%;
+
+    --secondary: 30 5% 16%;
+    --secondary-foreground: 45 14% 92%;
+
+    --muted: 30 5% 16%;
+    --muted-foreground: 45 6% 65%;
+
+    --accent: 19 83% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 45 14% 92%;
+
+    --border: 30 5% 20%;
+    --input: 30 5% 22%;
+    --ring: 19 83% 58%;
+
+    --orange: 19 83% 58%;
+    --orange-light: 19 40% 22%;
+    --stone: 30 6% 9%;
+    --stone-deep: 30 5% 16%;
+    --dark: 45 14% 92%;
+
+    /* Feedback panels */
+    --feedback-correct-bg: 150 45% 20% / 0.55;
+    --feedback-correct-border: 150 50% 45% / 0.5;
+    --feedback-correct-text: 150 60% 75%;
+    --feedback-incorrect-bg: 20 60% 24% / 0.6;
+    --feedback-incorrect-border: 19 83% 58% / 0.5;
+    --feedback-incorrect-text: 25 85% 75%;
+    --feedback-badge-correct-bg: 150 45% 30%;
+    --feedback-badge-correct-text: 0 0% 100%;
+    --feedback-badge-incorrect-bg: 19 70% 45%;
+    --feedback-badge-incorrect-text: 0 0% 100%;
+
+    --shadow-card: 0 1px 12px -2px hsl(0 0% 0% / 0.45), 0 1px 3px -1px hsl(0 0% 0% / 0.3);
+    --shadow-float: 0 6px 32px -6px hsl(0 0% 0% / 0.55), 0 2px 8px -3px hsl(0 0% 0% / 0.35);
+
+    --sidebar-background: 30 6% 9%;
+    --sidebar-foreground: 45 14% 92%;
+    --sidebar-primary: 45 14% 92%;
+    --sidebar-primary-foreground: 30 6% 9%;
+    --sidebar-accent: 30 5% 16%;
+    --sidebar-accent-foreground: 45 14% 92%;
+    --sidebar-border: 30 5% 20%;
+    --sidebar-ring: 19 83% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+  }
+}
+
+@layer base {
+  :lang(ja),
+  [lang="ja"] {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'DM Serif Display', Georgia, serif;
+  }
+
+  .font-serif:lang(ja),
+  .font-serif[lang="ja"] {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    font-weight: 500;
+  }
+
+  .font-sans-tw {
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-slide {
+    background: var(--gradient-slide);
+  }
+}
+
+
+/* 絵日記 — picture diary paper */
+@layer base {
+  :root {
+    --diary-paper: 42 30% 96%;
+    --diary-rule: 45 8% 74%;
+  }
+  .dark {
+    --diary-paper: 30 6% 13%;
+    --diary-rule: 30 5% 28%;
+  }
+}
+
+@layer utilities {
+  .font-jp {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  }
+
+  .bg-diary-paper {
+    background-color: hsl(var(--diary-paper));
+  }
+
+  /* Horizontal ruled lines: exactly 12 rows filling the box height. */
+  .bg-diary-lines-h {
+    background-color: hsl(var(--diary-paper));
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(2.25rem - 1px),
+      hsl(var(--diary-rule)) calc(2.25rem - 1px),
+      hsl(var(--diary-rule)) 2.25rem
+    );
+    background-position: left 0 top 0;
+    background-size: 100% calc(12 * 2.25rem);
+    background-repeat: no-repeat;
+  }
+
+  /* Vertical column separators: exactly 12 columns, drawn right-to-left. */
+  .bg-diary-lines-v {
+    background-color: hsl(var(--diary-paper));
+    background-image: repeating-linear-gradient(
+      to left,
+      transparent 0,
+      transparent calc(var(--diary-col, 2.25rem) - 1px),
+      hsl(var(--diary-rule)) calc(var(--diary-col, 2.25rem) - 1px),
+      hsl(var(--diary-rule)) var(--diary-col, 2.25rem)
+    );
+    background-position: right 0 top 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+/* Restore top borders that the merged toolbar normally hides, for PNG export. */
+.diary-exporting [data-export-hide] {
+  display: none !important;
+}
+
+[data-export-only] {
+  display: none;
+}
+
+.diary-exporting [data-export-only] {
+  display: grid !important;
+}
+
+.diary-exporting .diary-export-top {
+  border-top-width: 1px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+/* html-to-image rasterizes the outer border on the capture boundary, which can
+   lose its final pixel row. Draw that edge inside the card during export. */
+.diary-exporting {
+  position: relative;
+  margin: 0 !important;
+  border-color: transparent;
+  /* Draw the outer edge one pixel inside so rasterization can't clip it. */
+  box-shadow: inset 0 0 0 1px hsl(var(--border));
+}
+
+/* Keep the bottom edge above html-to-image's clipped final pixel row. */
+.diary-exporting::after {
+  content: "";
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  height: 1px;
+  background: hsl(var(--border));
+  pointer-events: none;
+}

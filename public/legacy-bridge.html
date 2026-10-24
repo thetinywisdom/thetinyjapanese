@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>storage bridge</title>
+  </head>
+  <body>
+    <script>
+      // Tiny cross-origin storage bridge. Older versions of this app lived on
+      // other domains; this page lets the current domain read the progress that
+      // is still stored in that origin's localStorage.
+      (function () {
+        var ALLOWED = [
+          "https://japanese.thetinywisdom.com",
+          "https://thetinyjapanese.com",
+          "https://www.thetinyjapanese.com",
+          "https://tinyjapanese.com",
+          "https://www.tinyjapanese.com",
+          "https://thetinykanji.lovable.app",
+        ];
+        var PREFIXES = ["tk.progress.", "lovable.", "level-scheme"];
+
+        function isAllowed(origin) {
+          if (ALLOWED.indexOf(origin) !== -1) return true;
+          return /^https:\/\/[a-z0-9-]+\.lovable\.app$/.test(origin) || /^http:\/\/localhost(:\d+)?$/.test(origin);
+        }
+
+        function dump() {
+          var out = {};
+          try {
+            for (var i = 0; i < localStorage.length; i++) {
+              var k = localStorage.key(i);
+              if (!k) continue;
+              for (var j = 0; j < PREFIXES.length; j++) {
+                if (k.indexOf(PREFIXES[j]) === 0) {
+                  out[k] = localStorage.getItem(k);
+                  break;
+                }
+              }
+            }
+          } catch (e) {
+            /* storage blocked */
+          }
+          return out;
+        }
+
+        function reply(event) {
+          var payload = { type: "tk-legacy-storage", origin: location.origin, data: dump() };
+          try {
+            event.source.postMessage(payload, event.origin);
+          } catch (e) {
+            /* ignore */
+          }
+        }
+
+        window.addEventListener("message", function (event) {
+          if (!event.data || event.data.type !== "tk-legacy-storage-request") return;
+          if (!isAllowed(event.origin)) return;
+          if (document.requestStorageAccess && document.hasStorageAccess) {
+            document.hasStorageAccess().then(function (has) {
+              if (has) return reply(event);
+              document.requestStorageAccess().then(
+                function () { reply(event); },
+                function () { reply(event); }
+              );
+            }, function () { reply(event); });
+          } else {
+            reply(event);
+          }
+        });
+
+        try {
+          if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: "tk-legacy-storage-ready", origin: location.origin }, "*");
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      })();
+    </script>
+  </body>
+</html>

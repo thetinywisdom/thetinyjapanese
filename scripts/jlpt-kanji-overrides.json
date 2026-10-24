@@ -1,0 +1,3 @@
+{
+  "_comment": "Hand-curated overrides for JLPT kanji level. Key is the kanji character. Value is 'N5'-'N1' or null to drop. Applied after loading scripts/jlpt-kanji/n*.txt in scripts/build-kanji-radicals.ts."
+}
