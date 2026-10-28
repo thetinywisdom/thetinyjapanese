@@ -5,9 +5,10 @@ import golden from "./conjugation-golden.json";
 
 /**
  * Frozen plain forms for every drilled conjugation of the N5 verbs and
- * adjectives. The expected strings were produced from the engine and still
- * need a native-speaker pass; do not regenerate this file to make a failure
- * go away without checking the Japanese.
+ * adjectives. The nonexistent forms from the native review (開く→あける and
+ * the other non-volitional paradigms) are not drilled. A further native pass
+ * of rows added with the core N5 level fixes is still wise; do not regenerate
+ * this file to make a failure go away without checking the Japanese.
  */
 describe("N5 conjugation golden file", () => {
   it("covers about 200 core N5 verbs and adjectives", () => {

@@ -1,12 +1,24 @@
+import { readFileSync } from "fs";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
+
 /**
  * Checked-in patch layer for generated word data.
  *
  * `src/data/words.json` is produced by `scripts/build-words.ts` from JMdict
  * (not stored in this repo) plus the JLPT vocab caches. This module is the
  * source of truth for teacher-verified corrections (review items 3–4, 9,
- * 14–31). Both build scripts call `applyContentOverrides` immediately before
- * writing JSON, and `node scripts/apply-content-overrides.mjs` reapplies the
- * same function to the checked-in file when JMdict is not available.
+ * 14–31, and the native-teacher follow-up). Both build scripts call
+ * `applyContentOverrides` immediately before writing JSON, and
+ * `node scripts/apply-content-overrides.mjs` reapplies the same function to
+ * the checked-in file when JMdict is not available.
+ *
+ * する glosses: `scripts/suru-senses.json` is extracted from JMdict (not in
+ * this repo) by `scripts/extract-suru-senses.mjs`. For each irregular-suru
+ * id it keeps up to two glosses that start with "to " on a sense tagged
+ * vs / vs-s / vs-i. When that sense has only a noun or adverb gloss, the
+ * value is "(する) …" and is not prefixed with "to ". `SURU_GLOSSES` is
+ * applied after the map, so the hand-checked N5–N3 lines win.
  *
  * Re-running the function is safe: drops match stable JMdict ids, field
  * patches overwrite, glosses are absolute, and added rows are inserted only
@@ -81,11 +93,13 @@ export const PATCHES = {
   "1594400": {
     dictionary: "しっかりする",
     kanjiForm: "確りする",
+    jlptLevel: "N3",
     meaning: "to hold on firmly; to be steady",
   },
   "1226360": {
     dictionary: "びっくりする",
     kanjiForm: "吃驚する",
+    jlptLevel: "N4",
     meaning: "to be surprised",
   },
   // 29 kana display. おかしい / つまらない are also core N5 (item 25).
@@ -145,6 +159,29 @@ export const PATCHES = {
   "1587850": { jlptLevel: "N5" }, // 色々
   "1415000": { jlptLevel: "N5", meaning: "serious; tough; difficult" },
   "1157070": { jlptLevel: "N5" }, // 椅子
+  // Native review: core N5 headwords were filed under a harder tag, or in kanji
+  // learners do not see. kanjiForm keeps the furigana index.
+  "1259290": { jlptLevel: "N5" }, // 見る
+  "1535910": { dictionary: "もらう", kanjiForm: "貰う", jlptLevel: "N5", meaning: "to receive; to get" },
+  "1375610": { dictionary: "なる", kanjiForm: "成る", jlptLevel: "N5" },
+  "1012980": { dictionary: "やる", kanjiForm: "遣る", jlptLevel: "N5", meaning: "to do; to give" },
+  "1495770": { dictionary: "つける", kanjiForm: "付ける", jlptLevel: "N5" },
+  "1610400": { dictionary: "つける", kanjiForm: "点ける", jlptLevel: "N5" },
+  "1207610": { dictionary: "かける", kanjiForm: "掛ける", jlptLevel: "N5" },
+  "1207590": { dictionary: "かかる", kanjiForm: "掛かる", jlptLevel: "N5" },
+  "1607260": { jlptLevel: "N5" }, // 履く
+  "1484330": { jlptLevel: "N5" }, // 被る
+  "1547450": { jlptLevel: "N5" }, // 浴びる
+  "1427900": { jlptLevel: "N5" }, // 張る
+  "1604230": { jlptLevel: "N5" }, // 丸い
+  "1495000": { dictionary: "まずい", kanjiForm: "不味い", jlptLevel: "N5" },
+  // 上る stays N4. 山に登る is the added 登る row.
+  "2784220": { jlptLevel: "N3" }, // マッチする — N5 マッチ is a match for lighting fires
+  "1329690": { jlptLevel: "N3" }, // 受け付ける
+  "1002430": { jlptLevel: "N4" }, // お茶する is colloquial, not JLPT N5
+  "1291330": { meaning: "to put up (an umbrella); to shine (of light)" }, // 差す
+  "1444610": { meaning: "to hand over; to give" }, // 渡す
+  "1414150": { meaning: "all right; OK; fine" }, // 大丈夫
 };
 
 /** Rows the generated dictionary does not contain. Ids are not JMdict seqs. */
@@ -169,11 +206,32 @@ export const ADDS = [
     verbClass: "adj-na",
     jlptLevel: "N5",
   },
+  {
+    id: "override-noboru",
+    dictionary: "登る",
+    reading: "のぼる",
+    meaning: "to climb; to go up (a mountain, stairs)",
+    pos: ["v5r", "vi"],
+    wordType: "verb",
+    verbClass: "godan-r",
+    jlptLevel: "N5",
+  },
+  {
+    id: "override-kirei",
+    dictionary: "きれい",
+    kanjiForm: "綺麗",
+    reading: "きれい",
+    meaning: "pretty; beautiful; clean",
+    pos: ["adj-na"],
+    wordType: "adj-na",
+    verbClass: "adj-na",
+    jlptLevel: "N5",
+  },
 ];
 
 /**
- * Hand-checked verb-sense glosses for N5–N4 する verbs (item 23).
- * Keyed by the reading after the patches above.
+ * Hand-checked verb-sense glosses for する verbs.
+ * Keyed by the reading after the patches above. These override suru-senses.json.
  * @type {Record<string, string>}
  */
 export const SURU_GLOSSES = {
@@ -200,7 +258,7 @@ export const SURU_GLOSSES = {
   アルバイトする: "to work part-time",
   あんしんする: "to feel relieved",
   あんないする: "to guide; to show around",
-  いけんする: "to state an opinion",
+  いけんする: "to admonish; to give (someone) a talking-to",
   うんてんする: "to drive",
   うんどうする: "to exercise",
   えんりょする: "to hold back; to refrain",
@@ -218,7 +276,7 @@ export const SURU_GLOSSES = {
   こうぎする: "to lecture",
   こしょうする: "to break down; to malfunction",
   しあいする: "to play a match",
-  しけんする: "to take an exam; to test",
+  しけんする: "to test; to examine (something)",
   したくする: "to get ready; to prepare",
   しっぱいする: "to fail",
   しゅっせきする: "to attend",
@@ -276,7 +334,19 @@ export const SURU_GLOSSES = {
   ひろびろとする: "to be spacious; to be extensive",
   まるまるとする: "to be plump; to be round",
   やけどする: "to get burned; to be scalded",
+  // Cited noun glosses that the blind "to " prefix had made ungrammatical.
+  ゆうしょうする: "to win the championship",
+  がくしゅうする: "to study; to learn",
+  しゅうちゅうする: "to concentrate",
+  たいくつする: "to feel bored; to get bored (with)",
+  ゆっくりする: "to take one's time; to relax",
+  ほっとする: "to feel relieved",
 };
+
+/** @type {Record<string, string>} */
+const SURU_SENSES = JSON.parse(
+  readFileSync(join(dirname(fileURLToPath(import.meta.url)), "suru-senses.json"), "utf8"),
+);
 
 function isVerbEntry(entry) {
   if (entry.wordType) return entry.wordType === "verb";
@@ -310,13 +380,19 @@ export function applyContentOverrides(entries, opts = {}) {
 
   for (const entry of out) {
     if (entry.verbClass !== "irregular-suru") continue;
-    const gloss = SURU_GLOSSES[entry.reading];
-    if (gloss) {
-      entry.meaning = gloss;
+    const hand = SURU_GLOSSES[entry.reading];
+    if (hand) {
+      entry.meaning = hand;
+      continue;
+    }
+    const sense = SURU_SENSES[entry.id];
+    if (sense) {
+      entry.meaning = sense;
       continue;
     }
     const meaning = String(entry.meaning ?? "").trim();
-    if (meaning && !/^to\s/i.test(meaning)) entry.meaning = `to ${meaning}`;
+    if (!meaning || meaning.startsWith("(する) ") || /^to\s/i.test(meaning)) continue;
+    entry.meaning = `(する) ${meaning}`;
   }
 
   if (opts.verbsOnly) return out.filter(isVerbEntry);

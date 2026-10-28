@@ -17,7 +17,7 @@ describe("verb JLPT tagging", () => {
     expect(byDict("結婚する")?.jlptLevel).toBe("N5");
     expect(byDict("故障する")?.jlptLevel).toBe("N4");
     expect(byDict("愛する")?.jlptLevel).toBe("N3");
-    expect(byDict("見る")?.jlptLevel).toBe("N3"); // matches upstream cache
+    expect(byDict("見る")?.jlptLevel).toBe("N5");
   });
 
   it("never produces double-suru entries", () => {

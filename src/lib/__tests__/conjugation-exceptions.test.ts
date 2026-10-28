@@ -34,6 +34,8 @@ describe("conjugation exceptions", () => {
     expect(f.potential).toBeUndefined();
     expect(f.imperative).toBeUndefined();
     expect(f.volitional).toBeUndefined();
+    expect(f.passive).toBeUndefined();
+    expect(f.causative).toBeUndefined();
     expect(f["causative-passive"]).toBeUndefined();
     expect(supportedQuestions("verb", aru)).not.toContain("potential");
   });
@@ -41,6 +43,11 @@ describe("conjugation exceptions", () => {
   it("uses くれ for くれる and くれろ for 暮れる", () => {
     const kureru = word({ reading: "くれる", dictionary: "くれる", verbClass: "ichidan", pos: ["v1-s"] });
     expect(buildForms(kureru).casual.imperative).toBe("くれ");
+    expect(buildForms(kureru).casual.volitional).toBe("くれよう");
+    expect(buildForms(kureru).casual.potential).toBeUndefined();
+    expect(buildForms(kureru).casual.passive).toBeUndefined();
+    expect(buildForms(kureru).casual.causative).toBeUndefined();
+    expect(buildForms(kureru).casual["causative-passive"]).toBeUndefined();
     const kureruKanji = word({ reading: "くれる", dictionary: "呉れる", verbClass: "ichidan", pos: ["v1-s"] });
     expect(buildForms(kureruKanji).casual.imperative).toBe("くれ");
     const kureruEvening = word({ reading: "くれる", dictionary: "暮れる", verbClass: "ichidan", pos: ["v1"] });
@@ -55,7 +62,8 @@ describe("conjugation exceptions", () => {
     expect(buildForms(aisuru).casual.imperative).toBe("あいせよ");
     expect(checkAnswer("あいすることができる", aisuru, "potential").correct).toBe(true);
     expect(checkAnswer("愛することができる", aisuru, "potential").correct).toBe(true);
-    expect(checkAnswer("あいせられる", aisuru, "potential").note).toBe("also correct");
+    expect(checkAnswer("あいせられる", aisuru, "potential").correct).toBe(false);
+    expect(checkAnswer("あいせられる", aisuru, "passive").note).toBe("also correct");
     expect(checkAnswer("あいしろ", aisuru, "imperative").note).toBe("also correct");
 
     const tassuru = word({
@@ -129,8 +137,11 @@ describe("conjugation exceptions", () => {
     expect(checkAnswer("さかなであれば", sakana, "provisional-eba").note).toBe("also correct");
 
     const takai = word({ reading: "たかい", dictionary: "高い", verbClass: "adj-i", wordType: "adj-i" });
-    expect(checkAnswer("たかくないです", takai, "non-past-negative").note).toBe("also correct");
-    expect(checkAnswer("高くありません", takai, "non-past-negative").note).toBe("also correct");
+    expect(checkAnswer("たかくないです", takai, "non-past-negative").correct).toBe(false);
+    expect(checkAnswer("高くありません", takai, "non-past-negative").correct).toBe(false);
+    expect(checkAnswer("たかくなかったです", takai, "past-negative").correct).toBe(false);
+    expect(checkAnswer("高くありませんでした", takai, "past-negative").correct).toBe(false);
+    expect(checkAnswer("たかくはない", takai, "non-past-negative").note).toBe("also correct");
     expect(checkAnswer("たかくない", takai, "non-past-negative").note).toBeUndefined();
 
     const taberu = word({ reading: "たべる", dictionary: "食べる", verbClass: "ichidan" });

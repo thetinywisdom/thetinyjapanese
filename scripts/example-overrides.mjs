@@ -64,8 +64,8 @@ export const REPLACEMENTS = {
     { ja: "音楽が心に染みる。", en: "The music touches my heart." },
   ],
   "違える|ちがえる": [
-    { ja: "道を違えた。", en: "I took the wrong road." },
-    { ja: "約束の時間を違えてしまった。", en: "I got the time of our appointment wrong." },
+    { ja: "寝ている間に首の筋を違えた。", en: "I cricked my neck in my sleep." },
+    { ja: "朝起きたら首の筋を違えていた。", en: "I woke up with a crick in my neck." },
   ],
   "勤める|つとめる": [
     { ja: "会社に勤めています。", en: "I work at a company." },
@@ -105,7 +105,7 @@ export const REPLACEMENTS = {
   ],
   "飛ぶ|とぶ": [
     { ja: "鳥は空を飛ぶ。", en: "Birds fly." },
-    { ja: "私は飛べます。", en: "I can fly." },
+    { ja: "飛行機が空を飛んでいる。", en: "A plane is flying." },
   ],
   "降る|ふる": [
     { ja: "雨が降っています。", en: "It's raining." },
@@ -113,7 +113,7 @@ export const REPLACEMENTS = {
   ],
   "返す|かえす": [
     { ja: "お金は明日返します。", en: "I'll give the money back tomorrow." },
-    { ja: "恩をあだで返すな。", en: "Don't bite the hand that feeds you." },
+    { ja: "本を図書館に返した。", en: "I returned the book to the library." },
   ],
   "知る|しる": [
     { ja: "恥を知れ。", en: "Have you no shame?" },
@@ -128,12 +128,12 @@ export const REPLACEMENTS = {
     { ja: "一曲歌いたい。", en: "I want to sing a song." },
   ],
   "打つ|うつ": [
-    { ja: "太鼓を打つ。", en: "Beat a drum." },
-    { ja: "雨が窓を打った。", en: "The rain beat against the window." },
+    { ja: "ボールを打つ。", en: "I hit the ball." },
+    { ja: "彼はボールを打った。", en: "He hit the ball." },
   ],
   "解く|とく": [
     { ja: "この問題を解いてください。", en: "Please solve this problem." },
-    { ja: "靴ひもを解いた。", en: "I untied the shoelace." },
+    { ja: "この問題はもう解いた。", en: "I've already solved this problem." },
   ],
   "乗る|のる": [
     { ja: "電車に乗ります。", en: "I'll take the train." },
@@ -145,7 +145,7 @@ export const REPLACEMENTS = {
   ],
   "退く|どく": [
     { ja: "ちょっとどいて。", en: "Step aside." },
-    { ja: "そこにどいてください。", en: "Please move over there." },
+    { ja: "そこをどいてください。", en: "Please get out of the way." },
   ],
   "話す|はなす": [
     { ja: "日本語を話します。", en: "I speak Japanese." },

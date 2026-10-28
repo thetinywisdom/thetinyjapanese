@@ -44,6 +44,26 @@ export function sharesDictionary(dictionary: string): boolean {
   return AMBIGUOUS_DICTIONARIES.has(dictionary);
 }
 
+/**
+ * Same dictionary spelling and the same reading (付ける and 点ける are both
+ * つける). The reading would be the answer, so the card shows the gloss.
+ */
+const SENSE_CUES = new Set<string>();
+{
+  const seen = new Map<string, number>();
+  for (const w of WORDS) {
+    const key = `${w.dictionary}\0${w.reading}`;
+    seen.set(key, (seen.get(key) ?? 0) + 1);
+  }
+  for (const [key, n] of seen) {
+    if (n > 1) SENSE_CUES.add(key);
+  }
+}
+
+export function needsSenseCue(dictionary: string, reading: string): boolean {
+  return SENSE_CUES.has(`${dictionary}\0${reading}`);
+}
+
 export const WORD_TYPE_LABEL: Record<WordType, string> = {
   verb: "Verb",
   "adj-i": "い-adjective",

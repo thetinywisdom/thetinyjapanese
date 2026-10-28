@@ -64,17 +64,58 @@ const COPULA_QUESTIONS: QuestionType[] = [
   "te-form", "conditional-tara", "provisional-eba",
 ];
 
-/** Forms that do not exist for non-volitional verbs (分かる, ある, weather, …). */
-const NON_VOLITIONAL_SKIP: QuestionType[] = [
-  "potential", "imperative", "volitional", "causative-passive",
+/**
+ * Forms that do not exist for non-volitional verbs.
+ * Passive and causative are included: あられる / あらせる are not modern ある.
+ * A short allow-list (分かる, 困る, 降る, 曇る, 疲れる) keeps the causative.
+ */
+const FULL_SKIP: QuestionType[] = [
+  "potential", "imperative", "volitional", "passive", "causative", "causative-passive",
 ];
-/** Humble / honorific verbs are not drilled as commands or "can do". */
-const KEIGO_SKIP: QuestionType[] = ["potential", "imperative", "causative-passive"];
+/** Same gap, but 分からせる / 困らせる / 降らせる / 曇らせる / 疲れさせる are real. */
+const KEEP_CAUSATIVE_SKIP: QuestionType[] = [
+  "potential", "imperative", "volitional", "passive", "causative-passive",
+];
+/** くれる has no potential, passive, or causative. くれ and くれよう stay. */
+const KURERU_SKIP: QuestionType[] = ["potential", "passive", "causative", "causative-passive"];
+/** Humble / honorific verbs are not drilled as commands, passives, or "can do". 申そう stays. */
+const KEIGO_SKIP: QuestionType[] = [
+  "potential", "imperative", "passive", "causative", "causative-passive",
+];
+/** 終わる has no passive. Potential and causative stay. */
+const PASSIVE_ONLY_SKIP: QuestionType[] = ["passive"];
+/** 咲く: flowers are not "bloomed upon". 咲かせる / 咲ける stay. */
+const BLOOM_SKIP: QuestionType[] = ["passive", "causative-passive"];
+/** 消える: the causative idea is 消す. 消えろ stays. */
+const VANISH_SKIP: QuestionType[] = ["passive", "causative", "causative-passive"];
+
+/**
+ * Intransitive / stative verbs whose potential or causative is either nonexistent
+ * or a different verb (開く→あける, 付く→つける, 違う→ちがえる, …).
+ * Match the dictionary spelling, not a short reading: なる is 成る, 鳴る is the one to skip.
+ * 開く is handled separately so ひらく keeps ひらける.
+ */
+const FULL_SKIP_DICTS = new Set([
+  "ある", "有る", "できる", "出来る", "要る", "見える", "聞こえる", "似る", "異なる",
+  "晴れる", "降り出す", "違う", "生まれる", "閉まる", "始まる",
+  "壊れる", "割れる", "折れる", "倒れる", "足りる", "増える", "減る", "冷える", "焼ける",
+  "汚れる", "慣れる", "過ぎる", "見つかる", "決まる", "起こる", "届く", "残る", "似合う",
+  "間に合う", "鳴る", "沸く", "止む", "付く", "痛む", "空く", "込む", "混む",
+  "存在する", "意味する", "広々とする", "丸々とする", "びっくりする",
+  // Relational / stative single-kanji する. 関せる and 関せよ are not used.
+  "関する", "対する", "属する", "反する", "面する", "有する", "要する", "即する", "適する", "化する",
+]);
 
 const KEIGO_READINGS = new Set([
   "おいでになる", "ぞんじる", "うけたまわる", "たまわる", "たてまつる", "めす",
+  "はいけんする", "もうす", "もうしあげる", "さしあげる", "まいる", "いたす",
+  "いただく", "うかがう", "おそれいる",
 ]);
-const KEIGO_DICTS = new Set(["お出でになる", "存じる", "承る", "賜る", "奉る", "召す"]);
+const KEIGO_DICTS = new Set([
+  "お出でになる", "存じる", "承る", "賜る", "奉る", "召す",
+  "拝見する", "申す", "申し上げる", "差し上げる", "参る", "致す",
+  "頂く", "いただく", "伺う", "恐れ入る",
+]);
 
 function bareDictionary(verb: WordLike): string {
   const d = verb.dictionary ?? "";
@@ -82,23 +123,37 @@ function bareDictionary(verb: WordLike): string {
   return i >= 0 ? d.slice(0, i) : d;
 }
 
-/** 分かる, 見える, できる, 要る, ある, weather verbs, and the other stative verbs in review item 8. */
-export function isNonVolitional(verb: WordLike): boolean {
-  const r = verb.reading;
+/** Verbs that may keep a causative (分からせる, 困らせる, 降らせる, 曇らせる, 疲れさせる). */
+function keepsCausative(verb: WordLike): boolean {
   const d = bareDictionary(verb);
+  const r = verb.reading;
   if (r === "わかる" || d === "分かる" || d === "判る" || d === "解る") return true;
-  if (r === "みえる" || d === "見える") return true;
-  if (r === "きこえる" || d === "聞こえる") return true;
-  if (r === "ある" || d === "ある" || d === "有る") return true;
-  if ((r === "できる" || d === "できる" || d === "出来る") && d !== "出切る") return true;
-  if (d === "要る") return true;
-  if (d === "似る") return true;
-  if (r === "ことなる" || d === "異なる") return true;
-  if (d === "晴れる") return true;
-  if (d === "曇る" || r === "くもる") return true;
-  if (d === "降る" || d === "降り出す") return true;
   if (d === "困る" || r === "こまる") return true;
+  if (d === "降る") return true;
+  if (d === "曇る" || r === "くもる") return true;
+  if (d === "疲れる") return true;
   return false;
+}
+
+/**
+ * No potential, imperative, volitional, passive, or causative.
+ * 分かる / 困る / 降る / 曇る / 疲れる are non-volitional but keep the causative,
+ * so they are reported by `isNonVolitional` and not by this predicate.
+ */
+function isFullySkipped(verb: WordLike): boolean {
+  const d = bareDictionary(verb);
+  const r = verb.reading;
+  if (d === "出切る") return false;
+  if (d === "開く") return r === "あく";
+  if (FULL_SKIP_DICTS.has(d)) return true;
+  if (r === "みえる" || r === "きこえる" || r === "ある" || r === "ことなる") return true;
+  if ((r === "できる" || d === "できる" || d === "出来る") && d !== "出切る") return true;
+  return false;
+}
+
+/** 分かる, 見える, できる, 要る, ある, weather, and the other stative verbs. */
+export function isNonVolitional(verb: WordLike): boolean {
+  return isFullySkipped(verb) || keepsCausative(verb);
 }
 
 export function isKeigoVerb(verb: WordLike): boolean {
@@ -109,7 +164,14 @@ export function isKeigoVerb(verb: WordLike): boolean {
 /** Question types that must not be generated or graded for this word. */
 export function skippedQuestions(verb: WordLike): QuestionType[] {
   if ((verb.wordType ?? "verb") !== "verb") return [];
-  if (isNonVolitional(verb)) return [...NON_VOLITIONAL_SKIP];
+  // くれる before the stative lists. 暮れる is a regular ichidan and is not v1-s.
+  if (isKureru(verb)) return [...KURERU_SKIP];
+  if (keepsCausative(verb)) return [...KEEP_CAUSATIVE_SKIP];
+  if (isFullySkipped(verb)) return [...FULL_SKIP];
+  const d = bareDictionary(verb);
+  if (d === "終わる") return [...PASSIVE_ONLY_SKIP];
+  if (d === "咲く") return [...BLOOM_SKIP];
+  if (d === "消える") return [...VANISH_SKIP];
   if (isKeigoVerb(verb)) return [...KEIGO_SKIP];
   return [];
 }
@@ -281,13 +343,15 @@ export function buildForms(verb: WordLike): Forms {
   // ── irregular: する / 〜する ──
   if (cls === "irregular-suru") {
     const prefix = r.endsWith("する") ? r.slice(0, -2) : "";
-    // vs-s (愛する): potential is せる / せられる / することができる, imperative せよ.
-    // あいできる is not Japanese.
+    // vs-s (愛する): potential is せる, or することができる. Not せられる —
+    // 愛せられる is the literary passive. あいできる is not Japanese.
     const vsS = isVsS(verb);
-    // 達する / 接する (促音 + する) take せられる. 愛する takes せる.
-    // Both also accept することができる; ordinary 勉強する stays できる.
+    // 達する / 接する / 罰する (促音 + する) take せられる for both the potential
+    // and the usual passive (罰せられる). 愛する takes せる / される.
+    // Ordinary 勉強する stays できる / される.
     const geminate = prefix.endsWith("っ");
     const potential = !vsS ? `${prefix}できる` : geminate ? `${prefix}せられる` : `${prefix}せる`;
+    const passive = vsS && geminate ? `${prefix}せられる` : `${prefix}される`;
     return finalize(verb, {
       polite: {
         "non-past-affirmative": `${prefix}します`,
@@ -306,7 +370,7 @@ export function buildForms(verb: WordLike): Forms {
         "imperative": vsS ? `${prefix}せよ` : `${prefix}しろ`,
         "conditional-tara": `${prefix}したら`,
         "provisional-eba": `${prefix}すれば`,
-        "passive": `${prefix}される`,
+        "passive": passive,
         "causative": `${prefix}させる`,
         "causative-passive": `${prefix}させられる`,
       },
@@ -544,14 +608,14 @@ function extraVariants(verb: WordLike, q: QuestionType, expected: string): Varia
     }
   }
 
+  // Polite→plain drills ask for たかくない, not the polite prompt (たかくないです / 高くありません).
+  // たかくはない is still plain.
   if (wt === "adj-i") {
     if (q === "non-past-negative" && expected.endsWith("くない")) {
-      out.push({ text: `${expected}です`, note: "also correct" });
-      out.push({ text: expected.slice(0, -2) + "ありません", note: "also correct" });
+      out.push({ text: expected.slice(0, -2) + "はない", note: "also correct" });
     }
     if (q === "past-negative" && expected.endsWith("くなかった")) {
-      out.push({ text: `${expected}です`, note: "also correct" });
-      out.push({ text: expected.replace(/くなかった$/, "くありませんでした"), note: "also correct" });
+      out.push({ text: expected.replace(/くなかった$/, "くはなかった"), note: "also correct" });
     }
   }
 
@@ -570,12 +634,18 @@ function extraVariants(verb: WordLike, q: QuestionType, expected: string): Varia
 
   if (isVsS(verb) && verb.reading.endsWith("する")) {
     const prefix = verb.reading.slice(0, -2);
+    const geminate = prefix.endsWith("っ");
     if (q === "potential") {
-      const geminate = prefix.endsWith("っ");
-      const other = geminate ? `${prefix}せる` : `${prefix}せられる`;
+      // Non-geminate: せる and することができる only. 愛せられる is passive.
+      // Geminate: せられる is primary; せる is the other short potential.
+      if (geminate) out.push({ text: `${prefix}せる`, note: "also correct" });
       const periphrastic = `${prefix}することができる`;
-      if (other !== expected) out.push({ text: other, note: "also correct" });
       if (periphrastic !== expected) out.push({ text: periphrastic, note: "also correct" });
+    }
+    if (q === "passive") {
+      // 罰せられる / 達せられる / 熱せられる, and the literary 愛せられる.
+      const other = geminate ? `${prefix}される` : `${prefix}せられる`;
+      if (other !== expected) out.push({ text: other, note: "also correct" });
     }
     if (q === "imperative") {
       const shiro = `${prefix}しろ`;
@@ -666,12 +736,12 @@ export function explanation(verbClass: string, q: QuestionType): string {
       "past-affirmative": "する → した.",
       "past-negative": "する → しなかった.",
       "te-form": "する → して.",
-      "potential": "する → できる. Single-kanji する (愛する) → せる or することができる; 達する → 達せられる.",
+      "potential": "する → できる. Single-kanji する (愛する) → せる or することができる; 促音 (達する) → せられる. 愛せられる is the passive, not the potential.",
       "volitional": "する → しよう.",
       "imperative": "する → しろ. Single-kanji する (愛する) → せよ.",
       "conditional-tara": "する → したら.",
       "provisional-eba": "する → すれば.",
-      "passive": "する → される.",
+      "passive": "する → される. Single-kanji する also accepts せられる (罰する → 罰せられる).",
       "causative": "する → させる.",
       "causative-passive": "する → させられる.",
     },

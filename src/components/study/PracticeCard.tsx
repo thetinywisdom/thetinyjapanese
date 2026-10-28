@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useSession } from "@/features/study/SessionContext";
 import { questionLabel, verbClassLabel, promptKanji, QUESTION_TOOLTIPS } from "@/lib/conjugation";
-import { sharesDictionary } from "@/data/words";
+import { needsSenseCue, sharesDictionary } from "@/data/words";
 import { getVerbExamples } from "@/data/examples";
 import { ExampleSentences } from "@/components/ExampleSentences";
 import { RuleExplanation } from "@/components/study/RuleExplanation";
@@ -186,7 +186,7 @@ export function PracticeCard() {
             {q.verb.reading}
           </p>
         )}
-        {state.filters.showMeaning && (
+        {(needsSenseCue(q.verb.dictionary, q.verb.reading) || state.filters.showMeaning) && (
           <p className="text-center text-sm text-muted-foreground -mt-3 mb-6">
             {q.verb.meaning.split(";")[0].trim()}
           </p>

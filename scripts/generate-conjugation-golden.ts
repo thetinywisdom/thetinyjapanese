@@ -1,7 +1,7 @@
 /**
  * Regenerate the N5 verb/adjective golden file from the conjugation engine.
- * A native speaker should review src/lib/__tests__/conjugation-golden.json
- * before treating a change to it as correct.
+ * Regenerate after a skip-list or N5-level change. The native review removed
+ * the nonexistent forms; a further pass of newly added N5 rows is still wise.
  *
  *   npx vite-node scripts/generate-conjugation-golden.ts
  */

@@ -16,7 +16,7 @@ const PATH = resolve(__dirname, "../src/data/words.json");
 const file = JSON.parse(readFileSync(PATH, "utf8"));
 const before = file.entries.length;
 file.entries = applyContentOverrides(file.entries);
-file.contentOverrideVersion = 1;
+file.contentOverrideVersion = 2;
 writeFileSync(PATH, JSON.stringify(file));
 
 const byLevel = {};
