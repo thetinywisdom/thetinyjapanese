@@ -61,23 +61,25 @@ function buildIndex() {
   const words = new Map<string, string>();
   const stems = new Map<string, string>();
   const all = [...WORDS, ...VERBS];
-  for (const w of all) {
-    const form = w.dictionary;
-    const reading = w.reading;
-    if (!form || !reading || !hasKanji(form)) continue;
-    if (form.length > MAX_WORD_LEN) continue;
+  const indexForm = (form: string, reading: string) => {
+    if (!form || !reading || !hasKanji(form)) return;
+    if (form.length > MAX_WORD_LEN) return;
     if (!words.has(form)) words.set(form, reading);
 
     // leading kanji block + kana tail → stem reading (for inflected forms)
     let i = 0;
     while (i < form.length && isKanji(form[i])) i++;
-    if (i === 0 || i === form.length) continue;
+    if (i === 0 || i === form.length) return;
     const tail = form.slice(i);
-    if (hasKanji(tail)) continue;
-    if (!reading.endsWith(tail)) continue;
+    if (hasKanji(tail)) return;
+    if (!reading.endsWith(tail)) return;
     const stem = form.slice(0, i);
     const stemReading = reading.slice(0, reading.length - tail.length);
     if (stemReading && !stems.has(stem)) stems.set(stem, stemReading);
+  };
+  for (const w of all) {
+    indexForm(w.dictionary, w.reading);
+    if (w.kanjiForm) indexForm(w.kanjiForm, w.reading);
   }
   for (const [form, reading] of Object.entries(OVERRIDES)) words.set(form, reading);
   wordMap = words;

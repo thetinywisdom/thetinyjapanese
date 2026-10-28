@@ -7,6 +7,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { RadicalBreakdown } from "@/components/kanji/RadicalBreakdown";
+import { ExampleSentences } from "@/components/ExampleSentences";
+import { getKanjiExamples } from "@/data/examples";
 import { getItemStat } from "@/lib/progress";
 import { cn } from "@/lib/utils";
 
@@ -203,6 +205,8 @@ export function RememberCard() {
           </div>
 
           <RadicalBreakdown word={q.card.char} />
+
+          <ExampleSentences examples={getKanjiExamples(q.card.char)} />
 
           {(() => {
             const stat = getItemStat("kanji-remember", q.card.char);

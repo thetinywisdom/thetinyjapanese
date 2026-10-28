@@ -11,19 +11,27 @@
  * The B-line lists every headword in the sentence. For each headword token we
  * extract just the leading dictionary form (everything before "(", "[", "{" or "~").
  *
- * We index sentences by headword, then for each verb in verbs.json we look up
- * its `dictionary` form, and for each kanji in kanji-radicals.json we look up
- * sentences containing that character.
+ * We index sentences by headword and reading, then for each verb in words.json
+ * we look up `${dictionary}|${reading}`. scripts/example-overrides.mjs drops
+ * banned lines (including 気違い) and replaces the sentences in review items
+ * 33–51. The checked-in file is keyed by `${id}|${reading}`.
  *
  * Run: bun run scripts/build-examples.ts
+ * Or, without the corpus: node scripts/patch-examples.mjs
  */
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import {
+  KANJI_REPLACEMENTS,
+  replacementFor,
+  sanitizeSentenceList,
+  sentenceAllowed,
+} from "./example-overrides.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CORPUS_PATH = resolve(__dirname, "cache/examples.utf");
-const VERBS_PATH = resolve(__dirname, "../src/data/verbs.json");
+const WORDS_PATH = resolve(__dirname, "../src/data/words.json");
 const KANJI_PATH = resolve(__dirname, "../src/data/kanji-radicals.json");
 const OUT_PATH = resolve(__dirname, "../src/data/examples.json");
 
@@ -56,17 +64,26 @@ interface Pair {
 
 const pairs: Pair[] = [];
 
-function extractHeadword(token: string): string {
-  // Strip everything from the first paren/bracket/brace/tilde
-  let end = token.length;
-  for (let i = 0; i < token.length; i++) {
-    const c = token[i];
-    if (c === "(" || c === "[" || c === "{" || c === "~") {
-      end = i;
+function extractHeadword(token: string): { head: string; reading?: string } {
+  let reading: string | undefined;
+  let s = token;
+  const p = s.indexOf("(");
+  if (p >= 0) {
+    const end = s.indexOf(")", p);
+    if (end > p) {
+      reading = s.slice(p + 1, end);
+      s = s.slice(0, p) + s.slice(end + 1);
+    }
+  }
+  let headEnd = s.length;
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (c === "[" || c === "{" || c === "~") {
+      headEnd = i;
       break;
     }
   }
-  return token.slice(0, end);
+  return { head: s.slice(0, headEnd), reading };
 }
 
 for (let i = 0; i < lines.length - 1; i++) {
@@ -85,8 +102,10 @@ for (let i = 0; i < lines.length - 1; i++) {
   const headwords = new Set<string>();
   for (const tok of b.slice(3).split(/\s+/)) {
     if (!tok) continue;
-    const hw = extractHeadword(tok);
-    if (hw) headwords.add(hw);
+    const { head, reading } = extractHeadword(tok);
+    if (!head) continue;
+    headwords.add(head);
+    if (reading) headwords.add(`${head}|${reading}`);
   }
   pairs.push({ ja, en, headwords });
 }
@@ -148,6 +167,7 @@ function pickSentences(indices: number[] | undefined, max: number): OutSentence[
   const seenJa = new Set<string>();
   for (const c of candidates) {
     if (seenJa.has(c.ja)) continue;
+    if (!sentenceAllowed(c)) continue;
     seenJa.add(c.ja);
     picked.push({ ja: c.ja, en: c.en });
     if (picked.length >= max) break;
@@ -155,24 +175,33 @@ function pickSentences(indices: number[] | undefined, max: number): OutSentence[
   return picked;
 }
 
-// --- Verbs ---
-const verbsFile = JSON.parse(readFileSync(VERBS_PATH, "utf8")) as {
-  entries: { id: string; dictionary: string; reading: string }[];
+// --- Verbs (words.json is the source of truth) ---
+const wordsFile = JSON.parse(readFileSync(WORDS_PATH, "utf8")) as {
+  entries: { id: string; dictionary: string; reading: string; wordType?: string; verbClass?: string }[];
 };
+const verbEntries = wordsFile.entries.filter((e) =>
+  e.wordType ? e.wordType === "verb" : e.verbClass && !e.verbClass.startsWith("adj") && e.verbClass !== "noun",
+);
 const byVerbId: Record<string, OutSentence[]> = {};
 let verbsWithExamples = 0;
-for (const v of verbsFile.entries) {
-  // Try kanji form first; fall back to kana reading (kana-only verbs).
-  let picks = pickSentences(byHeadword.get(v.dictionary), MAX_PER_VERB);
-  if (picks.length === 0 && v.reading !== v.dictionary) {
+for (const v of verbEntries) {
+  const forced = replacementFor(v.dictionary, v.reading);
+  let picks = forced
+    ? forced
+    : pickSentences(byHeadword.get(`${v.dictionary}|${v.reading}`), MAX_PER_VERB);
+  if (!forced && picks.length === 0) {
+    picks = pickSentences(byHeadword.get(v.dictionary), MAX_PER_VERB);
+  }
+  if (!forced && picks.length === 0 && v.reading !== v.dictionary) {
     picks = pickSentences(byHeadword.get(v.reading), MAX_PER_VERB);
   }
+  picks = sanitizeSentenceList(picks);
   if (picks.length > 0) {
-    byVerbId[v.id] = picks;
+    byVerbId[`${v.id}|${v.reading}`] = picks;
     verbsWithExamples++;
   }
 }
-console.log(`verbs with examples: ${verbsWithExamples}/${verbsFile.entries.length}`);
+console.log(`verbs with examples: ${verbsWithExamples}/${verbEntries.length}`);
 
 // --- Kanji ---
 const kanjiFile = JSON.parse(readFileSync(KANJI_PATH, "utf8")) as {
@@ -181,7 +210,7 @@ const kanjiFile = JSON.parse(readFileSync(KANJI_PATH, "utf8")) as {
 const byKanji: Record<string, OutSentence[]> = {};
 let kanjiWithExamples = 0;
 for (const k of Object.keys(kanjiFile.kanji)) {
-  const picks = pickSentences(byKanjiChar.get(k), MAX_PER_KANJI);
+  const picks = sanitizeSentenceList(KANJI_REPLACEMENTS[k] ?? pickSentences(byKanjiChar.get(k), MAX_PER_KANJI));
   if (picks.length > 0) {
     byKanji[k] = picks;
     kanjiWithExamples++;
@@ -190,8 +219,9 @@ for (const k of Object.keys(kanjiFile.kanji)) {
 console.log(`kanji with examples: ${kanjiWithExamples}/${Object.keys(kanjiFile.kanji).length}`);
 
 const payload = {
-  version: 1,
+  version: 2,
   generatedAt: new Date().toISOString(),
+  key: "id|reading",
   byVerbId,
   byKanji,
 };

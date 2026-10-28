@@ -13,6 +13,11 @@ export interface WordEntry {
   /** For verbs: godan-*, ichidan, irregular-*; for adjectives: adj-i / adj-i-yoi / adj-na; for nouns: "noun". */
   verbClass: string;
   jlptLevel: JlptLevel | null;
+  /**
+   * Kanji spelling kept after `dictionary` is switched to the kana natives
+   * write (ある, する, くれる). Used by the furigana index only.
+   */
+  kanjiForm?: string;
 }
 
 interface WordsFile {
@@ -23,6 +28,41 @@ interface WordsFile {
 
 export const WORDS: WordEntry[] = (wordsData as WordsFile).entries;
 export const WORDS_GENERATED_AT: string = (wordsData as WordsFile).generatedAt;
+
+/** Dictionary spellings that belong to more than one reading (辛い = からい / つらい). */
+const AMBIGUOUS_DICTIONARIES = new Set<string>();
+{
+  const readings = new Map<string, string>();
+  for (const w of WORDS) {
+    const prev = readings.get(w.dictionary);
+    if (prev === undefined) readings.set(w.dictionary, w.reading);
+    else if (prev !== w.reading) AMBIGUOUS_DICTIONARIES.add(w.dictionary);
+  }
+}
+
+export function sharesDictionary(dictionary: string): boolean {
+  return AMBIGUOUS_DICTIONARIES.has(dictionary);
+}
+
+/**
+ * Same dictionary spelling and the same reading (付ける and 点ける are both
+ * つける). The reading would be the answer, so the card shows the gloss.
+ */
+const SENSE_CUES = new Set<string>();
+{
+  const seen = new Map<string, number>();
+  for (const w of WORDS) {
+    const key = `${w.dictionary}\0${w.reading}`;
+    seen.set(key, (seen.get(key) ?? 0) + 1);
+  }
+  for (const [key, n] of seen) {
+    if (n > 1) SENSE_CUES.add(key);
+  }
+}
+
+export function needsSenseCue(dictionary: string, reading: string): boolean {
+  return SENSE_CUES.has(`${dictionary}\0${reading}`);
+}
 
 export const WORD_TYPE_LABEL: Record<WordType, string> = {
   verb: "Verb",

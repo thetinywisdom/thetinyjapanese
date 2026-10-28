@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { romajiToHiragana } from "@/lib/romaji";
 import { katakanaToHiragana, normalize } from "@/lib/kana";
 import { RadicalBreakdown } from "@/components/kanji/RadicalBreakdown";
+import { ExampleSentences } from "@/components/ExampleSentences";
+import { getVerbExamples } from "@/data/examples";
 import { getItemStat } from "@/lib/progress";
 
 function formatElapsed(ms: number) {
@@ -190,6 +192,8 @@ export function KanjiCard() {
           </div>
 
           <RadicalBreakdown word={c.kanji} />
+
+          <ExampleSentences examples={getVerbExamples(c.verb.id, c.reading)} />
 
           {(() => {
             const stat = getItemStat("kanji", c.kanji);

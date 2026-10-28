@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useSession } from "@/features/study/SessionContext";
 import { questionLabel, verbClassLabel, promptKanji, QUESTION_TOOLTIPS } from "@/lib/conjugation";
+import { needsSenseCue, sharesDictionary } from "@/data/words";
+import { getVerbExamples } from "@/data/examples";
+import { ExampleSentences } from "@/components/ExampleSentences";
 import { RuleExplanation } from "@/components/study/RuleExplanation";
 import { pairFurigana } from "@/lib/furigana";
 import { romajiToHiragana } from "@/lib/romaji";
@@ -151,7 +154,7 @@ export function PracticeCard() {
                 className="ml-auto inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full bg-muted cursor-help select-none"
                 onClick={() => setTooltipOpen((v) => !v)}
               >
-                {questionLabel(q.question)}
+                {questionLabel(q.question, q.verb.wordType)}
                 <span className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full border border-current opacity-50 text-[9px] leading-none">
                   ?
                 </span>
@@ -178,7 +181,12 @@ export function PracticeCard() {
             kanjiPrompt
           )}
         </p>
-        {state.filters.showMeaning && (
+        {sharesDictionary(q.verb.dictionary) && (
+          <p className="text-center text-sm text-muted-foreground -mt-4 mb-2" lang="ja">
+            {q.verb.reading}
+          </p>
+        )}
+        {(needsSenseCue(q.verb.dictionary, q.verb.reading) || state.filters.showMeaning) && (
           <p className="text-center text-sm text-muted-foreground -mt-3 mb-6">
             {q.verb.meaning.split(";")[0].trim()}
           </p>
@@ -266,6 +274,12 @@ function FeedbackPanel() {
         >
           {correct ? "Correct" : "Incorrect"}
         </span>
+        {r.note && (
+          <p className="text-sm">
+            <span className="text-xs uppercase tracking-wider font-bold mr-2">colloquial / also correct</span>
+            <span lang="ja">{r.note}</span>
+          </p>
+        )}
         <div className="space-y-1.5 pt-1">
           <div className="flex items-baseline gap-3">
             <span className="text-xs uppercase tracking-wider text-muted-foreground w-20 shrink-0">Question</span>
@@ -313,6 +327,8 @@ function FeedbackPanel() {
         <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Rule</p>
         <RuleExplanation verbClass={r.verb.verbClass} question={r.question} />
       </div>
+
+      <ExampleSentences examples={getVerbExamples(r.verb.id, r.verb.reading)} />
 
 
       {acc !== null && stat && stat.seen > 1 && (

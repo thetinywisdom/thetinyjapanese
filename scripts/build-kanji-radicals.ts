@@ -1,7 +1,8 @@
 /**
  * One-time build: parse kradfile + kradfile2 + kanjidic2 → src/data/kanji-radicals.json.
  *
- * Filters to only the kanji that appear in src/data/verbs.json, so the shipped
+ * Filters to only the kanji that appear in src/data/words.json (verbs.json is
+ * optional and unused by the app), so the shipped
  * file stays small. Joins a curated radical-name map for English glosses,
  * plus on'yomi / kun'yomi / English meanings from kanjidic2.
  *
@@ -149,9 +150,9 @@ const jlptLevels = loadJlptLevels(
 );
 console.log(`loaded JLPT levels for ${jlptLevels.size} kanji from bundled list`);
 
-const verbs = JSON.parse(readFileSync(VERBS_PATH, "utf8")) as WordListFile;
-const words = existsSync(WORDS_PATH)
-  ? (JSON.parse(readFileSync(WORDS_PATH, "utf8")) as WordListFile)
+const words = JSON.parse(readFileSync(WORDS_PATH, "utf8")) as WordListFile;
+const verbs = existsSync(VERBS_PATH)
+  ? (JSON.parse(readFileSync(VERBS_PATH, "utf8")) as WordListFile)
   : { entries: [] };
 const used = new Set<string>();
 for (const e of [...verbs.entries, ...words.entries]) {

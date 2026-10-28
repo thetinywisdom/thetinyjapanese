@@ -2,11 +2,15 @@
  * Extended data build: parses JMdict + JLPT vocab caches to produce
  * src/data/words.json containing verbs, i-adjectives, na-adjectives and
  * (JLPT-listed) nouns. Run: `bun run scripts/build-words.ts`.
+ *
+ * Teacher corrections live in scripts/content-overrides.mjs and are applied
+ * here, so a JMdict rebuild does not undo review items 3–4 and 14–31.
  */
 import sax from "sax";
 import { createReadStream, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { applyContentOverrides } from "./content-overrides.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const XML_PATH = resolve(__dirname, "JMdict.xml");
@@ -229,10 +233,11 @@ parser.on("end", () => {
   console.log(`Total words: ${out.length}`);
   console.log("Breakdown:", stats);
 
+  const entries = applyContentOverrides(out);
   mkdirSync(dirname(OUT_PATH), { recursive: true });
   writeFileSync(
     OUT_PATH,
-    JSON.stringify({ version: 1, generatedAt: new Date().toISOString(), entries: out }),
+    JSON.stringify({ version: 1, generatedAt: new Date().toISOString(), entries }),
   );
   console.log(`Wrote ${OUT_PATH}`);
 });
