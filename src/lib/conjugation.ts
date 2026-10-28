@@ -82,12 +82,31 @@ const KURERU_SKIP: QuestionType[] = ["potential", "passive", "causative", "causa
 const KEIGO_SKIP: QuestionType[] = [
   "potential", "imperative", "passive", "causative", "causative-passive",
 ];
-/** 終わる has no passive. Potential and causative stay. */
+/** 終わる / 慣れる have no passive. The other forms stay. */
 const PASSIVE_ONLY_SKIP: QuestionType[] = ["passive"];
-/** 咲く: flowers are not "bloomed upon". 咲かせる / 咲ける stay. */
-const BLOOM_SKIP: QuestionType[] = ["passive", "causative-passive"];
+/** 咲く: さける reads as 避ける / 裂ける. 咲かせる and 咲け stay. */
+const BLOOM_SKIP: QuestionType[] = ["potential", "passive", "causative-passive"];
 /** 消える: the causative idea is 消す. 消えろ stays. */
 const VANISH_SKIP: QuestionType[] = ["passive", "causative", "causative-passive"];
+/** 続く / 治る / 直る. つづけ and 治れ stay; つづける is 続ける. */
+const KEEP_IMPERATIVE_SKIP: QuestionType[] = [
+  "potential", "volitional", "passive", "causative", "causative-passive",
+];
+/** 光る: ひかれる reads as 引かれる. 光らせる stays. */
+const HIKARU_SKIP: QuestionType[] = ["potential", "passive", "causative-passive"];
+/** なる / 召し上がる: なられる is honorific, めしあがられる is a double honorific. */
+const VOICE_SKIP: QuestionType[] = ["passive", "causative", "causative-passive"];
+/** 落ちる: おちられる is not used. 落ちろ stays. */
+const POTENTIAL_ONLY_SKIP: QuestionType[] = ["potential"];
+/** 間に合う keeps 間に合える, 間に合え, and 間に合わせる. */
+const MANIAU_SKIP: QuestionType[] = ["passive", "causative-passive"];
+/**
+ * 頂く / 伺う / 拝見する / 差し上げる keep the potential
+ * (いただける, うかがえる, 拝見できる, 差し上げられる). Commands and voice stay skipped.
+ */
+const KEIGO_KEEP_POTENTIAL_SKIP: QuestionType[] = [
+  "imperative", "passive", "causative", "causative-passive",
+];
 
 /**
  * Intransitive / stative verbs whose potential or causative is either nonexistent
@@ -99,11 +118,17 @@ const FULL_SKIP_DICTS = new Set([
   "ある", "有る", "できる", "出来る", "要る", "見える", "聞こえる", "似る", "異なる",
   "晴れる", "降り出す", "違う", "生まれる", "閉まる", "始まる",
   "壊れる", "割れる", "折れる", "倒れる", "足りる", "増える", "減る", "冷える", "焼ける",
-  "汚れる", "慣れる", "過ぎる", "見つかる", "決まる", "起こる", "届く", "残る", "似合う",
-  "間に合う", "鳴る", "沸く", "止む", "付く", "痛む", "空く", "込む", "混む",
+  "汚れる", "過ぎる", "見つかる", "決まる", "起こる", "届く", "似合う",
+  "鳴る", "沸く", "止む", "付く", "痛む", "空く", "込む", "混む",
   "存在する", "意味する", "広々とする", "丸々とする", "びっくりする",
   // Relational / stative single-kanji する. 関せる and 関せよ are not used.
   "関する", "対する", "属する", "反する", "面する", "有する", "要する", "即する", "適する", "化する",
+  // N5 time-sense かかる, and N4 statives. Match the dictionary, not the reading:
+  // かかる is not 罹る, 暮れる is not くれる, 続く is not 続ける.
+  "かかる", "暮れる", "乾く", "揺れる", "亡くなる", "無くなる", "関係する", "すっとする",
+  // N3 intransitives whose potential is another verb or does not exist.
+  "育つ", "沈む", "経つ", "欠ける", "苦しむ", "売れる", "腐る", "凍る", "燃える",
+  "満ちる", "基づく", "優れる", "劣る", "罹る",
 ]);
 
 const KEIGO_READINGS = new Set([
@@ -111,6 +136,9 @@ const KEIGO_READINGS = new Set([
   "はいけんする", "もうす", "もうしあげる", "さしあげる", "まいる", "いたす",
   "いただく", "うかがう", "おそれいる",
 ]);
+/** These four keep a real potential. The other humble verbs do not. */
+const KEIGO_POTENTIAL_DICTS = new Set(["頂く", "いただく", "伺う", "拝見する", "差し上げる"]);
+const KEIGO_POTENTIAL_READINGS = new Set(["いただく", "うかがう", "はいけんする", "さしあげる"]);
 const KEIGO_DICTS = new Set([
   "お出でになる", "存じる", "承る", "賜る", "奉る", "召す",
   "拝見する", "申す", "申し上げる", "差し上げる", "参る", "致す",
@@ -132,6 +160,8 @@ function keepsCausative(verb: WordLike): boolean {
   if (d === "降る") return true;
   if (d === "曇る" || r === "くもる") return true;
   if (d === "疲れる") return true;
+  // 済む / 合う keep 済ませる / 合わせる. 会う is a different dictionary.
+  if (d === "済む" || d === "合う") return true;
   return false;
 }
 
@@ -164,19 +194,27 @@ export function isKeigoVerb(verb: WordLike): boolean {
 /** Question types that must not be generated or graded for this word. */
 export function skippedQuestions(verb: WordLike): QuestionType[] {
   if ((verb.wordType ?? "verb") !== "verb") return [];
-  // くれる before the stative lists. 暮れる is a regular ichidan and is not v1-s.
+  // くれる before the stative lists. 暮れる is not v1-s; it is fully skipped below.
   if (isKureru(verb)) return [...KURERU_SKIP];
   if (keepsCausative(verb)) return [...KEEP_CAUSATIVE_SKIP];
   if (isFullySkipped(verb)) return [...FULL_SKIP];
   const d = bareDictionary(verb);
-  if (d === "終わる") return [...PASSIVE_ONLY_SKIP];
+  if (d === "続く" || d === "治る" || d === "直る") return [...KEEP_IMPERATIVE_SKIP];
+  if (d === "光る") return [...HIKARU_SKIP];
+  if (d === "落ちる") return [...POTENTIAL_ONLY_SKIP];
   if (d === "咲く") return [...BLOOM_SKIP];
+  if (d === "終わる" || d === "慣れる") return [...PASSIVE_ONLY_SKIP];
+  if (d === "なる" || d === "召し上がる") return [...VOICE_SKIP];
+  if (d === "間に合う") return [...MANIAU_SKIP];
   if (d === "消える") return [...VANISH_SKIP];
+  if (KEIGO_POTENTIAL_DICTS.has(d) || KEIGO_POTENTIAL_READINGS.has(verb.reading)) {
+    return [...KEIGO_KEEP_POTENTIAL_SKIP];
+  }
   if (isKeigoVerb(verb)) return [...KEIGO_SKIP];
   return [];
 }
 
-/** 呉れる / くれる (v1-s). Not 暮れる, which is a regular ichidan. */
+/** 呉れる / くれる (v1-s). Not 暮れる, which has no potential, command, or causative. */
 export function isKureru(verb: WordLike): boolean {
   if (verb.pos?.includes("v1-s")) return true;
   const d = bareDictionary(verb);
@@ -653,6 +691,14 @@ function extraVariants(verb: WordLike, q: QuestionType, expected: string): Varia
     }
   }
 
+  // 説明せよ is the written command. しろ stays the primary form for ordinary する.
+  if (cls === "irregular-suru" && q === "imperative" && verb.reading.endsWith("する")) {
+    const seyo = `${verb.reading.slice(0, -2)}せよ`;
+    if (seyo !== expected && !out.some((v) => v.text === seyo)) {
+      out.push({ text: seyo, note: "formal/written" });
+    }
+  }
+
   return out;
 }
 
@@ -738,7 +784,7 @@ export function explanation(verbClass: string, q: QuestionType): string {
       "te-form": "する → して.",
       "potential": "する → できる. Single-kanji する (愛する) → せる or することができる; 促音 (達する) → せられる. 愛せられる is the passive, not the potential.",
       "volitional": "する → しよう.",
-      "imperative": "する → しろ. Single-kanji する (愛する) → せよ.",
+      "imperative": "する → しろ. せよ is also correct in writing (説明せよ). Single-kanji する (愛する) → せよ.",
       "conditional-tara": "する → したら.",
       "provisional-eba": "する → すれば.",
       "passive": "する → される. Single-kanji する also accepts せられる (罰する → 罰せられる).",

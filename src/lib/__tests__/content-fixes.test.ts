@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { needsSenseCue, WORDS } from "@/data/words";
 import { BANNED_JA, REPLACEMENTS } from "../../../scripts/example-overrides.mjs";
+import { SURU_GLOSSES } from "../../../scripts/content-overrides.mjs";
 import { VERBS } from "@/data/verbs";
 import { getKanjiExamples, getVerbExamples } from "@/data/examples";
 import examples from "@/data/examples.json";
@@ -55,7 +56,7 @@ describe("checked-in word overrides", () => {
     expect(byDict("渡す")?.meaning).toBe("to hand over; to give");
     expect(byDict("大丈夫")?.meaning).toBe("all right; OK; fine");
     for (const w of WORDS.filter((e) => e.verbClass === "irregular-suru")) {
-      expect(w.meaning, `${w.dictionary} ${w.meaning}`).toMatch(/^(to |\(する\) )/);
+      expect(w.meaning, `${w.dictionary} ${w.meaning}`).toMatch(/^(to |\(する\) |\([^)]*\) to )/);
       expect(w.meaning, w.dictionary).not.toMatch(/^to (overall|learning|concentration|slowly|tedious|with )/);
     }
   });
@@ -83,8 +84,34 @@ describe("checked-in word overrides", () => {
     expect(byDict("しっかりする")?.jlptLevel).toBe("N3");
     expect(byDict("受け付ける")?.jlptLevel).toBe("N3");
     expect(byDict("お茶する")?.jlptLevel).toBe("N4");
-    expect(byDict("作文する")?.jlptLevel).toBe("N5");
-    expect(byDict("授業する")?.jlptLevel).toBe("N5");
+    expect(byDict("作文する")?.jlptLevel).toBe("N3");
+    expect(byDict("作文", "さくぶん")).toMatchObject({ wordType: "noun", jlptLevel: "N5" });
+    expect(byDict("授業する")?.jlptLevel).toBe("N4");
+    expect(byDict("選択する")?.meaning).toBe("to choose; to select");
+    expect(byDict("洗濯する")?.meaning).toBe("to do laundry");
+    expect(byDict("駐車する")?.meaning).toBe("to park");
+    expect(byDict("注射する")?.meaning).toBe("to give an injection");
+    expect(byDict("休講する")?.meaning).toBe("to cancel a class");
+    expect(byDict("急行する")?.meaning).toBe("to hurry; to rush");
+    expect(byDict("包装する")?.meaning).toBe("to wrap; to package");
+    expect(byDict("放送する")?.meaning).toBe("to broadcast");
+    expect(byDict("抗議する")?.meaning).toBe("to protest");
+    expect(byDict("講義する")?.meaning).toBe("to lecture");
+    expect(byDict("清算する")?.meaning).toBe("to settle (accounts)");
+    expect(byDict("生産する")?.meaning).toBe("to produce");
+    expect(byDict("邪魔する")?.meaning).toBe("to disturb; to get in the way; to hinder");
+    expect(byDict("ぼんやりする")?.meaning).toBe("to be absent-minded");
+    expect(byDict("何とかする")?.meaning).toBe("to manage; to do something about");
+    for (const gone of ["結果する", "感覚する", "便りする", "一言する", "評判する", "申し訳する", "予算する", "設備する", "装置する", "損害する", "障害する", "信号する", "共同する", "免許する", "注する", "利益する", "現在する", "表紙する", "トンネルする"]) {
+      expect(byDict(gone), gone).toBeUndefined();
+    }
+    for (const key of Object.keys(SURU_GLOSSES)) {
+      if (key.includes("|")) continue;
+      const heads = new Set(
+        WORDS.filter((w) => w.verbClass === "irregular-suru" && w.reading === key).map((w) => w.dictionary),
+      );
+      expect(heads.size, key).toBeLessThanOrEqual(1);
+    }
   });
 
   it("keys examples by id and reading and drops banned sentences", () => {

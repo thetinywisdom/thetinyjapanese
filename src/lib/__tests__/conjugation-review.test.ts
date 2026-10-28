@@ -86,8 +86,8 @@ describe("native review: nonexistent forms (X2–X6, G1–G18)", () => {
       "1586270", "1158880", "1378690", "1436560", "1307500", "1156800",
       "1296400", "1546640", "1376470", "1199900", "1208020", "1385920",
       "1445790", "1404740", "1602440", "1263120", "1556630", "1350610",
-      "1179005", "1212670", "1195970", "1604550", "1591420", "1223680",
-      "1457200", "1304510", "1314680", "1215260", "1532910", "1606680",
+      "1179005", "1195970", "1604550", "1591420", "1223680",
+      "1457200", "1314680", "1532910", "1606680",
       "1310640", "1495740", "1432710", "1586265", "1593410", "2849867",
       "1406150", "1226360", "1602380", "1604260", "1259140", "1591150",
       "1314600", "1157510", "1282770", "1215790", "1610160", "1405710",
@@ -126,7 +126,7 @@ describe("native review: nonexistent forms (X2–X6, G1–G18)", () => {
 
     const saku = byId("1297210")!;
     expect(buildForms(saku).casual.causative).toBe("さかせる");
-    expect(buildForms(saku).casual.potential).toBe("さける");
+    expect(buildForms(saku).casual.potential).toBeUndefined();
     expect(buildForms(saku).casual.imperative).toBe("さけ");
     expect(buildForms(saku).casual.passive).toBeUndefined();
     expect(buildForms(saku).casual["causative-passive"]).toBeUndefined();
@@ -146,7 +146,7 @@ describe("native review: nonexistent forms (X2–X6, G1–G18)", () => {
   });
 
   it("skips humble and honorific commands, and leaves 召し上がれ", () => {
-    const keigo = ["1472270", "1363090", "1362950", "1291270", "1302070", "1421900", "1587290", "1305700", "1236680"];
+    const keigo = ["1363090", "1362950", "1302070", "1421900", "1236680"];
     for (const id of keigo) {
       const verb = byId(id);
       expect(verb, id).toBeTruthy();
@@ -157,12 +157,23 @@ describe("native review: nonexistent forms (X2–X6, G1–G18)", () => {
       expect(f.causative, verb!.dictionary).toBeUndefined();
       expect(f.volitional, verb!.dictionary).toBeTruthy();
     }
+    for (const id of ["1587290", "1305700", "1472270", "1291270"]) {
+      const verb = byId(id)!;
+      const f = buildForms(verb).casual;
+      expect(f.potential, verb.dictionary).toBeTruthy();
+      expect(f.imperative, verb.dictionary).toBeUndefined();
+      expect(f.passive, verb.dictionary).toBeUndefined();
+      expect(f.causative, verb.dictionary).toBeUndefined();
+    }
     expect(buildForms(byId("1363090")!).casual.volitional).toBe("もうそう");
     const meshi = word({ reading: "めしあがる", dictionary: "召し上がる", verbClass: "godan-r" });
     expect(buildForms(meshi).casual.imperative).toBe("めしあがれ");
+    expect(buildForms(meshi).casual.potential).toBe("めしあがれる");
+    expect(buildForms(meshi).casual.passive).toBeUndefined();
+    expect(buildForms(meshi).casual.causative).toBeUndefined();
   });
 
-  it("skips くれる's missing forms and leaves 暮れる regular", () => {
+  it("skips くれる's missing forms and skips 暮れる", () => {
     const kureru = byId("1269130")!;
     const f = buildForms(kureru).casual;
     expect(f.imperative).toBe("くれ");
@@ -172,8 +183,9 @@ describe("native review: nonexistent forms (X2–X6, G1–G18)", () => {
     expect(f.causative).toBeUndefined();
     const kureruEvening = byId("1514960")!;
     expect(kureruEvening.dictionary).toBe("暮れる");
-    expect(buildForms(kureruEvening).casual.imperative).toBe("くれろ");
-    expect(buildForms(kureruEvening).casual.potential).toBe("くれられる");
-    expect(buildForms(kureruEvening).casual.causative).toBe("くれさせる");
+    expect(buildForms(kureruEvening).casual.imperative).toBeUndefined();
+    expect(buildForms(kureruEvening).casual.potential).toBeUndefined();
+    expect(buildForms(kureruEvening).casual.causative).toBeUndefined();
+    expect(buildForms(kureruEvening).casual["te-form"]).toBe("くれて");
   });
 });

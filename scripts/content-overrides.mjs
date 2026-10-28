@@ -74,6 +74,26 @@ export const DROP_IDS = [
   "1580485", // 丈夫(じょうふ)
   // 26: いとま is the rare reading; ひま is added below
   "2858986",
+  // Nouns that are not used with する.
+  "1254690", // 結果する
+  "1212330", // 感覚する
+  "1512410", // 便りする
+  "1575990", // 一言する
+  "1490070", // 評判する
+  "1363050", // 申し訳する
+  "1543000", // 予算する
+  "1386070", // 設備する
+  "1402360", // 装置する
+  "1406710", // 損害する
+  "1352060", // 障害する
+  "1359240", // 信号する
+  "1591660", // 共同する
+  "1533130", // 免許する
+  "1426520", // 注する
+  "1549470", // 利益する — ご利益(りやく), not りえきする
+  "1263650", // 現在する
+  "1489600", // 表紙する
+  "1087630", // トンネルする
 ];
 
 /**
@@ -179,6 +199,8 @@ export const PATCHES = {
   "2784220": { jlptLevel: "N3" }, // マッチする — N5 マッチ is a match for lighting fires
   "1329690": { jlptLevel: "N3" }, // 受け付ける
   "1002430": { jlptLevel: "N4" }, // お茶する is colloquial, not JLPT N5
+  "1297960": { jlptLevel: "N3" }, // 作文する — speakers say 作文を書く
+  "1330290": { jlptLevel: "N4" }, // 授業する is the teacher's verb
   "1291330": { meaning: "to put up (an umbrella); to shine (of light)" }, // 差す
   "1444610": { meaning: "to hand over; to give" }, // 渡す
   "1414150": { meaning: "all right; OK; fine" }, // 大丈夫
@@ -217,6 +239,16 @@ export const ADDS = [
     jlptLevel: "N5",
   },
   {
+    id: "override-sakubun",
+    dictionary: "作文",
+    reading: "さくぶん",
+    meaning: "composition; essay",
+    pos: ["n"],
+    wordType: "noun",
+    verbClass: "noun",
+    jlptLevel: "N5",
+  },
+  {
     id: "override-kirei",
     dictionary: "きれい",
     kanjiForm: "綺麗",
@@ -231,7 +263,9 @@ export const ADDS = [
 
 /**
  * Hand-checked verb-sense glosses for する verbs.
- * Keyed by the reading after the patches above. These override suru-senses.json.
+ * Keyed by `dictionary|reading` when two headwords share a reading
+ * (選択する / 洗濯する). A bare reading is used only when that reading
+ * belongs to one headword. These override suru-senses.json.
  * @type {Record<string, string>}
  */
 export const SURU_GLOSSES = {
@@ -245,7 +279,8 @@ export const SURU_GLOSSES = {
   しごとする: "to work",
   しつもんする: "to ask a question",
   じゅぎょうする: "to hold a class; to teach a lesson",
-  せんたくする: "to do laundry",
+  "洗濯する|せんたくする": "to do laundry",
+  "選択する|せんたくする": "to choose; to select",
   そうじする: "to clean",
   テストする: "to test; to give a test",
   でんわする: "to call; to telephone",
@@ -258,14 +293,15 @@ export const SURU_GLOSSES = {
   アルバイトする: "to work part-time",
   あんしんする: "to feel relieved",
   あんないする: "to guide; to show around",
-  いけんする: "to admonish; to give (someone) a talking-to",
+  "意見する|いけんする": "to admonish; to give (someone) a talking-to",
   うんてんする: "to drive",
   うんどうする: "to exercise",
   えんりょする: "to hold back; to refrain",
   かいぎする: "to hold a meeting",
   かいわする: "to converse; to have a conversation",
   かんけいする: "to be related; to concern",
-  きゅうこうする: "to hurry; to rush",
+  "急行する|きゅうこうする": "to hurry; to rush",
+  "休講する|きゅうこうする": "to cancel a class",
   きょういくする: "to educate",
   きょうそうする: "to compete",
   けいかくする: "to plan",
@@ -273,7 +309,8 @@ export const SURU_GLOSSES = {
   げしゅくする: "to board; to lodge",
   けんきゅうする: "to research",
   けんぶつする: "to sightsee",
-  こうぎする: "to lecture",
+  "講義する|こうぎする": "to lecture",
+  "抗議する|こうぎする": "to protest",
   こしょうする: "to break down; to malfunction",
   しあいする: "to play a match",
   しけんする: "to test; to examine (something)",
@@ -290,7 +327,8 @@ export const SURU_GLOSSES = {
   すいえいする: "to swim",
   すっとする: "to feel refreshed",
   せいかつする: "to live; to make a living",
-  せいさんする: "to produce",
+  "生産する|せいさんする": "to produce",
+  "清算する|せいさんする": "to settle (accounts)",
   せつめいする: "to explain",
   せわする: "to look after; to take care of",
   せんそうする: "to wage war",
@@ -300,7 +338,8 @@ export const SURU_GLOSSES = {
   だんぼうする: "to heat a room",
   チェックする: "to check",
   ちゅういする: "to be careful; to warn",
-  ちゅうしゃする: "to give an injection",
+  "注射する|ちゅうしゃする": "to give an injection",
+  "駐車する|ちゅうしゃする": "to park",
   つごうする: "to arrange (one's schedule)",
   どろぼうする: "to steal",
   にゅういんする: "to be hospitalized",
@@ -315,7 +354,8 @@ export const SURU_GLOSSES = {
   プレゼントする: "to give a present",
   へんじする: "to reply",
   ぼうえきする: "to trade",
-  ほうそうする: "to broadcast",
+  "放送する|ほうそうする": "to broadcast",
+  "包装する|ほうそうする": "to wrap; to package",
   ほんやくする: "to translate",
   むりする: "to overdo it; to force oneself",
   やくそくする: "to promise",
@@ -341,6 +381,15 @@ export const SURU_GLOSSES = {
   たいくつする: "to feel bored; to get bored (with)",
   ゆっくりする: "to take one's time; to relax",
   ほっとする: "to feel relieved",
+  "邪魔する|じゃまする": "to disturb; to get in the way; to hinder",
+  ぼんやりする: "to be absent-minded",
+  きちんとする: "to be neat; to tidy up",
+  ちゃんとする: "to do properly; to behave",
+  ぴったりする: "to fit perfectly",
+  たっぷりする: "to be roomy",
+  にっこりする: "to smile",
+  しばしばする: "(eyes) to be bleary; to blink",
+  なんとかする: "to manage; to do something about",
 };
 
 /** @type {Record<string, string>} */
@@ -380,7 +429,7 @@ export function applyContentOverrides(entries, opts = {}) {
 
   for (const entry of out) {
     if (entry.verbClass !== "irregular-suru") continue;
-    const hand = SURU_GLOSSES[entry.reading];
+    const hand = SURU_GLOSSES[`${entry.dictionary}|${entry.reading}`] ?? SURU_GLOSSES[entry.reading];
     if (hand) {
       entry.meaning = hand;
       continue;

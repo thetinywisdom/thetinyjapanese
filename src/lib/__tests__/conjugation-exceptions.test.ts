@@ -40,7 +40,7 @@ describe("conjugation exceptions", () => {
     expect(supportedQuestions("verb", aru)).not.toContain("potential");
   });
 
-  it("uses くれ for くれる and くれろ for 暮れる", () => {
+  it("uses くれ for くれる and skips 暮れる", () => {
     const kureru = word({ reading: "くれる", dictionary: "くれる", verbClass: "ichidan", pos: ["v1-s"] });
     expect(buildForms(kureru).casual.imperative).toBe("くれ");
     expect(buildForms(kureru).casual.volitional).toBe("くれよう");
@@ -51,7 +51,9 @@ describe("conjugation exceptions", () => {
     const kureruKanji = word({ reading: "くれる", dictionary: "呉れる", verbClass: "ichidan", pos: ["v1-s"] });
     expect(buildForms(kureruKanji).casual.imperative).toBe("くれ");
     const kureruEvening = word({ reading: "くれる", dictionary: "暮れる", verbClass: "ichidan", pos: ["v1"] });
-    expect(buildForms(kureruEvening).casual.imperative).toBe("くれろ");
+    expect(buildForms(kureruEvening).casual.imperative).toBeUndefined();
+    expect(buildForms(kureruEvening).casual.potential).toBeUndefined();
+    expect(buildForms(kureruEvening).casual["te-form"]).toBe("くれて");
   });
 
   it("conjugates vs-s potential and imperative", () => {
@@ -66,6 +68,10 @@ describe("conjugation exceptions", () => {
     expect(checkAnswer("あいせられる", aisuru, "passive").note).toBe("also correct");
     expect(checkAnswer("あいしろ", aisuru, "imperative").note).toBe("also correct");
 
+    const suru = word({ reading: "する", dictionary: "する", verbClass: "irregular-suru" });
+    expect(buildForms(suru).casual.imperative).toBe("しろ");
+    expect(checkAnswer("せよ", suru, "imperative").note).toBe("formal/written");
+
     const tassuru = word({
       reading: "たっする", dictionary: "達する", verbClass: "irregular-suru", pos: ["vs-s"],
     });
@@ -79,6 +85,8 @@ describe("conjugation exceptions", () => {
     });
     expect(buildForms(benkyo).casual.potential).toBe("べんきょうできる");
     expect(buildForms(benkyo).casual.imperative).toBe("べんきょうしろ");
+    expect(checkAnswer("勉強せよ", benkyo, "imperative").note).toBe("formal/written");
+    expect(checkAnswer("説明せよ", benkyo, "imperative").correct).toBe(false);
   });
 
   it("skips impossible forms for non-volitional and keigo verbs", () => {
