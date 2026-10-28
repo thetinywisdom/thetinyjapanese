@@ -58,22 +58,90 @@ export function promptIsPolite(q: QuestionType): boolean {
   return POLITE_PROMPT_QS.has(q);
 }
 
-/** Which question types are meaningful for a given word type. */
-export function supportedQuestions(wordType: WordType): QuestionType[] {
-  if (wordType === "verb") return [...ALL_QUESTION_TYPES];
-  if (wordType === "adj-i") {
-    return [
-      "non-past-affirmative", "non-past-negative",
-      "past-affirmative", "past-negative",
-      "te-form", "conditional-tara", "provisional-eba",
-    ];
+const COPULA_QUESTIONS: QuestionType[] = [
+  "non-past-affirmative", "non-past-negative",
+  "past-affirmative", "past-negative",
+  "te-form", "conditional-tara", "provisional-eba",
+];
+
+/** Forms that do not exist for non-volitional verbs (分かる, ある, weather, …). */
+const NON_VOLITIONAL_SKIP: QuestionType[] = [
+  "potential", "imperative", "volitional", "causative-passive",
+];
+/** Humble / honorific verbs are not drilled as commands or "can do". */
+const KEIGO_SKIP: QuestionType[] = ["potential", "imperative", "causative-passive"];
+
+const KEIGO_READINGS = new Set([
+  "おいでになる", "ぞんじる", "うけたまわる", "たまわる", "たてまつる", "めす",
+]);
+const KEIGO_DICTS = new Set(["お出でになる", "存じる", "承る", "賜る", "奉る", "召す"]);
+
+function bareDictionary(verb: WordLike): string {
+  const d = verb.dictionary ?? "";
+  const i = d.indexOf("(");
+  return i >= 0 ? d.slice(0, i) : d;
+}
+
+/** 分かる, 見える, できる, 要る, ある, weather verbs, and the other stative verbs in review item 8. */
+export function isNonVolitional(verb: WordLike): boolean {
+  const r = verb.reading;
+  const d = bareDictionary(verb);
+  if (r === "わかる" || d === "分かる" || d === "判る" || d === "解る") return true;
+  if (r === "みえる" || d === "見える") return true;
+  if (r === "きこえる" || d === "聞こえる") return true;
+  if (r === "ある" || d === "ある" || d === "有る") return true;
+  if ((r === "できる" || d === "できる" || d === "出来る") && d !== "出切る") return true;
+  if (d === "要る") return true;
+  if (d === "似る") return true;
+  if (r === "ことなる" || d === "異なる") return true;
+  if (d === "晴れる") return true;
+  if (d === "曇る" || r === "くもる") return true;
+  if (d === "降る" || d === "降り出す") return true;
+  if (d === "困る" || r === "こまる") return true;
+  return false;
+}
+
+export function isKeigoVerb(verb: WordLike): boolean {
+  const d = bareDictionary(verb);
+  return KEIGO_READINGS.has(verb.reading) || KEIGO_DICTS.has(d);
+}
+
+/** Question types that must not be generated or graded for this word. */
+export function skippedQuestions(verb: WordLike): QuestionType[] {
+  if ((verb.wordType ?? "verb") !== "verb") return [];
+  if (isNonVolitional(verb)) return [...NON_VOLITIONAL_SKIP];
+  if (isKeigoVerb(verb)) return [...KEIGO_SKIP];
+  return [];
+}
+
+/** 呉れる / くれる (v1-s). Not 暮れる, which is a regular ichidan. */
+export function isKureru(verb: WordLike): boolean {
+  if (verb.pos?.includes("v1-s")) return true;
+  const d = bareDictionary(verb);
+  if (d === "呉れる" || d === "くれる") return true;
+  if (!verb.dictionary && verb.reading === "くれる") return true;
+  return false;
+}
+
+/** Single-kanji する verbs (愛する, 関する, …). Not ordinary 〜する compounds. */
+export function isVsS(verb: WordLike): boolean {
+  return !!verb.pos?.includes("vs-s");
+}
+
+function finalize(verb: WordLike, forms: Forms): Forms {
+  for (const q of skippedQuestions(verb)) {
+    delete forms.casual[q];
+    delete forms.polite[q];
   }
-  // adj-na / noun (share copula pattern)
-  return [
-    "non-past-affirmative", "non-past-negative",
-    "past-affirmative", "past-negative",
-    "te-form", "conditional-tara", "provisional-eba",
-  ];
+  return forms;
+}
+
+/** Which question types are meaningful for a given word type. */
+export function supportedQuestions(wordType: WordType, verb?: WordLike): QuestionType[] {
+  const base = wordType === "verb" ? [...ALL_QUESTION_TYPES] : [...COPULA_QUESTIONS];
+  if (!verb) return base;
+  const skip = new Set(skippedQuestions({ ...verb, wordType: verb.wordType ?? wordType }));
+  return base.filter((q) => !skip.has(q));
 }
 
 export interface VerbLike {
@@ -82,6 +150,8 @@ export interface VerbLike {
   dictionary?: string;
   /** Optional — defaults to "verb" for backwards compatibility. */
   wordType?: WordType;
+  /** JMdict part-of-speech tags. `vs-s` and `v1-s` select irregular subclasses. */
+  pos?: string[];
 }
 export type WordLike = VerbLike;
 
@@ -200,9 +270,10 @@ export function buildForms(verb: WordLike): Forms {
   // ── non-verb dispatch ──
   if (wt === "adj-i") return adjIForms(r, cls === "adj-i-yoi");
   if (wt === "adj-na" || wt === "noun") {
-    // Drop trailing な if any (JMdict readings rarely include it).
-    const stem = r.endsWith("な") ? r.slice(0, -1) : r;
-    return copulaForms(stem);
+    // Never strip a trailing な. JMdict na-adjective readings do not include
+    // the copula な, and nouns like 魚 (さかな) and 大人 (おとな) end in な
+    // as part of the word itself.
+    return copulaForms(r);
   }
 
 
@@ -210,7 +281,14 @@ export function buildForms(verb: WordLike): Forms {
   // ── irregular: する / 〜する ──
   if (cls === "irregular-suru") {
     const prefix = r.endsWith("する") ? r.slice(0, -2) : "";
-    return {
+    // vs-s (愛する): potential is せる / せられる / することができる, imperative せよ.
+    // あいできる is not Japanese.
+    const vsS = isVsS(verb);
+    // 達する / 接する (促音 + する) take せられる. 愛する takes せる.
+    // Both also accept することができる; ordinary 勉強する stays できる.
+    const geminate = prefix.endsWith("っ");
+    const potential = !vsS ? `${prefix}できる` : geminate ? `${prefix}せられる` : `${prefix}せる`;
+    return finalize(verb, {
       polite: {
         "non-past-affirmative": `${prefix}します`,
         "non-past-negative": `${prefix}しません`,
@@ -223,21 +301,21 @@ export function buildForms(verb: WordLike): Forms {
         "past-affirmative": `${prefix}した`,
         "past-negative": `${prefix}しなかった`,
         "te-form": `${prefix}して`,
-        "potential": `${prefix}できる`,
+        "potential": potential,
         "volitional": `${prefix}しよう`,
-        "imperative": `${prefix}しろ`,
+        "imperative": vsS ? `${prefix}せよ` : `${prefix}しろ`,
         "conditional-tara": `${prefix}したら`,
         "provisional-eba": `${prefix}すれば`,
         "passive": `${prefix}される`,
         "causative": `${prefix}させる`,
         "causative-passive": `${prefix}させられる`,
       },
-    };
+    });
   }
 
   // ── irregular: 来る ──
   if (cls === "irregular-kuru") {
-    return {
+    return finalize(verb, {
       polite: {
         "non-past-affirmative": "きます",
         "non-past-negative": "きません",
@@ -259,14 +337,16 @@ export function buildForms(verb: WordLike): Forms {
         "causative": "こさせる",
         "causative-passive": "こさせられる",
       },
-    };
+    });
   }
 
   // ── ichidan ──
   if (cls === "ichidan") {
     if (!r.endsWith("る")) throw new Error(`Ichidan must end in る: ${r}`);
     const stem = r.slice(0, -1);
-    return {
+    // くれる (v1-s) commands with くれ, not くれろ. 暮れる stays regular.
+    const imperative = isKureru(verb) ? "くれ" : `${stem}ろ`;
+    return finalize(verb, {
       polite: {
         "non-past-affirmative": `${stem}ます`,
         "non-past-negative": `${stem}ません`,
@@ -281,14 +361,14 @@ export function buildForms(verb: WordLike): Forms {
         "te-form": `${stem}て`,
         "potential": `${stem}られる`,
         "volitional": `${stem}よう`,
-        "imperative": `${stem}ろ`,
+        "imperative": imperative,
         "conditional-tara": `${stem}たら`,
         "provisional-eba": `${stem}れば`,
         "passive": `${stem}られる`,
         "causative": `${stem}させる`,
         "causative-passive": `${stem}させられる`,
       },
-    };
+    });
   }
 
   // ── godan ──
@@ -304,7 +384,9 @@ export function buildForms(verb: WordLike): Forms {
     const isIku = cls === "godan-iku" || (last === "く" && r === "いく");
     const pastAff = isIku ? `${stem}った` : stem + (GODAN_PAST_AFF[usedKey] ?? "た");
     const teForm = isIku ? `${stem}って` : stem + (GODAN_TE[usedKey] ?? "て");
-    return {
+    // ある is the one godan verb whose negative is ない, not あらない.
+    const isAru = r === "ある";
+    return finalize(verb, {
       polite: {
         "non-past-affirmative": `${iStem}ます`,
         "non-past-negative": `${iStem}ません`,
@@ -313,9 +395,9 @@ export function buildForms(verb: WordLike): Forms {
       },
       casual: {
         "non-past-affirmative": r,
-        "non-past-negative": `${aStem}ない`,
+        "non-past-negative": isAru ? "ない" : `${aStem}ない`,
         "past-affirmative": pastAff,
-        "past-negative": `${aStem}なかった`,
+        "past-negative": isAru ? "なかった" : `${aStem}なかった`,
         "te-form": teForm,
         "potential": `${eStem}る`,
         "volitional": `${oStem}う`,
@@ -326,7 +408,7 @@ export function buildForms(verb: WordLike): Forms {
         "causative": `${aStem}せる`,
         "causative-passive": `${aStem}せられる`,
       },
-    };
+    });
   }
 
   throw new Error(`Unsupported verb class: ${cls}`);
@@ -346,6 +428,24 @@ export function dictionaryReading(verb: VerbLike): string {
   return verb.reading;
 }
 
+/** Swap the kana stem of one form for the dictionary's kanji stem. */
+export function applyKanji(verb: VerbLike, kana: string): string | null {
+  const dict = verb.dictionary;
+  if (!dict || dict === verb.reading || !kana) return null;
+  const { prefix: kanjiPrefix, tail: dictTail } = splitOkurigana(dict);
+  if (!kanjiPrefix) return null;
+  // 来る: the vowel changes (く/き/こ) but 来 stays put.
+  if (verb.verbClass === "irregular-kuru") return kanjiPrefix + kana.slice(1);
+  const reading = verb.reading;
+  let kanaPrefixLen = reading.length - dictTail.length;
+  if (kanaPrefixLen < 0 || reading.slice(kanaPrefixLen) !== dictTail) {
+    kanaPrefixLen = Math.max(1, reading.length - 1);
+  }
+  const kanaPrefix = reading.slice(0, kanaPrefixLen);
+  if (!kana.startsWith(kanaPrefix)) return null;
+  return kanjiPrefix + kana.slice(kanaPrefix.length);
+}
+
 /**
  * Build kanji-form variants by replacing the kana stem prefix of each
  * generated form with the dictionary's kanji prefix.
@@ -354,46 +454,20 @@ export function buildKanjiForms(verb: VerbLike): {
   polite: Partial<Record<QuestionType, string>>;
   casual: Partial<Record<QuestionType, string>>;
 } | null {
-  const dict = verb.dictionary;
-  if (!dict || dict === verb.reading) return null;
-
-  const { prefix: kanjiPrefix, tail: dictTail } = splitOkurigana(dict);
-  if (!kanjiPrefix) return null;
-
   const kana = buildForms(verb);
-
-  // 来る is special: the reading vowel changes (く/き/こ) but 来 stays put.
-  if (verb.verbClass === "irregular-kuru") {
-    const swap = (s: string) => kanjiPrefix + s.slice(1);
-    const mapPart = <T extends Partial<Record<QuestionType, string>>>(forms: T): T => {
-      const out: Partial<Record<QuestionType, string>> = {};
-      for (const [k, v] of Object.entries(forms)) {
-        if (typeof v === "string") out[k as QuestionType] = swap(v);
-      }
-      return out as T;
-    };
-    return { polite: mapPart(kana.polite), casual: mapPart(kana.casual) };
-  }
-
-  const reading = verb.reading;
-  let kanaPrefixLen = reading.length - dictTail.length;
-  if (kanaPrefixLen < 0 || reading.slice(kanaPrefixLen) !== dictTail) {
-    kanaPrefixLen = Math.max(1, reading.length - 1);
-  }
-  const kanaPrefix = reading.slice(0, kanaPrefixLen);
-
-  const swap = (s: string): string =>
-    s.startsWith(kanaPrefix) ? kanjiPrefix + s.slice(kanaPrefix.length) : s;
-
   const mapPart = <T extends Partial<Record<QuestionType, string>>>(forms: T): T => {
     const out: Partial<Record<QuestionType, string>> = {};
     for (const [k, v] of Object.entries(forms)) {
-      if (typeof v === "string") out[k as QuestionType] = swap(v);
+      if (typeof v !== "string") continue;
+      const swapped = applyKanji(verb, v);
+      if (swapped) out[k as QuestionType] = swapped;
     }
     return out as T;
   };
-
-  return { polite: mapPart(kana.polite), casual: mapPart(kana.casual) };
+  const polite = mapPart(kana.polite);
+  const casual = mapPart(kana.casual);
+  if (!Object.keys(polite).length && !Object.keys(casual).length) return null;
+  return { polite, casual };
 }
 
 export function toCasualKanji(verb: VerbLike, q: QuestionType): string | null {
@@ -430,16 +504,107 @@ export interface CheckResult {
   correct: boolean;
   expected: string;
   normalizedInput: string;
+  /**
+   * Set when the input matched a non-primary variant. The feedback panel
+   * shows this under a "colloquial / also correct" heading.
+   */
+  note?: string;
+}
+
+interface Variant {
+  text: string;
+  note: string;
+}
+
+/** Textbook form is `expected`. These are the other answers we accept. */
+function extraVariants(verb: WordLike, q: QuestionType, expected: string): Variant[] {
+  const out: Variant[] = [];
+  const wt = verb.wordType ?? "verb";
+  const cls = verb.verbClass;
+
+  // Short causative-passive (飲まされる). Not for す-verbs (話させられる).
+  if (
+    q === "causative-passive" &&
+    cls.startsWith("godan-") &&
+    cls !== "godan-s" &&
+    expected.endsWith("せられる")
+  ) {
+    out.push({ text: expected.slice(0, -4) + "される", note: "also correct" });
+  }
+
+  if (wt === "noun" || wt === "adj-na") {
+    if (q === "non-past-negative" && expected.endsWith("じゃない")) {
+      out.push({ text: expected.replace(/じゃない$/, "ではない"), note: "also correct" });
+    }
+    if (q === "past-negative" && expected.endsWith("じゃなかった")) {
+      out.push({ text: expected.replace(/じゃなかった$/, "ではなかった"), note: "also correct" });
+    }
+    if (q === "provisional-eba" && expected.endsWith("なら")) {
+      out.push({ text: expected.slice(0, -2) + "であれば", note: "also correct" });
+    }
+  }
+
+  if (wt === "adj-i") {
+    if (q === "non-past-negative" && expected.endsWith("くない")) {
+      out.push({ text: `${expected}です`, note: "also correct" });
+      out.push({ text: expected.slice(0, -2) + "ありません", note: "also correct" });
+    }
+    if (q === "past-negative" && expected.endsWith("くなかった")) {
+      out.push({ text: `${expected}です`, note: "also correct" });
+      out.push({ text: expected.replace(/くなかった$/, "くありませんでした"), note: "also correct" });
+    }
+  }
+
+  // ら抜き: 食べられる → 食べれる, 来られる → 来れる. Noted as colloquial.
+  if (
+    q === "potential" &&
+    expected.endsWith("られる") &&
+    (cls === "ichidan" || cls === "irregular-kuru")
+  ) {
+    const written = applyKanji(verb, expected) ?? expected;
+    out.push({
+      text: expected.slice(0, -3) + "れる",
+      note: `colloquial; written: ${written}`,
+    });
+  }
+
+  if (isVsS(verb) && verb.reading.endsWith("する")) {
+    const prefix = verb.reading.slice(0, -2);
+    if (q === "potential") {
+      const geminate = prefix.endsWith("っ");
+      const other = geminate ? `${prefix}せる` : `${prefix}せられる`;
+      const periphrastic = `${prefix}することができる`;
+      if (other !== expected) out.push({ text: other, note: "also correct" });
+      if (periphrastic !== expected) out.push({ text: periphrastic, note: "also correct" });
+    }
+    if (q === "imperative") {
+      const shiro = `${prefix}しろ`;
+      if (shiro !== expected) out.push({ text: shiro, note: "also correct" });
+    }
+  }
+
+  return out;
+}
+
+function formMatches(inputHira: string, inputRaw: string, form: string, kanji: string | null): boolean {
+  if (inputHira === katakanaToHiragana(normalize(form))) return true;
+  return kanji !== null && inputRaw === normalize(kanji);
 }
 
 export function checkAnswer(input: string, verb: VerbLike, q: QuestionType): CheckResult {
-  const expected = toCasual(verb, q);
-  const expectedKanji = toCasualKanji(verb, q);
+  const expected = buildForms(verb).casual[q];
   const ni = katakanaToHiragana(normalize(input));
-  const ne = katakanaToHiragana(normalize(expected));
   const niRaw = normalize(input);
-  const correct = ni === ne || (expectedKanji !== null && niRaw === normalize(expectedKanji));
-  return { correct, expected, normalizedInput: ni };
+  if (expected == null) return { correct: false, expected: "", normalizedInput: ni };
+  if (formMatches(ni, niRaw, expected, applyKanji(verb, expected))) {
+    return { correct: true, expected, normalizedInput: ni };
+  }
+  for (const variant of extraVariants(verb, q, expected)) {
+    if (formMatches(ni, niRaw, variant.text, applyKanji(verb, variant.text))) {
+      return { correct: true, expected, normalizedInput: ni, note: variant.note };
+    }
+  }
+  return { correct: false, expected, normalizedInput: ni };
 }
 
 // ── grammar explanations (fixed strings, no AI) ─────────────────────────────
@@ -462,7 +627,7 @@ export function explanation(verbClass: string, q: QuestionType): string {
     "past-negative": "Copula past negative: add じゃなかった (casual) or ではありませんでした (polite).",
     "te-form": "Copula te-form: add で (元気で).",
     "conditional-tara": "Copula たら: add だったら (元気だったら).",
-    "provisional-eba": "Copula なら: add なら (元気なら).",
+    "provisional-eba": "Copula conditional: add なら (元気なら). であれば is also correct.",
   };
   const map: Record<string, Partial<Record<QuestionType, string>>> = {
     ichidan: {
@@ -493,7 +658,7 @@ export function explanation(verbClass: string, q: QuestionType): string {
       "provisional-eba": "Godan ば: う-row → え-row, add ば (書く → 書けば).",
       "passive": "Godan passive: う-row → あ-row, add れる (書く → 書かれる).",
       "causative": "Godan causative: う-row → あ-row, add せる (書く → 書かせる).",
-      "causative-passive": "Godan causative-passive: う-row → あ-row, add せられる.",
+      "causative-passive": "Godan causative-passive: う-row → あ-row, add せられる. The short form (飲まされる) is also correct, except for す-verbs.",
     },
     "irregular-suru": {
       "non-past-affirmative": "する → する.",
@@ -501,9 +666,9 @@ export function explanation(verbClass: string, q: QuestionType): string {
       "past-affirmative": "する → した.",
       "past-negative": "する → しなかった.",
       "te-form": "する → して.",
-      "potential": "する → できる.",
+      "potential": "する → できる. Single-kanji する (愛する) → せる or することができる; 達する → 達せられる.",
       "volitional": "する → しよう.",
-      "imperative": "する → しろ.",
+      "imperative": "する → しろ. Single-kanji する (愛する) → せよ.",
       "conditional-tara": "する → したら.",
       "provisional-eba": "する → すれば.",
       "passive": "する → される.",
@@ -534,35 +699,43 @@ export function explanation(verbClass: string, q: QuestionType): string {
 }
 
 
-export function questionLabel(q: QuestionType): string {
-  return {
-    "non-past-affirmative": "Non-past affirmative",
-    "non-past-negative": "Non-past negative",
-    "past-affirmative": "Past affirmative",
-    "past-negative": "Past negative",
-    "te-form": "Te-form",
-    "potential": "Potential",
-    "volitional": "Volitional",
-    "imperative": "Imperative",
-    "conditional-tara": "Conditional たら",
-    "provisional-eba": "Provisional ば",
-    "passive": "Passive",
-    "causative": "Causative",
-    "causative-passive": "Causative-passive",
-  }[q];
+const QUESTION_LABELS: Record<QuestionType, string> = {
+  "non-past-affirmative": "Non-past affirmative",
+  "non-past-negative": "Non-past negative",
+  "past-affirmative": "Past affirmative",
+  "past-negative": "Past negative",
+  "te-form": "Te-form",
+  "potential": "Potential",
+  "volitional": "Volitional",
+  "imperative": "Imperative",
+  "conditional-tara": "Conditional たら",
+  "provisional-eba": "Provisional ば",
+  "passive": "Passive",
+  "causative": "Causative",
+  "causative-passive": "Causative-passive",
+};
+
+export function questionLabel(q: QuestionType, wordType?: WordType): string {
+  if (q === "provisional-eba" && (wordType === "noun" || wordType === "adj-na")) {
+    return "Conditional (ば/なら)";
+  }
+  const base = QUESTION_LABELS[q];
+  // The four basic prompts show the polite form; the answer is plain.
+  if (promptIsPolite(q)) return `${base} · Polite → plain`;
+  return base;
 }
 
 export const QUESTION_TOOLTIPS: Record<QuestionType, string> = {
-  "non-past-affirmative": "Present or future tense, positive. e.g. 食べる, 書く",
-  "non-past-negative": "Present or future tense, negative. e.g. 食べない, 書かない",
-  "past-affirmative": "Past tense, positive. e.g. 食べた, 書いた",
-  "past-negative": "Past tense, negative. e.g. 食べなかった, 書かなかった",
+  "non-past-affirmative": "The prompt is polite. Answer with the plain form. e.g. 飲みます → 飲む",
+  "non-past-negative": "The prompt is polite. Answer with the plain form. e.g. 飲みません → 飲まない",
+  "past-affirmative": "The prompt is polite. Answer with the plain form. e.g. 飲みました → 飲んだ",
+  "past-negative": "The prompt is polite. Answer with the plain form. e.g. 飲みませんでした → 飲まなかった",
   "te-form": "Connective form used to link clauses. e.g. 食べて, 書いて",
   "potential": "Ability — 'can do'. e.g. 食べられる, 書ける",
   "volitional": "Intention — 'let's do'. e.g. 食べよう, 書こう",
   "imperative": "Direct command. e.g. 食べろ, 書け",
   "conditional-tara": "If/when condition — past + ら. e.g. 食べたら, 書いたら",
-  "provisional-eba": "Hypothetical condition — e-stem + ば. e.g. 食べれば, 書けば",
+  "provisional-eba": "Hypothetical condition. Verbs: e-stem + ば (書けば). Nouns and な-adjectives: なら (元気なら). であれば is also correct.",
   "passive": "Passive voice — 'is done to'. e.g. 食べられる, 書かれる",
   "causative": "Make or let someone do. e.g. 食べさせる, 書かせる",
   "causative-passive": "Be made to do. e.g. 食べさせられる, 書かせられる",
