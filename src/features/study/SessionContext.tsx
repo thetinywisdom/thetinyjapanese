@@ -10,7 +10,7 @@ import {
   type QuestionType,
 } from "@/lib/conjugation";
 import { getCriticalItems, recordAnswer, recordSession } from "@/lib/progress";
-import { getKanjiGrade, getKanjiJlpt, type SchoolGrade } from "@/data/kanji-radicals";
+import { getKanjiGrade, type SchoolGrade } from "@/data/kanji-radicals";
 import { defaultLevelsFor, type LevelScheme } from "@/lib/kanji-levels";
 import { useLevelScheme } from "@/features/level-scheme/useLevelScheme";
 import { loadFilters, saveFilters } from "@/lib/persisted-filters";
@@ -35,38 +35,17 @@ function hardestWordGrade(word: string): SchoolGrade | null {
   return sawKanji ? (worst as SchoolGrade) : null;
 }
 
-const JLPT_ORDER: JlptLevel[] = ["N5", "N4", "N3", "N2", "N1"];
-
-/** Hardest JLPT level among a word's kanji (unlisted kanji count as N1). */
-function hardestWordJlpt(word: string): JlptLevel | null {
-  let worst = -1;
-  for (const ch of word) {
-    const c = ch.charCodeAt(0);
-    if (c < 0x4e00 || c > 0x9fff) continue;
-    const lv = getKanjiJlpt(ch) ?? "N1";
-    const i = JLPT_ORDER.indexOf(lv);
-    if (i > worst) worst = i;
-  }
-  return worst < 0 ? null : JLPT_ORDER[worst];
-}
-
 /**
- * A word is only as easy as its hardest part: we take the harder of its own
- * vocabulary JLPT tag and the hardest kanji it is written with, so an "N5"
- * filter never surfaces a word containing N2 kanji.
+ * JLPT sessions use the vocabulary tag. A harder kanji inside an N5 word
+ * (飲 in 飲む is N5, but 新 in 新しい is not) must not hide the word.
+ * School-grade sessions still follow the hardest kanji, because grades
+ * describe the character curriculum rather than the word list.
  */
 export function wordLevelKey(
   v: WordEntry,
   scheme: LevelScheme,
 ): JlptLevel | SchoolGrade | null {
-  if (scheme === "jlpt") {
-    const vocab = v.jlptLevel;
-    const kanji = hardestWordJlpt(v.dictionary);
-    if (!vocab) return kanji;
-    if (!kanji) return vocab;
-    return JLPT_ORDER.indexOf(kanji) > JLPT_ORDER.indexOf(vocab) ? kanji : vocab;
-  }
-  // Kana-only words carry no kanji difficulty → easiest grade.
+  if (scheme === "jlpt") return v.jlptLevel;
   return hardestWordGrade(v.dictionary) ?? 1;
 }
 
@@ -97,6 +76,8 @@ export interface QuestionRecord {
   expected: string;
   userAnswer: string;
   correct: boolean;
+  /** Set when a non-primary variant was accepted (ら抜き, ではない, …). */
+  note?: string;
 }
 
 type Pick = { verb: WordEntry; question: QuestionType; prompt: string; expected: string };
@@ -204,7 +185,7 @@ export function eligibleWords(filters: Filters): WordEntry[] {
 export const eligibleVerbs = eligibleWords;
 
 function pickQuestionForWord(word: WordEntry, filters: Filters): Pick | null {
-  const applicable = supportedQuestions(word.wordType).filter((q) => filters.questions.includes(q));
+  const applicable = supportedQuestions(word.wordType, word).filter((q) => filters.questions.includes(q));
   if (!applicable.length) return null;
   const q = applicable[Math.floor(Math.random() * applicable.length)];
   try {
@@ -253,7 +234,7 @@ export function buildCriticalVerbPool(filters?: Filters): Pick[] {
       const key = wordLevelKey(w, filters!.scheme);
       if (key === null || !allowed.has(key)) continue;
     }
-    if (!supportedQuestions(w.wordType).includes(question)) continue;
+    if (!supportedQuestions(w.wordType, w).includes(question)) continue;
     try {
       out.push({
         verb: w,
@@ -340,6 +321,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
           expected: state.current.expected,
           userAnswer: answer,
           correct: res.correct,
+          note: res.note,
         };
         dispatch({ type: "SUBMIT", answer, correct: res.correct, record });
         recordAnswer(

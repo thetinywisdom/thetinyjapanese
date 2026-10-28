@@ -3,12 +3,10 @@ import { buildKanjiCards } from "@/features/kanji/cards";
 import { buildRememberCards } from "@/features/kanji-remember/cards";
 import { eligibleWords, wordLevelKey, type Filters } from "@/features/study/SessionContext";
 import { JLPT_LEVELS, SCHOOL_GRADES } from "@/lib/kanji-levels";
-import { getKanjiJlpt, getKanjiGrade } from "@/data/kanji-radicals";
+import { getKanjiGrade } from "@/data/kanji-radicals";
 import { ALL_QUESTION_TYPES } from "@/lib/conjugation";
 import type { JlptLevel } from "@/data/words";
 import type { SchoolGrade } from "@/data/kanji-radicals";
-
-const JLPT_RANK = new Map(JLPT_LEVELS.map((l, i) => [l, i]));
 
 function kanjiOf(word: string): string[] {
   return [...word].filter((ch) => {
@@ -27,23 +25,22 @@ function subsets<T>(items: readonly T[]): T[][] {
 }
 
 describe("kanji practice level filters", () => {
-  it("never surfaces a kanji harder than the selected JLPT levels", () => {
+  it("selects and badges Read cards by vocabulary JLPT, not hardest kanji", () => {
     const bad: string[] = [];
     for (const levels of subsets(JLPT_LEVELS)) {
-      const maxRank = Math.max(...levels.map((l) => JLPT_RANK.get(l)!));
       for (const card of buildKanjiCards("jlpt", levels)) {
-        if (!levels.includes(card.schemeLevel as JlptLevel)) {
-          bad.push(`${card.kanji} bucket ${card.schemeLevel} in ${levels.join("+")}`);
+        if (!levels.includes(card.jlptLevel)) {
+          bad.push(`${card.kanji} vocab ${card.jlptLevel} in ${levels.join("+")}`);
         }
-        for (const ch of kanjiOf(card.kanji)) {
-          const lv = getKanjiJlpt(ch) ?? "N1";
-          if (JLPT_RANK.get(lv)! > maxRank) {
-            bad.push(`${card.kanji} (${lv} kanji ${ch}) in ${levels.join("+")}`);
-          }
+        if (card.schemeLevel !== card.jlptLevel) {
+          bad.push(`${card.kanji} badge ${card.schemeLevel} vocab ${card.jlptLevel}`);
         }
       }
     }
     expect(bad.slice(0, 5)).toEqual([]);
+    const n5 = buildKanjiCards("jlpt", ["N5"]).map((c) => c.kanji);
+    expect(n5).toContain("飲む");
+    expect(n5).not.toContain("ぶら下げる");
   });
 
   it("never surfaces a kanji above the selected school grades", () => {
@@ -91,26 +88,23 @@ const BASE: Filters = {
 };
 
 describe("conjugation practice level filters", () => {
-  it("keeps every word within the selected JLPT levels (vocab tag and kanji)", () => {
+  it("keeps every word at its vocabulary JLPT tag, including core N5", () => {
     const bad: string[] = [];
     for (const levels of subsets(JLPT_LEVELS)) {
-      const maxRank = Math.max(...levels.map((l) => JLPT_RANK.get(l)!));
       for (const w of eligibleWords({ ...BASE, scheme: "jlpt", levels })) {
-        if (!levels.includes(wordLevelKey(w, "jlpt") as JlptLevel)) {
-          bad.push(`${w.dictionary} bucket in ${levels.join("+")}`);
-        }
-        if (w.jlptLevel && JLPT_RANK.get(w.jlptLevel)! > maxRank) {
+        if (!w.jlptLevel || !levels.includes(w.jlptLevel)) {
           bad.push(`${w.dictionary} vocab ${w.jlptLevel} in ${levels.join("+")}`);
         }
-        for (const ch of kanjiOf(w.dictionary)) {
-          const lv = getKanjiJlpt(ch) ?? "N1";
-          if (JLPT_RANK.get(lv)! > maxRank) {
-            bad.push(`${w.dictionary} (${lv} kanji ${ch}) in ${levels.join("+")}`);
-          }
+        if (wordLevelKey(w, "jlpt") !== w.jlptLevel) {
+          bad.push(`${w.dictionary} key ${wordLevelKey(w, "jlpt")}`);
         }
       }
     }
     expect(bad.slice(0, 5)).toEqual([]);
+    const n5 = eligibleWords({ ...BASE, scheme: "jlpt", levels: ["N5"] }).map((w) => w.dictionary);
+    for (const word of ["飲む", "赤い", "新しい", "忙しい"]) {
+      expect(n5).toContain(word);
+    }
   });
 
   it("keeps every word within the selected school grades", () => {
