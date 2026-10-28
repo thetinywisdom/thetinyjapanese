@@ -14,7 +14,15 @@ export interface Example {
 
 const FILE = data as ExamplesFile;
 
-export function getVerbExamples(verbId: string): Example[] {
+/**
+ * Examples are keyed by `${id}|${reading}` so homographs (開く あく / ひらく)
+ * do not share a sentence. Falls back to a bare id for older files.
+ */
+export function getVerbExamples(verbId: string, reading?: string): Example[] {
+  if (reading) {
+    const keyed = FILE.byVerbId[`${verbId}|${reading}`];
+    if (keyed) return keyed;
+  }
   return FILE.byVerbId[verbId] ?? [];
 }
 

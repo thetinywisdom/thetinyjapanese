@@ -1,25 +1,17 @@
-import verbsData from "@/data/verbs.json";
+import { WORDS, type JlptLevel, type WordEntry } from "@/data/words";
 
-export type JlptLevel = "N5" | "N4" | "N3" | "N2" | "N1";
+export type { JlptLevel };
 
-export interface VerbEntry {
-  id: string;
-  dictionary: string;
-  reading: string;
-  meaning: string;
-  pos: string[];
-  verbClass: string;
-  jlptLevel: JlptLevel | null;
+/**
+ * Verb rows are the `wordType: "verb"` slice of `words.json`.
+ * Practice and progress share one id, one JLPT tag, and one gloss.
+ * `verbs.json` is not read at runtime (see scripts/content-overrides.mjs).
+ */
+export interface VerbEntry extends WordEntry {
+  wordType: "verb";
 }
 
-interface VerbsFile {
-  version: number;
-  generatedAt: string;
-  entries: VerbEntry[];
-}
-
-export const VERBS: VerbEntry[] = (verbsData as VerbsFile).entries;
-export const VERBS_GENERATED_AT: string = (verbsData as VerbsFile).generatedAt;
+export const VERBS: VerbEntry[] = WORDS.filter((w): w is VerbEntry => w.wordType === "verb");
 
 export function verbStats() {
   const byLevel: Record<string, number> = { N5: 0, N4: 0, N3: 0, N2: 0, N1: 0 };

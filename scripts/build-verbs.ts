@@ -1,6 +1,11 @@
 /**
  * One-time build: parse JMdict XML + cross-ref JLPT vocab lists →
- * src/data/verbs.json (compact, ships with the app).
+ * src/data/verbs.json.
+ *
+ * The app does not read this file. Verb rows at runtime are the
+ * `wordType: "verb"` slice of words.json (src/data/verbs.ts). This script
+ * still emits verbs.json for older build steps, with the same
+ * content-overrides.mjs patch layer as build-words.ts.
  *
  * Run:  bun run scripts/build-verbs.ts
  */
@@ -8,6 +13,7 @@ import sax from "sax";
 import { createReadStream, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { applyContentOverrides } from "./content-overrides.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const XML_PATH = resolve(__dirname, "JMdict.xml");
@@ -247,10 +253,11 @@ parser.on("end", () => {
   console.log(`Overrides applied: ${overridesApplied}`);
   console.log("Breakdown:", stats);
 
+  const entries = applyContentOverrides(out, { verbsOnly: true });
   mkdirSync(dirname(OUT_PATH), { recursive: true });
   writeFileSync(
     OUT_PATH,
-    JSON.stringify({ version: 1, generatedAt: new Date().toISOString(), entries: out }),
+    JSON.stringify({ version: 1, generatedAt: new Date().toISOString(), entries }),
   );
   console.log(`Wrote ${OUT_PATH}`);
 });
