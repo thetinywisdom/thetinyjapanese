@@ -80,7 +80,7 @@ export function FilterBar() {
   const showVerbClasses = f.wordTypes.includes("verb");
 
   const toggle = <K extends keyof Filters>(key: K, value: Filters[K] extends (infer U)[] ? U : never) => {
-    const cur = f[key] as unknown as any[];
+    const cur = f[key] as unknown as readonly (typeof value)[];
     const next = cur.includes(value) ? cur.filter((v) => v !== value) : [...cur, value];
     if (next.length === 0) return;
     setFilters({ [key]: next } as Partial<Filters>);

@@ -6,7 +6,7 @@
  * file stays small. Joins a curated radical-name map for English glosses,
  * plus on'yomi / kun'yomi / English meanings from kanjidic2.
  *
- * Run:  bun run scripts/build-kanji-radicals.ts
+ * Run:  npx tsx scripts/build-kanji-radicals.ts
  *
  * Source: kradfile/kradfile2 + kanjidic2 © Michael Raine, James Breen and EDRDG,
  *         http://www.edrdg.org/edrdg/licence.html

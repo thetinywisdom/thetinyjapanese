@@ -18,5 +18,5 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["vite.config.ts", "src/lib/site-base.ts"]
+  "include": ["vite.config.ts", "src/lib/site-base.ts", "src/lib/route-meta.ts", "scripts/emit-pages.ts"]
 }

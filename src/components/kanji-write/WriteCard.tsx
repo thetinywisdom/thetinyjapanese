@@ -39,17 +39,17 @@ export function WriteCard() {
     return () => { alive = false; };
   }, [card?.kanji]);
 
-  if (!card) return null;
   const total = strokes?.strokes.length ?? 0;
-  const allDone = strokes !== null && strokeIdx >= total;
+  const allDone = card != null && strokes !== null && strokeIdx >= total;
 
   // When all strokes done, mark card as completed (once).
   useEffect(() => {
-    if (allDone && state.status === "writing" && !finishedRef.current) {
-      finishedRef.current = true;
-      finishCard({ card, completed: true, hintsUsed, mistakes });
-    }
+    if (!card || !allDone || state.status !== "writing" || finishedRef.current) return;
+    finishedRef.current = true;
+    finishCard({ card, completed: true, hintsUsed, mistakes });
   }, [allDone, state.status, card, finishCard, hintsUsed, mistakes]);
+
+  if (!card) return null;
 
   const onStrokeComplete = (points: Pt[]) => {
     if (!strokes || allDone) return;

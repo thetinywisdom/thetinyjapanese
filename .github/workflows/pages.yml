@@ -3,7 +3,6 @@
 #
 # The production base path is VITE_BASE_PATH in .env.production.
 # Set that to / when a custom domain serves the site from the domain root.
-# Lint is not a deploy gate: the tree has pre-existing eslint errors.
 
 name: Deploy to GitHub Pages
 
@@ -36,6 +35,9 @@ jobs:
 
       - name: Install
         run: npm ci
+
+      - name: Lint
+        run: npm run lint
 
       - name: Test
         run: npm test

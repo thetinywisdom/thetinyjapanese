@@ -16,7 +16,7 @@
  * banned lines (including 気違い) and replaces the sentences in review items
  * 33–51. The checked-in file is keyed by `${id}|${reading}`.
  *
- * Run: bun run scripts/build-examples.ts
+ * Run: npx tsx scripts/build-examples.ts
  * Or, without the corpus: node scripts/patch-examples.mjs
  */
 import { readFileSync, writeFileSync, existsSync } from "fs";

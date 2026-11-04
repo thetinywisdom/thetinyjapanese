@@ -1,73 +1,59 @@
-# Welcome to your Lovable project
+# The Tiny Japanese Practice Tool
 
-## Project info
+A static Japanese practice site: kanji readings, stroke writing, a remember quiz, verb and adjective conjugations, and a picture diary. Progress stays in the browser’s localStorage. There is no account and no server.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The live site is [https://thetinywisdom.github.io/thetinyjapanese/](https://thetinywisdom.github.io/thetinyjapanese/).
 
-## How can I edit this code?
+## Run locally
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Node.js 22 and npm.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm ci
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The dev server uses `VITE_BASE_PATH=/` from `.env.development`, so open http://localhost:8080/.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+npm test
+npm run lint
+npm run build
+npm run preview
+```
 
-**Use GitHub Codespaces**
+`npm run preview` serves the production build. With the production base path, the site is at http://localhost:4173/thetinyjapanese/.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deploy to GitHub Pages
 
-## What technologies are used for this project?
+Pushes to `main` run `.github/workflows/pages.yml`. The workflow installs with `npm ci`, lints, tests, builds, and uploads `dist/` to GitHub Pages. In the repository settings, Pages must use **GitHub Actions** as the source.
 
-This project is built with:
+Pull requests run the same checks in `.github/workflows/ci.yml` and do not deploy.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The build writes an `index.html` for each known route (`/kanji`, `/diary`, and the rest) so those URLs return HTTP 200. A diary entry id and any unknown path still use `404.html`, which is the same app shell, so the page can render after the 404 response.
 
-## How can I deploy this project?
+## Change `VITE_BASE_PATH`
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+This is the public path the built files live under.
 
-## Can I connect a custom domain to my Lovable project?
+| Host | `VITE_BASE_PATH` |
+|---|---|
+| GitHub Pages project site | `/thetinyjapanese/` |
+| Custom domain at the domain root | `/` |
 
-Yes, you can!
+The production value is in `.env.production`. A `VITE_BASE_PATH` environment variable set in CI overrides that file. Keep the leading and trailing slash.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Canonical URLs and the sitemap use `https://thetinywisdom.github.io` plus that base path. If you move the site to another host, change `SITE_ORIGIN` in `src/lib/route-meta.ts` as well.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Data files
+
+The practice lists live in `src/data/*.json`. The app loads them when you open a practice, progress, or diary-entry page, not with the home page. Rebuild them (needs a local `scripts/JMdict.xml`, which is not in git) with:
+
+```sh
+npx tsx scripts/build-words.ts
+npx tsx scripts/build-kanji-radicals.ts
+npx tsx scripts/build-examples.ts
+npx tsx scripts/build-kanji-strokes.ts
+```
+
+Install lockfile is npm (`package-lock.json`). `npm ci` is the install used in CI.
