@@ -173,6 +173,19 @@ export function RememberCard() {
             <div>
               <p className="text-xs uppercase tracking-wider text-muted-foreground">Reading</p>
               <p className="font-serif text-2xl" lang="ja">{q.card.reading}</p>
+              {q.card.taught.length > 0 && (
+                <ul className="mt-2 space-y-0.5">
+                  {q.card.taught.map((r) => (
+                    <li key={`${r.type}-${r.kana}-${r.anchor ?? ""}`} className="text-xs text-muted-foreground" lang="ja">
+                      <span className="font-serif text-sm text-foreground">{r.kana}</span>
+                      {" "}
+                      {r.type === "on" ? "on" : "kun"}
+                      {r.anchor ? ` · ${r.anchor}` : ""}
+                      {r.anchorReading ? `（${r.anchorReading}）` : ""}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
 

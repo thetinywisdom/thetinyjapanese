@@ -9,6 +9,45 @@ import { emitStaticPages } from "./scripts/emit-pages";
  * the HTTP status is 200. Anything else (a diary entry id, a typo) is served
  * as 404.html, which is the same app shell, and the URL is left unchanged.
  */
+
+/** Ship kuromoji's IPAdic from node_modules. The diary fetches it from our base path. */
+function kuromojiDict(): Plugin {
+  const src = path.resolve(__dirname, "node_modules/kuromoji/dict");
+  let outDir = "";
+  return {
+    name: "kuromoji-dict",
+    configResolved(config) {
+      outDir = path.resolve(config.root, config.build.outDir);
+    },
+    configureServer(server) {
+      server.middlewares.use(serveKuromoji(src));
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use(serveKuromoji(src));
+    },
+    closeBundle() {
+      if (!fs.existsSync(src)) return;
+      fs.cpSync(src, path.join(outDir, "kuromoji"), { recursive: true });
+    },
+  };
+}
+
+function serveKuromoji(src: string) {
+  return (req: { url?: string }, res: { setHeader: (name: string, value: string) => void }, next: () => void) => {
+    const url = (req.url ?? "").split("?")[0];
+    const marker = "/kuromoji/";
+    const idx = url.indexOf(marker);
+    if (idx < 0) return next();
+    const name = path.basename(url.slice(idx + marker.length));
+    if (!name.endsWith(".dat.gz")) return next();
+    const full = path.join(src, name);
+    if (!full.startsWith(src) || !fs.existsSync(full)) return next();
+    res.setHeader("Content-Type", "application/gzip");
+    res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+    fs.createReadStream(full).pipe(res as unknown as NodeJS.WritableStream);
+  };
+}
+
 function pagesSpaFallback(): Plugin {
   let outDir = "";
   let base = "/";
@@ -41,7 +80,7 @@ export default defineConfig(({ mode }) => {
         overlay: false,
       },
     },
-    plugins: [react(), pagesSpaFallback()],
+    plugins: [react(), pagesSpaFallback(), kuromojiDict()],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),

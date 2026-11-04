@@ -1,0 +1,10 @@
+[
+  { "input": "行った", "ruby": "い", "note": "past of 行く, not 行（ぎょう）" },
+  { "input": "来た", "ruby": "き", "note": "past of 来る, not 来（く）" },
+  { "input": "三人", "ruby": "さんにん", "note": "not みっ + ひと" },
+  { "input": "今日", "ruby": "きょう", "note": "" },
+  { "input": "一人", "ruby": "ひとり", "note": "IPAdic says いちにん; the course teaches ひとり" },
+  { "input": "大人", "ruby": "おとな", "note": "" },
+  { "input": "日本", "ruby": "にほん", "note": "IPAdic says にっぽん; N5 teaches にほん" },
+  { "input": "明日", "ruby": "あした", "note": "not あす" }
+]

@@ -1,8 +1,22 @@
 import data from "@/data/kanji-radicals.json";
+import studyData from "@/data/kanji-study.json";
 import { VERBS, type JlptLevel } from "@/data/verbs";
 import { katakanaToHiragana } from "@/lib/kana";
 import { getKanjiGrade, type SchoolGrade } from "@/data/kanji-radicals";
 import type { LevelScheme } from "@/lib/kanji-levels";
+
+interface StudyFile {
+  kanji: Record<
+    string,
+    {
+      meaning: string;
+      primary: string;
+      readings: TaughtReading[];
+    }
+  >;
+}
+
+const STUDY = studyData as StudyFile;
 
 interface RadicalsFile {
   kanji: Record<
@@ -21,10 +35,20 @@ interface RadicalsFile {
 
 const FILE = data as unknown as RadicalsFile;
 
+export interface TaughtReading {
+  kana: string;
+  type: "on" | "kun";
+  anchor?: string;
+  anchorReading?: string;
+}
+
 export interface RememberCard {
   char: string;
   meaning: string;
+  /** Quiz answer: the reading a learner should pick. */
   reading: string;
+  /** Common on/kun readings, each tied to an anchor word. */
+  taught: TaughtReading[];
   jlptLevel: JlptLevel;
   grade?: SchoolGrade;
 }
@@ -58,9 +82,26 @@ const USED_KANJI: Set<string> = (() => {
   return s;
 })();
 
+const STUDY_LEVELS = new Set<JlptLevel>(["N5", "N4", "N3"]);
+
 const ALL_CARDS: RememberCard[] = (() => {
   const out: RememberCard[] = [];
+  const seen = new Set<string>();
+  for (const [char, study] of Object.entries(STUDY.kanji)) {
+    const entry = FILE.kanji[char];
+    if (!entry?.jlpt || !STUDY_LEVELS.has(entry.jlpt) || !study.primary) continue;
+    seen.add(char);
+    out.push({
+      char,
+      meaning: study.meaning,
+      reading: study.primary,
+      taught: study.readings,
+      jlptLevel: entry.jlpt,
+      grade: getKanjiGrade(char),
+    });
+  }
   for (const char of USED_KANJI) {
+    if (seen.has(char)) continue;
     const entry = FILE.kanji[char];
     if (!entry || !entry.meaning || !entry.jlpt) continue;
     const reading = pickReading(entry, entry.jlpt);
@@ -69,6 +110,7 @@ const ALL_CARDS: RememberCard[] = (() => {
       char,
       meaning: shortMeaning(entry.meaning),
       reading,
+      taught: [{ kana: reading, type: entry.jlpt === "N5" || entry.jlpt === "N4" ? "kun" : "on" }],
       jlptLevel: entry.jlpt,
       grade: getKanjiGrade(char),
     });
