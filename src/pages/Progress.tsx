@@ -234,11 +234,11 @@ const Progress = () => {
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
-      <main className="max-w-2xl mx-auto px-4 py-6 space-y-6 pb-16">
+      <main className="page-shell py-6 space-y-6 pb-16">
         <div className="text-center py-6">
           <h1 className="font-serif text-3xl md:text-4xl mb-2">Your progress</h1>
           <p className="text-sm text-muted-foreground">
-            Saved on this device. You won't see this in your other devices.
+            Saved on this device. You won't see this on your other devices.
           </p>
         </div>
 
@@ -349,7 +349,7 @@ const Progress = () => {
                           {clearedInGroup} / {group.cards.length} cleared
                         </span>
                       </div>
-                      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
+                      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
                         {group.cards.map((c) => (
                           <KanjiGridCard
                             key={c.char}

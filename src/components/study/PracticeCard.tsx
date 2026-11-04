@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useSessionTimer } from "@/hooks/use-session-timer";
 import { useSession } from "@/features/study/SessionContext";
 import { questionLabel, verbClassLabel, promptKanji, QUESTION_TOOLTIPS } from "@/lib/conjugation";
 import { needsSenseCue, sharesDictionary } from "@/data/words";
@@ -39,39 +40,13 @@ function DiffText({
   );
 }
 
-function formatElapsed(ms: number) {
-  const total = Math.floor(ms / 1000);
-  const m = Math.floor(total / 60);
-  const s = total % 60;
-  return `${m}:${s.toString().padStart(2, "0")}`;
-}
-
 export function PracticeCard() {
   const { state, submitAnswer, nextQuestion, skipQuestion, setFilters } = useSession();
   const [answer, setAnswer] = useState("");
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const [startTime, setStartTime] = useState<number | null>(null);
-  const [now, setNow] = useState<number>(() => Date.now());
-
-  // Start the timer when the session begins (first question, no history yet)
-  useEffect(() => {
-    if ((state.status === "answering" || state.status === "feedback") && startTime === null) {
-      setStartTime(Date.now());
-    }
-    if (state.status === "idle" || state.status === "finished") {
-      setStartTime(null);
-    }
-  }, [state.status, startTime]);
-
-  // Tick every second while session is active
-  useEffect(() => {
-    if (state.status !== "answering" && state.status !== "feedback") return;
-    const id = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(id);
-  }, [state.status]);
-
-  const elapsed = startTime ? now - startTime : 0;
+  const timerActive = state.status === "answering" || state.status === "feedback";
+  const elapsedLabel = useSessionTimer(timerActive);
 
   // Reset input when a new question is presented
   useEffect(() => {
@@ -120,7 +95,7 @@ export function PracticeCard() {
           Question {progress} of {state.sessionLength}
         </span>
         <span className="tabular-nums font-medium" aria-label="Session timer">
-          ⏱ {formatElapsed(elapsed)}
+          ⏱ {elapsedLabel}
         </span>
       </div>
 

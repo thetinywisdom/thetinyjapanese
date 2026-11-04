@@ -4,7 +4,7 @@ import logoDark from "@/assets/tiny-wisdom-logo-dark.webp";
 export function SiteFooter() {
   return (
     <footer className="border-t mt-8">
-      <div className="max-w-2xl mx-auto px-4 py-8 flex flex-col items-center text-center space-y-3">
+      <div className="page-shell py-8 flex flex-col items-center text-center space-y-3">
         <a
           href="https://www.thetinywisdom.com"
           target="_blank"

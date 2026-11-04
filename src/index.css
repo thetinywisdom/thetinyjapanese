@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+/* Faces live in src/fonts.css (imported from main.tsx). An @import here is
+   dropped at build time because Tailwind's output precedes it. */
 
 /* Design system — The Tiny Wisdom brand palette. All colors MUST be HSL. */
 /* Brand colors: #EFEEEA (bg), #ed612b (accent/orange), #1a1a1a (dark) */
@@ -146,35 +147,35 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: "DM Sans", "Noto Sans JP", system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3 {
-    font-family: 'DM Serif Display', Georgia, serif;
+    font-family: "DM Serif Display", "Noto Sans JP", Georgia, serif;
   }
 }
 
 @layer base {
   :lang(ja),
   [lang="ja"] {
-    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
   }
 }
 
 @layer utilities {
   .font-serif {
-    font-family: 'DM Serif Display', Georgia, serif;
+    font-family: "DM Serif Display", "Noto Sans JP", Georgia, serif;
   }
 
   .font-serif:lang(ja),
   .font-serif[lang="ja"] {
-    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
     font-weight: 500;
   }
 
   .font-sans-tw {
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: "DM Sans", "Noto Sans JP", system-ui, sans-serif;
   }
 
   .shadow-card {
@@ -208,8 +209,16 @@
 }
 
 @layer utilities {
+  .page-shell {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+
+  .practice-shell {
+    @apply mx-auto w-full max-w-4xl px-4 sm:px-6;
+  }
+
   .font-jp {
-    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
   }
 
   .bg-diary-paper {

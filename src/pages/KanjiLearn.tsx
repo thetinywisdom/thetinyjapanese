@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { kankenSectionTitle } from "@/content/learner-copy";
 
 const readingRows = [
   {
@@ -57,7 +58,7 @@ const KanjiLearn = () => {
     <div className="min-h-screen bg-background">
       <SiteHeader />
 
-      <main className="max-w-2xl mx-auto px-4 py-6 space-y-10 pb-16">
+      <main className="page-shell py-6 space-y-10 pb-16">
         <div className="text-center py-4">
           <h1 className="font-serif text-3xl md:text-4xl mb-2">Learn the basics of kanji</h1>
           <p className="text-sm text-muted-foreground">
@@ -76,7 +77,7 @@ const KanjiLearn = () => {
         </Section>
 
         <Section
-          title="JLPT vs School Grade (Kanken)"
+          title={kankenSectionTitle}
           intro="Two different ways to organize kanji difficulty. You can switch between them in the header — here's what each means."
         >
           <div className="overflow-x-auto rounded-lg border bg-card shadow-card">

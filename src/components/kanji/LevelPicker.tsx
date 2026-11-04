@@ -3,9 +3,9 @@ import type { SchoolGrade } from "@/data/kanji-radicals";
 import {
   JLPT_LEVELS,
   SCHOOL_GRADES,
-  gradeShort,
   type LevelScheme,
 } from "@/lib/kanji-levels";
+import { kankenChipLabel, kankenGradeHelp } from "@/content/learner-copy";
 import { useLevelScheme } from "@/features/level-scheme/useLevelScheme";
 import { HelpCircle } from "lucide-react";
 import { SchemeToggle } from "@/components/SchemeToggle";
@@ -50,7 +50,7 @@ export function LevelPicker({ scheme, levels, onChange }: Props) {
     effective === "jlpt" ? String(l) : `G${l}`;
 
   const sublabelOf = (l: JlptLevel | SchoolGrade) =>
-    effective === "jlpt" ? null : `Kanken ${gradeShort(l as SchoolGrade)}`;
+    effective === "jlpt" ? null : kankenChipLabel(l as SchoolGrade);
 
   return (
     <div className="space-y-2">
@@ -107,8 +107,7 @@ export function LevelPicker({ scheme, levels, onChange }: Props) {
       </div>
       {effective === "grade" && (
         <p className="text-[11px] text-muted-foreground leading-snug">
-          G1–G6 = Japanese elementary years 1–6 (kyōiku kanji). G8 = remaining
-          jōyō (junior high / high school).
+          {kankenGradeHelp}
         </p>
       )}
     </div>

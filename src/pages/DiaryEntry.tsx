@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { diaryTextPlaceholder } from "@/content/learner-copy";
 import { DiaryCanvas, type DiaryCanvasHandle, type Stroke } from "@/components/diary/DiaryCanvas";
 import { DiaryToolbar, CRAYON_COLORS, type DiaryTool } from "@/components/diary/DiaryToolbar";
 import { type KanaMode } from "@/components/diary/DiaryTextToolbar";
@@ -157,7 +158,7 @@ const DiaryEntryPage = () => {
       y: 12,
       w: 50,
       h: 0,
-      text: "テキスト",
+      text: diaryTextPlaceholder,
       fontSize: 6,
       color: color,
     };
@@ -406,7 +407,7 @@ const DiaryEntryPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
-      <main className="max-w-2xl mx-auto px-4 py-6 space-y-4">
+      <main className="practice-shell py-6 space-y-4">
         <div className="flex items-center justify-between gap-2">
           <Link
             to="/diary"
