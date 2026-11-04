@@ -38,18 +38,18 @@ const KanjiRemember = () => {
               <p className="text-sm text-muted-foreground">
                 Multiple choice — meaning, reading, or kanji. JLPT N5–N1.
               </p>
-              <a
-                href="/kanji"
+              <Link
+                to="/kanji"
                 className="inline-block mt-3 text-xs text-[hsl(var(--accent))] hover:underline"
               >
                 Or type the reading instead →
-              </a>
-              <a
-                href="/kanji/write"
+              </Link>
+              <Link
+                to="/kanji/write"
                 className="block mt-1 text-xs text-[hsl(var(--accent))] hover:underline"
               >
                 Or learn to write kanji →
-              </a>
+              </Link>
             </div>
 
             {finished && (

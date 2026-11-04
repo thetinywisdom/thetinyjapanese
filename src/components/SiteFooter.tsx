@@ -1,5 +1,5 @@
 import logo from "@/assets/tiny-wisdom-logo.png";
-import logoDark from "@/assets/tiny-wisdom-logo-dark.png.asset.json";
+import logoDark from "@/assets/tiny-wisdom-logo-dark.webp";
 
 export function SiteFooter() {
   return (
@@ -12,7 +12,7 @@ export function SiteFooter() {
           aria-label="The Tiny Wisdom"
         >
           <img src={logo} alt="The Tiny Wisdom" className="h-7 w-auto dark:hidden" />
-          <img src={logoDark.url} alt="The Tiny Wisdom" className="h-7 w-auto hidden dark:block" />
+          <img src={logoDark} alt="The Tiny Wisdom" className="h-7 w-auto hidden dark:block" />
         </a>
         <p className="text-sm text-muted-foreground max-w-md">
           If you enjoy this website and would love to support me, please subscribe to my newsletter at{" "}
