@@ -3,10 +3,10 @@
  *
  *   node scripts/draft-phase3.mjs
  *
- * Words and kanji readings for N5–N3 come from the files this script writes
- * under scripts/curated/. N2–N1 stay on the JMdict-derived rows already in
- * words.json. Re-runs read the pre-change data from git HEAD so drafting
- * stays repeatable until that commit lands.
+ * This overwrites scripts/curated/*.json. After a teacher edits those files,
+ * merge with `node scripts/apply-phase3.mjs` instead. Drafting reads word
+ * and kanji data from the local `main` branch, which must still be the
+ * pre-curation snapshot.
  */
 import { execSync } from "node:child_process";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";

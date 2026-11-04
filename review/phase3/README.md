@@ -10,6 +10,8 @@ A native teacher can start with the "Check these first" section of each file.
 | [furigana.md](furigana.md) | diary readings that used to come out wrong |
 | [words-dropped.md](words-dropped.md) | N3 rows left out to keep the list near 1,200 |
 
+Edits to `scripts/curated/n5-n3-words.json`, `n5-n3-kanji.json`, and `sentences.json` are merged with `node scripts/apply-phase3.mjs`. `node scripts/draft-phase3.mjs` rebuilds those files from scratch and will overwrite corrections.
+
 ## Counts
 
 - Words: 1220 (N5 524, N4 501, N3 195). By type: adj-i 77, adj-na 53, noun 593, verb 497.
