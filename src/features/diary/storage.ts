@@ -87,7 +87,7 @@ function persist(entries: DiaryEntry[]): boolean {
   }
 }
 
-/** Overwrite the whole local diary (used by cloud sync). */
+/** Overwrite the whole local diary. */
 export function replaceAllEntries(entries: DiaryEntry[]): boolean {
   return persist(
     [...entries].sort(

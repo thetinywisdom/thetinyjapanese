@@ -12,7 +12,6 @@ import {
 import { LogoIcon } from "@/components/LogoIcon";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { AccountMenu } from "@/components/AccountMenu";
 
 const linkBase = "px-2 py-1 rounded hover:bg-muted transition-colors";
 
@@ -84,7 +83,6 @@ export function SiteHeader() {
           <Link to="/about" className={cn(linkBase, isAbout && "bg-muted")}>
             About
           </Link>
-          <AccountMenu />
           <ThemeToggle className="ml-1" />
         </nav>
 
@@ -135,10 +133,6 @@ export function SiteHeader() {
               <DropdownMenuItem asChild>
                 <Link to="/about">About</Link>
               </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <div className="px-1 py-1 text-xs">
-                <AccountMenu variant="row" className="w-full justify-start" />
-              </div>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

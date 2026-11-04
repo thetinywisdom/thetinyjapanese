@@ -1,15 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { ArrowLeft, Download, QrCode } from "lucide-react";
-import QRCode from "qrcode";
-import { supabase } from "@/integrations/supabase/client";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { ArrowLeft, Download } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
@@ -86,9 +77,6 @@ const DiaryEntryPage = () => {
   const [saved, setSaved] = useState(false);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [selectedStrokes, setSelectedStrokes] = useState<number[]>([]);
-  const [shareOpen, setShareOpen] = useState(false);
-  const [shareBusy, setShareBusy] = useState(false);
-  const [qrDataUrl, setQrDataUrl] = useState("");
 
   const clearSelection = () => {
     setSelectedIds([]);
@@ -397,22 +385,6 @@ const DiaryEntryPage = () => {
   };
 
   /** Shrink the capture into a compact JPEG so the phone link stays light. */
-  const toCompactJpeg = (png: string): Promise<string> =>
-    new Promise((resolve, reject) => {
-      const img = new Image();
-      img.onerror = () => reject(new Error("decode"));
-      img.onload = () => {
-        const max = 1400;
-        const scale = Math.min(1, max / Math.max(img.width, img.height));
-        const c = document.createElement("canvas");
-        c.width = Math.round(img.width * scale);
-        c.height = Math.round(img.height * scale);
-        c.getContext("2d")!.drawImage(img, 0, 0, c.width, c.height);
-        resolve(c.toDataURL("image/jpeg", 0.85));
-      };
-      img.src = png;
-    });
-
   const download = async () => {
     try {
       const png = await renderPaperPng();
@@ -423,29 +395,6 @@ const DiaryEntryPage = () => {
       a.click();
     } catch {
       toast.error("Couldn't create the image. Please try again.");
-    }
-  };
-
-  /** Host a copy of the image and show a QR code that opens the download link. */
-  const shareQr = async () => {
-    if (shareBusy) return;
-    setShareBusy(true);
-    try {
-      const png = await renderPaperPng();
-      if (!png) return;
-      const jpeg = await toCompactJpeg(png);
-      const { data, error } = await supabase.functions.invoke("diary-share", {
-        body: { image: jpeg },
-      });
-      const url: unknown = (data as { url?: unknown } | null)?.url;
-      if (error || typeof url !== "string" || url.length === 0) throw new Error("share");
-      const qr = await QRCode.toDataURL(url, { width: 512, margin: 2 });
-      setQrDataUrl(qr);
-      setShareOpen(true);
-    } catch {
-      toast.error("Couldn't create the QR code. Please try again.");
-    } finally {
-      setShareBusy(false);
     }
   };
 
@@ -476,15 +425,6 @@ const DiaryEntryPage = () => {
             </span>
             <Button variant="outline" size="sm" onClick={download} className="gap-1">
               <Download className="h-4 w-4" /> Download
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={shareQr}
-              disabled={shareBusy}
-              className="gap-1"
-            >
-              <QrCode className="h-4 w-4" /> QR code
             </Button>
           </div>
         </div>
@@ -602,27 +542,6 @@ const DiaryEntryPage = () => {
         />
 
       </main>
-
-      <Dialog open={shareOpen} onOpenChange={setShareOpen}>
-        <DialogContent className="max-w-xs text-center">
-          <DialogHeader className="text-center sm:text-center sm:items-center">
-            <DialogTitle>Scan to download</DialogTitle>
-            <DialogDescription>
-              Scan this code with your phone camera to download the diary image. The link
-              works for 7 days.
-            </DialogDescription>
-          </DialogHeader>
-          {qrDataUrl ? (
-            <img
-              src={qrDataUrl}
-              alt="QR code to download this diary image"
-              className="mx-auto h-56 w-56 rounded-md border bg-white p-2"
-            />
-          ) : (
-            <div className="mx-auto h-56 w-56 animate-pulse rounded-md bg-muted" />
-          )}
-        </DialogContent>
-      </Dialog>
 
       <SiteFooter />
     </div>

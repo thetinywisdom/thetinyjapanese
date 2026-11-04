@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { routerBasename } from "@/lib/site-base";
 import Index from "./pages/Index";
 import Results from "./pages/Results";
 
@@ -17,10 +18,8 @@ import Progress from "./pages/Progress";
 import Diary from "./pages/Diary";
 import DiaryEntry from "./pages/DiaryEntry";
 import NotFound from "./pages/NotFound";
-import Auth from "./pages/Auth";
-import AuthCallback from "./pages/AuthCallback";
 
-import { SyncProvider } from "./features/sync/SyncContext";
+import { LegacyImport } from "./features/recovery/LegacyImport";
 import { SessionProvider } from "./features/study/SessionContext";
 import { KanjiProvider } from "./features/kanji/KanjiContext";
 import { WriteProvider } from "./features/kanji-write/WriteContext";
@@ -33,8 +32,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <SyncProvider>
+      <BrowserRouter basename={routerBasename(import.meta.env.BASE_URL)}>
+        <LegacyImport />
         <SessionProvider>
           <KanjiProvider>
             <WriteProvider>
@@ -54,16 +53,12 @@ const App = () => (
                   <Route path="/diary" element={<Diary />} />
                   <Route path="/diary/:id" element={<DiaryEntry />} />
 
-                  <Route path="/auth" element={<Auth />} />
-                  <Route path="/auth/callback" element={<AuthCallback />} />
-
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </RememberProvider>
             </WriteProvider>
           </KanjiProvider>
         </SessionProvider>
-        </SyncProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

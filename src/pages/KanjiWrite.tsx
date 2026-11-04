@@ -23,18 +23,18 @@ const KanjiWrite = () => {
               <p className="text-sm text-muted-foreground">
                 Draw each kanji stroke-by-stroke with your mouse or finger.
               </p>
-              <a
-                href="/kanji"
+              <Link
+                to="/kanji"
                 className="inline-block mt-3 text-xs text-[hsl(var(--accent))] hover:underline"
               >
                 Or learn to recognize kanji →
-              </a>
-              <a
-                href="/kanji/remember"
+              </Link>
+              <Link
+                to="/kanji/remember"
                 className="block mt-1 text-xs text-[hsl(var(--accent))] hover:underline"
               >
                 Or try multiple-choice remember mode →
-              </a>
+              </Link>
             </div>
 
             {finished && (
