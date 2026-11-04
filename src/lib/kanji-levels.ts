@@ -11,8 +11,8 @@
  *    = jinmeiyō). Sourced from kanjidic2's `<grade>` field.
  *
  * Chip tooltips label each grade with the nearest Kanken level
- * (grade 1 → 10 … grade 6 → 5, grade 8 → 4–3). The wording lives in
- * src/content/learner-copy.ts so a teacher can revise it in one place.
+ * (grade 1 → 漢検10級 … grade 6 → 漢検5級, grade 8 → 漢検4級〜2級).
+ * The wording lives in src/content/learner-copy.ts.
  */
 import type { JlptLevel } from "@/data/verbs";
 import type { SchoolGrade } from "@/data/kanji-radicals";

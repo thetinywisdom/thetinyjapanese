@@ -1,17 +1,17 @@
 /**
  * Learner-facing strings a native teacher can edit in one place.
  *
- * The values here are the text the site shows today. Proposed replacements
- * are not applied in this file — see review/phase2-japanese-copy.md.
+ * The Japanese below is the teacher's final wording from the Phase 2 review.
+ * The same tagline is duplicated in the three description meta tags in index.html.
  */
 
 /** Home and About tagline. Also duplicated in index.html meta descriptions. */
-export const taglineJa = "日本語が上手になりましょう！";
+export const taglineJa = "一緒に日本語、上手になろう！";
 
 /**
  * Kanken level next to a school grade.
- * Grade 8 is the remaining jōyō list, which spans 4級 and 3級.
- * (The old chip tooltip said "S" for this grade. "S" is not a Kanken level.)
+ * Grades 1–6 are the number before 級 (10級 is the easiest).
+ * Grade 8 is the remaining jōyō list, which runs 4級 through 2級.
  */
 export const kankenLevelShort: Record<number, string> = {
   1: "10",
@@ -20,20 +20,25 @@ export const kankenLevelShort: Record<number, string> = {
   4: "7",
   5: "6",
   6: "5",
-  8: "4–3",
+  8: "4級〜2級",
 };
 
 /** Visible label for a school grade's nearest Kanken level. */
 export function kankenChipLabel(grade: number): string {
+  if (grade === 8) return "漢検4級〜2級";
   const level = kankenLevelShort[grade] ?? String(grade);
-  return `Kanken ${level}`;
+  return `漢検${level}級`;
 }
 
-/** Heading on /kanji/learn. Kept as the current wording until review. */
-export const kankenSectionTitle = "JLPT vs School Grade (Kanken)";
+/** Heading on /kanji/learn. */
+export const kankenSectionTitle = "JLPT vs School Grade";
+
+/** Sentence under the school-grade chips. */
+export const kankenGradeHelp =
+  "G1–G6 are elementary years 1–6 (roughly 漢検10級〜5級).";
 
 /** Placeholder dropped into a new diary text box. */
-export const diaryTextPlaceholder = "テキスト";
+export const diaryTextPlaceholder = "今日はどんな一日だった？";
 
 /** Short name of the picture-diary format, inside the Diary intro. */
 export const diaryBlurbJa = "絵日記";
@@ -49,7 +54,7 @@ export const godanLookalikes = [
   { word: "喋る", reading: "しゃべる", gloss: "to chat / talk" },
   { word: "蹴る", reading: "ける", gloss: "to kick" },
   { word: "減る", reading: "へる", gloss: "to decrease" },
-  { word: "焦る", reading: "あせる", gloss: "to be in a hurry / panic" },
+  { word: "焦る", reading: "あせる", gloss: "to feel rushed / panic" },
   { word: "限る", reading: "かぎる", gloss: "to limit" },
 ] as const;
 
@@ -64,21 +69,21 @@ export const verbGroups = [
     group: "Group 1",
     name: "Godan / う-verbs",
     label: "godan-*",
-    rule: "Dictionary form ends in any う-row kana (う, く, ぐ, す, つ, ぬ, ぶ, む, る). For -る verbs, the vowel before る is a / u / o.",
+    rule: "Dictionary form ends in any う-row kana (う, く, ぐ, す, つ, ぬ, ぶ, む, る). For -る verbs, the vowel before る is usually a / u / o, but some godan verbs end in -iru/-eru (帰る, 入る, 走る, 知る — see the look-alikes).",
     examples: "飲む (nomu), 書く (kaku), 話す (hanasu), 帰る (kaeru)",
   },
   {
     group: "Group 2",
     name: "Ichidan / る-verbs",
     label: "ichidan",
-    rule: "Always ends in る. The vowel before る is i or e.",
+    rule: "Always ends in る. The vowel before る is i or e, but not every -iru/-eru verb is Group 2 (see the look-alikes).",
     examples: "食べる (taberu), 見る (miru), 起きる (okiru)",
   },
   {
     group: "Group 3",
     name: "Irregular",
     label: "irregular-suru, irregular-kuru",
-    rule: "Only two members in the whole language.",
+    rule: "Just two core verbs, する and 来る. する also forms compounds like 勉強する.",
     examples: "する (to do), 来る (kuru, to come)",
   },
 ] as const;
@@ -95,12 +100,12 @@ export const extendedForms = [
     form: "Te-form",
     meaning: "Connector",
     use: "Links clauses, makes requests (〜てください), continuous tense (〜ている).",
-    g1Rule: "Same swap as past, with て/で. む/ぶ/ぬ → んで · く → いて · ぐ → いで · す → して · つ/る/う → って",
+    g1Rule: "Same swap as past, with て/で. む/ぶ/ぬ → んで · く → いて · ぐ → いで · す → して · つ/る/う → って. Exception: 行く → 行って (not 行いて).",
     g1Ex: "飲む → 飲んで",
     g2Rule: "Drop る, add て.",
     g2Ex: "食べる → 食べて",
-    g3Rule: "する → して · 来る → きて",
-    g3Ex: "して · きて",
+    g3Rule: "する → して · 来る(くる) → 来て(きて)",
+    g3Ex: "して · 来て(きて)",
     sample: "コーヒーを飲んで、出かけた。 — I had coffee and went out.",
   },
   {
@@ -109,11 +114,11 @@ export const extendedForms = [
     use: "Ability or possibility.",
     g1Rule: "Final う-row → え-row, then add る.",
     g1Ex: "飲む → 飲める",
-    g2Rule: "Drop る, add られる.",
+    g2Rule: "Drop る, add られる. In casual speech many people drop ら (食べれる), but write 食べられる.",
     g2Ex: "食べる → 食べられる",
-    g3Rule: "する → できる · 来る → こられる",
-    g3Ex: "できる · こられる",
-    sample: "刺身が食べられますか? — Can you eat sashimi?",
+    g3Rule: "する → できる · 来る(くる) → 来られる(こられる)",
+    g3Ex: "できる · 来られる(こられる)",
+    sample: "刺身は食べられますか？ — Can you eat sashimi?",
   },
   {
     form: "Volitional",
@@ -123,9 +128,9 @@ export const extendedForms = [
     g1Ex: "飲む → 飲もう",
     g2Rule: "Drop る, add よう.",
     g2Ex: "食べる → 食べよう",
-    g3Rule: "する → しよう · 来る → こよう",
-    g3Ex: "しよう · こよう",
-    sample: "一緒に行こう! — Let’s go together!",
+    g3Rule: "する → しよう · 来る(くる) → 来よう(こよう)",
+    g3Ex: "しよう · 来よう(こよう)",
+    sample: "一緒に行こう！ — Let’s go together!",
   },
   {
     form: "Imperative",
@@ -135,9 +140,9 @@ export const extendedForms = [
     g1Ex: "飲む → 飲め",
     g2Rule: "Drop る, add ろ.",
     g2Ex: "食べる → 食べろ",
-    g3Rule: "する → しろ · 来る → こい",
-    g3Ex: "しろ · こい",
-    sample: "早く来い! — Get here, fast!",
+    g3Rule: "する → しろ (written/formal: せよ) · 来る(くる) → 来い(こい)",
+    g3Ex: "しろ (written/formal: せよ) · 来い(こい)",
+    sample: "早く来い！ — Get here, fast!",
   },
   {
     form: "Conditional たら",
@@ -147,8 +152,8 @@ export const extendedForms = [
     g1Ex: "飲んだ → 飲んだら",
     g2Rule: "Take the past-affirmative form, add ら.",
     g2Ex: "食べた → 食べたら",
-    g3Rule: "した → したら · 来た → 来たら",
-    g3Ex: "したら · 来たら",
+    g3Rule: "した → したら · 来る(くる) → 来たら(きたら)",
+    g3Ex: "したら · 来たら(きたら)",
     sample: "雨が降ったら、行かない。 — If it rains, I won’t go.",
   },
   {
@@ -159,8 +164,8 @@ export const extendedForms = [
     g1Ex: "飲む → 飲めば",
     g2Rule: "Drop る, add れば.",
     g2Ex: "食べる → 食べれば",
-    g3Rule: "する → すれば · 来る → くれば",
-    g3Ex: "すれば · くれば",
+    g3Rule: "する → すれば · 来る(くる) → 来れば(くれば)",
+    g3Ex: "すれば · 来れば(くれば)",
     sample: "急げば間に合う。 — If you hurry, you’ll make it.",
   },
   {
@@ -171,9 +176,9 @@ export const extendedForms = [
     g1Ex: "飲む → 飲まれる",
     g2Rule: "Drop る, add られる.",
     g2Ex: "食べる → 食べられる",
-    g3Rule: "する → される · 来る → こられる",
-    g3Ex: "される · こられる",
-    sample: "ケーキを食べられた。 — My cake got eaten (on me).",
+    g3Rule: "する → される · 来る(くる) → 来られる(こられる)",
+    g3Ex: "される · 来られる(こられる)",
+    sample: "弟にケーキを食べられた。 — My little brother ate my cake (and I'm upset).",
   },
   {
     form: "Causative",
@@ -183,21 +188,21 @@ export const extendedForms = [
     g1Ex: "飲む → 飲ませる",
     g2Rule: "Drop る, add させる.",
     g2Ex: "食べる → 食べさせる",
-    g3Rule: "する → させる · 来る → こさせる",
-    g3Ex: "させる · こさせる",
-    sample: "子供に野菜を食べさせる。 — I make the kids eat vegetables.",
+    g3Rule: "する → させる · 来る(くる) → 来させる(こさせる)",
+    g3Ex: "させる · 来させる(こさせる)",
+    sample: "子どもに野菜を食べさせる。 — I make the kids eat vegetables.",
   },
   {
     form: "Causative-passive",
     meaning: "“Be made to do”",
     use: "Forced into doing something — often reluctantly.",
-    g1Rule: "Final う-row → あ-row, then add せられる (う → わ).",
+    g1Rule: "Final う-row → あ-row, then add せられる (う → わ). Short form 飲まされる is more common in speech (not for す-verbs: 話させられる).",
     g1Ex: "飲む → 飲ませられる",
     g2Rule: "Drop る, add させられる.",
     g2Ex: "食べる → 食べさせられる",
-    g3Rule: "する → させられる · 来る → こさせられる",
-    g3Ex: "させられる · こさせられる",
-    sample: "野菜を食べさせられた。 — I was made to eat vegetables.",
+    g3Rule: "する → させられる · 来る(くる) → 来させられる(こさせられる)",
+    g3Ex: "させられる · 来させられる(こさせられる)",
+    sample: "母に野菜を食べさせられた。 — My mom made me eat vegetables.",
   },
 ] as const;
 

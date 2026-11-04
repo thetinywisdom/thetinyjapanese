@@ -5,7 +5,7 @@ import {
   SCHOOL_GRADES,
   type LevelScheme,
 } from "@/lib/kanji-levels";
-import { kankenChipLabel } from "@/content/learner-copy";
+import { kankenChipLabel, kankenGradeHelp } from "@/content/learner-copy";
 import { useLevelScheme } from "@/features/level-scheme/useLevelScheme";
 import { HelpCircle } from "lucide-react";
 import { SchemeToggle } from "@/components/SchemeToggle";
@@ -107,8 +107,7 @@ export function LevelPicker({ scheme, levels, onChange }: Props) {
       </div>
       {effective === "grade" && (
         <p className="text-[11px] text-muted-foreground leading-snug">
-          G1–G6 are elementary years 1–6 ({kankenChipLabel(1)} down to {kankenChipLabel(6)}).
-          G8 is the remaining jōyō, taught later ({kankenChipLabel(8)}).
+          {kankenGradeHelp}
         </p>
       )}
     </div>
