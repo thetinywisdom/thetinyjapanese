@@ -13,6 +13,7 @@ import {
   subscribeDiary,
   type DiaryEntry,
 } from "@/features/diary/storage";
+import { diaryBlurbJa } from "@/content/learner-copy";
 
 const Diary = () => {
   const navigate = useNavigate();
@@ -37,12 +38,12 @@ const Diary = () => {
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
-      <main className="max-w-2xl mx-auto px-4 py-8 space-y-6">
+      <main className="page-shell py-8 space-y-6">
         <div className="text-center py-6">
           <h1 className="font-serif text-3xl md:text-4xl mb-2">Diary</h1>
           <p className="text-sm text-muted-foreground">
             Illustrate your day, practice your sentences.<br />
-            Traditional Japanese picture diary (絵日記) with Furigana support.
+            Traditional Japanese picture diary (<span lang="ja">{diaryBlurbJa}</span>) with Furigana support.
           </p>
         </div>
 
@@ -58,7 +59,7 @@ const Diary = () => {
             No entries yet. Your diary is saved on this device only.
           </p>
         ) : (
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {entries.map((e) => (
               <li
                 key={e.id}
@@ -92,7 +93,7 @@ const Diary = () => {
                   type="button"
                   aria-label="Delete entry"
                   onClick={() => remove(e.id)}
-                  className="absolute top-2 right-2 rounded-md bg-background/80 p-1.5 opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity hover:text-destructive"
+                  className="absolute top-2 right-2 inline-flex h-11 w-11 items-center justify-center rounded-md border border-border bg-background/95 text-foreground shadow-sm hover:text-destructive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [@media(hover:hover)]:pointer-events-none [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:pointer-events-auto [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:focus-visible:pointer-events-auto [@media(hover:hover)]:focus-visible:opacity-100"
                 >
                   <Trash2 className="h-4 w-4" />
                 </button>

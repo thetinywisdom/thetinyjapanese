@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useSessionTimer } from "@/hooks/use-session-timer";
 import { useKanji } from "@/features/kanji/KanjiContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,37 +10,13 @@ import { ExampleSentences } from "@/components/ExampleSentences";
 import { getVerbExamples } from "@/data/examples";
 import { getItemStat } from "@/lib/progress";
 
-function formatElapsed(ms: number) {
-  const total = Math.floor(ms / 1000);
-  const m = Math.floor(total / 60);
-  const s = total % 60;
-  return `${m}:${s.toString().padStart(2, "0")}`;
-}
-
 export function KanjiCard() {
   const { state, submitAnswer, advance, skipCurrent, setFilters } = useKanji();
   const showMeaningHint = state.filters.showMeaning;
   const [answer, setAnswer] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
-  const [startTime, setStartTime] = useState<number | null>(null);
-  const [now, setNow] = useState<number>(() => Date.now());
-
-  useEffect(() => {
-    if ((state.status === "prompt" || state.status === "feedback") && startTime === null) {
-      setStartTime(Date.now());
-    }
-    if (state.status === "idle" || state.status === "finished") {
-      setStartTime(null);
-    }
-  }, [state.status, startTime]);
-
-  useEffect(() => {
-    if (state.status !== "prompt" && state.status !== "feedback") return;
-    const id = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(id);
-  }, [state.status]);
-
-  const elapsed = startTime ? now - startTime : 0;
+  const timerActive = state.status === "prompt" || state.status === "feedback";
+  const elapsedLabel = useSessionTimer(timerActive);
 
   useEffect(() => {
     if (state.status === "prompt") {
@@ -83,7 +60,7 @@ export function KanjiCard() {
       <div className="flex items-center justify-between text-xs text-muted-foreground">
         <span>Question {progress} of {total}</span>
         <span className="tabular-nums font-medium" aria-label="Session timer">
-          ⏱ {formatElapsed(elapsed)}
+          ⏱ {elapsedLabel}
         </span>
       </div>
 

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useSessionTimer } from "@/hooks/use-session-timer";
 import {
   useRemember,
   REMEMBER_QUESTION_LABELS,
@@ -12,34 +13,12 @@ import { getKanjiExamples } from "@/data/examples";
 import { getItemStat } from "@/lib/progress";
 import { cn } from "@/lib/utils";
 
-function formatElapsed(ms: number) {
-  const total = Math.floor(ms / 1000);
-  const m = Math.floor(total / 60);
-  const s = total % 60;
-  return `${m}:${s.toString().padStart(2, "0")}`;
-}
-
 export function RememberCard() {
   const { state, submitAnswer, skipCurrent, advance } = useRemember();
   const [tooltipOpen, setTooltipOpen] = useState(false);
-  const [startTime, setStartTime] = useState<number | null>(null);
-  const [now, setNow] = useState<number>(() => Date.now());
   const advanceBtnRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if ((state.status === "prompt" || state.status === "feedback") && startTime === null) {
-      setStartTime(Date.now());
-    }
-    if (state.status === "idle" || state.status === "finished") {
-      setStartTime(null);
-    }
-  }, [state.status, startTime]);
-
-  useEffect(() => {
-    if (state.status !== "prompt" && state.status !== "feedback") return;
-    const id = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(id);
-  }, [state.status]);
+  const timerActive = state.status === "prompt" || state.status === "feedback";
+  const elapsedLabel = useSessionTimer(timerActive);
 
   // Enter advances on feedback
   useEffect(() => {
@@ -61,8 +40,6 @@ export function RememberCard() {
 
   const total = state.history.length + state.queue.length + (state.current ? 1 : 0);
   const progress = state.history.length + (state.status === "prompt" ? 1 : 0);
-  const elapsed = startTime ? now - startTime : 0;
-
   const promptText =
     q.type === "kanji" ? q.card.meaning : q.card.char;
   const isPromptKanji = q.type !== "kanji";
@@ -74,7 +51,7 @@ export function RememberCard() {
           Question {progress} of {total}
         </span>
         <span className="tabular-nums font-medium" aria-label="Session timer">
-          ⏱ {formatElapsed(elapsed)}
+          ⏱ {elapsedLabel}
         </span>
       </div>
 

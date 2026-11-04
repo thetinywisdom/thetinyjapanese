@@ -1,11 +1,13 @@
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { taglineJa } from "@/content/learner-copy";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
-      <main className="max-w-2xl mx-auto px-4 py-6 space-y-5 pb-16">
+      <main className="page-shell py-6 space-y-5 pb-16">
+        <div className="max-w-3xl mx-auto space-y-5">
         <div className="text-center py-6">
           <h1 className="font-serif text-3xl md:text-4xl mb-2">About</h1>
           <p className="text-sm text-muted-foreground">Why this tool exists.</p>
@@ -38,8 +40,8 @@ const About = () => {
             it makes the path a little easier.
           </p>
           <p>
-            Lets get good at Japanese together.{" "}
-            <span lang="ja">日本語が上手になりましょう！</span>
+            Let's get good at Japanese together.{" "}
+            <span lang="ja">{taglineJa}</span>
           </p>
           <p>
             Your friend,
@@ -126,6 +128,7 @@ const About = () => {
             licence.
           </p>
         </section>
+        </div>
       </main>
       <SiteFooter />
     </div>

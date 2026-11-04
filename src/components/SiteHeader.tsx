@@ -13,7 +13,7 @@ import { LogoIcon } from "@/components/LogoIcon";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-const linkBase = "px-2 py-1 rounded hover:bg-muted transition-colors";
+const linkBase = "px-2.5 py-1.5 rounded-md hover:bg-muted transition-colors";
 
 export function SiteHeader() {
   const { pathname } = useLocation();
@@ -26,13 +26,13 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
-      <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="page-shell py-3 md:py-4 flex items-center justify-between gap-4">
         <Link to="/" aria-label="Japanese Practice Tool">
           <LogoIcon className="h-8 w-auto" />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="justify-self-end hidden sm:flex items-center gap-1 text-xs">
+        <nav className="justify-self-end hidden sm:flex items-center gap-1 text-sm">
           <DropdownMenu>
             <DropdownMenuTrigger
               className={cn(
@@ -42,7 +42,7 @@ export function SiteHeader() {
               )}
             >
               Practice
-              <ChevronDown className="h-3 w-3" />
+              <ChevronDown className="h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="min-w-36">
               <DropdownMenuLabel className="text-[11px] text-muted-foreground font-normal pt-1 pb-1">
