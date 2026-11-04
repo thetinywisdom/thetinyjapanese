@@ -83,7 +83,7 @@ describe("native review: nonexistent forms (X2–X6, G1–G18)", () => {
 
   it("skips the expanded non-volitional list and keeps なる", () => {
     const full = [
-      "1586270", "1158880", "1378690", "1436560", "1307500", "1156800",
+      "1586270", "1158880", "1378690", "1436560", "1307500",
       "1296400", "1546640", "1376470", "1199900", "1208020", "1385920",
       "1445790", "1404740", "1602440", "1263120", "1556630", "1350610",
       "1179005", "1195970", "1604550", "1591420", "1223680",
@@ -105,6 +105,7 @@ describe("native review: nonexistent forms (X2–X6, G1–G18)", () => {
       expect(f.causative, verb!.dictionary).toBeUndefined();
       expect(f["te-form"], verb!.dictionary).toBeTruthy();
     }
+    expect(byId("1156800")).toMatchObject({ dictionary: "意味", wordType: "noun" });
     const naru = WORDS.find((w) => w.reading === "なる" && w.dictionary !== "鳴る")!;
     expect(buildForms(naru).casual.volitional).toBe("なろう");
     expect(buildForms(naru).casual.potential).toBe("なれる");

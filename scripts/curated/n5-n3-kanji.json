@@ -161,8 +161,8 @@
         {
           "type": "on",
           "kana": "じょう",
-          "anchor": "上手",
-          "anchorReading": "じょうず",
+          "anchor": "以上",
+          "anchorReading": "いじょう",
           "kunDisplay": ""
         }
       ],
@@ -721,11 +721,16 @@
           "anchor": "出す",
           "anchorReading": "だす",
           "kunDisplay": "だ.す"
+        },
+        {
+          "type": "on",
+          "kana": "しゅつ",
+          "anchor": "出発",
+          "anchorReading": "しゅっぱつ",
+          "kunDisplay": ""
         }
       ],
-      "demoted": [
-        "しゅつ"
-      ],
+      "demoted": [],
       "flag": "しゅつ（出発・出席）is real, but 出口 is でぐち, so it is a bad anchor. Left off the N5 card on purpose.",
       "sentences": [
         {
@@ -794,8 +799,8 @@
         {
           "type": "on",
           "kana": "ほく",
-          "anchor": "北海道",
-          "anchorReading": "ほっかいどう",
+          "anchor": "東北",
+          "anchorReading": "とうほく",
           "kunDisplay": ""
         }
       ],
@@ -1605,7 +1610,7 @@
           "kunDisplay": ""
         },
         {
-          "type": "on",
+          "type": "kun",
           "kana": "び",
           "anchor": "日曜日",
           "anchorReading": "にちようび",
@@ -2296,8 +2301,8 @@
         {
           "type": "on",
           "kana": "ぎょう",
-          "anchor": "旅行",
-          "anchorReading": "りょこう",
+          "anchor": "行事",
+          "anchorReading": "ぎょうじ",
           "kunDisplay": ""
         }
       ],
@@ -2848,16 +2853,16 @@
         {
           "type": "on",
           "kana": "しゅ",
-          "anchor": "主要",
-          "anchorReading": "しゅよう",
+          "anchor": "主人",
+          "anchorReading": "しゅじん",
           "kunDisplay": "",
           "surface": "しゅ"
         },
         {
           "type": "kun",
           "kana": "ぬし",
-          "anchor": "家主",
-          "anchorReading": "やぬし",
+          "anchor": "持ち主",
+          "anchorReading": "もちぬし",
           "kunDisplay": "ぬし",
           "surface": "ぬし"
         }
@@ -2875,8 +2880,8 @@
         {
           "type": "kun",
           "kana": "こと",
-          "anchor": "仕事する",
-          "anchorReading": "しごとする",
+          "anchor": "事",
+          "anchorReading": "こと",
           "kunDisplay": "こと",
           "surface": "ごと"
         },
@@ -2902,8 +2907,8 @@
         {
           "type": "on",
           "kana": "きょう",
-          "anchor": "上京する",
-          "anchorReading": "じょうきょうする",
+          "anchor": "東京",
+          "anchorReading": "とうきょう",
           "kunDisplay": "",
           "surface": "きょう"
         }
@@ -2916,23 +2921,17 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "つかえる"
+      ],
       "readings": [
         {
           "type": "on",
           "kana": "し",
-          "anchor": "仕事する",
-          "anchorReading": "しごとする",
+          "anchor": "仕事",
+          "anchorReading": "しごと",
           "kunDisplay": "",
           "surface": "し"
-        },
-        {
-          "type": "kun",
-          "kana": "つかえる",
-          "anchor": "仕える",
-          "anchorReading": "つかえる",
-          "kunDisplay": "つか.える",
-          "surface": "つか"
         }
       ],
       "sentences": []
@@ -2943,7 +2942,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "しろ"
+      ],
       "readings": [
         {
           "type": "on",
@@ -2960,20 +2961,12 @@
           "anchorReading": "かわり",
           "kunDisplay": "か.わり",
           "surface": "か"
-        },
-        {
-          "type": "kun",
-          "kana": "しろ",
-          "anchor": "代",
-          "anchorReading": "しろ",
-          "kunDisplay": "しろ",
-          "surface": "しろ"
         }
       ],
       "sentences": []
     },
     "以": {
-      "meaning": "by means of",
+      "meaning": "from; (以上・以下) and over / under",
       "primary": "い",
       "jlpt": "N4",
       "source": "aligned",
@@ -2997,7 +2990,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "え"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -3014,14 +3009,6 @@
           "anchorReading": "かいしゃ",
           "kunDisplay": "",
           "surface": "かい"
-        },
-        {
-          "type": "on",
-          "kana": "え",
-          "anchor": "会",
-          "anchorReading": "え",
-          "kunDisplay": "",
-          "surface": "え"
         }
       ],
       "sentences": []
@@ -3059,7 +3046,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "てい"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -3076,14 +3065,6 @@
           "anchorReading": "だいたい",
           "kunDisplay": "",
           "surface": "たい"
-        },
-        {
-          "type": "on",
-          "kana": "てい",
-          "anchor": "体",
-          "anchorReading": "てい",
-          "kunDisplay": "",
-          "surface": "てい"
         }
       ],
       "sentences": []
@@ -3129,7 +3110,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "つかい"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -3146,14 +3129,6 @@
           "anchorReading": "たいしかん",
           "kunDisplay": "",
           "surface": "し"
-        },
-        {
-          "type": "kun",
-          "kana": "つかい",
-          "anchor": "お使い",
-          "anchorReading": "おつかい",
-          "kunDisplay": "つか.い",
-          "surface": "つか"
         }
       ],
       "sentences": []
@@ -3177,8 +3152,8 @@
         {
           "type": "on",
           "kana": "しゃく",
-          "anchor": "借金する",
-          "anchorReading": "しゃっきんする",
+          "anchor": "借金",
+          "anchorReading": "しゃっきん",
           "kunDisplay": "",
           "surface": "しゃっ"
         }
@@ -3253,7 +3228,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "おおやけ"
+      ],
       "readings": [
         {
           "type": "on",
@@ -3262,14 +3239,6 @@
           "anchorReading": "こうえん",
           "kunDisplay": "",
           "surface": "こう"
-        },
-        {
-          "type": "kun",
-          "kana": "おおやけ",
-          "anchor": "公",
-          "anchorReading": "おおやけ",
-          "kunDisplay": "おおやけ",
-          "surface": "おおやけ"
         }
       ],
       "sentences": []
@@ -3280,7 +3249,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "うつ"
+      ],
       "readings": [
         {
           "type": "on",
@@ -3296,14 +3267,6 @@
           "anchor": "写す",
           "anchorReading": "うつす",
           "kunDisplay": "うつ.す",
-          "surface": "うつ"
-        },
-        {
-          "type": "kun",
-          "kana": "うつ",
-          "anchor": "写し",
-          "anchorReading": "うつし",
-          "kunDisplay": "うつ",
           "surface": "うつ"
         }
       ],
@@ -3328,8 +3291,8 @@
         {
           "type": "on",
           "kana": "とう",
-          "anchor": "冬眠する",
-          "anchorReading": "とうみんする",
+          "anchor": "冬眠",
+          "anchorReading": "とうみん",
           "kunDisplay": "",
           "surface": "とう"
         }
@@ -3342,7 +3305,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "きり"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -3359,14 +3324,6 @@
           "anchorReading": "たいせつ",
           "kunDisplay": "",
           "surface": "せつ"
-        },
-        {
-          "type": "kun",
-          "kana": "きり",
-          "anchor": "切り",
-          "anchorReading": "きり",
-          "kunDisplay": "き.り",
-          "surface": "き"
         }
       ],
       "sentences": []
@@ -3436,8 +3393,8 @@
         {
           "type": "on",
           "kana": "べん",
-          "anchor": "勉強する",
-          "anchorReading": "べんきょうする",
+          "anchor": "勉強",
+          "anchorReading": "べんきょう",
           "kunDisplay": "",
           "surface": "べん"
         }
@@ -3643,7 +3600,7 @@
     },
     "味": {
       "meaning": "flavor",
-      "primary": "み",
+      "primary": "あじ",
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
@@ -3652,8 +3609,8 @@
         {
           "type": "on",
           "kana": "み",
-          "anchor": "意味する",
-          "anchorReading": "いみする",
+          "anchor": "意味",
+          "anchorReading": "いみ",
           "kunDisplay": "",
           "surface": "み"
         },
@@ -3747,7 +3704,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "はかる"
+      ],
       "readings": [
         {
           "type": "on",
@@ -3764,14 +3723,6 @@
           "anchorReading": "としょかん",
           "kunDisplay": "",
           "surface": "と"
-        },
-        {
-          "type": "kun",
-          "kana": "はかる",
-          "anchor": "図る",
-          "anchorReading": "はかる",
-          "kunDisplay": "はか.る",
-          "surface": "はか"
         }
       ],
       "sentences": []
@@ -3868,8 +3819,8 @@
         {
           "type": "on",
           "kana": "ばい",
-          "anchor": "商売する",
-          "anchorReading": "しょうばいする",
+          "anchor": "商売",
+          "anchorReading": "しょうばい",
           "kunDisplay": "",
           "surface": "ばい"
         },
@@ -4057,8 +4008,8 @@
         {
           "type": "on",
           "kana": "し",
-          "anchor": "開始する",
-          "anchorReading": "かいしする",
+          "anchor": "開始",
+          "anchorReading": "かいし",
           "kunDisplay": "",
           "surface": "し"
         },
@@ -4079,7 +4030,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "あざ"
+      ],
       "readings": [
         {
           "type": "on",
@@ -4088,20 +4041,12 @@
           "anchorReading": "かんじ",
           "kunDisplay": "",
           "surface": "じ"
-        },
-        {
-          "type": "kun",
-          "kana": "あざ",
-          "anchor": "字",
-          "anchorReading": "あざ",
-          "kunDisplay": "あざ",
-          "surface": "あざ"
         }
       ],
       "sentences": []
     },
     "安": {
-      "meaning": "relax",
+      "meaning": "cheap; safe",
       "primary": "やすい",
       "jlpt": "N4",
       "source": "aligned",
@@ -4170,7 +4115,8 @@
           "kana": "うち",
           "anchor": "家",
           "anchorReading": "うち",
-          "kunDisplay": ""
+          "kunDisplay": "",
+          "note": "also correct (home). Never a distractor next to いえ."
         },
         {
           "type": "on",
@@ -4227,27 +4173,25 @@
     },
     "屋": {
       "meaning": "shop",
-      "primary": "おく",
+      "primary": "や",
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
+          "type": "kun",
+          "kana": "や",
+          "anchor": "本屋",
+          "anchorReading": "ほんや",
+          "kunDisplay": ""
+        },
+        {
           "type": "on",
           "kana": "おく",
           "anchor": "屋上",
           "anchorReading": "おくじょう",
-          "kunDisplay": "",
-          "surface": "おく"
-        },
-        {
-          "type": "kun",
-          "kana": "や",
-          "anchor": "小屋",
-          "anchorReading": "こや",
-          "kunDisplay": "や",
-          "surface": "や"
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -4280,7 +4224,7 @@
       "sentences": []
     },
     "帰": {
-      "meaning": "homecoming",
+      "meaning": "return (home)",
       "primary": "かえる",
       "jlpt": "N4",
       "source": "aligned",
@@ -4298,8 +4242,8 @@
         {
           "type": "on",
           "kana": "き",
-          "anchor": "帰宅する",
-          "anchorReading": "きたくする",
+          "anchor": "帰宅",
+          "anchorReading": "きたく",
           "kunDisplay": "",
           "surface": "き"
         },
@@ -4333,8 +4277,8 @@
         {
           "type": "on",
           "kana": "こう",
-          "anchor": "広告する",
-          "anchorReading": "こうこくする",
+          "anchor": "広告",
+          "anchorReading": "こうこく",
           "kunDisplay": "",
           "surface": "こう"
         },
@@ -4395,8 +4339,8 @@
         {
           "type": "on",
           "kana": "たく",
-          "anchor": "支度する",
-          "anchorReading": "したくする",
+          "anchor": "支度",
+          "anchorReading": "したく",
           "kunDisplay": "",
           "surface": "たく"
         },
@@ -4417,7 +4361,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "たて"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -4430,18 +4376,10 @@
         {
           "type": "on",
           "kana": "けん",
-          "anchor": "建設する",
-          "anchorReading": "けんせつする",
+          "anchor": "建設",
+          "anchorReading": "けんせつ",
           "kunDisplay": "",
           "surface": "けん"
-        },
-        {
-          "type": "kun",
-          "kana": "たて",
-          "anchor": "二階建て",
-          "anchorReading": "にかいだて",
-          "kunDisplay": "た.て",
-          "surface": "だ"
         }
       ],
       "sentences": []
@@ -4492,8 +4430,8 @@
         {
           "type": "on",
           "kana": "きょう",
-          "anchor": "勉強する",
-          "anchorReading": "べんきょうする",
+          "anchor": "勉強",
+          "anchorReading": "べんきょう",
           "kunDisplay": "",
           "surface": "きょう"
         },
@@ -4527,8 +4465,8 @@
         {
           "type": "on",
           "kana": "たい",
-          "anchor": "招待する",
-          "anchorReading": "しょうたいする",
+          "anchor": "招待",
+          "anchorReading": "しょうたい",
           "kunDisplay": "",
           "surface": "たい"
         }
@@ -4554,8 +4492,8 @@
         {
           "type": "on",
           "kana": "しん",
-          "anchor": "安心する",
-          "anchorReading": "あんしんする",
+          "anchor": "安心",
+          "anchorReading": "あんしん",
           "kunDisplay": "",
           "surface": "しん"
         }
@@ -4662,8 +4600,8 @@
         {
           "type": "on",
           "kana": "い",
-          "anchor": "意味する",
-          "anchorReading": "いみする",
+          "anchor": "意味",
+          "anchorReading": "いみ",
           "kunDisplay": "",
           "surface": "い"
         }
@@ -4703,7 +4641,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "もてる"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -4716,18 +4656,10 @@
         {
           "type": "on",
           "kana": "じ",
-          "anchor": "維持する",
-          "anchorReading": "いじする",
+          "anchor": "維持",
+          "anchorReading": "いじ",
           "kunDisplay": "",
           "surface": "じ"
-        },
-        {
-          "type": "kun",
-          "kana": "もてる",
-          "anchor": "持てる",
-          "anchorReading": "もてる",
-          "kunDisplay": "も.てる",
-          "surface": "も"
         }
       ],
       "sentences": []
@@ -4773,7 +4705,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "ふみ"
+      ],
       "readings": [
         {
           "type": "on",
@@ -4790,14 +4724,6 @@
           "anchorReading": "もんく",
           "kunDisplay": "",
           "surface": "もん"
-        },
-        {
-          "type": "kun",
-          "kana": "ふみ",
-          "anchor": "文",
-          "anchorReading": "ふみ",
-          "kunDisplay": "ふみ",
-          "surface": "ふみ"
         }
       ],
       "sentences": []
@@ -4813,8 +4739,8 @@
         {
           "type": "on",
           "kana": "りょう",
-          "anchor": "料理する",
-          "anchorReading": "りょうりする",
+          "anchor": "料理",
+          "anchorReading": "りょうり",
           "kunDisplay": "",
           "surface": "りょう"
         }
@@ -4894,8 +4820,8 @@
         {
           "type": "on",
           "kana": "りょ",
-          "anchor": "旅行する",
-          "anchorReading": "りょこうする",
+          "anchor": "旅行",
+          "anchorReading": "りょこう",
           "kunDisplay": "",
           "surface": "りょ"
         },
@@ -4935,7 +4861,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "はや"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -4943,14 +4871,6 @@
           "anchor": "早い",
           "anchorReading": "はやい",
           "kunDisplay": "はや.い",
-          "surface": "はや"
-        },
-        {
-          "type": "kun",
-          "kana": "はや",
-          "anchor": "早口",
-          "anchorReading": "はやくち",
-          "kunDisplay": "はや",
           "surface": "はや"
         }
       ],
@@ -5111,7 +5031,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "う"
+      ],
       "readings": [
         {
           "type": "on",
@@ -5120,14 +5042,6 @@
           "anchorReading": "ゆうめい",
           "kunDisplay": "",
           "surface": "ゆう"
-        },
-        {
-          "type": "on",
-          "kana": "う",
-          "anchor": "有無",
-          "anchorReading": "うむ",
-          "kunDisplay": "",
-          "surface": "う"
         }
       ],
       "sentences": []
@@ -5176,7 +5090,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "ごう"
+      ],
       "readings": [
         {
           "type": "on",
@@ -5185,49 +5101,31 @@
           "anchorReading": "こうぎょう",
           "kunDisplay": "",
           "surface": "ぎょう"
-        },
-        {
-          "type": "on",
-          "kana": "ごう",
-          "anchor": "業",
-          "anchorReading": "ごう",
-          "kunDisplay": "",
-          "surface": "ごう"
         }
       ],
       "sentences": []
     },
     "楽": {
-      "meaning": "music",
-      "primary": "がく",
+      "meaning": "fun; comfort; music",
+      "primary": "たのしい",
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
-          "type": "on",
-          "kana": "がく",
-          "anchor": "音楽",
-          "anchorReading": "おんがく",
-          "kunDisplay": "",
-          "surface": "がく"
-        },
-        {
-          "type": "on",
-          "kana": "らく",
-          "anchor": "楽",
-          "anchorReading": "らく",
-          "kunDisplay": "",
-          "surface": "らく"
-        },
-        {
           "type": "kun",
           "kana": "たのしい",
           "anchor": "楽しい",
           "anchorReading": "たのしい",
-          "kunDisplay": "たの.しい",
-          "surface": "たの"
+          "kunDisplay": "たの.しい"
+        },
+        {
+          "type": "on",
+          "kana": "がく",
+          "anchor": "音楽",
+          "anchorReading": "おんがく",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -5278,8 +5176,8 @@
         {
           "type": "on",
           "kana": "し",
-          "anchor": "禁止する",
-          "anchorReading": "きんしする",
+          "anchor": "禁止",
+          "anchorReading": "きんし",
           "kunDisplay": "",
           "surface": "し"
         },
@@ -5313,16 +5211,16 @@
         {
           "type": "on",
           "kana": "せい",
-          "anchor": "正",
-          "anchorReading": "せい",
+          "anchor": "正解",
+          "anchorReading": "せいかい",
           "kunDisplay": "",
           "surface": "せい"
         },
         {
           "type": "on",
           "kana": "しょう",
-          "anchor": "正直",
-          "anchorReading": "しょうじき",
+          "anchor": "正月",
+          "anchorReading": "しょうがつ",
           "kunDisplay": "",
           "surface": "しょう"
         }
@@ -5335,7 +5233,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "あゆむ"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -5348,37 +5248,35 @@
         {
           "type": "on",
           "kana": "ほ",
-          "anchor": "散歩する",
-          "anchorReading": "さんぽする",
+          "anchor": "歩道",
+          "anchorReading": "ほどう",
           "kunDisplay": "",
           "surface": "ぽ"
-        },
-        {
-          "type": "kun",
-          "kana": "あゆむ",
-          "anchor": "歩む",
-          "anchorReading": "あゆむ",
-          "kunDisplay": "あゆ.む",
-          "surface": "あゆ"
         }
       ],
       "sentences": []
     },
     "死": {
       "meaning": "death",
-      "primary": "し",
+      "primary": "しぬ",
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
-          "type": "on",
-          "kana": "し",
+          "type": "kun",
+          "kana": "しぬ",
           "anchor": "死ぬ",
           "anchorReading": "しぬ",
-          "kunDisplay": "",
-          "surface": "し"
+          "kunDisplay": "し.ぬ"
+        },
+        {
+          "type": "on",
+          "kana": "し",
+          "anchor": "死亡",
+          "anchorReading": "しぼう",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -5389,23 +5287,17 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "さす"
+      ],
       "readings": [
         {
           "type": "on",
           "kana": "ちゅう",
-          "anchor": "注意する",
-          "anchorReading": "ちゅういする",
+          "anchor": "注意",
+          "anchorReading": "ちゅうい",
           "kunDisplay": "",
           "surface": "ちゅう"
-        },
-        {
-          "type": "kun",
-          "kana": "さす",
-          "anchor": "注す",
-          "anchorReading": "さす",
-          "kunDisplay": "さ.す",
-          "surface": "さ"
         },
         {
           "type": "kun",
@@ -5465,7 +5357,7 @@
       "sentences": []
     },
     "漢": {
-      "meaning": "China",
+      "meaning": "Han China (as in 漢字)",
       "primary": "かん",
       "jlpt": "N4",
       "source": "aligned",
@@ -5594,8 +5486,8 @@
         {
           "type": "on",
           "kana": "り",
-          "anchor": "料理する",
-          "anchorReading": "りょうりする",
+          "anchor": "料理",
+          "anchorReading": "りょうり",
           "kunDisplay": "",
           "surface": "り"
         }
@@ -5694,8 +5586,8 @@
         {
           "type": "on",
           "kana": "かく",
-          "anchor": "計画する",
-          "anchorReading": "けいかくする",
+          "anchor": "計画",
+          "anchorReading": "けいかく",
           "kunDisplay": "",
           "surface": "かく"
         }
@@ -5727,7 +5619,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "やむ"
+      ],
       "readings": [
         {
           "type": "on",
@@ -5744,14 +5638,6 @@
           "anchorReading": "やまい",
           "kunDisplay": "やまい",
           "surface": "やまい"
-        },
-        {
-          "type": "kun",
-          "kana": "やむ",
-          "anchor": "病む",
-          "anchorReading": "やむ",
-          "kunDisplay": "や.む",
-          "surface": "や"
         }
       ],
       "sentences": []
@@ -5762,31 +5648,18 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "ほつ",
+        "たつ"
+      ],
       "readings": [
         {
           "type": "on",
           "kana": "はつ",
-          "anchor": "発音する",
-          "anchorReading": "はつおんする",
+          "anchor": "発音",
+          "anchorReading": "はつおん",
           "kunDisplay": "",
           "surface": "はつ"
-        },
-        {
-          "type": "kun",
-          "kana": "たつ",
-          "anchor": "発つ",
-          "anchorReading": "たつ",
-          "kunDisplay": "た.つ",
-          "surface": "た"
-        },
-        {
-          "type": "on",
-          "kana": "ほつ",
-          "anchor": "発作",
-          "anchorReading": "ほっさ",
-          "kunDisplay": "",
-          "surface": "ほっ"
         }
       ],
       "sentences": []
@@ -5797,7 +5670,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "ぼく"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -5814,14 +5689,6 @@
           "anchorReading": "かもく",
           "kunDisplay": "",
           "surface": "もく"
-        },
-        {
-          "type": "on",
-          "kana": "ぼく",
-          "anchor": "面目",
-          "anchorReading": "めんぼく",
-          "kunDisplay": "",
-          "surface": "ぼく"
         }
       ],
       "sentences": []
@@ -5845,8 +5712,8 @@
         {
           "type": "kun",
           "kana": "ま",
-          "anchor": "真っ直ぐ",
-          "anchorReading": "まっすぐ",
+          "anchor": "真ん中",
+          "anchorReading": "まんなか",
           "kunDisplay": "ま",
           "surface": "ま"
         }
@@ -5872,8 +5739,8 @@
         {
           "type": "on",
           "kana": "ちゃく",
-          "anchor": "到着する",
-          "anchorReading": "とうちゃくする",
+          "anchor": "到着",
+          "anchorReading": "とうちゃく",
           "kunDisplay": "",
           "surface": "ちゃく"
         },
@@ -5907,8 +5774,8 @@
         {
           "type": "on",
           "kana": "ち",
-          "anchor": "承知する",
-          "anchorReading": "しょうちする",
+          "anchor": "承知",
+          "anchorReading": "しょうち",
           "kunDisplay": "",
           "surface": "ち"
         },
@@ -5929,7 +5796,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "とぐ"
+      ],
       "readings": [
         {
           "type": "on",
@@ -5938,14 +5807,6 @@
           "anchorReading": "けんきゅうしつ",
           "kunDisplay": "",
           "surface": "けん"
-        },
-        {
-          "type": "kun",
-          "kana": "とぐ",
-          "anchor": "研ぐ",
-          "anchorReading": "とぐ",
-          "kunDisplay": "と.ぐ",
-          "surface": "と"
         }
       ],
       "sentences": []
@@ -5956,7 +5817,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "やしろ"
+      ],
       "readings": [
         {
           "type": "on",
@@ -5965,14 +5828,6 @@
           "anchorReading": "かいしゃ",
           "kunDisplay": "",
           "surface": "しゃ"
-        },
-        {
-          "type": "kun",
-          "kana": "やしろ",
-          "anchor": "社",
-          "anchorReading": "やしろ",
-          "kunDisplay": "やしろ",
-          "surface": "やしろ"
         }
       ],
       "sentences": []
@@ -5994,6 +5849,13 @@
           "anchor": "私立",
           "anchorReading": "しりつ",
           "kunDisplay": ""
+        },
+        {
+          "type": "kun",
+          "kana": "わたくし",
+          "anchor": "私",
+          "anchorReading": "わたくし",
+          "note": "also correct (formal). Never a wrong distractor."
         }
       ],
       "demoted": [
@@ -6109,8 +5971,8 @@
         {
           "type": "on",
           "kana": "りつ",
-          "anchor": "立派",
-          "anchorReading": "りっぱ",
+          "anchor": "私立",
+          "anchorReading": "しりつ",
           "kunDisplay": "",
           "surface": "りっ"
         },
@@ -6131,7 +5993,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "こたえ"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -6148,14 +6012,6 @@
           "anchorReading": "とうあん",
           "kunDisplay": "",
           "surface": "とう"
-        },
-        {
-          "type": "kun",
-          "kana": "こたえ",
-          "anchor": "答え",
-          "anchorReading": "こたえ",
-          "kunDisplay": "こた.え",
-          "surface": "こた"
         }
       ],
       "sentences": []
@@ -6241,8 +6097,8 @@
         {
           "type": "on",
           "kana": "しゅう",
-          "anchor": "練習する",
-          "anchorReading": "れんしゅうする",
+          "anchor": "練習",
+          "anchorReading": "れんしゅう",
           "kunDisplay": "",
           "surface": "しゅう"
         }
@@ -6255,7 +6111,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "かんがえ"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -6272,14 +6130,6 @@
           "anchorReading": "さんこう",
           "kunDisplay": "",
           "surface": "こう"
-        },
-        {
-          "type": "kun",
-          "kana": "かんがえ",
-          "anchor": "考え",
-          "anchorReading": "かんがえ",
-          "kunDisplay": "かんが.え",
-          "surface": "かんが"
         }
       ],
       "sentences": []
@@ -6384,8 +6234,8 @@
         {
           "type": "on",
           "kana": "しき",
-          "anchor": "色彩",
-          "anchorReading": "しきさい",
+          "anchor": "景色",
+          "anchorReading": "けしき",
           "kunDisplay": "",
           "surface": "しき"
         }
@@ -6502,7 +6352,7 @@
     },
     "言": {
       "meaning": "say",
-      "primary": "こと",
+      "primary": "いう",
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
@@ -6510,27 +6360,24 @@
       "readings": [
         {
           "type": "kun",
+          "kana": "いう",
+          "anchor": "言う",
+          "anchorReading": "いう",
+          "kunDisplay": "い.う"
+        },
+        {
+          "type": "kun",
           "kana": "こと",
           "anchor": "言葉",
           "anchorReading": "ことば",
-          "kunDisplay": "こと",
-          "surface": "こと"
+          "kunDisplay": ""
         },
         {
           "type": "on",
           "kana": "げん",
           "anchor": "言語",
           "anchorReading": "げんご",
-          "kunDisplay": "",
-          "surface": "げん"
-        },
-        {
-          "type": "kun",
-          "kana": "いう",
-          "anchor": "言う",
-          "anchorReading": "いう",
-          "kunDisplay": "い.う",
-          "surface": "い"
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -6546,8 +6393,8 @@
         {
           "type": "on",
           "kana": "けい",
-          "anchor": "計画する",
-          "anchorReading": "けいかくする",
+          "anchor": "計画",
+          "anchorReading": "けいかく",
           "kunDisplay": "",
           "surface": "けい"
         },
@@ -6573,8 +6420,8 @@
         {
           "type": "on",
           "kana": "し",
-          "anchor": "試合する",
-          "anchorReading": "しあいする",
+          "anchor": "試験",
+          "anchorReading": "しけん",
           "kunDisplay": "",
           "surface": "し"
         },
@@ -6616,8 +6463,8 @@
         {
           "type": "on",
           "kana": "ばい",
-          "anchor": "売買する",
-          "anchorReading": "ばいばいする",
+          "anchor": "売買",
+          "anchorReading": "ばいばい",
           "kunDisplay": "",
           "surface": "ばい"
         }
@@ -6630,7 +6477,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "かし"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -6639,14 +6488,6 @@
           "anchorReading": "かす",
           "kunDisplay": "か.す",
           "surface": "か"
-        },
-        {
-          "type": "kun",
-          "kana": "かし",
-          "anchor": "貸間",
-          "anchorReading": "かしま",
-          "kunDisplay": "かし",
-          "surface": "かし"
         }
       ],
       "sentences": []
@@ -6657,23 +6498,17 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "しち"
+      ],
       "readings": [
         {
           "type": "on",
           "kana": "しつ",
-          "anchor": "質問する",
-          "anchorReading": "しつもんする",
+          "anchor": "質問",
+          "anchorReading": "しつもん",
           "kunDisplay": "",
           "surface": "しつ"
-        },
-        {
-          "type": "on",
-          "kana": "しち",
-          "anchor": "人質",
-          "anchorReading": "ひとじち",
-          "kunDisplay": "",
-          "surface": "じち"
         }
       ],
       "sentences": []
@@ -6724,8 +6559,8 @@
         {
           "type": "on",
           "kana": "そう",
-          "anchor": "走行する",
-          "anchorReading": "そうこうする",
+          "anchor": "走行",
+          "anchorReading": "そうこう",
           "kunDisplay": "",
           "surface": "そう"
         }
@@ -6751,8 +6586,8 @@
         {
           "type": "on",
           "kana": "き",
-          "anchor": "起床する",
-          "anchorReading": "きしょうする",
+          "anchor": "起床",
+          "anchorReading": "きしょう",
           "kunDisplay": "",
           "surface": "き"
         },
@@ -6786,8 +6621,8 @@
         {
           "type": "on",
           "kana": "そく",
-          "anchor": "不足する",
-          "anchorReading": "ふそくする",
+          "anchor": "不足",
+          "anchorReading": "ふそく",
           "kunDisplay": "",
           "surface": "そく"
         },
@@ -6883,8 +6718,8 @@
         {
           "type": "on",
           "kana": "そう",
-          "anchor": "放送する",
-          "anchorReading": "ほうそうする",
+          "anchor": "放送",
+          "anchorReading": "ほうそう",
           "kunDisplay": "",
           "surface": "そう"
         }
@@ -6922,6 +6757,13 @@
           "anchorReading": "とおり",
           "kunDisplay": "とお.り",
           "surface": "とお"
+        },
+        {
+          "type": "kun",
+          "kana": "とおる",
+          "anchor": "通る",
+          "anchorReading": "とおる",
+          "kunDisplay": "とお.る"
         }
       ],
       "sentences": []
@@ -7040,7 +6882,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "の"
+      ],
       "readings": [
         {
           "type": "on",
@@ -7049,14 +6893,6 @@
           "anchorReading": "やさい",
           "kunDisplay": "",
           "surface": "や"
-        },
-        {
-          "type": "kun",
-          "kana": "の",
-          "anchor": "野",
-          "anchorReading": "の",
-          "kunDisplay": "の",
-          "surface": "の"
         }
       ],
       "sentences": []
@@ -7099,8 +6935,8 @@
         {
           "type": "on",
           "kana": "かい",
-          "anchor": "開始する",
-          "anchorReading": "かいしする",
+          "anchor": "開始",
+          "anchorReading": "かいし",
           "kunDisplay": "",
           "surface": "かい"
         },
@@ -7111,6 +6947,13 @@
           "anchorReading": "あける",
           "kunDisplay": "あ.ける",
           "surface": "あ"
+        },
+        {
+          "type": "kun",
+          "kana": "ひらく",
+          "anchor": "開く",
+          "anchorReading": "ひらく",
+          "kunDisplay": "ひら.く"
         }
       ],
       "sentences": []
@@ -7202,7 +7045,9 @@
       "jlpt": "N4",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "ね"
+      ],
       "readings": [
         {
           "type": "on",
@@ -7219,14 +7064,6 @@
           "anchorReading": "おと",
           "kunDisplay": "おと",
           "surface": "おと"
-        },
-        {
-          "type": "kun",
-          "kana": "ね",
-          "anchor": "音",
-          "anchorReading": "ね",
-          "kunDisplay": "ね",
-          "surface": "ね"
         }
       ],
       "sentences": []
@@ -7296,8 +7133,8 @@
         {
           "type": "on",
           "kana": "はん",
-          "anchor": "夕飯",
-          "anchorReading": "ゆうはん",
+          "anchor": "ご飯",
+          "anchorReading": "ごはん",
           "kunDisplay": "",
           "surface": "はん"
         },
@@ -7380,8 +7217,8 @@
         {
           "type": "on",
           "kana": "けん",
-          "anchor": "経験する",
-          "anchorReading": "けいけんする",
+          "anchor": "試験",
+          "anchorReading": "しけん",
           "kunDisplay": "",
           "surface": "けん"
         }
@@ -7480,8 +7317,8 @@
         {
           "type": "on",
           "kana": "よ",
-          "anchor": "給与する",
-          "anchorReading": "きゅうよする",
+          "anchor": "給与",
+          "anchorReading": "きゅうよ",
           "kunDisplay": "",
           "surface": "よ"
         }
@@ -7572,8 +7409,8 @@
         {
           "type": "on",
           "kana": "そう",
-          "anchor": "競争する",
-          "anchorReading": "きょうそうする",
+          "anchor": "競争",
+          "anchorReading": "きょうそう",
           "kunDisplay": "",
           "surface": "そう"
         },
@@ -7626,10 +7463,17 @@
         {
           "type": "on",
           "kana": "ぼう",
-          "anchor": "死亡する",
-          "anchorReading": "しぼうする",
+          "anchor": "死亡",
+          "anchorReading": "しぼう",
           "kunDisplay": "",
           "surface": "ぼう"
+        },
+        {
+          "type": "kun",
+          "kana": "なくなる",
+          "anchor": "亡くなる",
+          "anchorReading": "なくなる",
+          "kunDisplay": "な.くなる"
         }
       ],
       "sentences": []
@@ -7640,7 +7484,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "まじえる"
+      ],
       "readings": [
         {
           "type": "on",
@@ -7657,33 +7503,31 @@
           "anchorReading": "かわす",
           "kunDisplay": "か.わす",
           "surface": "か"
-        },
-        {
-          "type": "kun",
-          "kana": "まじえる",
-          "anchor": "交える",
-          "anchorReading": "まじえる",
-          "kunDisplay": "まじ.える",
-          "surface": "まじ"
         }
       ],
       "sentences": []
     },
     "他": {
       "meaning": "other",
-      "primary": "た",
+      "primary": "ほか",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
+          "type": "kun",
+          "kana": "ほか",
+          "anchor": "他",
+          "anchorReading": "ほか",
+          "kunDisplay": ""
+        },
+        {
           "type": "on",
           "kana": "た",
-          "anchor": "他",
-          "anchorReading": "た",
-          "kunDisplay": "",
-          "surface": "た"
+          "anchor": "その他",
+          "anchorReading": "そのた",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -7707,16 +7551,16 @@
         {
           "type": "kun",
           "kana": "つける",
-          "anchor": "片付ける",
-          "anchorReading": "かたづける",
+          "anchor": "付ける",
+          "anchorReading": "つける",
           "kunDisplay": "つ.ける",
           "surface": "づ"
         },
         {
           "type": "on",
           "kana": "ふ",
-          "anchor": "寄付する",
-          "anchorReading": "きふする",
+          "anchor": "寄付",
+          "anchorReading": "きふ",
           "kunDisplay": "",
           "surface": "ふ"
         }
@@ -7779,41 +7623,33 @@
     },
     "伝": {
       "meaning": "transmit",
-      "primary": "つだう",
+      "primary": "つたえる",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "つだう"
+      ],
       "readings": [
         {
           "type": "kun",
-          "kana": "つだう",
-          "anchor": "手伝う",
-          "anchorReading": "てつだう",
-          "kunDisplay": "つだ.う",
-          "surface": "つだ"
+          "kana": "つたえる",
+          "anchor": "伝える",
+          "anchorReading": "つたえる",
+          "kunDisplay": "つた.える"
         },
         {
           "type": "on",
           "kana": "でん",
           "anchor": "伝統",
           "anchorReading": "でんとう",
-          "kunDisplay": "",
-          "surface": "でん"
-        },
-        {
-          "type": "kun",
-          "kana": "つたえる",
-          "anchor": "伝える",
-          "anchorReading": "つたえる",
-          "kunDisplay": "つた.える",
-          "surface": "つた"
+          "kunDisplay": ""
         }
       ],
       "sentences": []
     },
     "似": {
-      "meaning": "becoming",
+      "meaning": "resemble",
       "primary": "にる",
       "jlpt": "N3",
       "source": "aligned",
@@ -7831,8 +7667,8 @@
         {
           "type": "on",
           "kana": "じ",
-          "anchor": "類似する",
-          "anchorReading": "るいじする",
+          "anchor": "類似",
+          "anchorReading": "るいじ",
           "kunDisplay": "",
           "surface": "じ"
         }
@@ -7867,7 +7703,7 @@
       "sentences": []
     },
     "余": {
-      "meaning": "too much",
+      "meaning": "surplus; extra",
       "primary": "よ",
       "jlpt": "N3",
       "source": "aligned",
@@ -7930,27 +7766,25 @@
     },
     "供": {
       "meaning": "submit",
-      "primary": "とも",
+      "primary": "きょう",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
-          "type": "kun",
-          "kana": "とも",
-          "anchor": "子供",
-          "anchorReading": "こども",
-          "kunDisplay": "とも",
-          "surface": "ども"
-        },
-        {
           "type": "on",
           "kana": "きょう",
-          "anchor": "供給する",
-          "anchorReading": "きょうきゅうする",
-          "kunDisplay": "",
-          "surface": "きょう"
+          "anchor": "提供",
+          "anchorReading": "ていきょう",
+          "kunDisplay": ""
+        },
+        {
+          "type": "kun",
+          "kana": "とも",
+          "anchor": "お供",
+          "anchorReading": "おとも",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -7993,8 +7827,8 @@
         {
           "type": "on",
           "kana": "けい",
-          "anchor": "関係する",
-          "anchorReading": "かんけいする",
+          "anchor": "関係",
+          "anchorReading": "かんけい",
           "kunDisplay": "",
           "surface": "けい"
         },
@@ -8047,8 +7881,8 @@
         {
           "type": "on",
           "kana": "とう",
-          "anchor": "面倒",
-          "anchorReading": "めんどう",
+          "anchor": "倒産",
+          "anchorReading": "とうさん",
           "kunDisplay": "",
           "surface": "どう"
         },
@@ -8119,89 +7953,58 @@
     },
     "偉": {
       "meaning": "admirable",
-      "primary": "い",
+      "primary": "えらい",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
-          "type": "on",
-          "kana": "い",
-          "anchor": "偉大",
-          "anchorReading": "いだい",
-          "kunDisplay": "",
-          "surface": "い"
-        },
-        {
           "type": "kun",
           "kana": "えらい",
           "anchor": "偉い",
           "anchorReading": "えらい",
-          "kunDisplay": "えら.い",
-          "surface": "えら"
+          "kunDisplay": ""
         }
       ],
       "sentences": []
     },
     "側": {
       "meaning": "side",
-      "primary": "そば",
+      "primary": "がわ",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "そば"
+      ],
       "readings": [
         {
           "type": "kun",
-          "kana": "そば",
-          "anchor": "側",
-          "anchorReading": "そば",
-          "kunDisplay": "そば",
-          "surface": "そば"
-        },
-        {
-          "type": "kun",
-          "kana": "かわ",
-          "anchor": "両側",
-          "anchorReading": "りょうがわ",
-          "kunDisplay": "かわ",
-          "surface": "がわ"
-        },
-        {
-          "type": "on",
-          "kana": "そく",
-          "anchor": "側面",
-          "anchorReading": "そくめん",
-          "kunDisplay": "",
-          "surface": "そく"
+          "kana": "がわ",
+          "anchor": "右側",
+          "anchorReading": "みぎがわ",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
     },
     "偶": {
       "meaning": "accidentally",
-      "primary": "たま",
+      "primary": "ぐう",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "たま"
+      ],
       "readings": [
-        {
-          "type": "kun",
-          "kana": "たま",
-          "anchor": "偶",
-          "anchorReading": "たま",
-          "kunDisplay": "たま",
-          "surface": "たま"
-        },
         {
           "type": "on",
           "kana": "ぐう",
           "anchor": "偶然",
           "anchorReading": "ぐうぜん",
-          "kunDisplay": "",
-          "surface": "ぐう"
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -8217,8 +8020,8 @@
         {
           "type": "on",
           "kana": "び",
-          "anchor": "準備する",
-          "anchorReading": "じゅんびする",
+          "anchor": "準備",
+          "anchorReading": "じゅんび",
           "kunDisplay": "",
           "surface": "び"
         },
@@ -8260,8 +8063,8 @@
         {
           "type": "on",
           "kana": "どう",
-          "anchor": "労働する",
-          "anchorReading": "ろうどうする",
+          "anchor": "労働",
+          "anchorReading": "ろうどう",
           "kunDisplay": "",
           "surface": "どう"
         }
@@ -8269,7 +8072,7 @@
       "sentences": []
     },
     "優": {
-      "meaning": "tenderness",
+      "meaning": "gentle; excellent",
       "primary": "やさしい",
       "jlpt": "N3",
       "source": "aligned",
@@ -8361,6 +8164,13 @@
           "anchorReading": "すべて",
           "kunDisplay": "すべ.て",
           "surface": "すべ"
+        },
+        {
+          "type": "kun",
+          "kana": "まったく",
+          "anchor": "全く",
+          "anchorReading": "まったく",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -8476,8 +8286,8 @@
         {
           "type": "on",
           "kana": "しょ",
-          "anchor": "処理する",
-          "anchorReading": "しょりする",
+          "anchor": "処理",
+          "anchorReading": "しょり",
           "kunDisplay": "",
           "surface": "しょ"
         }
@@ -8549,8 +8359,8 @@
         {
           "type": "on",
           "kana": "はん",
-          "anchor": "判断する",
-          "anchorReading": "はんだんする",
+          "anchor": "判断",
+          "anchorReading": "はんだん",
           "kunDisplay": "",
           "surface": "はん"
         }
@@ -8587,8 +8397,8 @@
         {
           "type": "on",
           "kana": "とう",
-          "anchor": "到着する",
-          "anchorReading": "とうちゃくする",
+          "anchor": "到着",
+          "anchorReading": "とうちゃく",
           "kunDisplay": "",
           "surface": "とう"
         }
@@ -8687,8 +8497,8 @@
         {
           "type": "on",
           "kana": "か",
-          "anchor": "加減する",
-          "anchorReading": "かげんする",
+          "anchor": "参加",
+          "anchorReading": "さんか",
           "kunDisplay": "",
           "surface": "か"
         },
@@ -8757,8 +8567,8 @@
         {
           "type": "on",
           "kana": "ど",
-          "anchor": "努力する",
-          "anchorReading": "どりょくする",
+          "anchor": "努力",
+          "anchorReading": "どりょく",
           "kunDisplay": "",
           "surface": "ど"
         },
@@ -8779,23 +8589,17 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "いたわる"
+      ],
       "readings": [
         {
           "type": "on",
           "kana": "ろう",
-          "anchor": "苦労する",
-          "anchorReading": "くろうする",
+          "anchor": "苦労",
+          "anchorReading": "くろう",
           "kunDisplay": "",
           "surface": "ろう"
-        },
-        {
-          "type": "kun",
-          "kana": "いたわる",
-          "anchor": "労る",
-          "anchorReading": "いたわる",
-          "kunDisplay": "いたわ.る",
-          "surface": "いたわ"
         }
       ],
       "sentences": []
@@ -8825,7 +8629,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "まさる"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -8838,18 +8644,10 @@
         {
           "type": "on",
           "kana": "しょう",
-          "anchor": "優勝する",
-          "anchorReading": "ゆうしょうする",
+          "anchor": "優勝",
+          "anchorReading": "ゆうしょう",
           "kunDisplay": "",
           "surface": "しょう"
-        },
-        {
-          "type": "kun",
-          "kana": "まさる",
-          "anchor": "勝る",
-          "anchorReading": "まさる",
-          "kunDisplay": "まさ.る",
-          "surface": "まさ"
         }
       ],
       "sentences": []
@@ -8873,8 +8671,8 @@
         {
           "type": "on",
           "kana": "きん",
-          "anchor": "出勤する",
-          "anchorReading": "しゅっきんする",
+          "anchor": "出勤",
+          "anchorReading": "しゅっきん",
           "kunDisplay": "",
           "surface": "きん"
         }
@@ -8900,8 +8698,8 @@
         {
           "type": "on",
           "kana": "け",
-          "anchor": "化粧する",
-          "anchorReading": "けしょうする",
+          "anchor": "化粧",
+          "anchorReading": "けしょう",
           "kunDisplay": "",
           "surface": "け"
         },
@@ -8971,34 +8769,32 @@
       "sentences": []
     },
     "原": {
-      "meaning": "meadow",
-      "primary": "はら",
+      "meaning": "origin; field",
+      "primary": "げん",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
-          "type": "kun",
-          "kana": "はら",
-          "anchor": "原",
-          "anchorReading": "はら",
-          "kunDisplay": "はら",
-          "surface": "はら"
-        },
-        {
           "type": "on",
           "kana": "げん",
-          "anchor": "原稿",
-          "anchorReading": "げんこう",
-          "kunDisplay": "",
-          "surface": "げん"
+          "anchor": "原因",
+          "anchorReading": "げんいん",
+          "kunDisplay": ""
+        },
+        {
+          "type": "kun",
+          "kana": "はら",
+          "anchor": "野原",
+          "anchorReading": "のはら",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
     },
     "参": {
-      "meaning": "nonplussed",
+      "meaning": "visit (humble); take part",
       "primary": "まいる",
       "jlpt": "N3",
       "source": "aligned",
@@ -9024,8 +8820,8 @@
         {
           "type": "kun",
           "kana": "まい",
-          "anchor": "お参りする",
-          "anchorReading": "おまいりする",
+          "anchor": "お参り",
+          "anchorReading": "おまいり",
           "kunDisplay": "まい",
           "surface": "まい"
         }
@@ -9038,23 +8834,17 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "たん"
+      ],
       "readings": [
         {
           "type": "on",
           "kana": "はん",
-          "anchor": "反対する",
-          "anchorReading": "はんたいする",
+          "anchor": "反対",
+          "anchorReading": "はんたい",
           "kunDisplay": "",
           "surface": "はん"
-        },
-        {
-          "type": "on",
-          "kana": "たん",
-          "anchor": "反",
-          "anchorReading": "たん",
-          "kunDisplay": "",
-          "surface": "たん"
         }
       ],
       "sentences": []
@@ -9100,7 +8890,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "とり"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -9111,18 +8903,10 @@
           "surface": "と"
         },
         {
-          "type": "kun",
-          "kana": "とり",
-          "anchor": "取り替える",
-          "anchorReading": "とりかえる",
-          "kunDisplay": "と.り",
-          "surface": "と"
-        },
-        {
           "type": "on",
           "kana": "しゅ",
-          "anchor": "取材する",
-          "anchorReading": "しゅざいする",
+          "anchor": "取材",
+          "anchorReading": "しゅざい",
           "kunDisplay": "",
           "surface": "しゅ"
         }
@@ -9148,8 +8932,8 @@
         {
           "type": "on",
           "kana": "じゅ",
-          "anchor": "受話器",
-          "anchorReading": "じゅわき",
+          "anchor": "受験",
+          "anchorReading": "じゅけん",
           "kunDisplay": "",
           "surface": "じゅ"
         },
@@ -9165,7 +8949,7 @@
       "sentences": []
     },
     "号": {
-      "meaning": "nickname",
+      "meaning": "number; issue",
       "primary": "ごう",
       "jlpt": "N3",
       "source": "aligned",
@@ -9184,8 +8968,8 @@
       "sentences": []
     },
     "合": {
-      "meaning": "fit",
-      "primary": "あい",
+      "meaning": "fit; match; together",
+      "primary": "あう",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
@@ -9193,33 +8977,30 @@
       "readings": [
         {
           "type": "kun",
-          "kana": "あい",
-          "anchor": "具合",
-          "anchorReading": "ぐあい",
-          "kunDisplay": "あい",
-          "surface": "あい"
+          "kana": "あう",
+          "anchor": "合う",
+          "anchorReading": "あう",
+          "kunDisplay": "あ.う"
         },
         {
           "type": "on",
           "kana": "ごう",
-          "anchor": "都合する",
-          "anchorReading": "つごうする",
-          "kunDisplay": "",
-          "surface": "ごう"
+          "anchor": "都合",
+          "anchorReading": "つごう",
+          "kunDisplay": ""
         },
         {
           "type": "kun",
-          "kana": "あう",
-          "anchor": "合う",
-          "anchorReading": "あう",
-          "kunDisplay": "あ.う",
-          "surface": "あ"
+          "kana": "あい",
+          "anchor": "試合",
+          "anchorReading": "しあい",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
     },
     "向": {
-      "meaning": "yonder",
+      "meaning": "face; toward",
       "primary": "むこう",
       "jlpt": "N3",
       "source": "aligned",
@@ -9272,8 +9053,8 @@
         {
           "type": "on",
           "kana": "くん",
-          "anchor": "君主",
-          "anchorReading": "くんしゅ",
+          "anchor": "田中君",
+          "anchorReading": "たなかくん",
           "kunDisplay": "",
           "surface": "くん"
         }
@@ -9291,8 +9072,8 @@
         {
           "type": "on",
           "kana": "ひ",
-          "anchor": "否定する",
-          "anchorReading": "ひていする",
+          "anchor": "否定",
+          "anchorReading": "ひてい",
           "kunDisplay": "",
           "surface": "ひ"
         }
@@ -9318,8 +9099,8 @@
         {
           "type": "on",
           "kana": "きゅう",
-          "anchor": "吸収する",
-          "anchorReading": "きゅうしゅうする",
+          "anchor": "吸収",
+          "anchorReading": "きゅうしゅう",
           "kunDisplay": "",
           "surface": "きゅう"
         }
@@ -9345,8 +9126,8 @@
         {
           "type": "on",
           "kana": "すい",
-          "anchor": "吹奏する",
-          "anchorReading": "すいそうする",
+          "anchor": "吹奏",
+          "anchorReading": "すいそう",
           "kunDisplay": "",
           "surface": "すい"
         }
@@ -9354,7 +9135,7 @@
       "sentences": []
     },
     "告": {
-      "meaning": "revelation",
+      "meaning": "tell; announce",
       "primary": "こく",
       "jlpt": "N3",
       "source": "aligned",
@@ -9364,8 +9145,8 @@
         {
           "type": "on",
           "kana": "こく",
-          "anchor": "警告する",
-          "anchorReading": "けいこくする",
+          "anchor": "警告",
+          "anchorReading": "けいこく",
           "kunDisplay": "",
           "surface": "こく"
         },
@@ -9399,8 +9180,8 @@
         {
           "type": "on",
           "kana": "こ",
-          "anchor": "呼吸する",
-          "anchorReading": "こきゅうする",
+          "anchor": "呼吸",
+          "anchorReading": "こきゅう",
           "kunDisplay": "",
           "surface": "こ"
         }
@@ -9478,7 +9259,7 @@
       "sentences": []
     },
     "商": {
-      "meaning": "make a deal",
+      "meaning": "trade; commerce",
       "primary": "しょう",
       "jlpt": "N3",
       "source": "aligned",
@@ -9634,8 +9415,8 @@
         {
           "type": "on",
           "kana": "ざい",
-          "anchor": "存在する",
-          "anchorReading": "そんざいする",
+          "anchor": "存在",
+          "anchorReading": "そんざい",
           "kunDisplay": "",
           "surface": "ざい"
         }
@@ -9653,8 +9434,8 @@
         {
           "type": "on",
           "kana": "ほう",
-          "anchor": "電報",
-          "anchorReading": "でんぽう",
+          "anchor": "情報",
+          "anchorReading": "じょうほう",
           "kunDisplay": "",
           "surface": "ぽう"
         }
@@ -9680,8 +9461,8 @@
         {
           "type": "on",
           "kana": "ぞう",
-          "anchor": "増加する",
-          "anchorReading": "ぞうかする",
+          "anchor": "増加",
+          "anchorReading": "ぞうか",
           "kunDisplay": "",
           "surface": "ぞう"
         },
@@ -9715,8 +9496,8 @@
         {
           "type": "on",
           "kana": "せい",
-          "anchor": "歓声",
-          "anchorReading": "かんせい",
+          "anchor": "音声",
+          "anchorReading": "おんせい",
           "kunDisplay": "",
           "surface": "せい"
         }
@@ -9822,35 +9603,32 @@
     },
     "夫": {
       "meaning": "husband",
-      "primary": "ふ",
+      "primary": "おっと",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
-          "type": "on",
-          "kana": "ふ",
-          "anchor": "丈夫",
-          "anchorReading": "じょうぶ",
-          "kunDisplay": "",
-          "surface": "ぶ"
-        },
-        {
           "type": "kun",
           "kana": "おっと",
           "anchor": "夫",
           "anchorReading": "おっと",
-          "kunDisplay": "おっと",
-          "surface": "おっと"
+          "kunDisplay": ""
         },
         {
           "type": "on",
           "kana": "ふう",
           "anchor": "夫婦",
           "anchorReading": "ふうふ",
-          "kunDisplay": "",
-          "surface": "ふう"
+          "kunDisplay": ""
+        },
+        {
+          "type": "on",
+          "kana": "ふ",
+          "anchor": "夫人",
+          "anchorReading": "ふじん",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -9866,8 +9644,8 @@
         {
           "type": "on",
           "kana": "しつ",
-          "anchor": "失敗する",
-          "anchorReading": "しっぱいする",
+          "anchor": "失礼",
+          "anchorReading": "しつれい",
           "kunDisplay": "",
           "surface": "しっ"
         },
@@ -9883,28 +9661,33 @@
       "sentences": []
     },
     "好": {
-      "meaning": "fond",
-      "primary": "こう",
+      "meaning": "like; fond",
+      "primary": "すき",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
+          "type": "kun",
+          "kana": "すき",
+          "anchor": "好き",
+          "anchorReading": "すき",
+          "kunDisplay": ""
+        },
+        {
           "type": "on",
           "kana": "こう",
           "anchor": "格好",
           "anchorReading": "かっこう",
-          "kunDisplay": "",
-          "surface": "こう"
+          "kunDisplay": ""
         },
         {
           "type": "kun",
           "kana": "このむ",
           "anchor": "好む",
           "anchorReading": "このむ",
-          "kunDisplay": "この.む",
-          "surface": "この"
+          "kunDisplay": "この.む"
         }
       ],
       "sentences": []
@@ -9966,8 +9749,8 @@
         {
           "type": "on",
           "kana": "こん",
-          "anchor": "結婚する",
-          "anchorReading": "けっこんする",
+          "anchor": "結婚",
+          "anchorReading": "けっこん",
           "kunDisplay": "",
           "surface": "こん"
         }
@@ -9985,8 +9768,8 @@
         {
           "type": "on",
           "kana": "ふ",
-          "anchor": "看護婦",
-          "anchorReading": "かんごふ",
+          "anchor": "主婦",
+          "anchorReading": "しゅふ",
           "kunDisplay": "",
           "surface": "ふ"
         }
@@ -10004,8 +9787,8 @@
         {
           "type": "on",
           "kana": "そん",
-          "anchor": "存在する",
-          "anchorReading": "そんざいする",
+          "anchor": "存在",
+          "anchorReading": "そんざい",
           "kunDisplay": "",
           "surface": "そん"
         }
@@ -10033,35 +9816,25 @@
     },
     "守": {
       "meaning": "protect",
-      "primary": "す",
+      "primary": "まもる",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
-          "type": "on",
-          "kana": "す",
-          "anchor": "留守にする",
-          "anchorReading": "るすにする",
-          "kunDisplay": "",
-          "surface": "す"
-        },
-        {
-          "type": "on",
-          "kana": "しゅ",
-          "anchor": "守衛",
-          "anchorReading": "しゅえい",
-          "kunDisplay": "",
-          "surface": "しゅ"
-        },
-        {
           "type": "kun",
           "kana": "まもる",
           "anchor": "守る",
           "anchorReading": "まもる",
-          "kunDisplay": "まも.る",
-          "surface": "まも"
+          "kunDisplay": "まも.る"
+        },
+        {
+          "type": "on",
+          "kana": "す",
+          "anchor": "留守",
+          "anchorReading": "るす",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -10115,16 +9888,16 @@
         {
           "type": "on",
           "kana": "てい",
-          "anchor": "予定する",
-          "anchorReading": "よていする",
+          "anchor": "予定",
+          "anchorReading": "よてい",
           "kunDisplay": "",
           "surface": "てい"
         },
         {
           "type": "on",
           "kana": "じょう",
-          "anchor": "勘定する",
-          "anchorReading": "かんじょうする",
+          "anchor": "勘定",
+          "anchorReading": "かんじょう",
           "kunDisplay": "",
           "surface": "じょう"
         },
@@ -10141,35 +9914,25 @@
     },
     "実": {
       "meaning": "truth; reality",
-      "primary": "み",
+      "primary": "じつ",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
+          "type": "on",
+          "kana": "じつ",
+          "anchor": "実は",
+          "anchorReading": "じつは",
+          "kunDisplay": ""
+        },
+        {
           "type": "kun",
           "kana": "み",
           "anchor": "実",
           "anchorReading": "み",
-          "kunDisplay": "み",
-          "surface": "み"
-        },
-        {
-          "type": "on",
-          "kana": "じつ",
-          "anchor": "確実",
-          "anchorReading": "かくじつ",
-          "kunDisplay": "",
-          "surface": "じつ"
-        },
-        {
-          "type": "kun",
-          "kana": "みのる",
-          "anchor": "実る",
-          "anchorReading": "みのる",
-          "kunDisplay": "みの.る",
-          "surface": "みの"
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -10231,8 +9994,8 @@
         {
           "type": "on",
           "kana": "よう",
-          "anchor": "容易",
-          "anchorReading": "ようい",
+          "anchor": "内容",
+          "anchorReading": "ないよう",
           "kunDisplay": "",
           "surface": "よう"
         }
@@ -10285,8 +10048,8 @@
         {
           "type": "on",
           "kana": "き",
-          "anchor": "寄付する",
-          "anchorReading": "きふする",
+          "anchor": "寄付",
+          "anchorReading": "きふ",
           "kunDisplay": "",
           "surface": "き"
         },
@@ -10420,8 +10183,8 @@
         {
           "type": "on",
           "kana": "たい",
-          "anchor": "反対する",
-          "anchorReading": "はんたいする",
+          "anchor": "反対",
+          "anchorReading": "はんたい",
           "kunDisplay": "",
           "surface": "たい"
         }
@@ -10466,8 +10229,8 @@
         {
           "type": "on",
           "kana": "きょ",
-          "anchor": "住居する",
-          "anchorReading": "じゅうきょする",
+          "anchor": "住居",
+          "anchorReading": "じゅうきょ",
           "kunDisplay": "",
           "surface": "きょ"
         },
@@ -10493,8 +10256,8 @@
         {
           "type": "on",
           "kana": "さ",
-          "anchor": "差す",
-          "anchorReading": "さす",
+          "anchor": "時差",
+          "anchorReading": "じさ",
           "kunDisplay": "",
           "surface": "さ"
         }
@@ -10675,7 +10438,7 @@
       "sentences": []
     },
     "座": {
-      "meaning": "squat",
+      "meaning": "sit; seat",
       "primary": "すわる",
       "jlpt": "N3",
       "source": "aligned",
@@ -10766,8 +10529,8 @@
         {
           "type": "on",
           "kana": "いん",
-          "anchor": "引退する",
-          "anchorReading": "いんたいする",
+          "anchor": "引退",
+          "anchorReading": "いんたい",
           "kunDisplay": "",
           "surface": "いん"
         }
@@ -10776,35 +10539,27 @@
     },
     "当": {
       "meaning": "hit",
-      "primary": "とう",
+      "primary": "あたる",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "あて"
+      ],
       "readings": [
+        {
+          "type": "kun",
+          "kana": "あたる",
+          "anchor": "当たる",
+          "anchorReading": "あたる",
+          "kunDisplay": "あ.たる"
+        },
         {
           "type": "on",
           "kana": "とう",
-          "anchor": "お弁当",
-          "anchorReading": "おべんとう",
-          "kunDisplay": "",
-          "surface": "とう"
-        },
-        {
-          "type": "kun",
-          "kana": "あて",
-          "anchor": "当て",
-          "anchorReading": "あて",
-          "kunDisplay": "あ.て",
-          "surface": "あ"
-        },
-        {
-          "type": "kun",
-          "kana": "あたり",
-          "anchor": "心当たり",
-          "anchorReading": "こころあたり",
-          "kunDisplay": "あ.たり",
-          "surface": "あ"
+          "anchor": "本当",
+          "anchorReading": "ほんとう",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -10850,7 +10605,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "えき"
+      ],
       "readings": [
         {
           "type": "on",
@@ -10859,14 +10616,6 @@
           "anchorReading": "やくにたつ",
           "kunDisplay": "",
           "surface": "やく"
-        },
-        {
-          "type": "on",
-          "kana": "えき",
-          "anchor": "役",
-          "anchorReading": "えき",
-          "kunDisplay": "",
-          "surface": "えき"
         }
       ],
       "sentences": []
@@ -10978,6 +10727,13 @@
           "anchorReading": "ひつよう",
           "kunDisplay": "",
           "surface": "ひつ"
+        },
+        {
+          "type": "kun",
+          "kana": "かならず",
+          "anchor": "必ず",
+          "anchorReading": "かならず",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -11093,8 +10849,8 @@
         {
           "type": "on",
           "kana": "ふ",
-          "anchor": "恐怖する",
-          "anchorReading": "きょうふする",
+          "anchor": "恐怖",
+          "anchorReading": "きょうふ",
           "kunDisplay": "",
           "surface": "ふ"
         }
@@ -11131,8 +10887,8 @@
         {
           "type": "on",
           "kana": "きょう",
-          "anchor": "恐怖する",
-          "anchorReading": "きょうふする",
+          "anchor": "恐怖",
+          "anchorReading": "きょうふ",
           "kunDisplay": "",
           "surface": "きょう"
         },
@@ -11161,7 +10917,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "はじらう"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -11178,14 +10936,6 @@
           "anchorReading": "はじ",
           "kunDisplay": "はじ",
           "surface": "はじ"
-        },
-        {
-          "type": "kun",
-          "kana": "はじらう",
-          "anchor": "恥じらう",
-          "anchorReading": "はじらう",
-          "kunDisplay": "は.じらう",
-          "surface": "は"
         }
       ],
       "sentences": []
@@ -11209,8 +10959,8 @@
         {
           "type": "on",
           "kana": "そく",
-          "anchor": "休息する",
-          "anchorReading": "きゅうそくする",
+          "anchor": "休息",
+          "anchorReading": "きゅうそく",
           "kunDisplay": "",
           "surface": "そく"
         }
@@ -11404,23 +11154,17 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "いくさ"
+      ],
       "readings": [
         {
           "type": "on",
           "kana": "せん",
-          "anchor": "戦争する",
-          "anchorReading": "せんそうする",
+          "anchor": "戦争",
+          "anchorReading": "せんそう",
           "kunDisplay": "",
           "surface": "せん"
-        },
-        {
-          "type": "kun",
-          "kana": "いくさ",
-          "anchor": "戦",
-          "anchorReading": "いくさ",
-          "kunDisplay": "いくさ",
-          "surface": "いくさ"
         },
         {
           "type": "kun",
@@ -11571,8 +11315,8 @@
         {
           "type": "on",
           "kana": "とう",
-          "anchor": "投票する",
-          "anchorReading": "とうひょうする",
+          "anchor": "投票",
+          "anchorReading": "とうひょう",
           "kunDisplay": "",
           "surface": "とう"
         }
@@ -11598,8 +11342,8 @@
         {
           "type": "on",
           "kana": "せつ",
-          "anchor": "骨折する",
-          "anchorReading": "こっせつする",
+          "anchor": "骨折",
+          "anchorReading": "こっせつ",
           "kunDisplay": "",
           "surface": "せつ"
         },
@@ -11615,7 +11359,7 @@
       "sentences": []
     },
     "抜": {
-      "meaning": "slip out",
+      "meaning": "pull out",
       "primary": "ぬく",
       "jlpt": "N3",
       "source": "aligned",
@@ -11651,35 +11395,27 @@
     },
     "抱": {
       "meaning": "embrace",
-      "primary": "いだく",
+      "primary": "だく",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "いだく"
+      ],
       "readings": [
         {
           "type": "kun",
-          "kana": "いだく",
+          "kana": "だく",
           "anchor": "抱く",
-          "anchorReading": "いだく",
-          "kunDisplay": "いだ.く",
-          "surface": "いだ"
-        },
-        {
-          "type": "on",
-          "kana": "ほう",
-          "anchor": "介抱する",
-          "anchorReading": "かいほうする",
-          "kunDisplay": "",
-          "surface": "ほう"
+          "anchorReading": "だく",
+          "kunDisplay": "だ.く"
         },
         {
           "type": "kun",
           "kana": "かかえる",
           "anchor": "抱える",
           "anchorReading": "かかえる",
-          "kunDisplay": "かか.える",
-          "surface": "かか"
+          "kunDisplay": "かか.える"
         }
       ],
       "sentences": []
@@ -11722,8 +11458,8 @@
         {
           "type": "on",
           "kana": "しょう",
-          "anchor": "招待する",
-          "anchorReading": "しょうたいする",
+          "anchor": "招待",
+          "anchorReading": "しょうたい",
           "kunDisplay": "",
           "surface": "しょう"
         },
@@ -11757,8 +11493,8 @@
         {
           "type": "on",
           "kana": "し",
-          "anchor": "指導する",
-          "anchorReading": "しどうする",
+          "anchor": "指導",
+          "anchorReading": "しどう",
           "kunDisplay": "",
           "surface": "し"
         },
@@ -11792,8 +11528,8 @@
         {
           "type": "on",
           "kana": "ほ",
-          "anchor": "逮捕する",
-          "anchorReading": "たいほする",
+          "anchor": "逮捕",
+          "anchorReading": "たいほ",
           "kunDisplay": "",
           "surface": "ほ"
         },
@@ -11844,7 +11580,7 @@
       "sentences": []
     },
     "探": {
-      "meaning": "grope",
+      "meaning": "search; look for",
       "primary": "さがす",
       "jlpt": "N3",
       "source": "aligned",
@@ -11870,8 +11606,8 @@
         {
           "type": "on",
           "kana": "たん",
-          "anchor": "探検する",
-          "anchorReading": "たんけんする",
+          "anchor": "探検",
+          "anchorReading": "たんけん",
           "kunDisplay": "",
           "surface": "たん"
         }
@@ -11889,8 +11625,8 @@
         {
           "type": "on",
           "kana": "し",
-          "anchor": "支度する",
-          "anchorReading": "したくする",
+          "anchor": "支度",
+          "anchorReading": "したく",
           "kunDisplay": "",
           "surface": "し"
         },
@@ -11919,13 +11655,15 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "はなれる"
+      ],
       "readings": [
         {
           "type": "on",
           "kana": "ほう",
-          "anchor": "放送する",
-          "anchorReading": "ほうそうする",
+          "anchor": "放送",
+          "anchorReading": "ほうそう",
           "kunDisplay": "",
           "surface": "ほう"
         },
@@ -11935,14 +11673,6 @@
           "anchor": "放す",
           "anchorReading": "はなす",
           "kunDisplay": "はな.す",
-          "surface": "はな"
-        },
-        {
-          "type": "kun",
-          "kana": "はなれる",
-          "anchor": "放れる",
-          "anchorReading": "はなれる",
-          "kunDisplay": "はな.れる",
           "surface": "はな"
         }
       ],
@@ -11978,8 +11708,8 @@
         {
           "type": "on",
           "kana": "はい",
-          "anchor": "失敗する",
-          "anchorReading": "しっぱいする",
+          "anchor": "失敗",
+          "anchorReading": "しっぱい",
           "kunDisplay": "",
           "surface": "ぱい"
         }
@@ -11997,8 +11727,8 @@
         {
           "type": "on",
           "kana": "さん",
-          "anchor": "散歩する",
-          "anchorReading": "さんぽする",
+          "anchor": "散歩",
+          "anchorReading": "さんぽ",
           "kunDisplay": "",
           "surface": "さん"
         },
@@ -12075,8 +11805,8 @@
         {
           "type": "on",
           "kana": "だん",
-          "anchor": "横断する",
-          "anchorReading": "おうだんする",
+          "anchor": "横断",
+          "anchorReading": "おうだん",
           "kunDisplay": "",
           "surface": "だん"
         }
@@ -12102,8 +11832,8 @@
         {
           "type": "on",
           "kana": "えき",
-          "anchor": "貿易する",
-          "anchorReading": "ぼうえきする",
+          "anchor": "貿易",
+          "anchorReading": "ぼうえき",
           "kunDisplay": "",
           "surface": "えき"
         },
@@ -12253,8 +11983,8 @@
         {
           "type": "on",
           "kana": "あん",
-          "anchor": "暗記する",
-          "anchorReading": "あんきする",
+          "anchor": "暗記",
+          "anchorReading": "あんき",
           "kunDisplay": "",
           "surface": "あん"
         }
@@ -12262,8 +11992,8 @@
       "sentences": []
     },
     "暮": {
-      "meaning": "evening",
-      "primary": "くれる",
+      "meaning": "live; get dark",
+      "primary": "くらす",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
@@ -12271,19 +12001,17 @@
       "readings": [
         {
           "type": "kun",
-          "kana": "くれる",
-          "anchor": "暮れる",
-          "anchorReading": "くれる",
-          "kunDisplay": "く.れる",
-          "surface": "く"
-        },
-        {
-          "type": "kun",
           "kana": "くらす",
           "anchor": "暮らす",
           "anchorReading": "くらす",
-          "kunDisplay": "く.らす",
-          "surface": "く"
+          "kunDisplay": "くら.す"
+        },
+        {
+          "type": "kun",
+          "kana": "くれる",
+          "anchor": "暮れる",
+          "anchorReading": "くれる",
+          "kunDisplay": "く.れる"
         }
       ],
       "sentences": []
@@ -12307,8 +12035,8 @@
         {
           "type": "on",
           "kana": "きょく",
-          "anchor": "作曲する",
-          "anchorReading": "さっきょくする",
+          "anchor": "作曲",
+          "anchorReading": "さっきょく",
           "kunDisplay": "",
           "surface": "きょく"
         },
@@ -12329,23 +12057,17 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "ふける"
+      ],
       "readings": [
         {
           "type": "on",
           "kana": "こう",
-          "anchor": "変更する",
-          "anchorReading": "へんこうする",
+          "anchor": "変更",
+          "anchorReading": "へんこう",
           "kunDisplay": "",
           "surface": "こう"
-        },
-        {
-          "type": "kun",
-          "kana": "ふける",
-          "anchor": "更ける",
-          "anchorReading": "ふける",
-          "kunDisplay": "ふ.ける",
-          "surface": "ふ"
         }
       ],
       "sentences": []
@@ -12365,6 +12087,13 @@
           "anchorReading": "さいきん",
           "kunDisplay": "",
           "surface": "さい"
+        },
+        {
+          "type": "kun",
+          "kana": "もっとも",
+          "anchor": "最も",
+          "anchorReading": "もっとも",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -12388,8 +12117,8 @@
         {
           "type": "on",
           "kana": "ぼう",
-          "anchor": "希望する",
-          "anchorReading": "きぼうする",
+          "anchor": "希望",
+          "anchorReading": "きぼう",
           "kunDisplay": "",
           "surface": "ぼう"
         }
@@ -12421,7 +12150,10 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "ひつじ",
+        "まだ"
+      ],
       "readings": [
         {
           "type": "on",
@@ -12430,22 +12162,6 @@
           "anchorReading": "みらい",
           "kunDisplay": "",
           "surface": "み"
-        },
-        {
-          "type": "kun",
-          "kana": "ひつじ",
-          "anchor": "未",
-          "anchorReading": "ひつじ",
-          "kunDisplay": "ひつじ",
-          "surface": "ひつじ"
-        },
-        {
-          "type": "kun",
-          "kana": "まだ",
-          "anchor": "未だ",
-          "anchorReading": "まだ",
-          "kunDisplay": "ま.だ",
-          "surface": "ま"
         }
       ],
       "sentences": []
@@ -12456,7 +12172,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "うら"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -12473,14 +12191,6 @@
           "anchorReading": "そまつ",
           "kunDisplay": "",
           "surface": "まつ"
-        },
-        {
-          "type": "kun",
-          "kana": "うら",
-          "anchor": "末",
-          "anchorReading": "うら",
-          "kunDisplay": "うら",
-          "surface": "うら"
         }
       ],
       "sentences": []
@@ -12496,8 +12206,8 @@
         {
           "type": "on",
           "kana": "そく",
-          "anchor": "約束する",
-          "anchorReading": "やくそくする",
+          "anchor": "約束",
+          "anchorReading": "やくそく",
           "kunDisplay": "",
           "surface": "そく"
         },
@@ -12518,23 +12228,17 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "さかずき"
+      ],
       "readings": [
         {
           "type": "on",
           "kana": "はい",
-          "anchor": "乾杯する",
-          "anchorReading": "かんぱいする",
+          "anchor": "乾杯",
+          "anchorReading": "かんぱい",
           "kunDisplay": "",
           "surface": "ぱい"
-        },
-        {
-          "type": "kun",
-          "kana": "さかずき",
-          "anchor": "杯",
-          "anchorReading": "さかずき",
-          "kunDisplay": "さかずき",
-          "surface": "さかずき"
         }
       ],
       "sentences": []
@@ -12545,7 +12249,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "はて"
+      ],
       "readings": [
         {
           "type": "on",
@@ -12561,14 +12267,6 @@
           "anchor": "果たす",
           "anchorReading": "はたす",
           "kunDisplay": "は.たす",
-          "surface": "は"
-        },
-        {
-          "type": "kun",
-          "kana": "はて",
-          "anchor": "果て",
-          "anchorReading": "はて",
-          "kunDisplay": "は.て",
           "surface": "は"
         }
       ],
@@ -12639,8 +12337,8 @@
         {
           "type": "on",
           "kana": "よう",
-          "anchor": "様",
-          "anchorReading": "よう",
+          "anchor": "様子",
+          "anchorReading": "ようす",
           "kunDisplay": "",
           "surface": "よう"
         },
@@ -12693,8 +12391,8 @@
         {
           "type": "on",
           "kana": "おう",
-          "anchor": "横断する",
-          "anchorReading": "おうだんする",
+          "anchor": "横断",
+          "anchorReading": "おうだん",
           "kunDisplay": "",
           "surface": "おう"
         }
@@ -12707,7 +12405,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "はた"
+      ],
       "readings": [
         {
           "type": "on",
@@ -12716,14 +12416,6 @@
           "anchorReading": "ひこうき",
           "kunDisplay": "",
           "surface": "き"
-        },
-        {
-          "type": "kun",
-          "kana": "はた",
-          "anchor": "機",
-          "anchorReading": "はた",
-          "kunDisplay": "はた",
-          "surface": "はた"
         }
       ],
       "sentences": []
@@ -12863,8 +12555,8 @@
         {
           "type": "on",
           "kana": "さい",
-          "anchor": "万歳する",
-          "anchorReading": "ばんざいする",
+          "anchor": "何歳",
+          "anchorReading": "なんさい",
           "kunDisplay": "",
           "surface": "ざい"
         }
@@ -12944,8 +12636,8 @@
         {
           "type": "on",
           "kana": "さつ",
-          "anchor": "自殺する",
-          "anchorReading": "じさつする",
+          "anchor": "自殺",
+          "anchorReading": "じさつ",
           "kunDisplay": "",
           "surface": "さつ"
         }
@@ -12973,27 +12665,25 @@
     },
     "求": {
       "meaning": "seek",
-      "primary": "きゅう",
+      "primary": "もとめる",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
-          "type": "on",
-          "kana": "きゅう",
-          "anchor": "請求する",
-          "anchorReading": "せいきゅうする",
-          "kunDisplay": "",
-          "surface": "きゅう"
-        },
-        {
           "type": "kun",
           "kana": "もとめる",
           "anchor": "求める",
           "anchorReading": "もとめる",
-          "kunDisplay": "もと.める",
-          "surface": "もと"
+          "kunDisplay": "もと.める"
+        },
+        {
+          "type": "on",
+          "kana": "きゅう",
+          "anchor": "要求",
+          "anchorReading": "ようきゅう",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -13017,8 +12707,8 @@
         {
           "type": "on",
           "kana": "けつ",
-          "anchor": "解決する",
-          "anchorReading": "かいけつする",
+          "anchor": "解決",
+          "anchorReading": "かいけつ",
           "kunDisplay": "",
           "surface": "けつ"
         },
@@ -13035,35 +12725,32 @@
     },
     "治": {
       "meaning": "govern; heal",
-      "primary": "じ",
+      "primary": "なおる",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
+          "type": "kun",
+          "kana": "なおる",
+          "anchor": "治る",
+          "anchorReading": "なおる",
+          "kunDisplay": "なお.る"
+        },
+        {
           "type": "on",
           "kana": "じ",
           "anchor": "政治",
           "anchorReading": "せいじ",
-          "kunDisplay": "",
-          "surface": "じ"
+          "kunDisplay": ""
         },
         {
           "type": "on",
           "kana": "ち",
           "anchor": "自治",
           "anchorReading": "じち",
-          "kunDisplay": "",
-          "surface": "ち"
-        },
-        {
-          "type": "kun",
-          "kana": "なおる",
-          "anchor": "治る",
-          "anchorReading": "なおる",
-          "kunDisplay": "なお.る",
-          "surface": "なお"
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -13106,8 +12793,8 @@
         {
           "type": "on",
           "kana": "えい",
-          "anchor": "水泳する",
-          "anchorReading": "すいえいする",
+          "anchor": "水泳",
+          "anchorReading": "すいえい",
           "kunDisplay": "",
           "surface": "えい"
         }
@@ -13133,8 +12820,8 @@
         {
           "type": "on",
           "kana": "せん",
-          "anchor": "洗濯する",
-          "anchorReading": "せんたくする",
+          "anchor": "洗濯",
+          "anchorReading": "せんたく",
           "kunDisplay": "",
           "surface": "せん"
         }
@@ -13152,8 +12839,8 @@
         {
           "type": "on",
           "kana": "かつ",
-          "anchor": "生活する",
-          "anchorReading": "せいかつする",
+          "anchor": "生活",
+          "anchorReading": "せいかつ",
           "kunDisplay": "",
           "surface": "かつ"
         }
@@ -13166,7 +12853,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "ながれ"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -13179,18 +12868,10 @@
         {
           "type": "on",
           "kana": "りゅう",
-          "anchor": "流行する",
-          "anchorReading": "りゅうこうする",
+          "anchor": "流行",
+          "anchorReading": "りゅうこう",
           "kunDisplay": "",
           "surface": "りゅう"
-        },
-        {
-          "type": "kun",
-          "kana": "ながれ",
-          "anchor": "流れ",
-          "anchorReading": "ながれ",
-          "kunDisplay": "なが.れ",
-          "surface": "なが"
         }
       ],
       "sentences": []
@@ -13435,8 +13116,8 @@
         {
           "type": "on",
           "kana": "えん",
-          "anchor": "演技する",
-          "anchorReading": "えんぎする",
+          "anchor": "演技",
+          "anchorReading": "えんぎ",
           "kunDisplay": "",
           "surface": "えん"
         }
@@ -13449,7 +13130,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "つく"
+      ],
       "readings": [
         {
           "type": "on",
@@ -13458,14 +13141,6 @@
           "anchorReading": "こうさてん",
           "kunDisplay": "",
           "surface": "てん"
-        },
-        {
-          "type": "kun",
-          "kana": "つく",
-          "anchor": "点く",
-          "anchorReading": "つく",
-          "kunDisplay": "つ.く",
-          "surface": "つ"
         }
       ],
       "sentences": []
@@ -13516,8 +13191,8 @@
         {
           "type": "on",
           "kana": "えん",
-          "anchor": "禁煙する",
-          "anchorReading": "きんえんする",
+          "anchor": "禁煙",
+          "anchorReading": "きんえん",
           "kunDisplay": "",
           "surface": "えん"
         },
@@ -13727,8 +13402,8 @@
         {
           "type": "on",
           "kana": "ゆ",
-          "anchor": "経由する",
-          "anchorReading": "けいゆする",
+          "anchor": "経由",
+          "anchorReading": "けいゆ",
           "kunDisplay": "",
           "surface": "ゆ"
         }
@@ -13754,8 +13429,8 @@
         {
           "type": "on",
           "kana": "しん",
-          "anchor": "申請する",
-          "anchorReading": "しんせいする",
+          "anchor": "申請",
+          "anchorReading": "しんせい",
           "kunDisplay": "",
           "surface": "しん"
         }
@@ -13768,7 +13443,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "とどめる"
+      ],
       "readings": [
         {
           "type": "on",
@@ -13781,18 +13458,10 @@
         {
           "type": "on",
           "kana": "る",
-          "anchor": "留守にする",
-          "anchorReading": "るすにする",
+          "anchor": "留守に",
+          "anchorReading": "るすに",
           "kunDisplay": "",
           "surface": "る"
-        },
-        {
-          "type": "kun",
-          "kana": "とどめる",
-          "anchor": "留める",
-          "anchorReading": "とどめる",
-          "kunDisplay": "とど.める",
-          "surface": "とど"
         }
       ],
       "sentences": []
@@ -13862,8 +13531,8 @@
         {
           "type": "on",
           "kana": "ひ",
-          "anchor": "疲労する",
-          "anchorReading": "ひろうする",
+          "anchor": "疲労",
+          "anchorReading": "ひろう",
           "kunDisplay": "",
           "surface": "ひ"
         }
@@ -13924,16 +13593,16 @@
         {
           "type": "on",
           "kana": "とう",
-          "anchor": "登場する",
-          "anchorReading": "とうじょうする",
+          "anchor": "登場",
+          "anchorReading": "とうじょう",
           "kunDisplay": "",
           "surface": "とう"
         },
         {
           "type": "on",
           "kana": "と",
-          "anchor": "登山する",
-          "anchorReading": "とざんする",
+          "anchor": "登山",
+          "anchorReading": "とざん",
           "kunDisplay": "",
           "surface": "と"
         }
@@ -13965,7 +13634,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "ぬすみ"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -13982,49 +13653,35 @@
           "anchorReading": "ごうとう",
           "kunDisplay": "",
           "surface": "とう"
-        },
-        {
-          "type": "kun",
-          "kana": "ぬすみ",
-          "anchor": "盗み",
-          "anchorReading": "ぬすみ",
-          "kunDisplay": "ぬす.み",
-          "surface": "ぬす"
         }
       ],
       "sentences": []
     },
     "直": {
       "meaning": "straight; fix",
-      "primary": "じき",
+      "primary": "なおす",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "じき",
+        "すぐ",
+        "あて"
+      ],
       "readings": [
         {
-          "type": "on",
-          "kana": "じき",
-          "anchor": "直",
-          "anchorReading": "じき",
-          "kunDisplay": "",
-          "surface": "じき"
+          "type": "kun",
+          "kana": "なおす",
+          "anchor": "直す",
+          "anchorReading": "なおす",
+          "kunDisplay": "なお.す"
         },
         {
           "type": "on",
           "kana": "ちょく",
           "anchor": "直接",
           "anchorReading": "ちょくせつ",
-          "kunDisplay": "",
-          "surface": "ちょく"
-        },
-        {
-          "type": "kun",
-          "kana": "すぐ",
-          "anchor": "真っ直ぐ",
-          "anchorReading": "まっすぐ",
-          "kunDisplay": "す.ぐ",
-          "surface": "す"
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -14040,8 +13697,8 @@
         {
           "type": "on",
           "kana": "そう",
-          "anchor": "相談する",
-          "anchorReading": "そうだんする",
+          "anchor": "相談",
+          "anchorReading": "そうだん",
           "kunDisplay": "",
           "surface": "そう"
         },
@@ -14153,8 +13810,8 @@
         {
           "type": "on",
           "kana": "は",
-          "anchor": "破産する",
-          "anchorReading": "はさんする",
+          "anchor": "破産",
+          "anchorReading": "はさん",
           "kunDisplay": "",
           "surface": "は"
         },
@@ -14215,8 +13872,8 @@
         {
           "type": "on",
           "kana": "じ",
-          "anchor": "掲示する",
-          "anchorReading": "けいじする",
+          "anchor": "掲示",
+          "anchorReading": "けいじ",
           "kunDisplay": "",
           "surface": "じ"
         }
@@ -14272,8 +13929,8 @@
         {
           "type": "on",
           "kana": "しん",
-          "anchor": "神社",
-          "anchorReading": "じんじゃ",
+          "anchor": "精神",
+          "anchorReading": "せいしん",
           "kunDisplay": "",
           "surface": "じん"
         },
@@ -14391,8 +14048,8 @@
         {
           "type": "on",
           "kana": "せき",
-          "anchor": "積極的",
-          "anchorReading": "せっきょくてき",
+          "anchor": "面積",
+          "anchorReading": "めんせき",
           "kunDisplay": "",
           "surface": "せっ"
         },
@@ -14480,8 +14137,8 @@
         {
           "type": "on",
           "kana": "しょう",
-          "anchor": "微笑する",
-          "anchorReading": "びしょうする",
+          "anchor": "微笑",
+          "anchorReading": "びしょう",
           "kunDisplay": "",
           "surface": "しょう"
         }
@@ -14591,8 +14248,8 @@
         {
           "type": "on",
           "kana": "やく",
-          "anchor": "約束する",
-          "anchorReading": "やくそくする",
+          "anchor": "約束",
+          "anchorReading": "やくそく",
           "kunDisplay": "",
           "surface": "やく"
         }
@@ -14610,8 +14267,8 @@
         {
           "type": "kun",
           "kana": "くみ",
-          "anchor": "番組",
-          "anchorReading": "ばんぐみ",
+          "anchor": "組",
+          "anchorReading": "くみ",
           "kunDisplay": "くみ",
           "surface": "ぐみ"
         },
@@ -14626,8 +14283,8 @@
         {
           "type": "on",
           "kana": "そ",
-          "anchor": "組織する",
-          "anchorReading": "そしきする",
+          "anchor": "組織",
+          "anchorReading": "そしき",
           "kunDisplay": "",
           "surface": "そ"
         }
@@ -14640,7 +14297,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "へる"
+      ],
       "readings": [
         {
           "type": "on",
@@ -14657,14 +14316,6 @@
           "anchorReading": "たつ",
           "kunDisplay": "た.つ",
           "surface": "た"
-        },
-        {
-          "type": "kun",
-          "kana": "へる",
-          "anchor": "経る",
-          "anchorReading": "へる",
-          "kunDisplay": "へ.る",
-          "surface": "へ"
         }
       ],
       "sentences": []
@@ -14675,7 +14326,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "たまう"
+      ],
       "readings": [
         {
           "type": "on",
@@ -14684,14 +14337,6 @@
           "anchorReading": "きゅうりょう",
           "kunDisplay": "",
           "surface": "きゅう"
-        },
-        {
-          "type": "kun",
-          "kana": "たまう",
-          "anchor": "給う",
-          "anchorReading": "たまう",
-          "kunDisplay": "たま.う",
-          "surface": "たま"
         }
       ],
       "sentences": []
@@ -14769,8 +14414,8 @@
         {
           "type": "on",
           "kana": "ぞく",
-          "anchor": "相続する",
-          "anchorReading": "そうぞくする",
+          "anchor": "相続",
+          "anchorReading": "そうぞく",
           "kunDisplay": "",
           "surface": "ぞく"
         },
@@ -14786,7 +14431,7 @@
       "sentences": []
     },
     "緒": {
-      "meaning": "thong",
+      "meaning": "cord; (一緒) together",
       "primary": "しょ",
       "jlpt": "N3",
       "source": "aligned",
@@ -14850,8 +14495,8 @@
         {
           "type": "on",
           "kana": "ち",
-          "anchor": "位置する",
-          "anchorReading": "いちする",
+          "anchor": "位置",
+          "anchorReading": "いち",
           "kunDisplay": "",
           "surface": "ち"
         }
@@ -14972,13 +14617,15 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "そだち"
+      ],
       "readings": [
         {
           "type": "on",
           "kana": "いく",
-          "anchor": "教育する",
-          "anchorReading": "きょういくする",
+          "anchor": "教育",
+          "anchorReading": "きょういく",
           "kunDisplay": "",
           "surface": "いく"
         },
@@ -14988,14 +14635,6 @@
           "anchor": "育てる",
           "anchorReading": "そだてる",
           "kunDisplay": "そだ.てる",
-          "surface": "そだ"
-        },
-        {
-          "type": "kun",
-          "kana": "そだち",
-          "anchor": "育ち",
-          "anchorReading": "そだち",
-          "kunDisplay": "そだ.ち",
           "surface": "そだ"
         }
       ],
@@ -15047,8 +14686,8 @@
         {
           "type": "on",
           "kana": "のう",
-          "anchor": "能",
-          "anchorReading": "のう",
+          "anchor": "才能",
+          "anchorReading": "さいのう",
           "kunDisplay": "",
           "surface": "のう"
         }
@@ -15146,19 +14785,25 @@
     },
     "良": {
       "meaning": "good",
-      "primary": "りょう",
+      "primary": "よい",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
+          "type": "kun",
+          "kana": "よい",
+          "anchor": "良い",
+          "anchorReading": "よい",
+          "kunDisplay": ""
+        },
+        {
           "type": "on",
           "kana": "りょう",
-          "anchor": "善良",
-          "anchorReading": "ぜんりょう",
-          "kunDisplay": "",
-          "surface": "りょう"
+          "anchor": "不良",
+          "anchorReading": "ふりょう",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -15236,8 +14881,8 @@
         {
           "type": "on",
           "kana": "そう",
-          "anchor": "草履",
-          "anchorReading": "ぞうり",
+          "anchor": "雑草",
+          "anchorReading": "ざっそう",
           "kunDisplay": "",
           "surface": "ぞう"
         }
@@ -15250,7 +14895,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "おち"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -15263,18 +14910,10 @@
         {
           "type": "on",
           "kana": "らく",
-          "anchor": "落第する",
-          "anchorReading": "らくだいする",
+          "anchor": "落第",
+          "anchorReading": "らくだい",
           "kunDisplay": "",
           "surface": "らく"
-        },
-        {
-          "type": "kun",
-          "kana": "おち",
-          "anchor": "落ち込む",
-          "anchorReading": "おちこむ",
-          "kunDisplay": "お.ち",
-          "surface": "お"
         }
       ],
       "sentences": []
@@ -15290,16 +14929,16 @@
         {
           "type": "kun",
           "kana": "は",
-          "anchor": "言葉",
-          "anchorReading": "ことば",
+          "anchor": "葉",
+          "anchorReading": "は",
           "kunDisplay": "は",
           "surface": "ば"
         },
         {
           "type": "on",
           "kana": "よう",
-          "anchor": "紅葉する",
-          "anchorReading": "こうようする",
+          "anchor": "紅葉",
+          "anchorReading": "こうよう",
           "kunDisplay": "",
           "surface": "よう"
         }
@@ -15452,8 +15091,8 @@
         {
           "type": "on",
           "kana": "かく",
-          "anchor": "覚悟する",
-          "anchorReading": "かくごする",
+          "anchor": "覚悟",
+          "anchorReading": "かくご",
           "kunDisplay": "",
           "surface": "かく"
         },
@@ -15576,8 +15215,8 @@
         {
           "type": "on",
           "kana": "ほう",
-          "anchor": "訪問する",
-          "anchorReading": "ほうもんする",
+          "anchor": "訪問",
+          "anchorReading": "ほうもん",
           "kunDisplay": "",
           "surface": "ほう"
         }
@@ -15603,8 +15242,8 @@
         {
           "type": "on",
           "kana": "きょ",
-          "anchor": "許可する",
-          "anchorReading": "きょかする",
+          "anchor": "許可",
+          "anchorReading": "きょか",
           "kunDisplay": "",
           "surface": "きょ"
         }
@@ -15622,8 +15261,8 @@
         {
           "type": "on",
           "kana": "にん",
-          "anchor": "確認する",
-          "anchorReading": "かくにんする",
+          "anchor": "確認",
+          "anchorReading": "かくにん",
           "kunDisplay": "",
           "surface": "にん"
         },
@@ -15649,8 +15288,8 @@
         {
           "type": "on",
           "kana": "ご",
-          "anchor": "誤解する",
-          "anchorReading": "ごかいする",
+          "anchor": "誤解",
+          "anchorReading": "ごかい",
           "kunDisplay": "",
           "surface": "ご"
         },
@@ -15671,7 +15310,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "とく"
+      ],
       "readings": [
         {
           "type": "on",
@@ -15680,14 +15321,6 @@
           "anchorReading": "しょうせつ",
           "kunDisplay": "",
           "surface": "せつ"
-        },
-        {
-          "type": "kun",
-          "kana": "とく",
-          "anchor": "説く",
-          "anchorReading": "とく",
-          "kunDisplay": "と.く",
-          "surface": "と"
         }
       ],
       "sentences": []
@@ -15698,7 +15331,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "しらべ"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -15715,14 +15350,6 @@
           "anchorReading": "じゅんちょう",
           "kunDisplay": "",
           "surface": "ちょう"
-        },
-        {
-          "type": "kun",
-          "kana": "しらべ",
-          "anchor": "調べ",
-          "anchorReading": "しらべ",
-          "kunDisplay": "しら.べ",
-          "surface": "しら"
         }
       ],
       "sentences": []
@@ -15738,8 +15365,8 @@
         {
           "type": "on",
           "kana": "だん",
-          "anchor": "相談する",
-          "anchorReading": "そうだんする",
+          "anchor": "相談",
+          "anchorReading": "そうだん",
           "kunDisplay": "",
           "surface": "だん"
         }
@@ -15841,8 +15468,8 @@
         {
           "type": "on",
           "kana": "ふ",
-          "anchor": "勝負する",
-          "anchorReading": "しょうぶする",
+          "anchor": "負担",
+          "anchorReading": "ふたん",
           "kunDisplay": "",
           "surface": "ぶ"
         },
@@ -15995,8 +15622,8 @@
         {
           "type": "on",
           "kana": "さん",
-          "anchor": "賛成する",
-          "anchorReading": "さんせいする",
+          "anchor": "賛成",
+          "anchorReading": "さんせい",
           "kunDisplay": "",
           "surface": "さん"
         }
@@ -16009,7 +15636,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "えつ"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -16018,14 +15647,6 @@
           "anchorReading": "こす",
           "kunDisplay": "こ.す",
           "surface": "こ"
-        },
-        {
-          "type": "on",
-          "kana": "えつ",
-          "anchor": "優越する",
-          "anchorReading": "ゆうえつする",
-          "kunDisplay": "",
-          "surface": "えつ"
         },
         {
           "type": "kun",
@@ -16130,8 +15751,8 @@
         {
           "type": "on",
           "kana": "げい",
-          "anchor": "歓迎する",
-          "anchorReading": "かんげいする",
+          "anchor": "歓迎",
+          "anchorReading": "かんげい",
           "kunDisplay": "",
           "surface": "げい"
         }
@@ -16157,8 +15778,8 @@
         {
           "type": "on",
           "kana": "へん",
-          "anchor": "返事する",
-          "anchorReading": "へんじする",
+          "anchor": "返事",
+          "anchorReading": "へんじ",
           "kunDisplay": "",
           "surface": "へん"
         },
@@ -16184,10 +15805,17 @@
         {
           "type": "on",
           "kana": "めい",
-          "anchor": "迷惑する",
-          "anchorReading": "めいわくする",
+          "anchor": "迷惑",
+          "anchorReading": "めいわく",
           "kunDisplay": "",
           "surface": "めい"
+        },
+        {
+          "type": "kun",
+          "kana": "まよう",
+          "anchor": "迷う",
+          "anchorReading": "まよう",
+          "kunDisplay": "まよ.う"
         }
       ],
       "sentences": []
@@ -16211,8 +15839,8 @@
         {
           "type": "on",
           "kana": "つい",
-          "anchor": "追加する",
-          "anchorReading": "ついかする",
+          "anchor": "追加",
+          "anchorReading": "ついか",
           "kunDisplay": "",
           "surface": "つい"
         }
@@ -16230,8 +15858,8 @@
         {
           "type": "on",
           "kana": "たい",
-          "anchor": "退院する",
-          "anchorReading": "たいいんする",
+          "anchor": "退院",
+          "anchorReading": "たいいん",
           "kunDisplay": "",
           "surface": "たい"
         },
@@ -16273,8 +15901,8 @@
         {
           "type": "on",
           "kana": "とう",
-          "anchor": "逃走する",
-          "anchorReading": "とうそうする",
+          "anchor": "逃走",
+          "anchorReading": "とうそう",
           "kunDisplay": "",
           "surface": "とう"
         },
@@ -16310,19 +15938,25 @@
     },
     "速": {
       "meaning": "quick",
-      "primary": "そく",
+      "primary": "はやい",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
+          "type": "kun",
+          "kana": "はやい",
+          "anchor": "速い",
+          "anchorReading": "はやい",
+          "kunDisplay": "はや.い"
+        },
+        {
           "type": "on",
           "kana": "そく",
-          "anchor": "急速",
-          "anchorReading": "きゅうそく",
-          "kunDisplay": "",
-          "surface": "そく"
+          "anchor": "速度",
+          "anchorReading": "そくど",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -16338,8 +15972,8 @@
         {
           "type": "on",
           "kana": "れん",
-          "anchor": "連絡する",
-          "anchorReading": "れんらくする",
+          "anchor": "連絡",
+          "anchorReading": "れんらく",
           "kunDisplay": "",
           "surface": "れん"
         },
@@ -16381,8 +16015,8 @@
         {
           "type": "on",
           "kana": "しん",
-          "anchor": "進学する",
-          "anchorReading": "しんがくする",
+          "anchor": "進学",
+          "anchorReading": "しんがく",
           "kunDisplay": "",
           "surface": "しん"
         },
@@ -16403,7 +16037,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "おくらす"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -16419,14 +16055,6 @@
           "anchor": "遅れる",
           "anchorReading": "おくれる",
           "kunDisplay": "おく.れる",
-          "surface": "おく"
-        },
-        {
-          "type": "kun",
-          "kana": "おくらす",
-          "anchor": "遅らす",
-          "anchorReading": "おくらす",
-          "kunDisplay": "おく.らす",
           "surface": "おく"
         }
       ],
@@ -16465,7 +16093,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "あやまち"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -16482,14 +16112,6 @@
           "anchorReading": "かこ",
           "kunDisplay": "",
           "surface": "か"
-        },
-        {
-          "type": "kun",
-          "kana": "あやまち",
-          "anchor": "過ち",
-          "anchorReading": "あやまち",
-          "kunDisplay": "あやま.ち",
-          "surface": "あやま"
         }
       ],
       "sentences": []
@@ -16505,10 +16127,17 @@
         {
           "type": "on",
           "kana": "たつ",
-          "anchor": "上達する",
-          "anchorReading": "じょうたつする",
+          "anchor": "上達",
+          "anchorReading": "じょうたつ",
           "kunDisplay": "",
           "surface": "たつ"
+        },
+        {
+          "type": "kun",
+          "kana": "たち",
+          "anchor": "友達",
+          "anchorReading": "ともだち",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -16519,7 +16148,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "ちがい"
+      ],
       "readings": [
         {
           "type": "kun",
@@ -16527,14 +16158,6 @@
           "anchor": "違う",
           "anchorReading": "ちがう",
           "kunDisplay": "ちが.う",
-          "surface": "ちが"
-        },
-        {
-          "type": "kun",
-          "kana": "ちがい",
-          "anchor": "違い",
-          "anchorReading": "ちがい",
-          "kunDisplay": "ちが.い",
           "surface": "ちが"
         },
         {
@@ -16567,8 +16190,8 @@
         {
           "type": "on",
           "kana": "えん",
-          "anchor": "遠慮する",
-          "anchorReading": "えんりょする",
+          "anchor": "遠慮",
+          "anchorReading": "えんりょ",
           "kunDisplay": "",
           "surface": "えん"
         }
@@ -16651,16 +16274,16 @@
         {
           "type": "on",
           "kana": "と",
-          "anchor": "都",
-          "anchorReading": "と",
+          "anchor": "東京都",
+          "anchorReading": "とうきょうと",
           "kunDisplay": "",
           "surface": "と"
         },
         {
           "type": "on",
           "kana": "つ",
-          "anchor": "都合する",
-          "anchorReading": "つごうする",
+          "anchor": "都合",
+          "anchorReading": "つごう",
           "kunDisplay": "",
           "surface": "つ"
         },
@@ -16686,8 +16309,8 @@
         {
           "type": "on",
           "kana": "はい",
-          "anchor": "心配する",
-          "anchorReading": "しんぱいする",
+          "anchor": "心配",
+          "anchorReading": "しんぱい",
           "kunDisplay": "",
           "surface": "ぱい"
         },
@@ -16756,8 +16379,8 @@
         {
           "type": "on",
           "kana": "へい",
-          "anchor": "閉会する",
-          "anchorReading": "へいかいする",
+          "anchor": "閉会",
+          "anchorReading": "へいかい",
           "kunDisplay": "",
           "surface": "へい"
         }
@@ -16775,8 +16398,8 @@
         {
           "type": "on",
           "kana": "かん",
-          "anchor": "玄関",
-          "anchorReading": "げんかん",
+          "anchor": "関係",
+          "anchorReading": "かんけい",
           "kunDisplay": "",
           "surface": "かん"
         }
@@ -16856,16 +16479,16 @@
         {
           "type": "on",
           "kana": "じ",
-          "anchor": "掃除する",
-          "anchorReading": "そうじする",
+          "anchor": "掃除",
+          "anchorReading": "そうじ",
           "kunDisplay": "",
           "surface": "じ"
         },
         {
           "type": "on",
           "kana": "じょ",
-          "anchor": "削除する",
-          "anchorReading": "さくじょする",
+          "anchor": "削除",
+          "anchorReading": "さくじょ",
           "kunDisplay": "",
           "surface": "じょ"
         },
@@ -16918,8 +16541,8 @@
         {
           "type": "on",
           "kana": "よう",
-          "anchor": "陽気",
-          "anchorReading": "ようき",
+          "anchor": "太陽",
+          "anchorReading": "たいよう",
           "kunDisplay": "",
           "surface": "よう"
         }
@@ -16932,7 +16555,9 @@
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
-      "demoted": [],
+      "demoted": [
+        "きわ"
+      ],
       "readings": [
         {
           "type": "on",
@@ -16941,14 +16566,6 @@
           "anchorReading": "こくさい",
           "kunDisplay": "",
           "surface": "さい"
-        },
-        {
-          "type": "kun",
-          "kana": "きわ",
-          "anchor": "際",
-          "anchorReading": "きわ",
-          "kunDisplay": "きわ",
-          "surface": "きわ"
         }
       ],
       "sentences": []
@@ -17074,27 +16691,25 @@
     },
     "面": {
       "meaning": "face; mask",
-      "primary": "おも",
+      "primary": "めん",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
+          "type": "on",
+          "kana": "めん",
+          "anchor": "面接",
+          "anchorReading": "めんせつ",
+          "kunDisplay": ""
+        },
+        {
           "type": "kun",
           "kana": "おも",
           "anchor": "面白い",
           "anchorReading": "おもしろい",
-          "kunDisplay": "おも",
-          "surface": "おも"
-        },
-        {
-          "type": "on",
-          "kana": "めん",
-          "anchor": "面",
-          "anchorReading": "めん",
-          "kunDisplay": "",
-          "surface": "めん"
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -17119,7 +16734,7 @@
       "sentences": []
     },
     "頂": {
-      "meaning": "place on the head",
+      "meaning": "top; receive (humble)",
       "primary": "ちょう",
       "jlpt": "N3",
       "source": "aligned",
@@ -17207,8 +16822,8 @@
         {
           "type": "on",
           "kana": "らい",
-          "anchor": "依頼する",
-          "anchorReading": "いらいする",
+          "anchor": "依頼",
+          "anchorReading": "いらい",
           "kunDisplay": "",
           "surface": "らい"
         },
@@ -17308,35 +16923,25 @@
     },
     "飛": {
       "meaning": "fly",
-      "primary": "ひ",
+      "primary": "とぶ",
       "jlpt": "N3",
       "source": "aligned",
       "flag": "",
       "demoted": [],
       "readings": [
         {
-          "type": "on",
-          "kana": "ひ",
-          "anchor": "飛行機",
-          "anchorReading": "ひこうき",
-          "kunDisplay": "",
-          "surface": "ひ"
-        },
-        {
           "type": "kun",
           "kana": "とぶ",
           "anchor": "飛ぶ",
           "anchorReading": "とぶ",
-          "kunDisplay": "と.ぶ",
-          "surface": "と"
+          "kunDisplay": "と.ぶ"
         },
         {
-          "type": "kun",
-          "kana": "とばす",
-          "anchor": "飛ばす",
-          "anchorReading": "とばす",
-          "kunDisplay": "と.ばす",
-          "surface": "と"
+          "type": "on",
+          "kana": "ひ",
+          "anchor": "飛行機",
+          "anchorReading": "ひこうき",
+          "kunDisplay": ""
         }
       ],
       "sentences": []
@@ -17387,8 +16992,8 @@
         {
           "type": "on",
           "kana": "ば",
-          "anchor": "馬鹿",
-          "anchorReading": "ばか",
+          "anchor": "競馬",
+          "anchorReading": "けいば",
           "kunDisplay": "",
           "surface": "ば"
         }

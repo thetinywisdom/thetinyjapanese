@@ -12,25 +12,26 @@ A native teacher can start with the "Check these first" section of each file.
 
 Edits to `scripts/curated/n5-n3-words.json`, `n5-n3-kanji.json`, and `sentences.json` are merged with `node scripts/apply-phase3.mjs`. `node scripts/draft-phase3.mjs` rebuilds those files from scratch and will overwrite corrections.
 
+The recheck list for this pass is [recheck.md](recheck.md).
+
 ## Counts
 
-- Words: 1220 (N5 524, N4 501, N3 195). By type: adj-i 77, adj-na 53, noun 593, verb 497.
+- Words: 1229 (N5 523, N4 499, N3 207). By type: adj-i 79, adj-na 46, noun 705, adverb 4, verb 395.
 - Kanji: 612 (N5 79, N4 166, N3 367).
-- Sentences: 2050 (497 verbs, 612 kanji).
-- Flagged for a second look: 3 words, 26 kanji, 1 sentences.
+- Hand-written sentences kept: 211 (42 on verbs, 169 on kanji). Template drafts removed. A word or kanji with no hand-written sentence shows none.
 
-## Open questions
+## Answers applied
 
-- 私 is taught as わたし. わたくし is the formal reading and the one in the old JLPT list.
-- 日本 in the diary is にほん, not IPAdic's にっぽん. Both are used; N5 textbooks use にほん.
-- 一人 / 二人 are ひとり / ふたり. IPAdic splits them as いちにん / ににん.
-- 明日 is あした. あす is also correct and more written.
-- 十（とお） versus じゅう: the quiz answer is じゅう. The sentence 卵を十買いました can also be read じゅう.
-- 年（とし）is not 今年（ことし）. The sentence is 年に一度.
-- 顔（かお）was missing from the word list, so the anchor is the character itself. 笑顔 is えがお.
-- 南口 is みなみぐち, so なん is anchored on 南米. Is 南米 the anchor you want?
-- 家: the quiz answer is いえ, and うち is also listed. Which one should a multiple-choice item accept?
-- 出（しゅつ） is demoted on the N5 card because 出口 is でぐち. Should 出発 be added as the on anchor?
-- N3 was cut to keep the list near 1,200. Words left out are the rarer JMdict rows, including 食う (teach 食べる) and most （する）noun glosses.
-- Sentences marked `draft` were generated from the gloss. The Japanese masu form is mechanical; the English tense needs a pass.
-- 明日・今日・大人 are special readings and are not split into on/kun anchors.
+- 私 quiz answer is わたし. わたくし is listed as also correct (formal) and is never a wrong option.
+- 日本 is にほん. にっぽん is not marked wrong.
+- 一人 / 二人 stay ひとり / ふたり. いちにん and ににん are never distractors.
+- 明日 is あした. あす is not marked wrong.
+- 十 quiz answer stays じゅう. The とお sentence is 娘は今年で十（とお）になります。
+- とし is 兄と私は年（とし）が三つ違います。 年に一度、実家に帰ります stays on ねん.
+- 顔 anchor stays かお. 笑顔 is back in the word list, and 笑顔がすてきです stays an extra example.
+- 南米 stays the anchor for なん.
+- 家 quiz answer is いえ. うち is also correct and is never the other option.
+- 出 keeps the quiz answer でる and adds しゅつ · 出発（しゅっぱつ）.
+- Nouns that had been stored only as する verbs are nouns again. 勉強 is shown as 勉強（する）.
+- Draft sentences are not shipped.
+- 今日, 明日, 大人, 今朝, 昨日, 一日, 二十歳, 果物, 眼鏡, 部屋, 八百屋, 上手, 下手, and 時計 are 熟字訓 and are not split into on/kun anchors.

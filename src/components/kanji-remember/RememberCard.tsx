@@ -13,6 +13,11 @@ import { getKanjiExamples } from "@/data/examples";
 import { getItemStat } from "@/lib/progress";
 import { cn } from "@/lib/utils";
 
+const JUKUJIKUN = new Set([
+  "今日", "明日", "大人", "今朝", "昨日", "一日", "二十歳",
+  "果物", "眼鏡", "部屋", "八百屋", "上手", "下手", "時計",
+]);
+
 export function RememberCard() {
   const { state, submitAnswer, skipCurrent, advance } = useRemember();
   const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -182,6 +187,8 @@ export function RememberCard() {
                       {r.type === "on" ? "on" : "kun"}
                       {r.anchor ? ` · ${r.anchor}` : ""}
                       {r.anchorReading ? `（${r.anchorReading}）` : ""}
+                      {r.anchor && JUKUJIKUN.has(r.anchor) ? " · 熟字訓" : ""}
+                      {r.note ? ` · ${r.note}` : ""}
                     </li>
                   ))}
                 </ul>

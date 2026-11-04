@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSessionTimer } from "@/hooks/use-session-timer";
 import { useSession } from "@/features/study/SessionContext";
 import { questionLabel, verbClassLabel, promptKanji, QUESTION_TOOLTIPS } from "@/lib/conjugation";
-import { needsSenseCue, sharesDictionary } from "@/data/words";
+import { displayHeadword, needsSenseCue, sharesDictionary } from "@/data/words";
 import { getVerbExamples } from "@/data/examples";
 import { ExampleSentences } from "@/components/ExampleSentences";
 import { RuleExplanation } from "@/components/study/RuleExplanation";
@@ -281,7 +281,7 @@ function FeedbackPanel() {
         <div>
           <p className="text-xs uppercase tracking-wider text-muted-foreground">Dictionary</p>
           <p className="font-serif text-lg" lang="ja">
-            {r.verb.dictionary}
+            {displayHeadword(r.verb)}
             {r.verb.dictionary !== r.verb.reading && (
               <span className="text-muted-foreground text-base ml-2">({r.verb.reading})</span>
             )}

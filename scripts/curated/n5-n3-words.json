@@ -539,7 +539,7 @@
       "id": "1404975",
       "dictionary": "早い",
       "reading": "はやい",
-      "meaning": "fast; quick",
+      "meaning": "early; soon",
       "pos": [
         "adj-i"
       ],
@@ -769,8 +769,8 @@
         "adj-no",
         "adj-na"
       ],
-      "wordType": "adj-na",
-      "verbClass": "adj-na",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N5"
     },
     {
@@ -791,14 +791,14 @@
       "id": "1576760",
       "dictionary": "黄色",
       "reading": "きいろ",
-      "meaning": "yellow; amber",
+      "meaning": "yellow",
       "pos": [
         "n",
         "adj-no",
         "adj-na"
       ],
-      "wordType": "adj-na",
-      "verbClass": "adj-na",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N5"
     },
     {
@@ -831,7 +831,7 @@
       "id": "1254760",
       "dictionary": "結構",
       "reading": "けっこう",
-      "meaning": "splendid; nice",
+      "meaning": "fine; good enough; quite; (no) thank you",
       "pos": [
         "adj-na",
         "adv",
@@ -883,7 +883,7 @@
       "id": "1580480",
       "dictionary": "丈夫",
       "reading": "じょうぶ",
-      "meaning": "healthy; robust",
+      "meaning": "sturdy; strong; healthy",
       "pos": [
         "adj-na"
       ],
@@ -1113,7 +1113,7 @@
       "id": "1269320",
       "dictionary": "後",
       "reading": "あと",
-      "meaning": "behind; rear",
+      "meaning": "after; later; behind",
       "pos": [
         "n",
         "adj-no",
@@ -1265,7 +1265,7 @@
       "id": "1163400",
       "dictionary": "一緒",
       "reading": "いっしょ",
-      "meaning": "(doing) together; one lump",
+      "meaning": "together; same",
       "pos": [
         "n",
         "adj-no"
@@ -1984,7 +1984,7 @@
       "id": "1039220",
       "dictionary": "カレンダー",
       "reading": "カレンダー",
-      "meaning": "calendar; calender (machine for flattening things)",
+      "meaning": "calendar",
       "pos": [
         "n"
       ],
@@ -2056,7 +2056,7 @@
       "id": "1385070",
       "dictionary": "切手",
       "reading": "きって",
-      "meaning": "stamp (postage); merchandise certificate",
+      "meaning": "(postage) stamp",
       "pos": [
         "n"
       ],
@@ -2302,7 +2302,7 @@
       "id": "1287410",
       "dictionary": "黒",
       "reading": "くろ",
-      "meaning": "black; black stone",
+      "meaning": "black",
       "pos": [
         "n",
         "adj-no"
@@ -2365,7 +2365,7 @@
       "id": "1049000",
       "dictionary": "コート",
       "reading": "コート",
-      "meaning": "coat; coating",
+      "meaning": "coat",
       "pos": [
         "n"
       ],
@@ -2477,7 +2477,7 @@
       "id": "2846389",
       "dictionary": "コップ",
       "reading": "コップ",
-      "meaning": "cop; police officer",
+      "meaning": "glass; cup (for drinking)",
       "pos": [
         "n"
       ],
@@ -2502,7 +2502,7 @@
       "id": "1264540",
       "dictionary": "言葉",
       "reading": "ことば",
-      "meaning": "language; dialect",
+      "meaning": "word(s); language",
       "pos": [
         "n"
       ],
@@ -2589,7 +2589,7 @@
       "id": "1387210",
       "dictionary": "先",
       "reading": "さき",
-      "meaning": "point; tip",
+      "meaning": "ahead; first; (the) future",
       "pos": [
         "n",
         "adj-no",
@@ -2711,18 +2711,6 @@
       "jlptLevel": "N5"
     },
     {
-      "id": "1315140",
-      "dictionary": "字引",
-      "reading": "じびき",
-      "meaning": "dictionary",
-      "pos": [
-        "n"
-      ],
-      "wordType": "noun",
-      "verbClass": "noun",
-      "jlptLevel": "N5"
-    },
-    {
       "id": "1321900",
       "dictionary": "写真",
       "reading": "しゃしん",
@@ -2738,7 +2726,7 @@
       "id": "1061520",
       "dictionary": "シャツ",
       "reading": "シャツ",
-      "meaning": "shirt (undergarment); undershirt",
+      "meaning": "shirt",
       "pos": [
         "n"
       ],
@@ -2786,7 +2774,7 @@
       "id": "1474900",
       "dictionary": "白",
       "reading": "しろ",
-      "meaning": "white; innocence",
+      "meaning": "white",
       "pos": [
         "n",
         "adj-no"
@@ -2848,7 +2836,7 @@
       "id": "1072590",
       "dictionary": "スプーン",
       "reading": "スプーン",
-      "meaning": "spoon; spoon lure",
+      "meaning": "spoon",
       "pos": [
         "n"
       ],
@@ -2884,7 +2872,7 @@
       "id": "2147990",
       "dictionary": "背",
       "reading": "せ",
-      "meaning": "back; reverse",
+      "meaning": "height; back",
       "pos": [
         "n"
       ],
@@ -3034,7 +3022,7 @@
       "id": "1412640",
       "dictionary": "台所",
       "reading": "だいどころ",
-      "meaning": "kitchen; financial situation",
+      "meaning": "kitchen",
       "pos": [
         "n"
       ],
@@ -3221,7 +3209,7 @@
       "id": "1078810",
       "dictionary": "テープレコーダー",
       "reading": "テープレコーダー",
-      "meaning": "tape recorder",
+      "meaning": "tape recorder (old-fashioned)",
       "pos": [
         "n"
       ],
@@ -3257,7 +3245,7 @@
       "id": "1083590",
       "dictionary": "デパート",
       "reading": "デパート",
-      "meaning": "department store; department",
+      "meaning": "department store",
       "pos": [
         "n"
       ],
@@ -3371,8 +3359,8 @@
         "adj-no",
         "n"
       ],
-      "wordType": "noun",
-      "verbClass": "noun",
+      "wordType": "adverb",
+      "verbClass": "adverb",
       "jlptLevel": "N5"
     },
     {
@@ -3688,7 +3676,7 @@
       "id": "1201940",
       "dictionary": "灰皿",
       "reading": "はいざら",
-      "meaning": "ashtray",
+      "meaning": "ashtray (old-fashioned)",
       "pos": [
         "n"
       ],
@@ -3700,7 +3688,7 @@
       "id": "1546590",
       "dictionary": "葉書",
       "reading": "はがき",
-      "meaning": "postcard; memo",
+      "meaning": "postcard",
       "pos": [
         "n"
       ],
@@ -3738,14 +3726,14 @@
       "id": "1342550",
       "dictionary": "初めて",
       "reading": "はじめて",
-      "meaning": "for the first time; only after ... is it ...",
+      "meaning": "for the first time",
       "pos": [
         "adv",
         "adj-no",
         "n"
       ],
-      "wordType": "noun",
-      "verbClass": "noun",
+      "wordType": "adverb",
+      "verbClass": "adverb",
       "jlptLevel": "N5"
     },
     {
@@ -3991,8 +3979,8 @@
     {
       "id": "1162130",
       "dictionary": "一月",
-      "reading": "ひとつき",
-      "meaning": "one month",
+      "reading": "いちがつ",
+      "meaning": "January",
       "pos": [
         "n"
       ],
@@ -4079,7 +4067,7 @@
       "id": "1110110",
       "dictionary": "フォーク",
       "reading": "フォーク",
-      "meaning": "fork; forkball",
+      "meaning": "fork",
       "pos": [
         "n"
       ],
@@ -4166,7 +4154,7 @@
       "id": "1120990",
       "dictionary": "ペット",
       "reading": "ペット",
-      "meaning": "pet; trumpet",
+      "meaning": "pet",
       "pos": [
         "n"
       ],
@@ -4582,7 +4570,7 @@
       "id": "1584800",
       "dictionary": "門",
       "reading": "もん",
-      "meaning": "gate; branch of learning based on the teachings of a single master",
+      "meaning": "gate",
       "pos": [
         "n",
         "n-suf",
@@ -4620,7 +4608,7 @@
       "id": "1537370",
       "dictionary": "野菜",
       "reading": "やさい",
-      "meaning": "vegetable; marijuana",
+      "meaning": "vegetable",
       "pos": [
         "n"
       ],
@@ -4745,7 +4733,7 @@
       "id": "1180570",
       "dictionary": "横",
       "reading": "よこ",
-      "meaning": "horizontal (as opposed to vertical); side-to-side (as opposed to front-to-back)",
+      "meaning": "side; beside; horizontal",
       "pos": [
         "n"
       ],
@@ -5099,16 +5087,16 @@
     },
     {
       "id": "1156800",
-      "dictionary": "意味する",
-      "reading": "いみする",
-      "meaning": "to mean; to signify",
+      "dictionary": "意味",
+      "reading": "いみ",
+      "meaning": "meaning",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N5"
     },
     {
@@ -5303,17 +5291,18 @@
     },
     {
       "id": "1589730",
-      "dictionary": "買い物する",
-      "reading": "かいものする",
-      "meaning": "to go shopping",
+      "dictionary": "買い物",
+      "reading": "かいもの",
+      "meaning": "shopping; to go shopping",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N5"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N5",
+      "suru": true
     },
     {
       "id": "1473740",
@@ -5548,17 +5537,18 @@
     },
     {
       "id": "1254790",
-      "dictionary": "結婚する",
-      "reading": "けっこんする",
-      "meaning": "to get married; to marry",
+      "dictionary": "結婚",
+      "reading": "けっこん",
+      "meaning": "marriage; to get married",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N5"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N5",
+      "suru": true
     },
     {
       "id": "1449540",
@@ -5575,17 +5565,18 @@
     },
     {
       "id": "1050590",
-      "dictionary": "コピーする",
-      "reading": "コピーする",
-      "meaning": "to copy; to photocopy",
+      "dictionary": "コピー",
+      "reading": "コピー",
+      "meaning": "copy; to copy; to photocopy",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N5"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N5",
+      "suru": true
     },
     {
       "id": "1289590",
@@ -5630,37 +5621,38 @@
     },
     {
       "id": "1303620",
-      "dictionary": "散歩する",
-      "reading": "さんぽする",
-      "meaning": "to take a walk",
+      "dictionary": "散歩",
+      "reading": "さんぽ",
+      "meaning": "a walk; to take a walk",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N5"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N5",
+      "suru": true
     },
     {
       "id": "1304970",
-      "dictionary": "仕事する",
-      "reading": "しごとする",
-      "meaning": "to work",
+      "dictionary": "仕事",
+      "reading": "しごと",
+      "meaning": "job; work",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N5"
     },
     {
       "id": "1320760",
-      "dictionary": "質問する",
-      "reading": "しつもんする",
-      "meaning": "to ask a question",
+      "dictionary": "質問",
+      "reading": "しつもん",
+      "meaning": "a question; to ask a question",
       "pos": [
         "n",
         "vs",
@@ -5668,9 +5660,10 @@
         "vi",
         "adj-no"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N5"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N5",
+      "suru": true
     },
     {
       "id": "1310730",
@@ -5796,31 +5789,33 @@
     },
     {
       "id": "1390980",
-      "dictionary": "洗濯する",
-      "reading": "せんたくする",
-      "meaning": "to do laundry",
+      "dictionary": "洗濯",
+      "reading": "せんたく",
+      "meaning": "laundry; to do laundry",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N5"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N5",
+      "suru": true
     },
     {
       "id": "1399790",
-      "dictionary": "掃除する",
-      "reading": "そうじする",
-      "meaning": "to clean",
+      "dictionary": "掃除",
+      "reading": "そうじ",
+      "meaning": "cleaning; to clean",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N5"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N5",
+      "suru": true
     },
     {
       "id": "1338180",
@@ -6012,16 +6007,16 @@
     },
     {
       "id": "1079760",
-      "dictionary": "テストする",
-      "reading": "テストする",
-      "meaning": "to test; to give a test",
+      "dictionary": "テスト",
+      "reading": "テスト",
+      "meaning": "test",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N5"
     },
     {
@@ -6039,18 +6034,19 @@
     },
     {
       "id": "1443840",
-      "dictionary": "電話する",
-      "reading": "でんわする",
-      "meaning": "to call; to telephone",
+      "dictionary": "電話",
+      "reading": "でんわ",
+      "meaning": "telephone; to call",
       "pos": [
         "n",
         "vs",
         "vt",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N5"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N5",
+      "suru": true
     },
     {
       "id": "1429700",
@@ -6410,18 +6406,19 @@
     },
     {
       "id": "1512670",
-      "dictionary": "勉強する",
-      "reading": "べんきょうする",
-      "meaning": "to study",
+      "dictionary": "勉強",
+      "reading": "べんきょう",
+      "meaning": "study; to study",
       "pos": [
         "n",
         "vs",
         "vt",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N5"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N5",
+      "suru": true
     },
     {
       "id": "1239730",
@@ -6524,7 +6521,7 @@
       "id": "1227560",
       "dictionary": "休む",
       "reading": "やすむ",
-      "meaning": "to be absent; to take a day off",
+      "meaning": "to rest; to take a day off",
       "pos": [
         "v5m",
         "vi"
@@ -6578,45 +6575,48 @@
     },
     {
       "id": "1554310",
-      "dictionary": "料理する",
-      "reading": "りょうりする",
-      "meaning": "to cook",
+      "dictionary": "料理",
+      "reading": "りょうり",
+      "meaning": "cooking; to cook",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N5"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N5",
+      "suru": true
     },
     {
       "id": "1553170",
-      "dictionary": "旅行する",
-      "reading": "りょこうする",
-      "meaning": "to travel",
+      "dictionary": "旅行",
+      "reading": "りょこう",
+      "meaning": "travel; to travel",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N5"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N5",
+      "suru": true
     },
     {
       "id": "1559160",
-      "dictionary": "練習する",
-      "reading": "れんしゅうする",
-      "meaning": "to practice",
+      "dictionary": "練習",
+      "reading": "れんしゅう",
+      "meaning": "practice; to practice",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N5"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N5",
+      "suru": true
     },
     {
       "id": "1606560",
@@ -6869,20 +6869,20 @@
       "id": "1526960",
       "dictionary": "味",
       "reading": "あじ",
-      "meaning": "flavor; flavour",
+      "meaning": "flavor",
       "pos": [
         "n",
         "adj-na"
       ],
-      "wordType": "adj-na",
-      "verbClass": "adj-na",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
       "id": "1153930",
       "dictionary": "安全",
       "reading": "あんぜん",
-      "meaning": "safety; security",
+      "meaning": "safe",
       "pos": [
         "n",
         "adj-na"
@@ -6922,7 +6922,7 @@
       "id": "1218560",
       "dictionary": "危険",
       "reading": "きけん",
-      "meaning": "danger; peril",
+      "meaning": "dangerous",
       "pos": [
         "n",
         "adj-na"
@@ -6973,7 +6973,7 @@
       "id": "1318720",
       "dictionary": "自由",
       "reading": "じゆう",
-      "meaning": "freedom; liberty",
+      "meaning": "free",
       "pos": [
         "n",
         "adj-na"
@@ -6996,30 +6996,17 @@
       "jlptLevel": "N4"
     },
     {
-      "id": "1006610",
-      "dictionary": "そう",
-      "reading": "そう",
-      "meaning": "appearing that; seeming that",
-      "pos": [
-        "aux",
-        "adj-na"
-      ],
-      "wordType": "adj-na",
-      "verbClass": "adj-na",
-      "jlptLevel": "N4"
-    },
-    {
       "id": "1075500",
       "dictionary": "ソフト",
       "reading": "ソフト",
-      "meaning": "soft; software",
+      "meaning": "software",
       "pos": [
         "adj-na",
         "adj-no",
         "n"
       ],
-      "wordType": "adj-na",
-      "verbClass": "adj-na",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
@@ -7052,13 +7039,13 @@
       "id": "1207250",
       "dictionary": "楽しみ",
       "reading": "たのしみ",
-      "meaning": "enjoyment; pleasure",
+      "meaning": "something to look forward to",
       "pos": [
         "n",
         "adj-na"
       ],
-      "wordType": "adj-na",
-      "verbClass": "adj-na",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
@@ -7104,18 +7091,19 @@
     },
     {
       "id": "1599420",
-      "dictionary": "中々",
+      "dictionary": "なかなか",
       "reading": "なかなか",
-      "meaning": "very; considerably",
+      "meaning": "quite; (not) easily",
       "pos": [
         "adv",
         "adj-na",
         "n",
         "adj-no"
       ],
-      "wordType": "adj-na",
-      "verbClass": "adj-na",
-      "jlptLevel": "N4"
+      "wordType": "adverb",
+      "verbClass": "adverb",
+      "jlptLevel": "N4",
+      "kanjiForm": "中々"
     },
     {
       "id": "1227370",
@@ -7177,7 +7165,7 @@
       "id": "1494860",
       "dictionary": "不便",
       "reading": "ふべん",
-      "meaning": "inconvenience; inexpediency",
+      "meaning": "inconvenient",
       "pos": [
         "n",
         "adj-na"
@@ -7190,7 +7178,7 @@
       "id": "1509430",
       "dictionary": "別",
       "reading": "べつ",
-      "meaning": "distinction; difference",
+      "meaning": "separate; different; another",
       "pos": [
         "n",
         "adj-no",
@@ -7293,7 +7281,7 @@
       "id": "2855080",
       "dictionary": "アルバイト",
       "reading": "アルバイト",
-      "meaning": "albite",
+      "meaning": "part-time job",
       "pos": [
         "n"
       ],
@@ -7894,9 +7882,9 @@
     },
     {
       "id": "1213870",
-      "dictionary": "看護婦",
-      "reading": "かんごふ",
-      "meaning": "(female) nurse",
+      "dictionary": "看護師",
+      "reading": "かんごし",
+      "meaning": "nurse",
       "pos": [
         "n"
       ],
@@ -7932,7 +7920,7 @@
       "id": "1222700",
       "dictionary": "汽車",
       "reading": "きしゃ",
-      "meaning": "train (esp. a long-distance train); steam train",
+      "meaning": "train (esp. a long-distance train); steam train (old-fashioned)",
       "pos": [
         "n"
       ],
@@ -8373,7 +8361,7 @@
       "id": "1286400",
       "dictionary": "国際",
       "reading": "こくさい",
-      "meaning": "international; diplomatic intercourse",
+      "meaning": "international",
       "pos": [
         "adj-no",
         "n"
@@ -8671,7 +8659,7 @@
       "id": "1446760",
       "dictionary": "島",
       "reading": "しま",
-      "meaning": "island; one's territory (of a sex worker, organized crime gang, etc.)",
+      "meaning": "island",
       "pos": [
         "n"
       ],
@@ -8840,7 +8828,7 @@
       "id": "1367300",
       "dictionary": "人口",
       "reading": "じんこう",
-      "meaning": "population; common talk",
+      "meaning": "population",
       "pos": [
         "n"
       ],
@@ -9073,7 +9061,7 @@
       "id": "1396840",
       "dictionary": "祖父",
       "reading": "そふ",
-      "meaning": "grandfather; old man",
+      "meaning": "grandfather",
       "pos": [
         "n"
       ],
@@ -9109,14 +9097,14 @@
       "id": "1414470",
       "dictionary": "大体",
       "reading": "だいたい",
-      "meaning": "generally; on the whole",
+      "meaning": "roughly; mostly",
       "pos": [
         "adv",
         "adj-no",
         "n"
       ],
-      "wordType": "noun",
-      "verbClass": "noun",
+      "wordType": "adverb",
+      "verbClass": "adverb",
       "jlptLevel": "N4"
     },
     {
@@ -9157,16 +9145,17 @@
     },
     {
       "id": "1157080",
-      "dictionary": "為",
+      "dictionary": "ため",
       "reading": "ため",
-      "meaning": "good; advantage",
+      "meaning": "for (the sake of); in order to; because of",
       "pos": [
         "n",
         "adv"
       ],
       "wordType": "noun",
       "verbClass": "noun",
-      "jlptLevel": "N4"
+      "jlptLevel": "N4",
+      "kanjiForm": "為"
     },
     {
       "id": "1420160",
@@ -9185,7 +9174,7 @@
       "id": "1255060",
       "dictionary": "血",
       "reading": "ち",
-      "meaning": "blood; blood",
+      "meaning": "blood",
       "pos": [
         "n"
       ],
@@ -9245,7 +9234,7 @@
       "id": "1294330",
       "dictionary": "妻",
       "reading": "つま",
-      "meaning": "wife; garnish (esp. one served with sashimi)",
+      "meaning": "wife",
       "pos": [
         "n"
       ],
@@ -9354,7 +9343,7 @@
       "id": "1443760",
       "dictionary": "電報",
       "reading": "でんぽう",
-      "meaning": "telegram",
+      "meaning": "telegram (old-fashioned)",
       "pos": [
         "n"
       ],
@@ -9662,7 +9651,7 @@
       "id": "1106400",
       "dictionary": "ピアノ",
       "reading": "ピアノ",
-      "meaning": "piano (instrument); piano (dynamic)",
+      "meaning": "piano",
       "pos": [
         "n"
       ],
@@ -9869,7 +9858,7 @@
       "id": "1604290",
       "dictionary": "周り",
       "reading": "まわり",
-      "meaning": "circumference; girth",
+      "meaning": "surroundings; around",
       "pos": [
         "n"
       ],
@@ -9970,7 +9959,7 @@
       "id": "1404390",
       "dictionary": "息子",
       "reading": "むすこ",
-      "meaning": "son; penis",
+      "meaning": "son",
       "pos": [
         "n"
       ],
@@ -9994,7 +9983,7 @@
       "id": "1534870",
       "dictionary": "木綿",
       "reading": "もめん",
-      "meaning": "cotton (material); red silk-cotton tree (Bombax ceiba)",
+      "meaning": "cotton",
       "pos": [
         "n"
       ],
@@ -10054,7 +10043,7 @@
       "id": "1529410",
       "dictionary": "夢",
       "reading": "ゆめ",
-      "meaning": "dream; dream",
+      "meaning": "dream",
       "pos": [
         "n"
       ],
@@ -10152,7 +10141,7 @@
       "id": "1148520",
       "dictionary": "ワープロ",
       "reading": "ワープロ",
-      "meaning": "word processor",
+      "meaning": "word processor (old-fashioned)",
       "pos": [
         "n"
       ],
@@ -10201,7 +10190,7 @@
       "id": "1284430",
       "dictionary": "合う",
       "reading": "あう",
-      "meaning": "to come together; to merge",
+      "meaning": "to fit; to match; to suit",
       "pos": [
         "v5u",
         "vi",
@@ -10241,7 +10230,7 @@
       "id": "1323010",
       "dictionary": "謝る",
       "reading": "あやまる",
-      "meaning": "to apologize (apologise); to refuse",
+      "meaning": "to apologize",
       "pos": [
         "v5r",
         "vt",
@@ -10253,46 +10242,49 @@
     },
     {
       "id": "1019420",
-      "dictionary": "アルバイトする",
-      "reading": "アルバイトする",
-      "meaning": "to work part-time",
+      "dictionary": "アルバイト",
+      "reading": "アルバイト",
+      "meaning": "part-time job; to work part-time",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1153890",
-      "dictionary": "安心する",
-      "reading": "あんしんする",
-      "meaning": "to feel relieved",
+      "dictionary": "安心",
+      "reading": "あんしん",
+      "meaning": "feel relieved; to feel relieved",
       "pos": [
         "n",
         "adj-na",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1154860",
-      "dictionary": "案内する",
-      "reading": "あんないする",
-      "meaning": "to guide; to show around",
+      "dictionary": "案内",
+      "reading": "あんない",
+      "meaning": "guide; to guide; to show around",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1378520",
@@ -10309,17 +10301,17 @@
     },
     {
       "id": "1156530",
-      "dictionary": "意見する",
-      "reading": "いけんする",
-      "meaning": "to admonish; to give (someone) a talking-to",
+      "dictionary": "意見",
+      "reading": "いけん",
+      "meaning": "opinion",
       "pos": [
         "n",
         "vs",
         "vt",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
@@ -10443,32 +10435,34 @@
     },
     {
       "id": "1172830",
-      "dictionary": "運転する",
-      "reading": "うんてんする",
-      "meaning": "to drive",
+      "dictionary": "運転",
+      "reading": "うんてん",
+      "meaning": "drive; to drive",
       "pos": [
         "n",
         "vs",
         "vt",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1172910",
-      "dictionary": "運動する",
-      "reading": "うんどうする",
-      "meaning": "to exercise",
+      "dictionary": "運動",
+      "reading": "うんどう",
+      "meaning": "exercise; to exercise",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1588730",
@@ -10485,18 +10479,19 @@
     },
     {
       "id": "1178450",
-      "dictionary": "遠慮する",
-      "reading": "えんりょする",
-      "meaning": "to hold back; to refrain",
+      "dictionary": "遠慮",
+      "reading": "えんりょ",
+      "meaning": "hold back; to hold back; to refrain",
       "pos": [
         "n",
         "vs",
         "vt",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1402730",
@@ -10528,7 +10523,7 @@
       "id": "1223660",
       "dictionary": "起こす",
       "reading": "おこす",
-      "meaning": "to raise; to raise up",
+      "meaning": "to wake (someone) up; to cause",
       "pos": [
         "v5s",
         "vt"
@@ -10566,16 +10561,16 @@
     },
     {
       "id": "1002430",
-      "dictionary": "お茶する",
-      "reading": "おちゃする",
-      "meaning": "to have tea",
+      "dictionary": "お茶",
+      "reading": "おちゃ",
+      "meaning": "tea",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
@@ -10595,7 +10590,7 @@
       "id": "1538440",
       "dictionary": "踊る",
       "reading": "おどる",
-      "meaning": "to dance (orig. a hopping dance); to be manipulated",
+      "meaning": "to dance",
       "pos": [
         "v5r",
         "vi"
@@ -10647,7 +10642,7 @@
       "id": "1385910",
       "dictionary": "折る",
       "reading": "おる",
-      "meaning": "to break; to fracture",
+      "meaning": "to fold; to break",
       "pos": [
         "v5r",
         "vt"
@@ -10671,32 +10666,33 @@
     },
     {
       "id": "1198360",
-      "dictionary": "会議する",
-      "reading": "かいぎする",
-      "meaning": "to hold a meeting",
+      "dictionary": "会議",
+      "reading": "かいぎ",
+      "meaning": "meeting",
       "pos": [
         "n",
         "vs",
         "vi",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
       "id": "1198880",
-      "dictionary": "会話する",
-      "reading": "かいわする",
-      "meaning": "to converse; to have a conversation",
+      "dictionary": "会話",
+      "reading": "かいわ",
+      "meaning": "converse; to converse; to have a conversation",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1510650",
@@ -10817,18 +10813,19 @@
     },
     {
       "id": "1215810",
-      "dictionary": "関係する",
-      "reading": "かんけいする",
-      "meaning": "to be related; to concern",
+      "dictionary": "関係",
+      "reading": "かんけい",
+      "meaning": "be related; to be related; to concern",
       "pos": [
         "n",
         "vs",
         "vi",
         "n-suf"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1591150",
@@ -10858,47 +10855,49 @@
     },
     {
       "id": "1228690",
-      "dictionary": "急行する",
-      "reading": "きゅうこうする",
-      "meaning": "to hurry; to rush",
+      "dictionary": "急行",
+      "reading": "きゅうこう",
+      "meaning": "express (train)",
       "pos": [
         "n",
         "vs",
         "adj-no",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
       "id": "1236950",
-      "dictionary": "教育する",
-      "reading": "きょういくする",
-      "meaning": "to educate",
+      "dictionary": "教育",
+      "reading": "きょういく",
+      "meaning": "educate; to educate",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1234140",
-      "dictionary": "競争する",
-      "reading": "きょうそうする",
-      "meaning": "to compete",
+      "dictionary": "競争",
+      "reading": "きょうそう",
+      "meaning": "compete; to compete",
       "pos": [
         "n",
         "vs",
         "vt",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1483540",
@@ -10928,102 +10927,109 @@
     },
     {
       "id": "1252090",
-      "dictionary": "計画する",
-      "reading": "けいかくする",
-      "meaning": "to plan",
+      "dictionary": "計画",
+      "reading": "けいかく",
+      "meaning": "plan; to plan",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1251270",
-      "dictionary": "経験する",
-      "reading": "けいけんする",
-      "meaning": "to experience",
+      "dictionary": "経験",
+      "reading": "けいけん",
+      "meaning": "experience; to experience",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1185290",
-      "dictionary": "下宿する",
-      "reading": "げしゅくする",
-      "meaning": "to board; to lodge",
+      "dictionary": "下宿",
+      "reading": "げしゅく",
+      "meaning": "board; to board; to lodge",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1258520",
-      "dictionary": "研究する",
-      "reading": "けんきゅうする",
-      "meaning": "to research",
+      "dictionary": "研究",
+      "reading": "けんきゅう",
+      "meaning": "research; to research",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1260000",
-      "dictionary": "見物する",
-      "reading": "けんぶつする",
-      "meaning": "to sightsee",
+      "dictionary": "見物",
+      "reading": "けんぶつ",
+      "meaning": "sightsee; to sightsee",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1282260",
-      "dictionary": "講義する",
-      "reading": "こうぎする",
-      "meaning": "to lecture",
+      "dictionary": "講義",
+      "reading": "こうぎ",
+      "meaning": "lecture; to lecture",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1267180",
-      "dictionary": "故障する",
-      "reading": "こしょうする",
-      "meaning": "to break down; to malfunction",
+      "dictionary": "故障",
+      "reading": "こしょう",
+      "meaning": "break down; to break down; to malfunction",
       "pos": [
         "n",
         "vs",
         "vi",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1593410",
@@ -11095,7 +11101,7 @@
       "id": "1184170",
       "dictionary": "下げる",
       "reading": "さげる",
-      "meaning": "to hang; to suspend",
+      "meaning": "to lower",
       "pos": [
         "v1",
         "vt"
@@ -11108,7 +11114,7 @@
       "id": "1291270",
       "dictionary": "差し上げる",
       "reading": "さしあげる",
-      "meaning": "to lift up; to hold up",
+      "meaning": "to give (humble)",
       "pos": [
         "v1",
         "vt",
@@ -11147,172 +11153,181 @@
     },
     {
       "id": "1312420",
-      "dictionary": "試合する",
-      "reading": "しあいする",
-      "meaning": "to play a match",
+      "dictionary": "試合",
+      "reading": "しあい",
+      "meaning": "match; game",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
       "id": "1312350",
-      "dictionary": "試験する",
-      "reading": "しけんする",
-      "meaning": "to test; to examine (something)",
+      "dictionary": "試験",
+      "reading": "しけん",
+      "meaning": "exam",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
       "id": "1310260",
-      "dictionary": "支度する",
-      "reading": "したくする",
-      "meaning": "to get ready; to prepare",
+      "dictionary": "支度",
+      "reading": "したく",
+      "meaning": "get ready; to get ready; to prepare",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1320140",
-      "dictionary": "失敗する",
-      "reading": "しっぱいする",
-      "meaning": "to fail",
+      "dictionary": "失敗",
+      "reading": "しっぱい",
+      "meaning": "fail; to fail",
       "pos": [
         "n",
         "vs",
         "vt",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1330290",
-      "dictionary": "授業する",
-      "reading": "じゅぎょうする",
-      "meaning": "to hold a class; to teach a lesson",
+      "dictionary": "授業",
+      "reading": "じゅぎょう",
+      "meaning": "class; lesson",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
       "id": "1339460",
-      "dictionary": "出席する",
-      "reading": "しゅっせきする",
-      "meaning": "to attend",
+      "dictionary": "出席",
+      "reading": "しゅっせき",
+      "meaning": "attend; to attend",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1340000",
-      "dictionary": "出発する",
-      "reading": "しゅっぱつする",
-      "meaning": "to depart",
+      "dictionary": "出発",
+      "reading": "しゅっぱつ",
+      "meaning": "depart; to depart",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1341670",
-      "dictionary": "準備する",
-      "reading": "じゅんびする",
-      "meaning": "to prepare",
+      "dictionary": "準備",
+      "reading": "じゅんび",
+      "meaning": "prepare; to prepare",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1351430",
-      "dictionary": "紹介する",
-      "reading": "しょうかいする",
-      "meaning": "to introduce",
+      "dictionary": "紹介",
+      "reading": "しょうかい",
+      "meaning": "introduce; to introduce",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1349610",
-      "dictionary": "招待する",
-      "reading": "しょうたいする",
-      "meaning": "to invite",
+      "dictionary": "招待",
+      "reading": "しょうたい",
+      "meaning": "invite; to invite",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1349480",
-      "dictionary": "承知する",
-      "reading": "しょうちする",
-      "meaning": "to consent; to acknowledge",
+      "dictionary": "承知",
+      "reading": "しょうち",
+      "meaning": "consent; to consent; to acknowledge",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1358490",
-      "dictionary": "食事する",
-      "reading": "しょくじする",
-      "meaning": "to have a meal",
+      "dictionary": "食事",
+      "reading": "しょくじ",
+      "meaning": "a meal; to have a meal",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1420410",
@@ -11342,31 +11357,32 @@
     },
     {
       "id": "1360930",
-      "dictionary": "心配する",
-      "reading": "しんぱいする",
-      "meaning": "to worry",
+      "dictionary": "心配",
+      "reading": "しんぱい",
+      "meaning": "worry; to worry",
       "pos": [
         "n",
         "vs",
         "vt",
         "adj-na"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1371320",
-      "dictionary": "水泳する",
-      "reading": "すいえいする",
-      "meaning": "to swim",
+      "dictionary": "水泳",
+      "reading": "すいえい",
+      "meaning": "swimming",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
@@ -11394,19 +11410,6 @@
       ],
       "wordType": "verb",
       "verbClass": "godan-m",
-      "jlptLevel": "N4"
-    },
-    {
-      "id": "1006140",
-      "dictionary": "すっとする",
-      "reading": "すっとする",
-      "meaning": "to feel refreshed",
-      "pos": [
-        "adv",
-        "vs"
-      ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
       "jlptLevel": "N4"
     },
     {
@@ -11451,87 +11454,92 @@
     },
     {
       "id": "1378860",
-      "dictionary": "生活する",
-      "reading": "せいかつする",
-      "meaning": "to live; to make a living",
+      "dictionary": "生活",
+      "reading": "せいかつ",
+      "meaning": "live; to live; to make a living",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1378990",
-      "dictionary": "生産する",
-      "reading": "せいさんする",
-      "meaning": "to produce",
+      "dictionary": "生産",
+      "reading": "せいさん",
+      "meaning": "produce; to produce",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1386460",
-      "dictionary": "説明する",
-      "reading": "せつめいする",
-      "meaning": "to explain",
+      "dictionary": "説明",
+      "reading": "せつめい",
+      "meaning": "explain; to explain",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1374300",
-      "dictionary": "世話する",
-      "reading": "せわする",
-      "meaning": "to look after; to take care of",
+      "dictionary": "世話",
+      "reading": "せわ",
+      "meaning": "look after; to look after; to take care of",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1390360",
-      "dictionary": "戦争する",
-      "reading": "せんそうする",
-      "meaning": "to wage war",
+      "dictionary": "戦争",
+      "reading": "せんそう",
+      "meaning": "war",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
       "id": "1401210",
-      "dictionary": "相談する",
-      "reading": "そうだんする",
-      "meaning": "to consult; to discuss",
+      "dictionary": "相談",
+      "reading": "そうだん",
+      "meaning": "consult; to consult; to discuss",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1160570",
@@ -11548,31 +11556,33 @@
     },
     {
       "id": "1405890",
-      "dictionary": "卒業する",
-      "reading": "そつぎょうする",
-      "meaning": "to graduate",
+      "dictionary": "卒業",
+      "reading": "そつぎょう",
+      "meaning": "graduate; to graduate",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1411300",
-      "dictionary": "退院する",
-      "reading": "たいいんする",
-      "meaning": "to leave the hospital",
+      "dictionary": "退院",
+      "reading": "たいいん",
+      "meaning": "leave the hospital; to leave the hospital",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1445790",
@@ -11681,23 +11691,23 @@
     },
     {
       "id": "1419860",
-      "dictionary": "暖房する",
-      "reading": "だんぼうする",
-      "meaning": "to heat a room",
+      "dictionary": "暖房",
+      "reading": "だんぼう",
+      "meaning": "heating",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
       "id": "1077550",
-      "dictionary": "チェックする",
-      "reading": "チェックする",
-      "meaning": "to check",
+      "dictionary": "チェック",
+      "reading": "チェック",
+      "meaning": "check; to check",
       "pos": [
         "n",
         "adj-no",
@@ -11705,38 +11715,41 @@
         "vt",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1426530",
-      "dictionary": "注意する",
-      "reading": "ちゅういする",
-      "meaning": "to be careful; to warn",
+      "dictionary": "注意",
+      "reading": "ちゅうい",
+      "meaning": "be careful; to be careful; to warn",
       "pos": [
         "n",
         "vs",
         "vi",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1426590",
-      "dictionary": "注射する",
-      "reading": "ちゅうしゃする",
-      "meaning": "to give an injection",
+      "dictionary": "注射",
+      "reading": "ちゅうしゃ",
+      "meaning": "give an injection; to give an injection",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1597780",
@@ -11780,17 +11793,17 @@
     },
     {
       "id": "1444980",
-      "dictionary": "都合する",
-      "reading": "つごうする",
-      "meaning": "to arrange (one's schedule)",
+      "dictionary": "都合",
+      "reading": "つごう",
+      "meaning": "convenience; circumstances",
       "pos": [
         "n",
         "vs",
         "vt",
         "adv"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
@@ -11916,7 +11929,7 @@
       "id": "1474850",
       "dictionary": "泊まる",
       "reading": "とまる",
-      "meaning": "to stay at (e.g. hotel); to be docked",
+      "meaning": "to stay (overnight)",
       "pos": [
         "v5r",
         "vi"
@@ -11953,16 +11966,16 @@
     },
     {
       "id": "1599340",
-      "dictionary": "泥棒する",
-      "reading": "どろぼうする",
-      "meaning": "to steal",
+      "dictionary": "泥棒",
+      "reading": "どろぼう",
+      "meaning": "thief",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
@@ -12100,31 +12113,33 @@
     },
     {
       "id": "1465720",
-      "dictionary": "入院する",
-      "reading": "にゅういんする",
-      "meaning": "to be hospitalized",
+      "dictionary": "入院",
+      "reading": "にゅういん",
+      "meaning": "be hospitalized; to be hospitalized",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1465850",
-      "dictionary": "入学する",
-      "reading": "にゅうがくする",
-      "meaning": "to enter a school",
+      "dictionary": "入学",
+      "reading": "にゅうがく",
+      "meaning": "enter a school; to enter a school",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1314600",
@@ -12167,9 +12182,9 @@
     },
     {
       "id": "1360320",
-      "dictionary": "寝坊する",
-      "reading": "ねぼうする",
-      "meaning": "to oversleep",
+      "dictionary": "寝坊",
+      "reading": "ねぼう",
+      "meaning": "oversleep; to oversleep",
       "pos": [
         "n",
         "vs",
@@ -12177,15 +12192,16 @@
         "adj-na",
         "adj-no"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1529390",
       "dictionary": "眠る",
       "reading": "ねむる",
-      "meaning": "to sleep; to die",
+      "meaning": "to sleep",
       "pos": [
         "v5r",
         "vi"
@@ -12277,17 +12293,18 @@
     },
     {
       "id": "1477170",
-      "dictionary": "発音する",
-      "reading": "はつおんする",
-      "meaning": "to pronounce",
+      "dictionary": "発音",
+      "reading": "はつおん",
+      "meaning": "pronounce; to pronounce",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1010150",
@@ -12305,15 +12322,15 @@
     },
     {
       "id": "1194660",
-      "dictionary": "花見する",
-      "reading": "はなみする",
-      "meaning": "to view the cherry blossoms",
+      "dictionary": "お花見",
+      "reading": "おはなみ",
+      "meaning": "cherry-blossom viewing",
       "pos": [
         "n",
         "vs"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
@@ -12331,9 +12348,9 @@
     },
     {
       "id": "1480670",
-      "dictionary": "反対する",
-      "reading": "はんたいする",
-      "meaning": "to oppose",
+      "dictionary": "反対",
+      "reading": "はんたい",
+      "meaning": "oppose; to oppose",
       "pos": [
         "n",
         "vs",
@@ -12341,9 +12358,10 @@
         "adj-no",
         "adj-na"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1556630",
@@ -12455,17 +12473,18 @@
     },
     {
       "id": "1500800",
-      "dictionary": "復習する",
-      "reading": "ふくしゅうする",
-      "meaning": "to review (a lesson)",
+      "dictionary": "復習",
+      "reading": "ふくしゅう",
+      "meaning": "review (a lesson); to review (a lesson)",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1408220",
@@ -12508,79 +12527,84 @@
     },
     {
       "id": "1116840",
-      "dictionary": "プレゼントする",
-      "reading": "プレゼントする",
-      "meaning": "to give a present",
+      "dictionary": "プレゼント",
+      "reading": "プレゼント",
+      "meaning": "give a present; to give a present",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1512220",
-      "dictionary": "返事する",
-      "reading": "へんじする",
-      "meaning": "to reply",
+      "dictionary": "返事",
+      "reading": "へんじ",
+      "meaning": "a reply; to reply",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1520120",
-      "dictionary": "貿易する",
-      "reading": "ぼうえきする",
-      "meaning": "to trade",
+      "dictionary": "貿易",
+      "reading": "ぼうえき",
+      "meaning": "trade; to trade",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1516750",
-      "dictionary": "放送する",
-      "reading": "ほうそうする",
-      "meaning": "to broadcast",
+      "dictionary": "放送",
+      "reading": "ほうそう",
+      "meaning": "broadcast; to broadcast",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1523400",
-      "dictionary": "翻訳する",
-      "reading": "ほんやくする",
-      "meaning": "to translate",
+      "dictionary": "翻訳",
+      "reading": "ほんやく",
+      "meaning": "translate; to translate",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1302070",
       "dictionary": "参る",
       "reading": "まいる",
-      "meaning": "to go; to come",
+      "meaning": "to go; to come (humble)",
       "pos": [
         "v5r",
         "vi"
@@ -12724,9 +12748,9 @@
     },
     {
       "id": "1530970",
-      "dictionary": "無理する",
-      "reading": "むりする",
-      "meaning": "to overdo it; to force oneself",
+      "dictionary": "無理",
+      "reading": "むり",
+      "meaning": "overdo it; to overdo it; to force oneself",
       "pos": [
         "adj-na",
         "n",
@@ -12735,9 +12759,10 @@
         "int",
         "adj-no"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1346370",
@@ -12807,17 +12832,18 @@
     },
     {
       "id": "1538130",
-      "dictionary": "約束する",
-      "reading": "やくそくする",
-      "meaning": "to promise",
+      "dictionary": "約束",
+      "reading": "やくそく",
+      "meaning": "promise; to promise",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1537980",
@@ -12873,33 +12899,35 @@
     },
     {
       "id": "1538820",
-      "dictionary": "輸出する",
-      "reading": "ゆしゅつする",
-      "meaning": "to export",
+      "dictionary": "輸出",
+      "reading": "ゆしゅつ",
+      "meaning": "export; to export",
       "pos": [
         "n",
         "vs",
         "vt",
         "adj-f"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1538870",
-      "dictionary": "輸入する",
-      "reading": "ゆにゅうする",
-      "meaning": "to import",
+      "dictionary": "輸入",
+      "reading": "ゆにゅう",
+      "meaning": "import; to import",
       "pos": [
         "n",
         "vs",
         "vt",
         "adj-f"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1545710",
@@ -12916,17 +12944,18 @@
     },
     {
       "id": "1546220",
-      "dictionary": "用意する",
-      "reading": "よういする",
-      "meaning": "to prepare",
+      "dictionary": "用意",
+      "reading": "ようい",
+      "meaning": "prepare; to prepare",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1179005",
@@ -12943,45 +12972,48 @@
     },
     {
       "id": "1543070",
-      "dictionary": "予習する",
-      "reading": "よしゅうする",
-      "meaning": "to prepare for a lesson",
+      "dictionary": "予習",
+      "reading": "よしゅう",
+      "meaning": "prepare for a lesson; to prepare for a lesson",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1543240",
-      "dictionary": "予定する",
-      "reading": "よていする",
-      "meaning": "to schedule; to plan",
+      "dictionary": "予定",
+      "reading": "よてい",
+      "meaning": "schedule; to schedule; to plan",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1543750",
-      "dictionary": "予約する",
-      "reading": "よやくする",
-      "meaning": "to reserve",
+      "dictionary": "予約",
+      "reading": "よやく",
+      "meaning": "reserve; to reserve",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1219680",
@@ -13012,23 +13044,24 @@
     },
     {
       "id": "1549660",
-      "dictionary": "利用する",
-      "reading": "りようする",
-      "meaning": "to use",
+      "dictionary": "利用",
+      "reading": "りよう",
+      "meaning": "use; to use",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1552760",
-      "dictionary": "留守にする",
-      "reading": "るすにする",
-      "meaning": "to be away from home",
+      "dictionary": "留守",
+      "reading": "るす",
+      "meaning": "be away from home; to be away from home",
       "pos": [
         "n",
         "vs",
@@ -13036,38 +13069,40 @@
         "vi",
         "adj-no"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1557290",
-      "dictionary": "冷房する",
-      "reading": "れいぼうする",
-      "meaning": "to air-condition; to cool a room",
+      "dictionary": "冷房",
+      "reading": "れいぼう",
+      "meaning": "air conditioning",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
+      "wordType": "noun",
+      "verbClass": "noun",
       "jlptLevel": "N4"
     },
     {
       "id": "1559900",
-      "dictionary": "連絡する",
-      "reading": "れんらくする",
-      "meaning": "to contact",
+      "dictionary": "連絡",
+      "reading": "れんらく",
+      "meaning": "contact; to contact",
       "pos": [
         "n",
         "vs",
         "vt",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N4"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N4",
+      "suru": true
     },
     {
       "id": "1501660",
@@ -13151,7 +13186,7 @@
       "id": "1256170",
       "dictionary": "健康",
       "reading": "けんこう",
-      "meaning": "health; healthy",
+      "meaning": "healthy; health",
       "pos": [
         "n",
         "adj-na"
@@ -13179,7 +13214,7 @@
       "id": "1507670",
       "dictionary": "平等",
       "reading": "びょうどう",
-      "meaning": "equality; impartiality",
+      "meaning": "equal; equality",
       "pos": [
         "n",
         "adj-na",
@@ -13193,7 +13228,7 @@
       "id": "1491150",
       "dictionary": "不安",
       "reading": "ふあん",
-      "meaning": "anxiety; uneasiness",
+      "meaning": "anxious; anxiety",
       "pos": [
         "n",
         "adj-na"
@@ -13206,7 +13241,7 @@
       "id": "1508070",
       "dictionary": "平和",
       "reading": "へいわ",
-      "meaning": "peace; harmony",
+      "meaning": "peaceful; peace",
       "pos": [
         "n",
         "adj-na"
@@ -13571,7 +13606,7 @@
       "id": "2083100",
       "dictionary": "日",
       "reading": "にち",
-      "meaning": "Sunday; nth day (of the month)",
+      "meaning": "day (counter), e.g. 三日間",
       "pos": [
         "n",
         "suf",
@@ -13789,8 +13824,8 @@
     {
       "id": "1584090",
       "dictionary": "抱く",
-      "reading": "いだく",
-      "meaning": "to hold in one's arms (e.g. a baby); to embrace",
+      "reading": "だく",
+      "meaning": "to hold; to hug",
       "pos": [
         "v5k",
         "vt"
@@ -13824,19 +13859,6 @@
       ],
       "wordType": "verb",
       "verbClass": "godan-m",
-      "jlptLevel": "N3"
-    },
-    {
-      "id": "1311870",
-      "dictionary": "至る",
-      "reading": "いたる",
-      "meaning": "to arrive at (e.g. a decision); to reach (a stage)",
-      "pos": [
-        "v5r",
-        "vi"
-      ],
-      "wordType": "verb",
-      "verbClass": "godan-r",
       "jlptLevel": "N3"
     },
     {
@@ -13890,19 +13912,6 @@
       ],
       "wordType": "verb",
       "verbClass": "godan-s",
-      "jlptLevel": "N3"
-    },
-    {
-      "id": "1253570",
-      "dictionary": "撃つ",
-      "reading": "うつ",
-      "meaning": "to shoot (a gun, person, etc.); to fire",
-      "pos": [
-        "v5t",
-        "vt"
-      ],
-      "wordType": "verb",
-      "verbClass": "godan-t",
       "jlptLevel": "N3"
     },
     {
@@ -14090,19 +14099,6 @@
       "jlptLevel": "N3"
     },
     {
-      "id": "1609500",
-      "dictionary": "罹る",
-      "reading": "かかる",
-      "meaning": "to contract (a disease); to suffer from",
-      "pos": [
-        "v5r",
-        "vi"
-      ],
-      "wordType": "verb",
-      "verbClass": "godan-r",
-      "jlptLevel": "N3"
-    },
-    {
       "id": "1264640",
       "dictionary": "限る",
       "reading": "かぎる",
@@ -14118,17 +14114,18 @@
     },
     {
       "id": "1206820",
-      "dictionary": "学習する",
-      "reading": "がくしゅうする",
-      "meaning": "to study; to learn",
+      "dictionary": "学習",
+      "reading": "がくしゅう",
+      "meaning": "study; to study; to learn",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N3"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3",
+      "suru": true
     },
     {
       "id": "1170650",
@@ -14346,19 +14343,6 @@
       "jlptLevel": "N3"
     },
     {
-      "id": "1237510",
-      "dictionary": "狂う",
-      "reading": "くるう",
-      "meaning": "to go mad; to lose one's mind",
-      "pos": [
-        "v5u",
-        "vi"
-      ],
-      "wordType": "verb",
-      "verbClass": "godan-u",
-      "jlptLevel": "N3"
-    },
-    {
       "id": "1244350",
       "dictionary": "苦しむ",
       "reading": "くるしむ",
@@ -14486,20 +14470,6 @@
       ],
       "wordType": "verb",
       "verbClass": "godan-b",
-      "jlptLevel": "N3"
-    },
-    {
-      "id": "1297960",
-      "dictionary": "作文する",
-      "reading": "さくぶんする",
-      "meaning": "to write a composition",
-      "pos": [
-        "n",
-        "vs",
-        "vi"
-      ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
       "jlptLevel": "N3"
     },
     {
@@ -14680,9 +14650,9 @@
     },
     {
       "id": "1323500",
-      "dictionary": "邪魔する",
-      "reading": "じゃまする",
-      "meaning": "to disturb; to get in the way; to hinder",
+      "dictionary": "邪魔",
+      "reading": "じゃま",
+      "meaning": "disturb; to disturb; to get in the way; to hinder",
       "pos": [
         "n",
         "adj-na",
@@ -14690,24 +14660,26 @@
         "vt",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N3"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3",
+      "suru": true
     },
     {
       "id": "1333750",
-      "dictionary": "集中する",
-      "reading": "しゅうちゅうする",
-      "meaning": "to concentrate",
+      "dictionary": "集中",
+      "reading": "しゅうちゅう",
+      "meaning": "concentrate; to concentrate",
       "pos": [
         "n",
         "vs",
         "vt",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N3"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3",
+      "suru": true
     },
     {
       "id": "1586265",
@@ -14803,17 +14775,18 @@
     },
     {
       "id": "1392290",
-      "dictionary": "選択する",
-      "reading": "せんたくする",
-      "meaning": "to choose; to select",
+      "dictionary": "選択",
+      "reading": "せんたく",
+      "meaning": "choose; to choose; to select",
       "pos": [
         "n",
         "vs",
         "vt"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N3"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3",
+      "suru": true
     },
     {
       "id": "1581730",
@@ -14859,18 +14832,19 @@
     },
     {
       "id": "1596750",
-      "dictionary": "退屈する",
-      "reading": "たいくつする",
-      "meaning": "to feel bored; to get bored (with)",
+      "dictionary": "退屈",
+      "reading": "たいくつ",
+      "meaning": "feel bored; to feel bored; to get bored (with)",
       "pos": [
         "adj-na",
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N3"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3",
+      "suru": true
     },
     {
       "id": "1610160",
@@ -14992,17 +14966,18 @@
     },
     {
       "id": "1426910",
-      "dictionary": "駐車する",
-      "reading": "ちゅうしゃする",
-      "meaning": "to park",
+      "dictionary": "駐車",
+      "reading": "ちゅうしゃ",
+      "meaning": "park; to park",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N3"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3",
+      "suru": true
     },
     {
       "id": "1433650",
@@ -15407,19 +15382,6 @@
       "jlptLevel": "N3"
     },
     {
-      "id": "1612920",
-      "dictionary": "轢く",
-      "reading": "ひく",
-      "meaning": "to run over (with a vehicle); to knock down",
-      "pos": [
-        "v5k",
-        "vt"
-      ],
-      "wordType": "verb",
-      "verbClass": "godan-k",
-      "jlptLevel": "N3"
-    },
-    {
       "id": "1361330",
       "dictionary": "振る",
       "reading": "ふる",
@@ -15473,18 +15435,19 @@
     },
     {
       "id": "1011920",
-      "dictionary": "ぼんやりする",
-      "reading": "ぼんやりする",
-      "meaning": "to be absent-minded",
+      "dictionary": "ぼんやり",
+      "reading": "ぼんやり",
+      "meaning": "be absent-minded; to be absent-minded",
       "pos": [
         "adv",
         "adv-to",
         "vs",
         "n"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N3"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3",
+      "suru": true
     },
     {
       "id": "1403120",
@@ -15498,20 +15461,6 @@
       ],
       "wordType": "verb",
       "verbClass": "godan-s",
-      "jlptLevel": "N3"
-    },
-    {
-      "id": "2784220",
-      "dictionary": "マッチする",
-      "reading": "マッチする",
-      "meaning": "to match; to go well with",
-      "pos": [
-        "n",
-        "vs",
-        "vi"
-      ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
       "jlptLevel": "N3"
     },
     {
@@ -15609,17 +15558,18 @@
     },
     {
       "id": "1539280",
-      "dictionary": "優勝する",
-      "reading": "ゆうしょうする",
-      "meaning": "to win the championship",
+      "dictionary": "優勝",
+      "reading": "ゆうしょう",
+      "meaning": "win the championship; to win the championship",
       "pos": [
         "n",
         "vs",
         "vi"
       ],
-      "wordType": "verb",
-      "verbClass": "irregular-suru",
-      "jlptLevel": "N3"
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3",
+      "suru": true
     },
     {
       "id": "1013050",
@@ -15662,19 +15612,6 @@
       "jlptLevel": "N3"
     },
     {
-      "id": "1310600",
-      "dictionary": "止す",
-      "reading": "よす",
-      "meaning": "to stop (doing); to cease",
-      "pos": [
-        "v5s",
-        "vt"
-      ],
-      "wordType": "verb",
-      "verbClass": "godan-s",
-      "jlptLevel": "N3"
-    },
-    {
       "id": "1503000",
       "dictionary": "分ける",
       "reading": "わける",
@@ -15699,6 +15636,274 @@
       "wordType": "verb",
       "verbClass": "godan-r",
       "jlptLevel": "N3"
+    },
+    {
+      "id": "1219510",
+      "dictionary": "嬉しい",
+      "reading": "うれしい",
+      "meaning": "happy; glad",
+      "pos": [
+        "adj-i"
+      ],
+      "wordType": "adj-i",
+      "verbClass": "adj-i",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1172400",
+      "dictionary": "嘘",
+      "reading": "うそ",
+      "meaning": "lie; fib",
+      "pos": [
+        "n",
+        "adj-no",
+        "int"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1260490",
+      "dictionary": "鍵",
+      "reading": "かぎ",
+      "meaning": "key; lock",
+      "pos": [
+        "n"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1213060",
+      "dictionary": "汗",
+      "reading": "あせ",
+      "meaning": "sweat; perspiration",
+      "pos": [
+        "n",
+        "int"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1258950",
+      "dictionary": "肩",
+      "reading": "かた",
+      "meaning": "shoulder",
+      "pos": [
+        "n"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1488840",
+      "dictionary": "氷",
+      "reading": "こおり",
+      "meaning": "ice",
+      "pos": [
+        "n"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1351400",
+      "dictionary": "笑顔",
+      "reading": "えがお",
+      "meaning": "smiling face; smile",
+      "pos": [
+        "n"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1002610",
+      "dictionary": "お腹",
+      "reading": "おなか",
+      "meaning": "belly; abdomen",
+      "pos": [
+        "n"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1589340",
+      "dictionary": "思い出",
+      "reading": "おもいで",
+      "meaning": "memories; recollections",
+      "pos": [
+        "n"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1579080",
+      "dictionary": "頃",
+      "reading": "ころ",
+      "meaning": "time; around",
+      "pos": [
+        "n",
+        "adv",
+        "n-suf"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1595730",
+      "dictionary": "全て",
+      "reading": "すべて",
+      "meaning": "everything; all",
+      "pos": [
+        "n",
+        "adj-no",
+        "adv"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1254730",
+      "dictionary": "結局",
+      "reading": "けっきょく",
+      "meaning": "after all; in the end",
+      "pos": [
+        "adv",
+        "n",
+        "adj-no"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1436730",
+      "dictionary": "諦める",
+      "reading": "あきらめる",
+      "meaning": "to give up; to abandon (hope, plans)",
+      "pos": [
+        "v1",
+        "vt"
+      ],
+      "wordType": "verb",
+      "verbClass": "ichidan",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1359040",
+      "dictionary": "信じる",
+      "reading": "しんじる",
+      "meaning": "to believe; to believe in",
+      "pos": [
+        "v1",
+        "vt"
+      ],
+      "wordType": "verb",
+      "verbClass": "ichidan",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1212260",
+      "dictionary": "感じる",
+      "reading": "かんじる",
+      "meaning": "to feel; to sense",
+      "pos": [
+        "v1",
+        "vt",
+        "vi"
+      ],
+      "wordType": "verb",
+      "verbClass": "ichidan",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1351730",
+      "dictionary": "詳しい",
+      "reading": "くわしい",
+      "meaning": "detailed; full",
+      "pos": [
+        "adj-i"
+      ],
+      "wordType": "adj-i",
+      "verbClass": "adj-i",
+      "jlptLevel": "N3"
+    },
+    {
+      "id": "1151120",
+      "dictionary": "挨拶",
+      "reading": "あいさつ",
+      "meaning": "greeting; to greet",
+      "pos": [
+        "n",
+        "vs",
+        "vi",
+        "exp"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3",
+      "suru": true
+    },
+    {
+      "id": "1200220",
+      "dictionary": "怪我",
+      "reading": "けが",
+      "meaning": "injury; to get injured",
+      "pos": [
+        "n",
+        "vs",
+        "vt",
+        "vi"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3",
+      "suru": true
+    },
+    {
+      "id": "1196970",
+      "dictionary": "我慢",
+      "reading": "がまん",
+      "meaning": "patience; to endure",
+      "pos": [
+        "n",
+        "vs",
+        "vt",
+        "vi"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3",
+      "suru": true
+    },
+    {
+      "id": "1257040",
+      "dictionary": "喧嘩",
+      "reading": "けんか",
+      "meaning": "quarrel; to quarrel",
+      "pos": [
+        "n",
+        "vs",
+        "vi"
+      ],
+      "wordType": "noun",
+      "verbClass": "noun",
+      "jlptLevel": "N3",
+      "suru": true
     }
   ]
 }

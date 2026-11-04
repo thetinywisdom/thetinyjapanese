@@ -52,7 +52,82 @@ const HAND_PREFERRED: Record<string, string> = {
   日本人: "にほんじん",
   二十歳: "はたち",
   二十日: "はつか",
+  二日: "ふつか",
+  三日: "みっか",
+  四日: "よっか",
+  五日: "いつか",
+  六日: "むいか",
+  七日: "なのか",
+  八日: "ようか",
+  九日: "ここのか",
+  十日: "とおか",
+  今朝: "けさ",
+  昨日: "きのう",
+  一昨日: "おととい",
+  上手: "じょうず",
+  下手: "へた",
 };
+
+const NAN_COUNTER: Record<string, string> = {
+  時: "なんじ",
+  人: "なんにん",
+  日: "なんにち",
+  月: "なんがつ",
+  年: "なんねん",
+  回: "なんかい",
+  個: "なんこ",
+  本: "なんぼん",
+  枚: "なんまい",
+  冊: "なんさつ",
+  階: "なんかい",
+  度: "なんど",
+  分: "なんぷん",
+  歳: "なんさい",
+  才: "なんさい",
+  杯: "なんばい",
+  匹: "なんびき",
+  頭: "なんとう",
+  羽: "なんわ",
+  台: "なんだい",
+  軒: "なんげん",
+  足: "なんそく",
+  着: "なんちゃく",
+  点: "なんてん",
+};
+
+/** Context readings that a longest word match would get wrong. Checked first. */
+function contextHit(text: string, i: number): { len: number; reading: string } | null {
+  if (text.startsWith("来ません", i) || text.startsWith("来ない", i) || text.startsWith("来よう", i)) {
+    return { len: 1, reading: "こ" };
+  }
+  if (text.startsWith("来ます", i) || text.startsWith("来て", i) || text.startsWith("来た", i)) {
+    return { len: 1, reading: "き" };
+  }
+  if (text.startsWith("読み方", i)) return { len: 3, reading: "よみかた" };
+  if (text.startsWith("一日", i)) {
+    return { len: 2, reading: i > 0 && text[i - 1] === "月" ? "ついたち" : "いちにち" };
+  }
+  if (text[i] === "何") {
+    const counter = NAN_COUNTER[text[i + 1] ?? ""];
+    if (counter) return { len: 2, reading: counter };
+    const rest = text.slice(i + 1);
+    if (rest.startsWith("を") || rest.startsWith("が") || rest.startsWith("も")) return { len: 1, reading: "なに" };
+    if (rest.startsWith("だ") || rest.startsWith("です") || rest.startsWith("の")) return { len: 1, reading: "なん" };
+  }
+  if (text[i] === "方") {
+    const prev2 = i >= 2 ? text.slice(i - 2, i) : "";
+    if (prev2 === "この" || prev2 === "その" || prev2 === "あの" || prev2 === "どの") {
+      return { len: 1, reading: "かた" };
+    }
+    if (i > 0 && text[i - 1] === "の") return { len: 1, reading: "ほう" };
+  }
+  if (text[i] === "他") {
+    const next = text.charCodeAt(i + 1);
+    const nextIsKanji = next >= 0x4e00 && next <= 0x9fff;
+    if (!nextIsKanji) return { len: 1, reading: "ほか" };
+  }
+  return null;
+}
 
 const MAX_PREF = 12;
 
@@ -128,6 +203,12 @@ export function annotateWithTokenizer(text: string, tokenizer: MorphTokenizer): 
   const out: RubyToken[] = [];
   let i = 0;
   while (i < text.length) {
+    const ctx = contextHit(text, i);
+    if (ctx) {
+      emitSurface(out, text.slice(i, i + ctx.len), ctx.reading);
+      i += ctx.len;
+      continue;
+    }
     const hit = preferredAt(text, i, pref);
     if (hit) {
       emitSurface(out, text.slice(i, i + hit.len), hit.reading);
@@ -135,7 +216,7 @@ export function annotateWithTokenizer(text: string, tokenizer: MorphTokenizer): 
       continue;
     }
     let j = i + 1;
-    while (j < text.length && !preferredAt(text, j, pref)) j++;
+    while (j < text.length && !preferredAt(text, j, pref) && !contextHit(text, j)) j++;
     emitGap(out, text.slice(i, j), tokenizer);
     i = j;
   }

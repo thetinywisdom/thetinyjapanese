@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useReducer, useMemo, type ReactNode } from "react";
-import { WORDS, type WordEntry, type JlptLevel, type WordType } from "@/data/words";
+import { WORDS, displayHeadword, type WordEntry, type JlptLevel, type WordType } from "@/data/words";
 import {
   ALL_QUESTION_TYPES,
   supportedQuestions,
@@ -327,7 +327,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         recordAnswer(
           "verb",
           `${record.verb.id}::${record.question}`,
-          `${record.verb.dictionary} · ${questionLabel(record.question)}`,
+          `${displayHeadword(record.verb)} · ${questionLabel(record.question)}`,
           record.correct,
           record.verb.meaning.split(";")[0].trim(),
         );
@@ -347,7 +347,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         recordAnswer(
           "verb",
           `${record.verb.id}::${record.question}`,
-          `${record.verb.dictionary} · ${questionLabel(record.question)}`,
+          `${displayHeadword(record.verb)} · ${questionLabel(record.question)}`,
           false,
           record.verb.meaning.split(";")[0].trim(),
         );

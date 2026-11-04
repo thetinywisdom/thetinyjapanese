@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import fs from "node:fs";
 import path from "path";
 import { normalizeBasePath } from "./src/lib/site-base";
 import { emitStaticPages } from "./scripts/emit-pages";

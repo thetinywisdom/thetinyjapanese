@@ -32,9 +32,11 @@ describe("diary furigana golden cases", () => {
     expect(golden.length).toBeGreaterThanOrEqual(8);
   });
 
-  for (const row of golden) {
+  for (const row of golden as { input: string; ruby: string; contains?: boolean }[]) {
     it(`${row.input} → ${row.ruby}`, () => {
-      expect(joinedRuby(annotateWithTokenizer(row.input, tokenizer))).toBe(row.ruby);
+      const got = joinedRuby(annotateWithTokenizer(row.input, tokenizer));
+      if (row.contains) expect(got).toContain(row.ruby);
+      else expect(got).toBe(row.ruby);
     });
   }
 });

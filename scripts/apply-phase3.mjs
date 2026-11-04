@@ -62,18 +62,27 @@ for (const [ch, info] of Object.entries(study)) {
       kana: r.kana,
       anchor: r.anchor || undefined,
       anchorReading: r.anchorReading || undefined,
+      note: r.note || undefined,
     })),
   };
 }
 
-const byVerbId = { ...examplesFile.byVerbId };
+const curatedIds = new Set(curatedWords.map((w) => w.id));
+const byVerbId = {};
+for (const [key, list] of Object.entries(examplesFile.byVerbId)) {
+  const id = key.split("|")[0];
+  if (curatedIds.has(id)) continue;
+  byVerbId[key] = list;
+}
 for (const row of Object.values(sentences.verbs)) {
+  if (!row.sentences?.length) continue;
   byVerbId[`${row.id}|${row.reading}`] = row.sentences.map((s) => ({ ja: s.ja, en: s.en }));
-  delete byVerbId[row.id];
 }
 const byKanji = { ...examplesFile.byKanji };
-for (const [ch, list] of Object.entries(sentences.kanji)) {
-  byKanji[ch] = list.map((s) => ({ ja: s.ja, en: s.en }));
+for (const ch of Object.keys(study)) {
+  const list = sentences.kanji[ch];
+  if (list?.length) byKanji[ch] = list.map((s) => ({ ja: s.ja, en: s.en }));
+  else delete byKanji[ch];
 }
 examplesFile.byVerbId = byVerbId;
 examplesFile.byKanji = byKanji;

@@ -13,9 +13,9 @@ describe("verb JLPT tagging", () => {
     expect(byDict("行く")?.jlptLevel).toBe("N5");
     expect(byDict("飲む")?.jlptLevel).toBe("N5");
     expect(byDict("来る")?.jlptLevel).toBe("N5");
-    expect(byDict("勉強する")?.jlptLevel).toBe("N5");
-    expect(byDict("結婚する")?.jlptLevel).toBe("N5");
-    expect(byDict("故障する")?.jlptLevel).toBe("N4");
+    expect(byDict("勉強する")).toBeUndefined();
+    expect(byDict("結婚する")).toBeUndefined();
+    expect(byDict("故障する")).toBeUndefined();
     expect(byDict("愛する")?.jlptLevel).toBe("N3");
     expect(byDict("見る")?.jlptLevel).toBe("N5");
   });

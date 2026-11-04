@@ -40,6 +40,18 @@ export interface TaughtReading {
   type: "on" | "kun";
   anchor?: string;
   anchorReading?: string;
+  note?: string;
+}
+
+/** Readings that must never be a wrong option on a remember card. */
+const BANNED_READING_DISTRACTORS = new Set(["わたくし", "いちにん", "ににん"]);
+
+/** いえ and うち are both correct for 家, so they are never options against each other. */
+export function readingDistractorAllowed(answer: string, candidate: string): boolean {
+  if (!candidate || candidate === answer) return false;
+  if (BANNED_READING_DISTRACTORS.has(candidate)) return false;
+  if ((answer === "いえ" && candidate === "うち") || (answer === "うち" && candidate === "いえ")) return false;
+  return true;
 }
 
 export interface RememberCard {
