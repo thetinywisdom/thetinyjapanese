@@ -1,7 +1,7 @@
 /**
  * Extended data build: parses JMdict + JLPT vocab caches to produce
  * src/data/words.json containing verbs, i-adjectives, na-adjectives and
- * (JLPT-listed) nouns. Run: `bun run scripts/build-words.ts`.
+ * (JLPT-listed) nouns. Run: `npx tsx scripts/build-words.ts`.
  *
  * Teacher corrections live in scripts/content-overrides.mjs and are applied
  * here, so a JMdict rebuild does not undo review items 3–4 and 14–31.
@@ -90,11 +90,17 @@ const parser = sax.createStream(true, { trim: true });
   const head = readFileSync(XML_PATH, "utf8").slice(0, 200_000);
   const re = /<!ENTITY\s+([A-Za-z0-9_-]+)\s+"([^"]*)">/g;
   let m: RegExpExecArray | null;
-  const ents = (parser as any)._parser.ENTITIES as Record<string, string>;
+  const ents = (parser as unknown as { _parser: { ENTITIES: Record<string, string> } })._parser.ENTITIES;
   while ((m = re.exec(head))) ents[m[1]] = m[1];
 }
 
-let cur: any = null;
+let cur: {
+  ent_seq: string;
+  k: string[];
+  r: string[];
+  pos: Set<string>;
+  gloss: string[];
+} | null = null;
 let textBuf = "";
 let curGlossLang: string | undefined;
 

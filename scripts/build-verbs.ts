@@ -7,7 +7,7 @@
  * still emits verbs.json for older build steps, with the same
  * content-overrides.mjs patch layer as build-words.ts.
  *
- * Run:  bun run scripts/build-verbs.ts
+ * Run:  npx tsx scripts/build-verbs.ts
  */
 import sax from "sax";
 import { createReadStream, readFileSync, writeFileSync, mkdirSync } from "fs";
@@ -63,10 +63,10 @@ console.log(`JLPT pair-index size: ${jlptIndex.size}`);
 
 // Hand-curated overrides for upstream misclassifications.
 // Key: "dictionary|reading"; Value: JLPT level or null to drop the entry.
-const overrides: Record<string, JlptTag | null> = JSON.parse(
+const overrides = JSON.parse(
   readFileSync(resolve(__dirname, "jlpt-overrides.json"), "utf8"),
-);
-delete (overrides as any)._comment;
+) as Record<string, JlptTag | null> & { _comment?: string };
+delete overrides._comment;
 let overridesApplied = 0;
 
 const VERB_POS = new Set([
@@ -117,14 +117,20 @@ const parser = sax.createStream(true, { trim: true });
   const re = /<!ENTITY\s+([A-Za-z0-9_-]+)\s+"([^"]*)">/g;
   let m: RegExpExecArray | null;
   // sax exposes ENTITIES on the underlying parser
-  const ents = (parser as any)._parser.ENTITIES as Record<string, string>;
+  const ents = (parser as unknown as { _parser: { ENTITIES: Record<string, string> } })._parser.ENTITIES;
   while ((m = re.exec(head))) {
     ents[m[1]] = m[1]; // preserve the entity NAME so <pos>v1</pos>
   }
 }
 
-let cur: any = null;
-let path: string[] = [];
+let cur: {
+  ent_seq: string;
+  k: string[];
+  r: string[];
+  pos: Set<string>;
+  gloss: string[];
+} | null = null;
+const path: string[] = [];
 let textBuf = "";
 let curGlossLang: string | undefined; // xml:lang on current <gloss>
 

@@ -144,7 +144,7 @@ export function romajiToHiragana(buf: string): { converted: string; pending: str
     if (matched) continue;
 
     // Already kana / kanji / other char — pass through.
-    if (!/^[a-z'\-]$/.test(ch)) {
+    if (!/^[a-z'-]$/.test(ch)) {
       out += buf[i];
       i += 1;
       continue;

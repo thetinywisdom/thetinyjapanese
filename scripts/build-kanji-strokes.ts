@@ -4,7 +4,7 @@
  * For each kanji that appears in src/data/kanji-radicals.json, extract the
  * ordered list of stroke `d` attributes from scripts/cache/kanjivg/kanji/.
  *
- * Run:  bun run scripts/build-kanji-strokes.ts
+ * Run:  npx tsx scripts/build-kanji-strokes.ts
  *
  * Source: KanjiVG © Ulrich Apel, CC-BY-SA 3.0, https://kanjivg.tagaini.net/
  */
