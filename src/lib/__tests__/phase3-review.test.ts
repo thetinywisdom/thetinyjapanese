@@ -29,6 +29,8 @@ describe("teacher review: kanji quiz readings", () => {
     expect(cards["速"].reading).toBe("はやい");
     expect(taught("速", "はやい")?.anchor).toBe("速い");
     expect(taught("速", "そく")).toMatchObject({ anchor: "速度", anchorReading: "そくど" });
+    expect(taught("達", "たち")).toMatchObject({ anchor: "私達", anchorReading: "わたしたち" });
+    expect(taught("留", "る")).toMatchObject({ anchor: "留守", anchorReading: "るす" });
   });
 
   it("never offers わたくし, いちにん, ににん, or いえ against うち", () => {
@@ -50,6 +52,12 @@ describe("teacher review: noun＋する", () => {
     const study = noun("1512670");
     expect(study).toMatchObject({ dictionary: "勉強", reading: "べんきょう", wordType: "noun", suru: true });
     expect(displayHeadword(study)).toBe("勉強（する）");
+
+    const rusu = noun("1552760");
+    expect(rusu).toMatchObject({ dictionary: "留守", wordType: "noun", suru: true, suruAs: "にする" });
+    expect(displayHeadword(rusu)).toBe("留守（にする）");
+    expect(buildForms(rusu).polite["non-past-affirmative"]).toBe("るすです");
+    expect(JSON.stringify(buildForms(rusu))).not.toContain("します");
     expect(buildForms(study).polite["non-past-affirmative"]).toBe("べんきょうです");
     expect(supportedQuestions(study.wordType, study)).not.toContain("potential");
 
@@ -61,6 +69,14 @@ describe("teacher review: noun＋する", () => {
     for (const head of ["勉強する", "意見する", "急行する", "都合する", "泥棒する"]) {
       expect(VERBS.find((v) => v.dictionary === head), head).toBeUndefined();
     }
+  });
+
+  it("does not gloss a noun by repeating the verb", () => {
+    const bad = WORDS.filter((w) => {
+      const parts = w.meaning.split(";").map((s) => s.trim());
+      return parts.length >= 2 && /^to /i.test(parts[1]) && parts[0].toLowerCase() === parts[1].slice(3).toLowerCase();
+    }).map((w) => `${w.dictionary}: ${w.meaning}`);
+    expect(bad).toEqual([]);
   });
 
   it("ships no template sentences", () => {

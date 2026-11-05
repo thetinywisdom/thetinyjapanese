@@ -5567,7 +5567,7 @@
       "id": "1050590",
       "dictionary": "コピー",
       "reading": "コピー",
-      "meaning": "copy; to copy; to photocopy",
+      "meaning": "a copy; to copy; to photocopy",
       "pos": [
         "n",
         "vs",
@@ -6408,7 +6408,7 @@
       "id": "1512670",
       "dictionary": "勉強",
       "reading": "べんきょう",
-      "meaning": "study; to study",
+      "meaning": "studying; to study",
       "pos": [
         "n",
         "vs",
@@ -6592,7 +6592,7 @@
       "id": "1553170",
       "dictionary": "旅行",
       "reading": "りょこう",
-      "meaning": "travel; to travel",
+      "meaning": "a trip; to travel",
       "pos": [
         "n",
         "vs",
@@ -6607,7 +6607,7 @@
       "id": "1559160",
       "dictionary": "練習",
       "reading": "れんしゅう",
-      "meaning": "practice; to practice",
+      "meaning": "practice; to train",
       "pos": [
         "n",
         "vs",
@@ -10259,7 +10259,7 @@
       "id": "1153890",
       "dictionary": "安心",
       "reading": "あんしん",
-      "meaning": "feel relieved; to feel relieved",
+      "meaning": "relief; to feel relieved",
       "pos": [
         "n",
         "adj-na",
@@ -10275,7 +10275,7 @@
       "id": "1154860",
       "dictionary": "案内",
       "reading": "あんない",
-      "meaning": "guide; to guide; to show around",
+      "meaning": "guidance; to guide; to show around",
       "pos": [
         "n",
         "vs",
@@ -10437,7 +10437,7 @@
       "id": "1172830",
       "dictionary": "運転",
       "reading": "うんてん",
-      "meaning": "drive; to drive",
+      "meaning": "driving; to drive",
       "pos": [
         "n",
         "vs",
@@ -10453,7 +10453,7 @@
       "id": "1172910",
       "dictionary": "運動",
       "reading": "うんどう",
-      "meaning": "exercise; to exercise",
+      "meaning": "exercise; to work out",
       "pos": [
         "n",
         "vs",
@@ -10481,7 +10481,7 @@
       "id": "1178450",
       "dictionary": "遠慮",
       "reading": "えんりょ",
-      "meaning": "hold back; to hold back; to refrain",
+      "meaning": "restraint; to hold back; to refrain",
       "pos": [
         "n",
         "vs",
@@ -10683,7 +10683,7 @@
       "id": "1198880",
       "dictionary": "会話",
       "reading": "かいわ",
-      "meaning": "converse; to converse; to have a conversation",
+      "meaning": "conversation; to converse; to have a conversation",
       "pos": [
         "n",
         "vs",
@@ -10815,7 +10815,7 @@
       "id": "1215810",
       "dictionary": "関係",
       "reading": "かんけい",
-      "meaning": "be related; to be related; to concern",
+      "meaning": "relationship; to be related; to concern",
       "pos": [
         "n",
         "vs",
@@ -10872,7 +10872,7 @@
       "id": "1236950",
       "dictionary": "教育",
       "reading": "きょういく",
-      "meaning": "educate; to educate",
+      "meaning": "education; to educate",
       "pos": [
         "n",
         "vs",
@@ -10887,7 +10887,7 @@
       "id": "1234140",
       "dictionary": "競争",
       "reading": "きょうそう",
-      "meaning": "compete; to compete",
+      "meaning": "competition; to compete",
       "pos": [
         "n",
         "vs",
@@ -10929,7 +10929,7 @@
       "id": "1252090",
       "dictionary": "計画",
       "reading": "けいかく",
-      "meaning": "plan; to plan",
+      "meaning": "a plan; to plan",
       "pos": [
         "n",
         "vs",
@@ -10944,7 +10944,7 @@
       "id": "1251270",
       "dictionary": "経験",
       "reading": "けいけん",
-      "meaning": "experience; to experience",
+      "meaning": "experience; to have an experience",
       "pos": [
         "n",
         "vs",
@@ -10959,7 +10959,7 @@
       "id": "1185290",
       "dictionary": "下宿",
       "reading": "げしゅく",
-      "meaning": "board; to board; to lodge",
+      "meaning": "lodging; to board; to lodge",
       "pos": [
         "n",
         "vs",
@@ -10974,7 +10974,7 @@
       "id": "1258520",
       "dictionary": "研究",
       "reading": "けんきゅう",
-      "meaning": "research; to research",
+      "meaning": "research; to look into",
       "pos": [
         "n",
         "vs",
@@ -10989,7 +10989,7 @@
       "id": "1260000",
       "dictionary": "見物",
       "reading": "けんぶつ",
-      "meaning": "sightsee; to sightsee",
+      "meaning": "sightseeing; to sightsee",
       "pos": [
         "n",
         "vs",
@@ -11004,7 +11004,7 @@
       "id": "1282260",
       "dictionary": "講義",
       "reading": "こうぎ",
-      "meaning": "lecture; to lecture",
+      "meaning": "a lecture; to lecture",
       "pos": [
         "n",
         "vs",
@@ -11019,7 +11019,7 @@
       "id": "1267180",
       "dictionary": "故障",
       "reading": "こしょう",
-      "meaning": "break down; to break down; to malfunction",
+      "meaning": "breakdown; to break down; to malfunction",
       "pos": [
         "n",
         "vs",
@@ -11183,7 +11183,7 @@
       "id": "1310260",
       "dictionary": "支度",
       "reading": "したく",
-      "meaning": "get ready; to get ready; to prepare",
+      "meaning": "preparations; to get ready; to prepare",
       "pos": [
         "n",
         "vs",
@@ -11198,7 +11198,7 @@
       "id": "1320140",
       "dictionary": "失敗",
       "reading": "しっぱい",
-      "meaning": "fail; to fail",
+      "meaning": "failure; to fail",
       "pos": [
         "n",
         "vs",
@@ -11228,7 +11228,7 @@
       "id": "1339460",
       "dictionary": "出席",
       "reading": "しゅっせき",
-      "meaning": "attend; to attend",
+      "meaning": "attendance; to attend",
       "pos": [
         "n",
         "vs",
@@ -11243,7 +11243,7 @@
       "id": "1340000",
       "dictionary": "出発",
       "reading": "しゅっぱつ",
-      "meaning": "depart; to depart",
+      "meaning": "departure; to depart",
       "pos": [
         "n",
         "vs",
@@ -11258,7 +11258,7 @@
       "id": "1341670",
       "dictionary": "準備",
       "reading": "じゅんび",
-      "meaning": "prepare; to prepare",
+      "meaning": "preparation; to prepare",
       "pos": [
         "n",
         "vs",
@@ -11273,7 +11273,7 @@
       "id": "1351430",
       "dictionary": "紹介",
       "reading": "しょうかい",
-      "meaning": "introduce; to introduce",
+      "meaning": "introduction; to introduce",
       "pos": [
         "n",
         "vs",
@@ -11288,7 +11288,7 @@
       "id": "1349610",
       "dictionary": "招待",
       "reading": "しょうたい",
-      "meaning": "invite; to invite",
+      "meaning": "invitation; to invite",
       "pos": [
         "n",
         "vs",
@@ -11303,7 +11303,7 @@
       "id": "1349480",
       "dictionary": "承知",
       "reading": "しょうち",
-      "meaning": "consent; to consent; to acknowledge",
+      "meaning": "consent; to give consent; to acknowledge",
       "pos": [
         "n",
         "vs",
@@ -11359,7 +11359,7 @@
       "id": "1360930",
       "dictionary": "心配",
       "reading": "しんぱい",
-      "meaning": "worry; to worry",
+      "meaning": "worry; to feel worried",
       "pos": [
         "n",
         "vs",
@@ -11456,7 +11456,7 @@
       "id": "1378860",
       "dictionary": "生活",
       "reading": "せいかつ",
-      "meaning": "live; to live; to make a living",
+      "meaning": "life; to live; to make a living",
       "pos": [
         "n",
         "vs",
@@ -11471,7 +11471,7 @@
       "id": "1378990",
       "dictionary": "生産",
       "reading": "せいさん",
-      "meaning": "produce; to produce",
+      "meaning": "production; to produce",
       "pos": [
         "n",
         "vs",
@@ -11486,7 +11486,7 @@
       "id": "1386460",
       "dictionary": "説明",
       "reading": "せつめい",
-      "meaning": "explain; to explain",
+      "meaning": "explanation; to explain",
       "pos": [
         "n",
         "vs",
@@ -11501,7 +11501,7 @@
       "id": "1374300",
       "dictionary": "世話",
       "reading": "せわ",
-      "meaning": "look after; to look after; to take care of",
+      "meaning": "care; to look after; to take care of",
       "pos": [
         "n",
         "vs",
@@ -11530,7 +11530,7 @@
       "id": "1401210",
       "dictionary": "相談",
       "reading": "そうだん",
-      "meaning": "consult; to consult; to discuss",
+      "meaning": "consultation; to consult; to discuss",
       "pos": [
         "n",
         "vs",
@@ -11558,7 +11558,7 @@
       "id": "1405890",
       "dictionary": "卒業",
       "reading": "そつぎょう",
-      "meaning": "graduate; to graduate",
+      "meaning": "graduation; to graduate",
       "pos": [
         "n",
         "vs",
@@ -11573,7 +11573,7 @@
       "id": "1411300",
       "dictionary": "退院",
       "reading": "たいいん",
-      "meaning": "leave the hospital; to leave the hospital",
+      "meaning": "leaving the hospital; to leave the hospital",
       "pos": [
         "n",
         "vs",
@@ -11707,7 +11707,7 @@
       "id": "1077550",
       "dictionary": "チェック",
       "reading": "チェック",
-      "meaning": "check; to check",
+      "meaning": "a check; to check",
       "pos": [
         "n",
         "adj-no",
@@ -11724,7 +11724,7 @@
       "id": "1426530",
       "dictionary": "注意",
       "reading": "ちゅうい",
-      "meaning": "be careful; to be careful; to warn",
+      "meaning": "caution; to be careful; to warn",
       "pos": [
         "n",
         "vs",
@@ -11740,7 +11740,7 @@
       "id": "1426590",
       "dictionary": "注射",
       "reading": "ちゅうしゃ",
-      "meaning": "give an injection; to give an injection",
+      "meaning": "injection; to give an injection",
       "pos": [
         "n",
         "vs",
@@ -12115,7 +12115,7 @@
       "id": "1465720",
       "dictionary": "入院",
       "reading": "にゅういん",
-      "meaning": "be hospitalized; to be hospitalized",
+      "meaning": "hospitalization; to be hospitalized",
       "pos": [
         "n",
         "vs",
@@ -12130,7 +12130,7 @@
       "id": "1465850",
       "dictionary": "入学",
       "reading": "にゅうがく",
-      "meaning": "enter a school; to enter a school",
+      "meaning": "school entry; to enter a school",
       "pos": [
         "n",
         "vs",
@@ -12184,7 +12184,7 @@
       "id": "1360320",
       "dictionary": "寝坊",
       "reading": "ねぼう",
-      "meaning": "oversleep; to oversleep",
+      "meaning": "oversleeping; to oversleep",
       "pos": [
         "n",
         "vs",
@@ -12295,7 +12295,7 @@
       "id": "1477170",
       "dictionary": "発音",
       "reading": "はつおん",
-      "meaning": "pronounce; to pronounce",
+      "meaning": "pronunciation; to pronounce",
       "pos": [
         "n",
         "vs",
@@ -12350,7 +12350,7 @@
       "id": "1480670",
       "dictionary": "反対",
       "reading": "はんたい",
-      "meaning": "oppose; to oppose",
+      "meaning": "opposition; to oppose",
       "pos": [
         "n",
         "vs",
@@ -12475,7 +12475,7 @@
       "id": "1500800",
       "dictionary": "復習",
       "reading": "ふくしゅう",
-      "meaning": "review (a lesson); to review (a lesson)",
+      "meaning": "review; to review (a lesson)",
       "pos": [
         "n",
         "vs",
@@ -12529,7 +12529,7 @@
       "id": "1116840",
       "dictionary": "プレゼント",
       "reading": "プレゼント",
-      "meaning": "give a present; to give a present",
+      "meaning": "present; to give a present",
       "pos": [
         "n",
         "vs",
@@ -12559,7 +12559,7 @@
       "id": "1520120",
       "dictionary": "貿易",
       "reading": "ぼうえき",
-      "meaning": "trade; to trade",
+      "meaning": "trade; to trade goods",
       "pos": [
         "n",
         "vs",
@@ -12574,7 +12574,7 @@
       "id": "1516750",
       "dictionary": "放送",
       "reading": "ほうそう",
-      "meaning": "broadcast; to broadcast",
+      "meaning": "broadcast; to air a program",
       "pos": [
         "n",
         "vs",
@@ -12589,7 +12589,7 @@
       "id": "1523400",
       "dictionary": "翻訳",
       "reading": "ほんやく",
-      "meaning": "translate; to translate",
+      "meaning": "translation; to translate",
       "pos": [
         "n",
         "vs",
@@ -12750,7 +12750,7 @@
       "id": "1530970",
       "dictionary": "無理",
       "reading": "むり",
-      "meaning": "overdo it; to overdo it; to force oneself",
+      "meaning": "unreasonable; to overdo it; to force oneself",
       "pos": [
         "adj-na",
         "n",
@@ -12834,7 +12834,7 @@
       "id": "1538130",
       "dictionary": "約束",
       "reading": "やくそく",
-      "meaning": "promise; to promise",
+      "meaning": "a promise; to promise",
       "pos": [
         "n",
         "vs",
@@ -12901,7 +12901,7 @@
       "id": "1538820",
       "dictionary": "輸出",
       "reading": "ゆしゅつ",
-      "meaning": "export; to export",
+      "meaning": "export; to send abroad",
       "pos": [
         "n",
         "vs",
@@ -12917,7 +12917,7 @@
       "id": "1538870",
       "dictionary": "輸入",
       "reading": "ゆにゅう",
-      "meaning": "import; to import",
+      "meaning": "import; to bring in",
       "pos": [
         "n",
         "vs",
@@ -12946,7 +12946,7 @@
       "id": "1546220",
       "dictionary": "用意",
       "reading": "ようい",
-      "meaning": "prepare; to prepare",
+      "meaning": "preparation; to prepare",
       "pos": [
         "n",
         "vs",
@@ -12974,7 +12974,7 @@
       "id": "1543070",
       "dictionary": "予習",
       "reading": "よしゅう",
-      "meaning": "prepare for a lesson; to prepare for a lesson",
+      "meaning": "lesson prep; to prepare for a lesson",
       "pos": [
         "n",
         "vs",
@@ -12989,7 +12989,7 @@
       "id": "1543240",
       "dictionary": "予定",
       "reading": "よてい",
-      "meaning": "schedule; to schedule; to plan",
+      "meaning": "schedule; to plan",
       "pos": [
         "n",
         "vs",
@@ -13004,7 +13004,7 @@
       "id": "1543750",
       "dictionary": "予約",
       "reading": "よやく",
-      "meaning": "reserve; to reserve",
+      "meaning": "reservation; to reserve",
       "pos": [
         "n",
         "vs",
@@ -13046,7 +13046,7 @@
       "id": "1549660",
       "dictionary": "利用",
       "reading": "りよう",
-      "meaning": "use; to use",
+      "meaning": "use; to make use of",
       "pos": [
         "n",
         "vs",
@@ -13061,7 +13061,7 @@
       "id": "1552760",
       "dictionary": "留守",
       "reading": "るす",
-      "meaning": "be away from home; to be away from home",
+      "meaning": "absence; to be away from home",
       "pos": [
         "n",
         "vs",
@@ -13072,7 +13072,8 @@
       "wordType": "noun",
       "verbClass": "noun",
       "jlptLevel": "N4",
-      "suru": true
+      "suru": true,
+      "suruAs": "にする"
     },
     {
       "id": "1557290",
@@ -13092,7 +13093,7 @@
       "id": "1559900",
       "dictionary": "連絡",
       "reading": "れんらく",
-      "meaning": "contact; to contact",
+      "meaning": "contact; to get in touch",
       "pos": [
         "n",
         "vs",
@@ -14116,7 +14117,7 @@
       "id": "1206820",
       "dictionary": "学習",
       "reading": "がくしゅう",
-      "meaning": "study; to study; to learn",
+      "meaning": "learning; to study; to learn",
       "pos": [
         "n",
         "vs",
@@ -14652,7 +14653,7 @@
       "id": "1323500",
       "dictionary": "邪魔",
       "reading": "じゃま",
-      "meaning": "disturb; to disturb; to get in the way; to hinder",
+      "meaning": "hindrance; to disturb; to get in the way; to hinder",
       "pos": [
         "n",
         "adj-na",
@@ -14669,7 +14670,7 @@
       "id": "1333750",
       "dictionary": "集中",
       "reading": "しゅうちゅう",
-      "meaning": "concentrate; to concentrate",
+      "meaning": "concentration; to concentrate",
       "pos": [
         "n",
         "vs",
@@ -14777,7 +14778,7 @@
       "id": "1392290",
       "dictionary": "選択",
       "reading": "せんたく",
-      "meaning": "choose; to choose; to select",
+      "meaning": "choice; to choose; to select",
       "pos": [
         "n",
         "vs",
@@ -14834,7 +14835,7 @@
       "id": "1596750",
       "dictionary": "退屈",
       "reading": "たいくつ",
-      "meaning": "feel bored; to feel bored; to get bored (with)",
+      "meaning": "boredom; to feel bored; to get bored (with)",
       "pos": [
         "adj-na",
         "n",
@@ -14968,7 +14969,7 @@
       "id": "1426910",
       "dictionary": "駐車",
       "reading": "ちゅうしゃ",
-      "meaning": "park; to park",
+      "meaning": "parking; to park",
       "pos": [
         "n",
         "vs",
@@ -15437,7 +15438,7 @@
       "id": "1011920",
       "dictionary": "ぼんやり",
       "reading": "ぼんやり",
-      "meaning": "be absent-minded; to be absent-minded",
+      "meaning": "absent-mindedly; to be absent-minded",
       "pos": [
         "adv",
         "adv-to",
@@ -15560,7 +15561,7 @@
       "id": "1539280",
       "dictionary": "優勝",
       "reading": "ゆうしょう",
-      "meaning": "win the championship; to win the championship",
+      "meaning": "championship; to win the championship",
       "pos": [
         "n",
         "vs",
@@ -15894,7 +15895,7 @@
       "id": "1257040",
       "dictionary": "喧嘩",
       "reading": "けんか",
-      "meaning": "quarrel; to quarrel",
+      "meaning": "a quarrel; to quarrel",
       "pos": [
         "n",
         "vs",

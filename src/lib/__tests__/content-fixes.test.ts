@@ -42,7 +42,7 @@ describe("checked-in word overrides", () => {
     expect(byDict("うるさい", "うるさい")?.dictionary).toBe("うるさい");
     expect(byDict("広々とする", "ひろびろとする")?.reading).toBe("ひろびろとする");
     expect(byDict("留守", "るす")).toMatchObject({ wordType: "noun", dictionary: "留守" });
-    expect(byDict("勉強", "べんきょう")).toMatchObject({ wordType: "noun", meaning: "study; to study", suru: true });
+    expect(byDict("勉強", "べんきょう")).toMatchObject({ wordType: "noun", meaning: "studying; to study", suru: true });
     expect(byDict("結婚", "けっこん")).toMatchObject({ wordType: "noun", suru: true });
     expect(byDict("意見", "いけん")).toMatchObject({ wordType: "noun", meaning: "opinion" });
     expect(byDict("試験", "しけん")).toMatchObject({ wordType: "noun", meaning: "exam" });

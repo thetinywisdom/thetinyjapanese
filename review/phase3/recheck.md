@@ -669,3 +669,9 @@ Applied on top of the curated files. The draft script was not re-run.
 - 出（しゅつ） is a taught reading with anchor 出発. The quiz answer stays でる, because 出 is an N5 kanji and the card has one answer.
 - にっぽん and あす are not quiz distractors. Nothing in the app marks them wrong.
 - The curated list had 96 noun+する entries, not 114. Real する verbs (する, 愛する, 関する, 対する, 達する, 適する, 罰する, はっきりする, しっかりする, びっくりする, ゆっくりする, 何とかする, 存在する, 拝見する) stay verbs.
+
+## Recheck on 5f1d272
+
+1. 留守 (1552760): display 留守（する） → 留守（にする）. The drill is the copula (るすです), not 留守します. Kanji 留 reading る: anchor 留守に（るすに） → 留守（るす）.
+2. Noun glosses of the form "A; to A": 69 rows. The first clause is now the English noun (出発 departure, 招待 invitation, 安心 relief, and the rest of the teacher's list). Where the English noun and verb are the same word, the verb half is a fuller phrase so the gloss is not "A; to A" (経験 experience; to have an experience, 利用 use; to make use of, 輸出 export; to send abroad, 輸入 import; to bring in, 放送 broadcast; to air a program, 貿易 trade; to trade goods, 予定 schedule; to plan, 連絡 contact; to get in touch, 練習 practice; to train, 運動 exercise; to work out, 研究 research; to look into, 承知 consent; to give consent, 心配 worry; to feel worried).
+3. Kanji 達 reading たち: anchor 友達（ともだち） → 私達（わたしたち）.

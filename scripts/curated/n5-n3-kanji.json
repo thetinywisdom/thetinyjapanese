@@ -13458,8 +13458,8 @@
         {
           "type": "on",
           "kana": "る",
-          "anchor": "留守に",
-          "anchorReading": "るすに",
+          "anchor": "留守",
+          "anchorReading": "るす",
           "kunDisplay": "",
           "surface": "る"
         }
@@ -16135,8 +16135,8 @@
         {
           "type": "kun",
           "kana": "たち",
-          "anchor": "友達",
-          "anchorReading": "ともだち",
+          "anchor": "私達",
+          "anchorReading": "わたしたち",
           "kunDisplay": ""
         }
       ],

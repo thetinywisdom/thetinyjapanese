@@ -23,6 +23,8 @@ export interface WordEntry {
    * The conjugation drill uses the copula, never the する verb.
    */
   suru?: boolean;
+  /** Shown inside the parentheses. 勉強 uses する; 留守 uses にする. */
+  suruAs?: string;
 }
 
 interface WordsFile {
@@ -77,9 +79,10 @@ export const WORD_TYPE_LABEL: Record<WordType, string> = {
   adverb: "Adverb",
 };
 
-/** Learner-facing dictionary line. 勉強 stays a noun and is shown as 勉強（する）. */
-export function displayHeadword(word: { dictionary: string; suru?: boolean }): string {
-  return word.suru ? `${word.dictionary}（する）` : word.dictionary;
+/** Learner-facing dictionary line. 勉強 is 勉強（する）. 留守 is 留守（にする）. */
+export function displayHeadword(word: { dictionary: string; suru?: boolean; suruAs?: string }): string {
+  if (!word.suru) return word.dictionary;
+  return `${word.dictionary}（${word.suruAs ?? "する"}）`;
 }
 
 export function wordStats() {
