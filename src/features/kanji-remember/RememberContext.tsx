@@ -7,6 +7,7 @@ import { useLevelScheme } from "@/features/level-scheme/useLevelScheme";
 import {
   buildRememberCards,
   getAllRememberCards,
+  readingDistractorAllowed,
   type RememberCard,
 } from "./cards";
 import {
@@ -147,6 +148,7 @@ function pickDistractors(
     if (c.char === answer.char) continue;
     const f = fieldFor(c, type);
     if (!f || seen.has(f)) continue;
+    if (type === "reading" && !readingDistractorAllowed(target, f)) continue;
     seen.add(f);
     picks.push(f);
     if (picks.length === 3) break;
@@ -157,6 +159,7 @@ function pickDistractors(
       if (c.char === answer.char) continue;
       const f = fieldFor(c, type);
       if (!f || seen.has(f)) continue;
+      if (type === "reading" && !readingDistractorAllowed(target, f)) continue;
       seen.add(f);
       picks.push(f);
       if (picks.length === 3) break;

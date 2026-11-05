@@ -1,7 +1,7 @@
 import wordsData from "@/data/words.json";
 
 export type JlptLevel = "N5" | "N4" | "N3" | "N2" | "N1";
-export type WordType = "verb" | "adj-i" | "adj-na" | "noun";
+export type WordType = "verb" | "adj-i" | "adj-na" | "noun" | "adverb";
 
 export interface WordEntry {
   id: string;
@@ -18,6 +18,13 @@ export interface WordEntry {
    * write (ある, する, くれる). Used by the furigana index only.
    */
   kanjiForm?: string;
+  /**
+   * Noun that learners also meet with する (勉強). The stored word is the noun.
+   * The conjugation drill uses the copula, never the する verb.
+   */
+  suru?: boolean;
+  /** Shown inside the parentheses. 勉強 uses する; 留守 uses にする. */
+  suruAs?: string;
 }
 
 interface WordsFile {
@@ -69,11 +76,18 @@ export const WORD_TYPE_LABEL: Record<WordType, string> = {
   "adj-i": "い-adjective",
   "adj-na": "な-adjective",
   noun: "Noun",
+  adverb: "Adverb",
 };
+
+/** Learner-facing dictionary line. 勉強 is 勉強（する）. 留守 is 留守（にする）. */
+export function displayHeadword(word: { dictionary: string; suru?: boolean; suruAs?: string }): string {
+  if (!word.suru) return word.dictionary;
+  return `${word.dictionary}（${word.suruAs ?? "する"}）`;
+}
 
 export function wordStats() {
   const byLevel: Record<string, number> = { N5: 0, N4: 0, N3: 0, N2: 0, N1: 0 };
-  const byType: Record<WordType, number> = { verb: 0, "adj-i": 0, "adj-na": 0, noun: 0 };
+  const byType: Record<WordType, number> = { verb: 0, "adj-i": 0, "adj-na": 0, noun: 0, adverb: 0 };
   for (const w of WORDS) {
     if (w.jlptLevel) byLevel[w.jlptLevel]++;
     byType[w.wordType]++;

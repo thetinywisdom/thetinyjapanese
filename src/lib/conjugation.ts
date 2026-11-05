@@ -13,7 +13,7 @@
 
 import { normalize, katakanaToHiragana } from "./kana";
 
-export type WordType = "verb" | "adj-i" | "adj-na" | "noun";
+export type WordType = "verb" | "adj-i" | "adj-na" | "noun" | "adverb";
 
 export type QuestionType =
   | "non-past-affirmative"
@@ -238,6 +238,7 @@ function finalize(verb: WordLike, forms: Forms): Forms {
 
 /** Which question types are meaningful for a given word type. */
 export function supportedQuestions(wordType: WordType, verb?: WordLike): QuestionType[] {
+  if (wordType === "adverb") return [];
   const base = wordType === "verb" ? [...ALL_QUESTION_TYPES] : [...COPULA_QUESTIONS];
   if (!verb) return base;
   const skip = new Set(skippedQuestions({ ...verb, wordType: verb.wordType ?? wordType }));
@@ -369,6 +370,7 @@ export function buildForms(verb: WordLike): Forms {
 
   // ── non-verb dispatch ──
   if (wt === "adj-i") return adjIForms(r, cls === "adj-i-yoi");
+  if (wt === "adverb") return { polite: {}, casual: {} };
   if (wt === "adj-na" || wt === "noun") {
     // Never strip a trailing な. JMdict na-adjective readings do not include
     // the copula な, and nouns like 魚 (さかな) and 大人 (おとな) end in な

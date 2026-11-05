@@ -1,0 +1,1641 @@
+{
+  "version": 1,
+  "verbs": {
+    "1586270|あく": {
+      "id": "1586270",
+      "dictionary": "開く",
+      "reading": "あく",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "ドアが開きました。",
+          "en": "The door opened.",
+          "reading": "あく",
+          "flag": ""
+        },
+        {
+          "ja": "窓が開いています。",
+          "en": "The window is open.",
+          "reading": "あく",
+          "flag": ""
+        }
+      ]
+    },
+    "1352320|あげる": {
+      "id": "1352320",
+      "dictionary": "上げる",
+      "reading": "あげる",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "手を上げてください。",
+          "en": "Please raise your hand.",
+          "reading": "あげる",
+          "flag": ""
+        },
+        {
+          "ja": "荷物を棚に上げた。",
+          "en": "I put the bag up on the shelf.",
+          "reading": "あげる",
+          "flag": ""
+        }
+      ]
+    },
+    "1588120|うたう": {
+      "id": "1588120",
+      "dictionary": "歌う",
+      "reading": "うたう",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "歌を歌いましょう。",
+          "en": "Let's sing a song.",
+          "reading": "うたう",
+          "flag": ""
+        },
+        {
+          "ja": "一曲歌いたい。",
+          "en": "I want to sing a song.",
+          "reading": "うたう",
+          "flag": ""
+        }
+      ]
+    },
+    "1421850|おく": {
+      "id": "1421850",
+      "dictionary": "置く",
+      "reading": "おく",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "本を机に置いた。",
+          "en": "I put the book on the desk.",
+          "reading": "おく",
+          "flag": ""
+        },
+        {
+          "ja": "ここに置いてください。",
+          "en": "Please put it here.",
+          "reading": "おく",
+          "flag": ""
+        }
+      ]
+    },
+    "1512130|かえす": {
+      "id": "1512130",
+      "dictionary": "返す",
+      "reading": "かえす",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "お金は明日返します。",
+          "en": "I'll give the money back tomorrow.",
+          "reading": "かえす",
+          "flag": ""
+        },
+        {
+          "ja": "本を図書館に返した。",
+          "en": "I returned the book to the library.",
+          "reading": "かえす",
+          "flag": ""
+        }
+      ]
+    },
+    "1420470|しる": {
+      "id": "1420470",
+      "dictionary": "知る",
+      "reading": "しる",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "その人を知っています。",
+          "en": "I know that person.",
+          "reading": "しる",
+          "flag": ""
+        },
+        {
+          "ja": "名前を知っていますか。",
+          "en": "Do you know their name?",
+          "reading": "しる",
+          "flag": ""
+        }
+      ]
+    },
+    "1597040|たつ": {
+      "id": "1597040",
+      "dictionary": "立つ",
+      "reading": "たつ",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "ここに立ってください。",
+          "en": "Please stand here.",
+          "reading": "たつ",
+          "flag": ""
+        },
+        {
+          "ja": "駅の前に立っています。",
+          "en": "I'm standing in front of the station.",
+          "reading": "たつ",
+          "flag": ""
+        }
+      ]
+    },
+    "1240825|つとめる": {
+      "id": "1240825",
+      "dictionary": "勤める",
+      "reading": "つとめる",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "会社に勤めています。",
+          "en": "I work at a company.",
+          "reading": "つとめる",
+          "flag": ""
+        },
+        {
+          "ja": "父は銀行に勤めている。",
+          "en": "My father works at a bank.",
+          "reading": "つとめる",
+          "flag": ""
+        }
+      ]
+    },
+    "1429700|とぶ": {
+      "id": "1429700",
+      "dictionary": "飛ぶ",
+      "reading": "とぶ",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "鳥は空を飛ぶ。",
+          "en": "Birds fly.",
+          "reading": "とぶ",
+          "flag": ""
+        },
+        {
+          "ja": "飛行機が空を飛んでいる。",
+          "en": "A plane is flying.",
+          "reading": "とぶ",
+          "flag": ""
+        }
+      ]
+    },
+    "1508390|ならべる": {
+      "id": "1508390",
+      "dictionary": "並べる",
+      "reading": "ならべる",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "本を大きさの順に並べた。",
+          "en": "I lined the books up by size.",
+          "reading": "ならべる",
+          "flag": ""
+        },
+        {
+          "ja": "名前を五十音順に並べてください。",
+          "en": "Please put the names in gojūon order.",
+          "reading": "ならべる",
+          "flag": ""
+        }
+      ]
+    },
+    "1355120|のる": {
+      "id": "1355120",
+      "dictionary": "乗る",
+      "reading": "のる",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "電車に乗ります。",
+          "en": "I'll take the train.",
+          "reading": "のる",
+          "flag": ""
+        },
+        {
+          "ja": "駅でバスに乗った。",
+          "en": "I got on the bus at the station.",
+          "reading": "のる",
+          "flag": ""
+        }
+      ]
+    },
+    "1562350|はなす": {
+      "id": "1562350",
+      "dictionary": "話す",
+      "reading": "はなす",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "日本語を話します。",
+          "en": "I speak Japanese.",
+          "reading": "はなす",
+          "flag": ""
+        },
+        {
+          "ja": "先生と話した。",
+          "en": "I talked with the teacher.",
+          "reading": "はなす",
+          "flag": ""
+        }
+      ]
+    },
+    "1169250|ひく": {
+      "id": "1169250",
+      "dictionary": "引く",
+      "reading": "ひく",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "ドアを引いてください。",
+          "en": "Please pull the door.",
+          "reading": "ひく",
+          "flag": ""
+        },
+        {
+          "ja": "辞書を引いてください。",
+          "en": "Please look it up in a dictionary.",
+          "reading": "ひく",
+          "flag": ""
+        }
+      ]
+    },
+    "1282790|ふる": {
+      "id": "1282790",
+      "dictionary": "降る",
+      "reading": "ふる",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "雨が降っています。",
+          "en": "It's raining.",
+          "reading": "ふる",
+          "flag": ""
+        },
+        {
+          "ja": "雪が降りそうだ。",
+          "en": "It looks like it will snow.",
+          "reading": "ふる",
+          "flag": ""
+        }
+      ]
+    },
+    "1315720|もつ": {
+      "id": "1315720",
+      "dictionary": "持つ",
+      "reading": "もつ",
+      "level": "N5",
+      "sentences": [
+        {
+          "ja": "傘を持っています。",
+          "en": "I have an umbrella.",
+          "reading": "もつ",
+          "flag": ""
+        },
+        {
+          "ja": "右手に荷物を持ってください。",
+          "en": "Please hold the bag in your right hand.",
+          "reading": "もつ",
+          "flag": ""
+        }
+      ]
+    },
+    "1333560|あつめる": {
+      "id": "1333560",
+      "dictionary": "集める",
+      "reading": "あつめる",
+      "level": "N4",
+      "sentences": [
+        {
+          "ja": "切手を集めています。",
+          "en": "I'm collecting stamps.",
+          "reading": "あつめる",
+          "flag": ""
+        },
+        {
+          "ja": "何か集めていますか。",
+          "en": "Do you collect anything?",
+          "reading": "あつめる",
+          "flag": ""
+        }
+      ]
+    },
+    "1408810|うつ": {
+      "id": "1408810",
+      "dictionary": "打つ",
+      "reading": "うつ",
+      "level": "N4",
+      "sentences": [
+        {
+          "ja": "ボールを打つ。",
+          "en": "I hit the ball.",
+          "reading": "うつ",
+          "flag": ""
+        },
+        {
+          "ja": "彼はボールを打った。",
+          "en": "He hit the ball.",
+          "reading": "うつ",
+          "flag": ""
+        }
+      ]
+    },
+    "1599400|なおる": {
+      "id": "1599400",
+      "dictionary": "治る",
+      "reading": "なおる",
+      "level": "N4",
+      "sentences": [
+        {
+          "ja": "頭痛が治った。",
+          "en": "My headache is gone.",
+          "reading": "なおる",
+          "flag": ""
+        },
+        {
+          "ja": "かぜが治らない。",
+          "en": "I can't get rid of my cold.",
+          "reading": "なおる",
+          "flag": ""
+        }
+      ]
+    },
+    "1202440|ひらく": {
+      "id": "1202440",
+      "dictionary": "開く",
+      "reading": "ひらく",
+      "level": "N4",
+      "sentences": [
+        {
+          "ja": "本を開いてください。",
+          "en": "Please open the book.",
+          "reading": "ひらく",
+          "flag": ""
+        },
+        {
+          "ja": "駅前に店を開きました。",
+          "en": "They opened a shop in front of the station.",
+          "reading": "ひらく",
+          "flag": ""
+        }
+      ]
+    },
+    "1198890|とく": {
+      "id": "1198890",
+      "dictionary": "解く",
+      "reading": "とく",
+      "level": "N3",
+      "sentences": [
+        {
+          "ja": "この問題を解いてください。",
+          "en": "Please solve this problem.",
+          "reading": "とく",
+          "flag": ""
+        },
+        {
+          "ja": "この問題はもう解いた。",
+          "en": "I've already solved this problem.",
+          "reading": "とく",
+          "flag": ""
+        }
+      ]
+    },
+    "1361330|ふる": {
+      "id": "1361330",
+      "dictionary": "振る",
+      "reading": "ふる",
+      "level": "N3",
+      "sentences": [
+        {
+          "ja": "手を振りました。",
+          "en": "I waved my hand.",
+          "reading": "ふる",
+          "flag": ""
+        },
+        {
+          "ja": "塩を少し振ってください。",
+          "en": "Please sprinkle a little salt.",
+          "reading": "ふる",
+          "flag": ""
+        }
+      ]
+    }
+  },
+  "kanji": {
+    "一": [
+      {
+        "ja": "一番好きな色は青です。",
+        "en": "My favorite color is blue.",
+        "reading": "いち",
+        "flag": ""
+      },
+      {
+        "ja": "りんごを一つください。",
+        "en": "One apple, please.",
+        "reading": "ひとつ",
+        "flag": ""
+      }
+    ],
+    "七": [
+      {
+        "ja": "みかんを七つください。",
+        "en": "Seven mandarins, please.",
+        "reading": "なな",
+        "flag": ""
+      },
+      {
+        "ja": "七時に起きます。",
+        "en": "I get up at seven.",
+        "reading": "しち",
+        "flag": ""
+      }
+    ],
+    "万": [
+      {
+        "ja": "これは一万円です。",
+        "en": "This is 10,000 yen.",
+        "reading": "まん",
+        "flag": ""
+      }
+    ],
+    "三": [
+      {
+        "ja": "三人で映画を見ます。",
+        "en": "The three of us will watch a movie.",
+        "reading": "さん",
+        "flag": ""
+      },
+      {
+        "ja": "みかんを三つください。",
+        "en": "Three mandarins, please.",
+        "reading": "みっつ",
+        "flag": ""
+      }
+    ],
+    "上": [
+      {
+        "ja": "本は机の上です。",
+        "en": "The book is on the desk.",
+        "reading": "うえ",
+        "flag": ""
+      },
+      {
+        "ja": "料理が上手ですね。",
+        "en": "You're good at cooking.",
+        "reading": "じょう",
+        "flag": ""
+      }
+    ],
+    "下": [
+      {
+        "ja": "猫は机の下にいます。",
+        "en": "The cat is under the desk.",
+        "reading": "した",
+        "flag": ""
+      },
+      {
+        "ja": "地下鉄で行きます。",
+        "en": "I'll go by subway.",
+        "reading": "か",
+        "flag": ""
+      }
+    ],
+    "中": [
+      {
+        "ja": "鍵はかばんの中です。",
+        "en": "The key is in the bag.",
+        "reading": "なか",
+        "flag": ""
+      },
+      {
+        "ja": "中国の映画を見ました。",
+        "en": "I saw a Chinese movie.",
+        "reading": "ちゅう",
+        "flag": ""
+      }
+    ],
+    "九": [
+      {
+        "ja": "九番のバスに乗ります。",
+        "en": "I'll take the number nine bus.",
+        "reading": "きゅう",
+        "flag": ""
+      },
+      {
+        "ja": "九時に寝ます。",
+        "en": "I go to bed at nine.",
+        "reading": "く",
+        "flag": ""
+      }
+    ],
+    "二": [
+      {
+        "ja": "二月は寒いです。",
+        "en": "February is cold.",
+        "reading": "に",
+        "flag": ""
+      },
+      {
+        "ja": "りんごを二つください。",
+        "en": "Two apples, please.",
+        "reading": "ふたつ",
+        "flag": ""
+      }
+    ],
+    "五": [
+      {
+        "ja": "五時に会いましょう。",
+        "en": "Let's meet at five.",
+        "reading": "ご",
+        "flag": ""
+      },
+      {
+        "ja": "みかんを五つください。",
+        "en": "Five mandarins, please.",
+        "reading": "いつつ",
+        "flag": ""
+      }
+    ],
+    "人": [
+      {
+        "ja": "あの人は先生です。",
+        "en": "That person is a teacher.",
+        "reading": "ひと",
+        "flag": ""
+      },
+      {
+        "ja": "日本人の友達がいます。",
+        "en": "I have a Japanese friend.",
+        "reading": "じん",
+        "flag": ""
+      }
+    ],
+    "今": [
+      {
+        "ja": "今、家にいます。",
+        "en": "I'm at home now.",
+        "reading": "いま",
+        "flag": ""
+      },
+      {
+        "ja": "今週は試験があります。",
+        "en": "There's an exam this week.",
+        "reading": "こん",
+        "flag": ""
+      }
+    ],
+    "休": [
+      {
+        "ja": "日曜日は家で休みます。",
+        "en": "I rest at home on Sunday.",
+        "reading": "やすむ",
+        "flag": ""
+      },
+      {
+        "ja": "明日は休日です。",
+        "en": "Tomorrow is a holiday.",
+        "reading": "きゅう",
+        "flag": ""
+      }
+    ],
+    "何": [
+      {
+        "ja": "何を食べますか。",
+        "en": "What will you eat?",
+        "reading": "なに",
+        "flag": ""
+      },
+      {
+        "ja": "今、何時ですか。",
+        "en": "What time is it now?",
+        "reading": "なん",
+        "flag": ""
+      }
+    ],
+    "先": [
+      {
+        "ja": "先に入ってください。",
+        "en": "Please go in first.",
+        "reading": "さき",
+        "flag": ""
+      },
+      {
+        "ja": "先生は日本語を教えます。",
+        "en": "The teacher teaches Japanese.",
+        "reading": "せん",
+        "flag": ""
+      }
+    ],
+    "入": [
+      {
+        "ja": "部屋に入ってください。",
+        "en": "Please come in.",
+        "reading": "はいる",
+        "flag": ""
+      },
+      {
+        "ja": "四月に大学へ入学します。",
+        "en": "I'll enter university in April.",
+        "reading": "にゅう",
+        "flag": ""
+      }
+    ],
+    "八": [
+      {
+        "ja": "八時に学校へ行きます。",
+        "en": "I go to school at eight.",
+        "reading": "はち",
+        "flag": ""
+      },
+      {
+        "ja": "みかんを八つください。",
+        "en": "Eight mandarins, please.",
+        "reading": "やっつ",
+        "flag": ""
+      }
+    ],
+    "六": [
+      {
+        "ja": "六時に起きます。",
+        "en": "I get up at six.",
+        "reading": "ろく",
+        "flag": ""
+      },
+      {
+        "ja": "卵を六つ買いました。",
+        "en": "I bought six eggs.",
+        "reading": "むっつ",
+        "flag": ""
+      }
+    ],
+    "円": [
+      {
+        "ja": "この本は五百円です。",
+        "en": "This book is 500 yen.",
+        "reading": "えん",
+        "flag": ""
+      }
+    ],
+    "出": [
+      {
+        "ja": "朝、家を出ます。",
+        "en": "I leave the house in the morning.",
+        "reading": "でる",
+        "flag": ""
+      },
+      {
+        "ja": "宿題を出してください。",
+        "en": "Please turn in the homework.",
+        "reading": "だす",
+        "flag": ""
+      }
+    ],
+    "前": [
+      {
+        "ja": "駅の前で待ちます。",
+        "en": "I'll wait in front of the station.",
+        "reading": "まえ",
+        "flag": ""
+      },
+      {
+        "ja": "午前中に銀行へ行きます。",
+        "en": "I'll go to the bank in the morning.",
+        "reading": "ぜん",
+        "flag": ""
+      }
+    ],
+    "北": [
+      {
+        "ja": "北の窓を開けます。",
+        "en": "I'll open the north window.",
+        "reading": "きた",
+        "flag": ""
+      },
+      {
+        "ja": "東北（とうほく）の冬は寒いです。",
+        "en": "Winter in Tohoku is cold.",
+        "reading": "ほく",
+        "flag": ""
+      }
+    ],
+    "十": [
+      {
+        "ja": "十時に寝ます。",
+        "en": "I go to bed at ten.",
+        "reading": "じゅう",
+        "flag": ""
+      },
+      {
+        "ja": "娘は今年で十（とお）になります。",
+        "en": "She turns ten this year.",
+        "reading": "とお",
+        "flag": ""
+      }
+    ],
+    "千": [
+      {
+        "ja": "これは千円です。",
+        "en": "This is 1,000 yen.",
+        "reading": "せん",
+        "flag": ""
+      }
+    ],
+    "午": [
+      {
+        "ja": "午前十時に駅で会います。",
+        "en": "I'll meet you at the station at 10 a.m.",
+        "reading": "ご",
+        "flag": ""
+      }
+    ],
+    "半": [
+      {
+        "ja": "このケーキを半分ください。",
+        "en": "Half of this cake, please.",
+        "reading": "はん",
+        "flag": ""
+      },
+      {
+        "ja": "三時半に来てください。",
+        "en": "Please come at half past three.",
+        "reading": "はん",
+        "flag": ""
+      }
+    ],
+    "南": [
+      {
+        "ja": "南の部屋は明るいです。",
+        "en": "The south-facing room is bright.",
+        "reading": "みなみ",
+        "flag": ""
+      }
+    ],
+    "友": [
+      {
+        "ja": "友達と映画を見ます。",
+        "en": "I'll see a movie with a friend.",
+        "reading": "とも",
+        "flag": ""
+      },
+      {
+        "ja": "大学の友人に会いました。",
+        "en": "I met a friend from university.",
+        "reading": "ゆう",
+        "flag": ""
+      }
+    ],
+    "右": [
+      {
+        "ja": "右に曲がってください。",
+        "en": "Please turn right.",
+        "reading": "みぎ",
+        "flag": ""
+      },
+      {
+        "ja": "左右を見てください。",
+        "en": "Please look left and right.",
+        "reading": "う",
+        "flag": ""
+      }
+    ],
+    "名": [
+      {
+        "ja": "名前を書いてください。",
+        "en": "Please write your name.",
+        "reading": "な",
+        "flag": ""
+      },
+      {
+        "ja": "有名な店です。",
+        "en": "It's a famous shop.",
+        "reading": "めい",
+        "flag": ""
+      }
+    ],
+    "四": [
+      {
+        "ja": "答えは四です。",
+        "en": "The answer is four.",
+        "reading": "よん",
+        "flag": ""
+      },
+      {
+        "ja": "四月に日本へ行きます。",
+        "en": "I'm going to Japan in April.",
+        "reading": "し",
+        "flag": ""
+      }
+    ],
+    "国": [
+      {
+        "ja": "どこの国から来ましたか。",
+        "en": "Which country are you from?",
+        "reading": "くに",
+        "flag": ""
+      },
+      {
+        "ja": "外国へ行きたいです。",
+        "en": "I want to go abroad.",
+        "reading": "こく",
+        "flag": ""
+      }
+    ],
+    "土": [
+      {
+        "ja": "土曜日に公園へ行きます。",
+        "en": "I'll go to the park on Saturday.",
+        "reading": "ど",
+        "flag": ""
+      },
+      {
+        "ja": "庭の土を触りました。",
+        "en": "I touched the soil in the garden.",
+        "reading": "つち",
+        "flag": ""
+      }
+    ],
+    "外": [
+      {
+        "ja": "外は雨です。",
+        "en": "It's raining outside.",
+        "reading": "そと",
+        "flag": ""
+      },
+      {
+        "ja": "外国の映画を見ました。",
+        "en": "I saw a foreign movie.",
+        "reading": "がい",
+        "flag": ""
+      }
+    ],
+    "大": [
+      {
+        "ja": "この犬は大きいです。",
+        "en": "This dog is big.",
+        "reading": "おおきい",
+        "flag": ""
+      },
+      {
+        "ja": "大学で日本語を勉強します。",
+        "en": "I study Japanese at university.",
+        "reading": "だい",
+        "flag": ""
+      }
+    ],
+    "天": [
+      {
+        "ja": "今日の天気はいいです。",
+        "en": "The weather is nice today.",
+        "reading": "てん",
+        "flag": ""
+      }
+    ],
+    "女": [
+      {
+        "ja": "あの女の人は医者です。",
+        "en": "That woman is a doctor.",
+        "reading": "おんな",
+        "flag": ""
+      },
+      {
+        "ja": "このクラスは女子が多いです。",
+        "en": "There are many girls in this class.",
+        "reading": "じょ",
+        "flag": ""
+      }
+    ],
+    "子": [
+      {
+        "ja": "子供が公園で遊んでいます。",
+        "en": "Children are playing in the park.",
+        "reading": "こ",
+        "flag": ""
+      },
+      {
+        "ja": "姉は女子大生です。",
+        "en": "My older sister is a women's-college student.",
+        "reading": "し",
+        "flag": ""
+      }
+    ],
+    "学": [
+      {
+        "ja": "私は学生です。",
+        "en": "I am a student.",
+        "reading": "がく",
+        "flag": ""
+      },
+      {
+        "ja": "大学で日本語を学びます。",
+        "en": "I study Japanese at university.",
+        "reading": "まなぶ",
+        "flag": ""
+      }
+    ],
+    "小": [
+      {
+        "ja": "小さい猫を飼っています。",
+        "en": "I have a small cat.",
+        "reading": "ちいさい",
+        "flag": ""
+      },
+      {
+        "ja": "小学校は駅の近くです。",
+        "en": "The elementary school is near the station.",
+        "reading": "しょう",
+        "flag": ""
+      }
+    ],
+    "山": [
+      {
+        "ja": "週末、山に登ります。",
+        "en": "I'll climb a mountain this weekend.",
+        "reading": "やま",
+        "flag": ""
+      },
+      {
+        "ja": "富士山を見ました。",
+        "en": "I saw Mt. Fuji.",
+        "reading": "さん",
+        "flag": ""
+      }
+    ],
+    "川": [
+      {
+        "ja": "川で魚を見ました。",
+        "en": "I saw fish in the river.",
+        "reading": "かわ",
+        "flag": ""
+      }
+    ],
+    "左": [
+      {
+        "ja": "左に曲がってください。",
+        "en": "Please turn left.",
+        "reading": "ひだり",
+        "flag": ""
+      },
+      {
+        "ja": "左右をよく見てください。",
+        "en": "Please look carefully left and right.",
+        "reading": "さ",
+        "flag": ""
+      }
+    ],
+    "年": [
+      {
+        "ja": "兄と私は年（とし）が三つ違います。",
+        "en": "My older brother and I are three years apart.",
+        "reading": "とし",
+        "flag": ""
+      },
+      {
+        "ja": "来年、大学を卒業します。",
+        "en": "I'll graduate next year.",
+        "reading": "ねん",
+        "flag": ""
+      },
+      {
+        "ja": "年に一度、実家に帰ります。",
+        "en": "I go back to my parents' house once a year.",
+        "reading": "ねん",
+        "flag": ""
+      }
+    ],
+    "後": [
+      {
+        "ja": "後で電話します。",
+        "en": "I'll call later.",
+        "reading": "あと",
+        "flag": ""
+      },
+      {
+        "ja": "午後三時に会いましょう。",
+        "en": "Let's meet at 3 p.m.",
+        "reading": "ご",
+        "flag": ""
+      }
+    ],
+    "日": [
+      {
+        "ja": "今日はいい日です。",
+        "en": "Today is a nice day.",
+        "reading": "ひ",
+        "flag": ""
+      },
+      {
+        "ja": "日曜日に友達と会います。",
+        "en": "I'll see a friend on Sunday.",
+        "reading": "にち",
+        "flag": ""
+      }
+    ],
+    "時": [
+      {
+        "ja": "今、何時ですか。",
+        "en": "What time is it now?",
+        "reading": "じ",
+        "flag": ""
+      },
+      {
+        "ja": "学生の時、京都に住んでいました。",
+        "en": "I lived in Kyoto when I was a student.",
+        "reading": "とき",
+        "flag": ""
+      }
+    ],
+    "書": [
+      {
+        "ja": "母に手紙を書きます。",
+        "en": "I'll write a letter to my mother.",
+        "reading": "かく",
+        "flag": ""
+      },
+      {
+        "ja": "図書館で本を借ります。",
+        "en": "I'll borrow a book at the library.",
+        "reading": "しょ",
+        "flag": ""
+      }
+    ],
+    "月": [
+      {
+        "ja": "月がきれいです。",
+        "en": "The moon is beautiful.",
+        "reading": "つき",
+        "flag": ""
+      },
+      {
+        "ja": "月曜日にテストがあります。",
+        "en": "There's a test on Monday.",
+        "reading": "げつ",
+        "flag": ""
+      }
+    ],
+    "木": [
+      {
+        "ja": "木の下で休みます。",
+        "en": "I'll rest under the tree.",
+        "reading": "き",
+        "flag": ""
+      },
+      {
+        "ja": "木曜日に会いましょう。",
+        "en": "Let's meet on Thursday.",
+        "reading": "もく",
+        "flag": ""
+      }
+    ],
+    "本": [
+      {
+        "ja": "この本を読みました。",
+        "en": "I read this book.",
+        "reading": "ほん",
+        "flag": ""
+      }
+    ],
+    "来": [
+      {
+        "ja": "友達が家に来ます。",
+        "en": "A friend is coming to my house.",
+        "reading": "くる",
+        "flag": ""
+      },
+      {
+        "ja": "来年、また日本へ行きます。",
+        "en": "I'll go to Japan again next year.",
+        "reading": "らい",
+        "flag": ""
+      }
+    ],
+    "東": [
+      {
+        "ja": "東の空が明るいです。",
+        "en": "The eastern sky is bright.",
+        "reading": "ひがし",
+        "flag": ""
+      },
+      {
+        "ja": "東京に住んでいます。",
+        "en": "I live in Tokyo.",
+        "reading": "とう",
+        "flag": ""
+      }
+    ],
+    "校": [
+      {
+        "ja": "学校で日本語を勉強します。",
+        "en": "I study Japanese at school.",
+        "reading": "こう",
+        "flag": ""
+      }
+    ],
+    "母": [
+      {
+        "ja": "母は料理が上手です。",
+        "en": "My mother is good at cooking.",
+        "reading": "はは",
+        "flag": ""
+      }
+    ],
+    "毎": [
+      {
+        "ja": "毎日日本語を勉強します。",
+        "en": "I study Japanese every day.",
+        "reading": "まい",
+        "flag": ""
+      }
+    ],
+    "気": [
+      {
+        "ja": "祖母はとても元気です。",
+        "en": "My grandmother is very well.",
+        "reading": "き",
+        "flag": ""
+      }
+    ],
+    "水": [
+      {
+        "ja": "水をください。",
+        "en": "Water, please.",
+        "reading": "みず",
+        "flag": ""
+      },
+      {
+        "ja": "水曜日は休みです。",
+        "en": "Wednesday is a day off.",
+        "reading": "すい",
+        "flag": ""
+      }
+    ],
+    "火": [
+      {
+        "ja": "火を消してください。",
+        "en": "Please put the fire out.",
+        "reading": "ひ",
+        "flag": ""
+      },
+      {
+        "ja": "火曜日に来てください。",
+        "en": "Please come on Tuesday.",
+        "reading": "か",
+        "flag": ""
+      }
+    ],
+    "父": [
+      {
+        "ja": "父は会社で働いています。",
+        "en": "My father works at a company.",
+        "reading": "ちち",
+        "flag": ""
+      }
+    ],
+    "生": [
+      {
+        "ja": "先生は教室にいます。",
+        "en": "The teacher is in the classroom.",
+        "reading": "せい",
+        "flag": ""
+      },
+      {
+        "ja": "東京で生まれました。",
+        "en": "I was born in Tokyo.",
+        "reading": "うまれる",
+        "flag": ""
+      }
+    ],
+    "男": [
+      {
+        "ja": "あの男の人は父です。",
+        "en": "That man is my father.",
+        "reading": "おとこ",
+        "flag": ""
+      },
+      {
+        "ja": "男性の先生です。",
+        "en": "He is a male teacher.",
+        "reading": "だん",
+        "flag": ""
+      }
+    ],
+    "白": [
+      {
+        "ja": "白い花が好きです。",
+        "en": "I like white flowers.",
+        "reading": "しろ",
+        "flag": ""
+      },
+      {
+        "ja": "白紙に名前を書いてください。",
+        "en": "Please write your name on a blank sheet.",
+        "reading": "はく",
+        "flag": ""
+      }
+    ],
+    "百": [
+      {
+        "ja": "これは百円です。",
+        "en": "This is 100 yen.",
+        "reading": "ひゃく",
+        "flag": ""
+      }
+    ],
+    "聞": [
+      {
+        "ja": "音楽を聞きます。",
+        "en": "I listen to music.",
+        "reading": "きく",
+        "flag": ""
+      },
+      {
+        "ja": "朝、新聞を読みます。",
+        "en": "I read the newspaper in the morning.",
+        "reading": "ぶん",
+        "flag": ""
+      }
+    ],
+    "行": [
+      {
+        "ja": "明日、学校へ行きます。",
+        "en": "I'll go to school tomorrow.",
+        "reading": "いく",
+        "flag": ""
+      },
+      {
+        "ja": "銀行は駅の前です。",
+        "en": "The bank is in front of the station.",
+        "reading": "こう",
+        "flag": ""
+      }
+    ],
+    "西": [
+      {
+        "ja": "西の空が赤いです。",
+        "en": "The western sky is red.",
+        "reading": "にし",
+        "flag": ""
+      },
+      {
+        "ja": "西洋の音楽が好きです。",
+        "en": "I like Western music.",
+        "reading": "せい",
+        "flag": ""
+      }
+    ],
+    "見": [
+      {
+        "ja": "今夜、映画を見ます。",
+        "en": "I'll watch a movie tonight.",
+        "reading": "みる",
+        "flag": ""
+      },
+      {
+        "ja": "先生の意見を聞きました。",
+        "en": "I listened to the teacher's opinion.",
+        "reading": "けん",
+        "flag": ""
+      }
+    ],
+    "話": [
+      {
+        "ja": "友達と日本語を話します。",
+        "en": "I speak Japanese with my friends.",
+        "reading": "はなす",
+        "flag": ""
+      },
+      {
+        "ja": "会話の練習をします。",
+        "en": "I'll practice conversation.",
+        "reading": "わ",
+        "flag": ""
+      }
+    ],
+    "語": [
+      {
+        "ja": "日本語を勉強しています。",
+        "en": "I'm studying Japanese.",
+        "reading": "ご",
+        "flag": ""
+      }
+    ],
+    "読": [
+      {
+        "ja": "夜、本を読みます。",
+        "en": "I read a book at night.",
+        "reading": "よむ",
+        "flag": ""
+      },
+      {
+        "ja": "読書が好きです。",
+        "en": "I like reading.",
+        "reading": "どく",
+        "flag": ""
+      }
+    ],
+    "車": [
+      {
+        "ja": "車でスーパーへ行きます。",
+        "en": "I'll go to the supermarket by car.",
+        "reading": "くるま",
+        "flag": ""
+      },
+      {
+        "ja": "電車は八時に来ます。",
+        "en": "The train comes at eight.",
+        "reading": "しゃ",
+        "flag": ""
+      }
+    ],
+    "金": [
+      {
+        "ja": "お金を忘れました。",
+        "en": "I forgot my money.",
+        "reading": "かね",
+        "flag": ""
+      },
+      {
+        "ja": "金曜日に映画を見ます。",
+        "en": "I'll see a movie on Friday.",
+        "reading": "きん",
+        "flag": ""
+      }
+    ],
+    "長": [
+      {
+        "ja": "この道は長いです。",
+        "en": "This road is long.",
+        "reading": "ながい",
+        "flag": ""
+      },
+      {
+        "ja": "社長は今日いません。",
+        "en": "The company president is out today.",
+        "reading": "ちょう",
+        "flag": ""
+      }
+    ],
+    "間": [
+      {
+        "ja": "三時から五時の間、家にいます。",
+        "en": "I'll be home between 3 and 5.",
+        "reading": "あいだ",
+        "flag": ""
+      },
+      {
+        "ja": "時間がありません。",
+        "en": "I don't have time.",
+        "reading": "かん",
+        "flag": ""
+      }
+    ],
+    "雨": [
+      {
+        "ja": "雨が降っています。",
+        "en": "It's raining.",
+        "reading": "あめ",
+        "flag": ""
+      }
+    ],
+    "電": [
+      {
+        "ja": "後で電話します。",
+        "en": "I'll call you later.",
+        "reading": "でん",
+        "flag": ""
+      },
+      {
+        "ja": "電車で学校へ行きます。",
+        "en": "I go to school by train.",
+        "reading": "でん",
+        "flag": ""
+      }
+    ],
+    "食": [
+      {
+        "ja": "朝ごはんを食べます。",
+        "en": "I eat breakfast.",
+        "reading": "たべる",
+        "flag": ""
+      },
+      {
+        "ja": "食堂は二階です。",
+        "en": "The cafeteria is on the second floor.",
+        "reading": "しょく",
+        "flag": ""
+      }
+    ],
+    "高": [
+      {
+        "ja": "このビルは高いです。",
+        "en": "This building is tall.",
+        "reading": "たかい",
+        "flag": ""
+      },
+      {
+        "ja": "高校で英語を勉強しました。",
+        "en": "I studied English in high school.",
+        "reading": "こう",
+        "flag": ""
+      }
+    ],
+    "仕": [
+      {
+        "ja": "父は毎日仕事に行きます。",
+        "en": "My father goes to work every day.",
+        "reading": "し",
+        "flag": ""
+      }
+    ],
+    "兄": [
+      {
+        "ja": "兄弟は何人いますか。",
+        "en": "How many siblings do you have?",
+        "reading": "きょう",
+        "flag": ""
+      }
+    ],
+    "家": [
+      {
+        "ja": "家は駅の近くです。",
+        "en": "The house is near the station.",
+        "reading": "いえ",
+        "flag": ""
+      },
+      {
+        "ja": "家族は四人です。",
+        "en": "There are four people in my family.",
+        "reading": "か",
+        "flag": ""
+      }
+    ],
+    "持": [
+      {
+        "ja": "傘を持っています。",
+        "en": "I have an umbrella.",
+        "reading": "もつ",
+        "flag": "uses the anchor verb"
+      }
+    ],
+    "明": [
+      {
+        "ja": "この部屋は明るいです。",
+        "en": "This room is bright.",
+        "reading": "あかるい",
+        "flag": ""
+      },
+      {
+        "ja": "先生が使い方を説明しました。",
+        "en": "The teacher explained how to use it.",
+        "reading": "めい",
+        "flag": ""
+      }
+    ],
+    "知": [
+      {
+        "ja": "その人を知っています。",
+        "en": "I know that person.",
+        "reading": "しる",
+        "flag": "uses the anchor verb"
+      }
+    ],
+    "私": [
+      {
+        "ja": "私は学生です。",
+        "en": "I am a student.",
+        "reading": "わたし",
+        "flag": ""
+      },
+      {
+        "ja": "私立の学校です。",
+        "en": "It's a private school.",
+        "reading": "し",
+        "flag": ""
+      }
+    ],
+    "立": [
+      {
+        "ja": "ここに立ってください。",
+        "en": "Please stand here.",
+        "reading": "たつ",
+        "flag": "uses the anchor verb"
+      }
+    ],
+    "色": [
+      {
+        "ja": "この色が好きです。",
+        "en": "I like this color.",
+        "reading": "いろ",
+        "flag": ""
+      },
+      {
+        "ja": "何色がいいですか。",
+        "en": "What color do you want?",
+        "reading": "いろ",
+        "flag": ""
+      }
+    ],
+    "開": [
+      {
+        "ja": "ドアが開きました。",
+        "en": "The door opened.",
+        "reading": "あく",
+        "flag": "uses the anchor verb"
+      }
+    ],
+    "乗": [
+      {
+        "ja": "電車に乗ります。",
+        "en": "I'll take the train.",
+        "reading": "のる",
+        "flag": "uses the anchor verb"
+      }
+    ],
+    "勤": [
+      {
+        "ja": "会社に勤めています。",
+        "en": "I work at a company.",
+        "reading": "つとめる",
+        "flag": "uses the anchor verb"
+      }
+    ],
+    "引": [
+      {
+        "ja": "ドアを引いてください。",
+        "en": "Please pull the door.",
+        "reading": "ひく",
+        "flag": ""
+      }
+    ],
+    "打": [
+      {
+        "ja": "ボールを打つ。",
+        "en": "I hit the ball.",
+        "reading": "うつ",
+        "flag": "uses the anchor verb"
+      }
+    ],
+    "昨": [
+      {
+        "ja": "昨年、日本へ行きました。",
+        "en": "I went to Japan last year.",
+        "reading": "さく",
+        "flag": ""
+      }
+    ],
+    "置": [
+      {
+        "ja": "本を机に置いた。",
+        "en": "I put the book on the desk.",
+        "reading": "おく",
+        "flag": "uses the anchor verb"
+      }
+    ],
+    "解": [
+      {
+        "ja": "この問題を解いてください。",
+        "en": "Please solve this problem.",
+        "reading": "とく",
+        "flag": "uses the anchor verb"
+      }
+    ],
+    "返": [
+      {
+        "ja": "お金は明日返します。",
+        "en": "I'll give the money back tomorrow.",
+        "reading": "かえす",
+        "flag": "uses the anchor verb"
+      }
+    ],
+    "降": [
+      {
+        "ja": "雨が降っています。",
+        "en": "It's raining.",
+        "reading": "ふる",
+        "flag": "uses the anchor verb"
+      }
+    ],
+    "顔": [
+      {
+        "ja": "顔を洗いました。",
+        "en": "I washed my face.",
+        "reading": "かお",
+        "flag": ""
+      },
+      {
+        "ja": "笑顔がすてきです。",
+        "en": "That's a lovely smile.",
+        "reading": "がお",
+        "flag": "笑顔 is えがお; 顔 here is voiced がお."
+      }
+    ],
+    "飛": [
+      {
+        "ja": "鳥は空を飛ぶ。",
+        "en": "Birds fly.",
+        "reading": "とぶ",
+        "flag": "uses the anchor verb"
+      }
+    ]
+  }
+}

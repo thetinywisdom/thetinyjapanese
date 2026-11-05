@@ -31,7 +31,9 @@ describe("native recheck: golden forms and skip lists", () => {
   });
 
   it("skips the listed N4 verbs without touching their twins", () => {
-    const full = ["1514960", "1209650", "1545710", "1518540", "1529550", "1215810", "1006140"];
+    const full = ["1514960", "1209650", "1545710", "1518540", "1529550"];
+    expect(byId("1215810")).toMatchObject({ dictionary: "関係", wordType: "noun" });
+    expect(WORDS.find((w) => w.id === "1006140")).toBeUndefined();
     for (const id of full) {
       const verb = byId(id);
       const f = buildForms(verb).casual;
@@ -93,15 +95,14 @@ describe("native recheck: golden forms and skip lists", () => {
       expect(other.reading).toBe(reading);
       expect(buildForms(other).casual.potential ?? buildForms(other).casual.imperative, other.dictionary).toBeTruthy();
     }
-    for (const id of ["1473960", "1497800", "1593100", "1469570", "1604540", "1605270", "1539080", "1558400", "1609500", "1253920"]) {
+    for (const id of ["1473960", "1497800", "1593100", "1469570", "1604540", "1605270", "1539080", "1558400", "1253920"]) {
       const verb = byId(id);
       expect(buildForms(verb).casual.potential, verb.dictionary).toBeUndefined();
       expect(buildForms(verb).casual.imperative, verb.dictionary).toBeUndefined();
     }
     const kakaru = WORDS.find((w) => w.dictionary === "かかる")!;
-    const riru = WORDS.find((w) => w.dictionary === "罹る")!;
-    expect(kakaru.id).not.toBe(riru.id);
-    expect(buildForms(riru).casual.potential).toBeUndefined();
+    expect(kakaru.id).toBe("1207590");
+    expect(WORDS.find((w) => w.dictionary === "罹る")).toBeUndefined();
   });
 
   it("restores the over-skipped potentials and the volitional uses of 残る", () => {

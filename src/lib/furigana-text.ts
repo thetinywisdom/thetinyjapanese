@@ -1,10 +1,11 @@
 /**
- * Add furigana to free-form Japanese text.
+ * Synchronous longest-match furigana. The diary does not use this anymore
+ * (it produced 行[ぎょう]った and 三[みっ]人[ひと]). Diary text goes through
+ * src/lib/furigana-analyze.ts.
  *
- * Strategy (no network, no AI):
+ * Strategy:
  *  1. Longest-match against the bundled word/verb dictionaries.
- *  2. Fall back to matching the leading kanji block of a dictionary entry
- *     (so inflected forms like 食べます still get た over 食).
+ *  2. Fall back to matching the leading kanji block of a dictionary entry.
  *  3. Fall back to per-kanji kun/on readings from kanjidic data.
  */
 
